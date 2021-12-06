@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,6 +19,16 @@
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Fornecedor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Funcionario.java" afterDir="false" />
     </list>
+=======
+<<<<<<< HEAD
+    <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Acidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Acidente.java" afterDir="false" />
+    </list>
+=======
+    <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="" />
+>>>>>>> 90de6b035dfa69eac6c5d14ebf7e9b2ee08ac725
+>>>>>>> 409f5521e29b4f187af89095bb8aa4152aa16597
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +100,10 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 409f5521e29b4f187af89095bb8aa4152aa16597
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -98,6 +113,11 @@
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 90de6b035dfa69eac6c5d14ebf7e9b2ee08ac725
+>>>>>>> 409f5521e29b4f187af89095bb8aa4152aa16597
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

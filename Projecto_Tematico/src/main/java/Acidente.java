@@ -1,19 +1,25 @@
 import java.util.Date;
 
 public class Acidente {
+    private int id;
     private Date data;
     private String descricao;
     private float valorPagar;
     private String culpado;
     private Date dataLimitePagamento;
 
-    public Acidente(Date data, String descricao, float valorPagar, String culpado,
+    public Acidente(int id, Date data, String descricao, float valorPagar, String culpado,
                     Date dataLimitePagamento){
+        this.id=id;
         this.data=data;
         this.descricao=descricao;
         this.valorPagar=valorPagar;
         this.culpado=culpado;
         this.dataLimitePagamento=dataLimitePagamento;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Date getData() {
@@ -34,6 +40,10 @@ public class Acidente {
 
     public Date getDataLimitePagamento() {
         return dataLimitePagamento;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setData(Date data) {
