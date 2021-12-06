@@ -1,10 +1,12 @@
+import java.util.Date;
+
 public class Pessoa {
     protected String nome;
     protected int id;
-    protected int numeroCidadao;
+    protected String numeroCidadao;
     protected String morada;
-    protected String dataRegistoSistema;
-    protected String dataNascimento;
+    protected Date dataRegistoSistema;
+    protected Date dataNascimento;
     protected int numTelefone;
     protected String email;
     protected String username;
@@ -12,8 +14,8 @@ public class Pessoa {
 
     public Pessoa(){};
 
-    public Pessoa(String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-    String dataNascimento, int numTelefone, String email, String username, String password){
+    public Pessoa(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+    Date dataNascimento, int numTelefone, String email, String username, String password){
 
         this.nome=nome;
         this.id=id;
@@ -44,11 +46,11 @@ public class Pessoa {
         this.id = id;
     }
 
-    public int getNumeroCidadao() {
+    public String getNumeroCidadao() {
         return numeroCidadao;
     }
 
-    public void setNumeroCidadao(int numeroCidadao) {
+    public void setNumeroCidadao(String numeroCidadao) {
         this.numeroCidadao = numeroCidadao;
     }
 
@@ -60,19 +62,19 @@ public class Pessoa {
         this.morada = morada;
     }
 
-    public String getDataRegistoSistema() {
+    public Date getDataRegistoSistema() {
         return dataRegistoSistema;
     }
 
-    public void setDataRegistoSistema(String dataRegistoSistema) {
+    public void setDataRegistoSistema(Date dataRegistoSistema) {
         this.dataRegistoSistema = dataRegistoSistema;
     }
 
-    public String getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

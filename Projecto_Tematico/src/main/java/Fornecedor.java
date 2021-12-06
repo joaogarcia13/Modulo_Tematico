@@ -1,9 +1,11 @@
+import java.util.Date;
+
 public class Fornecedor extends Pessoa{
 
     private int idProprietario;
 
-    public Fornecedor(String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-                      String dataNascimento, int numTelefone, String email, String username, String password, int idProprietario){
+    public Fornecedor(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+                      Date dataNascimento, int numTelefone, String email, String username, String password, int idProprietario){
 
         this.nome=nome;
         this.id=id;

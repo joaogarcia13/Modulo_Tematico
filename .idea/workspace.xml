@@ -4,14 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Acidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Acidente.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="" />
+>>>>>>> 90de6b035dfa69eac6c5d14ebf7e9b2ee08ac725
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projecto_Tematico" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,6 +76,7 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+<<<<<<< HEAD
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -64,6 +86,8 @@
         </entry>
       </map>
     </option>
+=======
+>>>>>>> 90de6b035dfa69eac6c5d14ebf7e9b2ee08ac725
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

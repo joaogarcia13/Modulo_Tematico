@@ -1,11 +1,13 @@
+import java.util.Date;
+
 public class Condutor extends Pessoa{
 
     private int idCondutor;
     private int numeroCartaConducao;
     private int classificacao;
 
-    public Condutor (String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-    String dataNascimento, int numTelefone, String email, String username, String password, int idCondutor, int numeroCartaoConducao,int classificacao){
+    public Condutor (String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+    Date dataNascimento, int numTelefone, String email, String username, String password, int idCondutor, int numeroCartaoConducao,int classificacao){
 
         this.nome=nome;
         this.id=id;
