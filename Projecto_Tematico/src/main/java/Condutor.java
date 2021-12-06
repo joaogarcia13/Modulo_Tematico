@@ -2,12 +2,11 @@ import java.util.Date;
 
 public class Condutor extends Pessoa{
 
-    private int idCondutor;
     private int numeroCartaConducao;
     private int classificacao;
 
     public Condutor (String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
-    Date dataNascimento, int numTelefone, String email, String username, String password, int idCondutor, int numeroCartaoConducao,int classificacao){
+    Date dataNascimento, int numTelefone, String email, String username, String password, int numeroCartaoConducao,int classificacao){
 
         this.nome=nome;
         this.id=id;
@@ -19,7 +18,6 @@ public class Condutor extends Pessoa{
         this.email=email;
         this.username=username;
         this.password=password;
-        this.idCondutor=idCondutor;
         this.numeroCartaConducao=numeroCartaoConducao;
         this.classificacao=classificacao;
     }
@@ -27,14 +25,6 @@ public class Condutor extends Pessoa{
     public void alugarVeiculo(){};
     public void reportarAcidente(){};
     public void efetuarPagamentoEmpresa(){};
-
-    public int getIdCondutor() {
-        return idCondutor;
-    }
-
-    public void setIdCondutor(int idCondutor) {
-        this.idCondutor = idCondutor;
-    }
 
     public int getNumeroCartaConducao() {
         return numeroCartaConducao;

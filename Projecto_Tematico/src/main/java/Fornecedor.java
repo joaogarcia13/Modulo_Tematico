@@ -2,10 +2,9 @@ import java.util.Date;
 
 public class Fornecedor extends Pessoa{
 
-    private int idProprietario;
 
     public Fornecedor(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
-                      Date dataNascimento, int numTelefone, String email, String username, String password, int idProprietario){
+                      Date dataNascimento, int numTelefone, String email, String username, String password){
 
         this.nome=nome;
         this.id=id;
@@ -17,18 +16,10 @@ public class Fornecedor extends Pessoa{
         this.email=email;
         this.username=username;
         this.password=password;
-        this.idProprietario=idProprietario;
     }
 
     public void pedidoRegistoVeiculo(){};
     public void pedidoRemoverVeiculo(){};
     public void LevantarVeiculo(){};
 
-    public int getIdProprietario() {
-        return idProprietario;
-    }
-
-    public void setIdProprietario(int idProprietario) {
-        this.idProprietario = idProprietario;
-    }
 }
