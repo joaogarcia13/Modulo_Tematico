@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Funcionario extends Pessoa {
 
     protected String cargo;
@@ -5,8 +7,8 @@ public class Funcionario extends Pessoa {
 
     public Funcionario(){};
 
-    public Funcionario(String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-                       String dataNascimento, int numTelefone, String email, String username, String password,
+    public Funcionario(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+                       Date dataNascimento, int numTelefone, String email, String username, String password,
                        String cargo, int idFuncionario) {
 
         this.nome=nome;
