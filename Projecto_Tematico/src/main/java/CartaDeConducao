@@ -1,0 +1,45 @@
+public class CartaDeConducao{
+    private String numero;
+    private String dataDeEmissao;
+    private String dataDeValidade;
+    private String categoria;
+
+    public CartaDeConducao(String numero, String DataDeEmissao, String DataDeValidade, String Categoria){
+        this.numero=numero;
+        this.dataDeEmissao=dataDeEmissao;
+        this.dataDeValidade=dataDeValidade;
+        this.dategoria=categoria;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getDataDeEmissao() {
+        return dataDeEmissao;
+    }
+
+    public String getDataDeValidade() {
+        return dataDeValidade;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public void setDataDeEmissao(String dataDeEmissao) {
+        this.dataDeEmissao = dataDeEmissao;
+    }
+
+    public void setDataDeValidade(String dataDeValidade) {
+        this.dataDeValidade = dataDeValidade;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+}
