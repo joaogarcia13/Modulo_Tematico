@@ -1,12 +1,14 @@
+import java.util.Date;
+
 public class Acidente {
-    private String data;
+    private Date data;
     private String descricao;
     private float valorPagar;
     private String culpado;
-    private String dataLimitePagamento;
+    private Date dataLimitePagamento;
 
-    public Acidente(String data,String descricao, float valorPagar, String culpado,
-    String dataLimitePagamento){
+    public Acidente(Date data, String descricao, float valorPagar, String culpado,
+                    Date dataLimitePagamento){
         this.data=data;
         this.descricao=descricao;
         this.valorPagar=valorPagar;
@@ -14,7 +16,7 @@ public class Acidente {
         this.dataLimitePagamento=dataLimitePagamento;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
@@ -30,11 +32,11 @@ public class Acidente {
         return culpado;
     }
 
-    public String getDataLimitePagamento() {
+    public Date getDataLimitePagamento() {
         return dataLimitePagamento;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -50,7 +52,7 @@ public class Acidente {
         this.culpado = culpado;
     }
 
-    public void setDataLimitePagamento(String dataLimitePagamento) {
+    public void setDataLimitePagamento(Date dataLimitePagamento) {
         this.dataLimitePagamento = dataLimitePagamento;
     }
 }

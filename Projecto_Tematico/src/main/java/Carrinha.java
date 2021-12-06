@@ -1,15 +1,17 @@
+import java.util.Date;
+
 public class Carrinha {
     private String matricula;
-    private String dataRegisto;
-    private String dataRegistoSistema;
+    private Date dataRegisto;
+    private Date dataRegistoSistema;
     private String estado;
     private String categoria;
     private boolean disponibilidade;
-    private int numeroSeguro;
+    private String numeroSeguro;
     private String dataValidadeSeguro;
 
-    public Carrinha(String matricula, String dataRegisto, String dataRegistoSistema,
-    String estado, String categoria, boolean disponibilidade, int numeroSeguro, String dataValidadeSeguro){
+    public Carrinha(String matricula, Date dataRegisto, Date dataRegistoSistema,
+                    String estado, String categoria, boolean disponibilidade, String numeroSeguro, String dataValidadeSeguro){
         this.matricula=matricula;
         this.dataRegisto=dataRegisto;
         this.dataRegistoSistema=dataRegistoSistema;
@@ -24,11 +26,11 @@ public class Carrinha {
         return matricula;
     }
 
-    public String getDataRegisto() {
+    public Date getDataRegisto() {
         return dataRegisto;
     }
 
-    public String getDataRegistoSistema() {
+    public Date getDataRegistoSistema() {
         return dataRegistoSistema;
     }
 
@@ -44,7 +46,7 @@ public class Carrinha {
         return disponibilidade;
     }
 
-    public int getNumeroSeguro() {
+    public String getNumeroSeguro() {
         return numeroSeguro;
     }
 
@@ -56,11 +58,11 @@ public class Carrinha {
         this.matricula = matricula;
     }
 
-    public void setDataRegisto(String dataRegisto) {
+    public void setDataRegisto(Date dataRegisto) {
         this.dataRegisto = dataRegisto;
     }
 
-    public void setDataRegistoSistema(String dataRegistoSistema) {
+    public void setDataRegistoSistema(Date dataRegistoSistema) {
         this.dataRegistoSistema = dataRegistoSistema;
     }
 
@@ -76,7 +78,7 @@ public class Carrinha {
         this.disponibilidade = disponibilidade;
     }
 
-    public void setNumeroSeguro(int numeroSeguro) {
+    public void setNumeroSeguro(String numeroSeguro) {
         this.numeroSeguro = numeroSeguro;
     }
 
