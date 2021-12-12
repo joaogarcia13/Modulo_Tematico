@@ -296,7 +296,7 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="cilindrada"/>
+            <StringItem index="0" value="Cilindrada"/>
             <StringItem index="1" value="Item 2"/>
             <StringItem index="2" value="Item 3"/>
             <StringItem index="3" value="Item 4"/>

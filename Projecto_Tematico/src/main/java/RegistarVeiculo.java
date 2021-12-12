@@ -78,9 +78,9 @@ public class RegistarVeiculo extends javax.swing.JFrame {
 
         ComboPotencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Potencia", "Item 2", "Item 3", "Item 4" }));
 
-        ComboCilindrada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cilindrada", "Item 2", "Item 3", "Item 4" }));
+        ComboCilindrada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cilindrada", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel2.setText("Até");
+        jLabel2.setText("AtÃ©");
 
         jLabel3.setText("Disponibilidade");
 
@@ -90,7 +90,7 @@ public class RegistarVeiculo extends javax.swing.JFrame {
 
         jLabel6.setText("Marca");
 
-        jLabel7.setText("Cambustível");
+        jLabel7.setText("CambustÃ­vel");
 
         jLabel9.setText("Modelo");
 
@@ -98,9 +98,9 @@ public class RegistarVeiculo extends javax.swing.JFrame {
 
         jLabel11.setText("Matricula");
 
-        jLabel12.setText("Nº da Apolice");
+        jLabel12.setText("NÂº da Apolice");
 
-        jLabel8.setText("Potência");
+        jLabel8.setText("PotÃªncia");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
