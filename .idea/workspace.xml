@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="700b7631-7769-4fd7-b636-98f56a60fbcc" name="Changes" comment="" />
+<<<<<<< HEAD
+    <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+=======
+    <list default="true" id="700b7631-7769-4fd7-b636-98f56a60fbcc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Cor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 19eeb8bd52f870136aaf0ac127c14685d029e9c6
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,12 +69,19 @@
       <created>1638834109376</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1638828295596</updated>
+      <workItem from="1638828535583" duration="501000" />
+      <workItem from="1638829064955" duration="1473000" />
+      <workItem from="1639128623744" duration="70000" />
+=======
       <updated>1638834109376</updated>
       <workItem from="1638834113288" duration="101000" />
       <workItem from="1638834618897" duration="38000" />
       <workItem from="1638923404709" duration="63000" />
       <workItem from="1639238073998" duration="210000" />
-      <workItem from="1639238302465" duration="1037000" />
+      <workItem from="1639238302465" duration="964000" />
+>>>>>>> 19eeb8bd52f870136aaf0ac127c14685d029e9c6
     </task>
     <servers />
   </component>
