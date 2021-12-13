@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b47778ec-8be2-44ad-a6b8-64f747da5cbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/Aluguer.Java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/CartaDeConducao" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Modulo_Tematico.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/CartaDeConducao" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/CartaDeConducao" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/Projecto_Tematico">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +54,8 @@
       <updated>1638828295596</updated>
       <workItem from="1638828535583" duration="501000" />
       <workItem from="1638829064955" duration="1473000" />
+      <workItem from="1638830673999" duration="431000" />
+      <workItem from="1638831213033" duration="547000" />
     </task>
     <servers />
   </component>
