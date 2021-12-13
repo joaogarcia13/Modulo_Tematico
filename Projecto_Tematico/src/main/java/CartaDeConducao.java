@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class CartaDeConducao{
     private String numero;
     private Date dataDeEmissao;
@@ -8,7 +10,7 @@ public class CartaDeConducao{
         this.numero=numero;
         this.dataDeEmissao=dataDeEmissao;
         this.dataDeValidade=dataDeValidade;
-        this.dategoria=categoria;
+        this.categoria=categoria;
     }
 
     public String getNumero() {

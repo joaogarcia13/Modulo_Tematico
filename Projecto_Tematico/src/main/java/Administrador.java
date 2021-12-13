@@ -1,8 +1,10 @@
+import java.util.Date;
+
 public class Administrador extends Funcionario{
 
-    public Administrador(String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-                       String dataNascimento, int numTelefone, String email, String username, String password,
-                       String cargo, int idFuncionario) {
+    public Administrador(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+                         Date dataNascimento, int numTelefone, String email, String username, String password,
+                         String cargo) {
 
         this.nome=nome;
         this.id=id;
@@ -15,7 +17,6 @@ public class Administrador extends Funcionario{
         this.username=username;
         this.password=password;
         this.cargo=cargo;
-        this.idFuncionario=idFuncionario;
     }
 
     public void editarFuncionario(){};
