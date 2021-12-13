@@ -1,13 +1,14 @@
+import java.util.Date;
+
 public class Funcionario extends Pessoa {
 
     protected String cargo;
-    protected int idFuncionario;
 
     public Funcionario(){};
 
-    public Funcionario(String nome, int id, int numeroCidadao, String morada, String dataRegistoSistema,
-                       String dataNascimento, int numTelefone, String email, String username, String password,
-                       String cargo, int idFuncionario) {
+    public Funcionario(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
+                       Date dataNascimento, int numTelefone, String email, String username, String password,
+                       String cargo) {
 
         this.nome=nome;
         this.id=id;
@@ -20,7 +21,6 @@ public class Funcionario extends Pessoa {
         this.username=username;
         this.password=password;
         this.cargo=cargo;
-        this.idFuncionario=idFuncionario;
     }
 
     public void registarVeiculo(){};
@@ -35,11 +35,4 @@ public class Funcionario extends Pessoa {
         this.cargo = cargo;
     }
 
-    public int getIdFuncionario() {
-        return idFuncionario;
-    }
-
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
-    }
 }

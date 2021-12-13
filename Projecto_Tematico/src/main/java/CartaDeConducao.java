@@ -1,25 +1,27 @@
+import java.util.Date;
+
 public class CartaDeConducao{
     private String numero;
-    private String dataDeEmissao;
-    private String dataDeValidade;
+    private Date dataDeEmissao;
+    private Date dataDeValidade;
     private String categoria;
 
-    public CartaDeConducao(String numero, String DataDeEmissao, String DataDeValidade, String Categoria){
+    public CartaDeConducao(String numero, Date DataDeEmissao, Date DataDeValidade, String Categoria){
         this.numero=numero;
         this.dataDeEmissao=dataDeEmissao;
         this.dataDeValidade=dataDeValidade;
-        this.dategoria=categoria;
+        this.categoria=categoria;
     }
 
     public String getNumero() {
         return numero;
     }
 
-    public String getDataDeEmissao() {
+    public Date getDataDeEmissao() {
         return dataDeEmissao;
     }
 
-    public String getDataDeValidade() {
+    public Date getDataDeValidade() {
         return dataDeValidade;
     }
 
@@ -31,11 +33,11 @@ public class CartaDeConducao{
         this.numero = numero;
     }
 
-    public void setDataDeEmissao(String dataDeEmissao) {
+    public void setDataDeEmissao(Date dataDeEmissao) {
         this.dataDeEmissao = dataDeEmissao;
     }
 
-    public void setDataDeValidade(String dataDeValidade) {
+    public void setDataDeValidade(Date dataDeValidade) {
         this.dataDeValidade = dataDeValidade;
     }
 
