@@ -206,7 +206,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel16.setText("DescriÃ§Ã£o Detalhada:");
+        jLabel16.setText("Descrição Detalhada:");
 
         jTextField10.setBackground(new java.awt.Color(169, 202, 221));
         jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
@@ -300,8 +300,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton8)))
@@ -319,7 +318,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addComponent(jRadioButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton4))
-                    .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                    .addComponent(jTextField10))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
@@ -665,7 +664,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         });
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel22.setText("Finalizar Aluguer");
+        jLabel22.setText("Registar Veiculo");
 
         ComboMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca", "Citroen", "Mercedes", "Ferrari", "" }));
 
@@ -679,7 +678,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         ComboCilindrada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cilindrada", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel23.setText("AtÃ©");
+        jLabel23.setText("Até");
 
         jLabel24.setText("Disponibilidade");
 
@@ -689,7 +688,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel27.setText("Marca");
 
-        jLabel28.setText("CambustÃ­vel");
+        jLabel28.setText("Cambustível");
 
         jLabel29.setText("Modelo");
 
@@ -697,9 +696,9 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel31.setText("Matricula");
 
-        jLabel32.setText("NÂº da Apolice");
+        jLabel32.setText("Nº da Apolice");
 
-        jLabel33.setText("PotÃªncia");
+        jLabel33.setText("Potência");
 
         javax.swing.GroupLayout RegistarVeiculoLayout = new javax.swing.GroupLayout(RegistarVeiculo.getContentPane());
         RegistarVeiculo.getContentPane().setLayout(RegistarVeiculoLayout);
@@ -846,17 +845,17 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton10.setBackground(new java.awt.Color(60, 94, 115));
         jButton10.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         jButton10.setForeground(new java.awt.Color(235, 244, 249));
-        jButton10.setText("Registar VeÃ­culo");
+        jButton10.setText("Registar Veículo");
 
         jButton11.setBackground(new java.awt.Color(60, 94, 115));
         jButton11.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jButton11.setForeground(new java.awt.Color(235, 244, 249));
-        jButton11.setText("Alugar VeÃ­culo");
+        jButton11.setText("Alugar Veículo");
 
         jButton12.setBackground(new java.awt.Color(60, 94, 115));
         jButton12.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         jButton12.setForeground(new java.awt.Color(235, 244, 249));
-        jButton12.setText("Consultar VeÃ­culo");
+        jButton12.setText("Consultar Veículo");
 
         jLabel37.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -873,7 +872,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton15.setBackground(new java.awt.Color(60, 94, 115));
         jButton15.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jButton15.setForeground(new java.awt.Color(235, 244, 249));
-        jButton15.setText("InformaÃ§Ãµes");
+        jButton15.setText("Informações");
 
         jLabel38.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -884,7 +883,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel39.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel39.setText("Sobre nÃ³s");
+        jLabel39.setText("Sobre nós");
 
         jButton16.setBackground(new java.awt.Color(239, 177, 74));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toppng.com-book-icon-book-icon-1571x1452.png"))); // NOI18N
@@ -1033,7 +1032,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel5.setText("NÂº TelemovÃ©l:");
+        jLabel5.setText("Nº Telemovél:");
 
         jTextField3.setBackground(new java.awt.Color(169, 202, 221));
         jTextField3.setForeground(new java.awt.Color(60, 94, 115));
@@ -1061,7 +1060,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel7.setText("NÂº Documento IdentificaÃ§ao:");
+        jLabel7.setText("Nº Documento Identificaçao:");
 
         jTextField5.setBackground(new java.awt.Color(169, 202, 221));
         jTextField5.setForeground(new java.awt.Color(60, 94, 115));
@@ -1103,7 +1102,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton2.setText("Confirmar");
 
         jButton9.setBackground(new java.awt.Color(239, 177, 74));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ponto_interrogaÃ§Ã£o.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ponto_interrogação.png"))); // NOI18N
         jButton9.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         javax.swing.GroupLayout SignUpLayout = new javax.swing.GroupLayout(SignUp);
