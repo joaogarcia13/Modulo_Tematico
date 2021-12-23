@@ -1,16 +1,17 @@
-public class aluguer {
+public class Aluguer {
     private String horario;
     private String regularidade;
     private float preco;
     private String estado;
     private int classificacao;
 
-    public aluguer(String horario, String regularidade, float preco, String estado, int classificacao)
-        this.horario=horario;
-        this.regularidade=regularidade;
-        this.preco=preco;
-        this.estado=estado;
-        this.classificacao=classificacao;
+    public Aluguer(String horario, String regularidade, float preco, String estado, int classificacao) {
+        this.horario = horario;
+        this.regularidade = regularidade;
+        this.preco = preco;
+        this.estado = estado;
+        this.classificacao = classificacao;
+    }
 
     public String getHorario() {
         return horario;
