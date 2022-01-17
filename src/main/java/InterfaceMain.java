@@ -1,3 +1,11 @@
+package main.java;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,13 +16,18 @@
  * @author joaogarcia
  */
 public class InterfaceMain extends javax.swing.JFrame {
-
+    
+    private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-[a-zA-z]{2}$";
+    private String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
+    private String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
+    private String formatoData = "\\d{2}\\/\\d{2}\\/\\d{4}$";
+    private String formatoHora = "^\\d{2}:\\d{2}$";
+    
     /**
      * Creates new form InterfaceMain
      */
     public InterfaceMain() {
         initComponents();
-        MenuPrincipal.setVisible(true);
     }
 
     /**
@@ -108,24 +121,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        MenuPrincipal = new javax.swing.JFrame();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jLabel37 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jLabel38 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel39 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
         SignUp = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -250,7 +245,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel16.setText("Descri��o Detalhada:");
+        jLabel16.setText("Descrição Detalhada:");
 
         jTextField10.setBackground(new java.awt.Color(169, 202, 221));
         jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
@@ -697,10 +692,21 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         RegistarVeiculo.setResizable(false);
+        RegistarVeiculo.setSize(new java.awt.Dimension(424, 440));
 
         BtnConfirmar.setText("Confirmar");
+        BtnConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConfirmarBtn_RegistarVeiculo(evt);
+            }
+        });
 
         BtnLimpar.setText("Limpar");
+        BtnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LimparBtn_RegistarVeiculo(evt);
+            }
+        });
         BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnLimparActionPerformed(evt);
@@ -711,10 +717,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel22.setText("Registar Veiculo");
 
         ComboMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca", "Citroen", "Mercedes", "Ferrari", "" }));
+        ComboMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarcaSelecionar(evt);
+            }
+        });
 
         ComboAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano", "Item 2", "Item 3", "Item 4" }));
 
         ComboModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Modelo", "Item 2", "Item 3", "Item 4" }));
+        ComboModelo.setEnabled(false);
 
         ComboCombustivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combustivel", "Item 2", "Item 3", "Item 4" }));
 
@@ -722,7 +734,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         ComboCilindrada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cilindrada", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel23.setText("At�");
+        jLabel23.setText("Até");
 
         jLabel24.setText("Disponibilidade");
 
@@ -732,7 +744,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel27.setText("Marca");
 
-        jLabel28.setText("Cambust�vel");
+        jLabel28.setText("Combustível");
 
         jLabel29.setText("Modelo");
 
@@ -740,9 +752,9 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel31.setText("Matricula");
 
-        jLabel32.setText("N� da Apolice");
+        jLabel32.setText("Nº da Apolice");
 
-        jLabel33.setText("Pot�ncia");
+        jLabel33.setText("Potência");
 
         javax.swing.GroupLayout RegistarVeiculoLayout = new javax.swing.GroupLayout(RegistarVeiculo.getContentPane());
         RegistarVeiculo.getContentPane().setLayout(RegistarVeiculoLayout);
@@ -874,165 +886,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        MenuPrincipal.setResizable(false);
-
-        jPanel2.setBackground(new java.awt.Color(239, 177, 74));
-
-        jLabel34.setFont(new java.awt.Font("Fira Sans", 1, 30)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel34.setText("Empresa Gorila");
-
-        jLabel35.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
-
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carro.png"))); // NOI18N
-
-        jButton10.setBackground(new java.awt.Color(60, 94, 115));
-        jButton10.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(235, 244, 249));
-        jButton10.setText("Registar Ve�culo");
-
-        jButton11.setBackground(new java.awt.Color(60, 94, 115));
-        jButton11.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(235, 244, 249));
-        jButton11.setText("Alugar Ve�culo");
-
-        jButton12.setBackground(new java.awt.Color(60, 94, 115));
-        jButton12.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(235, 244, 249));
-        jButton12.setText("Consultar Ve�culo");
-
-        jLabel37.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
-
-        jButton13.setBackground(new java.awt.Color(60, 94, 115));
-        jButton13.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(235, 244, 249));
-        jButton13.setText("Reportar Acidente");
-
-        jButton14.setBackground(new java.awt.Color(60, 94, 115));
-        jButton14.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(235, 244, 249));
-        jButton14.setText("A Empresa");
-
-        jButton15.setBackground(new java.awt.Color(60, 94, 115));
-        jButton15.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(235, 244, 249));
-        jButton15.setText("Informa��es");
-
-        jLabel38.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
-
-        jTextArea1.setBackground(new java.awt.Color(169, 202, 221));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jLabel39.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel39.setText("Sobre n�s");
-
-        jButton16.setBackground(new java.awt.Color(239, 177, 74));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toppng.com-book-icon-book-icon-1571x1452.png"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
-        jButton17.setBackground(new java.awt.Color(239, 177, 74));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SeekPng.com_male-symbol-png_410093.png"))); // NOI18N
-        jButton17.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(265, 265, 265)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel36)
-                        .addGap(112, 112, 112)
-                        .addComponent(jButton16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(48, 48, 48)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(484, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(4, 4, 4)))
-                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jLabel39)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(132, 132, 132)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(244, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout MenuPrincipalLayout = new javax.swing.GroupLayout(MenuPrincipal.getContentPane());
-        MenuPrincipal.getContentPane().setLayout(MenuPrincipalLayout);
-        MenuPrincipalLayout.setHorizontalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        MenuPrincipalLayout.setVerticalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         SignUp.setBackground(new java.awt.Color(239, 177, 74));
         SignUp.setToolTipText("Sign Up");
 
@@ -1073,7 +926,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel5.setText("N� Telemov�l:");
+        jLabel5.setText("Nº Telemovél:");
 
         jTextField3.setBackground(new java.awt.Color(169, 202, 221));
         jTextField3.setForeground(new java.awt.Color(60, 94, 115));
@@ -1101,7 +954,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel7.setText("N� Documento Identifica�ao:");
+        jLabel7.setText("Nº Documento Identificaçao:");
 
         jTextField5.setBackground(new java.awt.Color(169, 202, 221));
         jTextField5.setForeground(new java.awt.Color(60, 94, 115));
@@ -1143,7 +996,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton2.setText("Confirmar");
 
         jButton9.setBackground(new java.awt.Color(239, 177, 74));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ponto_interroga��o.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ponto_interrogação.png"))); // NOI18N
         jButton9.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         javax.swing.GroupLayout SignUpLayout = new javax.swing.GroupLayout(SignUp);
@@ -1469,6 +1322,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton18.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         jButton18.setForeground(new java.awt.Color(235, 244, 249));
         jButton18.setText("Registar Veículo");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Click_Main_Registar(evt);
+            }
+        });
 
         jButton19.setBackground(new java.awt.Color(60, 94, 115));
         jButton19.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
@@ -1548,10 +1406,10 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel42)
-                        .addGap(112, 112, 112)
-                        .addComponent(jButton24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(80, 80, 80)
+                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainMenuLayout.createSequentialGroup()
@@ -1571,9 +1429,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                            .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(4, 4, 4)))
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
@@ -1691,6 +1549,100 @@ public class InterfaceMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton28ActionPerformed
 
+    private void Click_Main_Registar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Click_Main_Registar
+        //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
+        RegistarVeiculo.setVisible(true);
+    }//GEN-LAST:event_Click_Main_Registar
+
+    private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
+        TxtMatricula.setText("");
+        ComboMarca.setSelectedIndex(0);
+        ComboModelo.setSelectedIndex(0);
+        ComboAno.setSelectedIndex(0);
+        ComboCombustivel.setSelectedIndex(0);
+        ComboPotencia.setSelectedIndex(0);
+        ComboCilindrada.setSelectedIndex(0);
+        TextValSeguro.setText("");
+        TextApolice.setText("");
+        TextDataInicio.setText("");
+        TextDataFim.setText("");
+        TextHoraFim.setText("");
+        TextHoraInicio.setText("");
+        
+    }//GEN-LAST:event_LimparBtn_RegistarVeiculo
+
+    private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
+        boolean erro = false;
+        String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
+
+        if(!Pattern.matches(formatoMatricula1, TxtMatricula.getText()) && !Pattern.matches(formatoMatricula2, TxtMatricula.getText()) 
+                && !Pattern.matches(formatoMatricula3, TxtMatricula.getText())){
+            erro = true;
+            mensagem += "\nMatricula deve ser do formato NN-CC-CC (Ex:34-EE-EE).";
+        }
+        if(ComboMarca.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado a marca do carro.";
+        }
+        if(ComboModelo.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado o modelo do carro.";
+        }
+        if(ComboAno.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado o ano do carro.";
+        }
+        if(ComboMarca.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado o tipo de combustível.";
+        }
+        if(ComboPotencia.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado a Potencia do carro.";
+        }
+        if(ComboCilindrada.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado a cilindrada do carro.";
+        }
+        try{
+            if(Integer.parseInt(TextApolice.getText()) < 0){
+                erro = true;
+                mensagem += "\nNumero de Apolice não é válido.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nNúmero de Apolice não é valido.";
+        }
+        try{
+            Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
+            Date todayDate = new Date();
+            System.out.println(todayDate);
+            //esse regex esta mal |falta confirmar data e hora e criar o objecto se nao tiver erros
+            if(ValApol.before(todayDate) || !Pattern.matches("(0?[1-9]|[12][0-9]|3[01])\\/(0?[1-9]|1[0-2])\\/([0-9]{4})",ValApol.toString())){
+                erro = true;
+                mensagem += "\nValidade do Seguro inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nValidade do seguro não temo formato dd/mm/aaaa ou é inválida.";
+        }
+        
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            //criar objecto carrinha  
+        }
+    }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
+
+    private void MarcaSelecionar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaSelecionar
+        if(ComboMarca.getSelectedIndex() > 0){
+            ComboModelo.setEnabled(true);
+        }else{
+            ComboModelo.setEnabled(false);
+            ComboModelo.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_MarcaSelecionar
+
     /**
      * @param args the command line arguments
      */
@@ -1738,7 +1690,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel InfoCarro;
     private javax.swing.JFrame ListarVeiculos;
     private javax.swing.JPanel MainMenu;
-    private javax.swing.JFrame MenuPrincipal;
     private javax.swing.JFrame Pagamento;
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame Perfil_Utilizador;
@@ -1758,14 +1709,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel infoCarro;
     private javax.swing.JPanel infoCarro1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
@@ -1813,12 +1756,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
@@ -1843,7 +1780,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JRadioButton jRadioButton1;
@@ -1853,10 +1789,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;

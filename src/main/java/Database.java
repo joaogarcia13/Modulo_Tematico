@@ -1,3 +1,5 @@
+package main.java;
+
 import java.sql.*;
 import static java.sql.DriverManager.*;
 

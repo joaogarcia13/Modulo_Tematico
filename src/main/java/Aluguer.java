@@ -1,3 +1,5 @@
+package main.java;
+
 public class Aluguer {
     private String horario;
     private String regularidade;

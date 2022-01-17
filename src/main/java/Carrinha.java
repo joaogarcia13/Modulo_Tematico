@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.Date;
 
 public class Carrinha {
@@ -8,9 +10,12 @@ public class Carrinha {
     private String categoria;
     private boolean disponibilidade;
     private String numeroSeguro;
-    private String dataValidadeSeguro;
+    private Date dataValidadeSeguro;
+    private Date InicioDisponibilidade;
+    private Date fimDisponibilidade;
 
-    public Carrinha(String matricula, Date dataRegisto, Date dataRegistoSistema, String estado, String categoria, boolean disponibilidade, String numeroSeguro, String dataValidadeSeguro){
+    public Carrinha(String matricula, Date dataRegisto, Date dataRegistoSistema, String estado, String categoria, boolean disponibilidade, 
+            String numeroSeguro, Date dataValidadeSeguro, Date Inicio, Date Fim){
         this.matricula=matricula;
         this.dataRegisto=dataRegisto;
         this.dataRegistoSistema=dataRegistoSistema;
@@ -19,6 +24,24 @@ public class Carrinha {
         this.disponibilidade=disponibilidade;
         this.numeroSeguro=numeroSeguro;
         this.dataValidadeSeguro=dataValidadeSeguro;
+        this.InicioDisponibilidade = Inicio;
+        this.fimDisponibilidade = Fim;
+    }
+
+    public void setInicioDisponibilidade(Date InicioDisponibilidade) {
+        this.InicioDisponibilidade = InicioDisponibilidade;
+    }
+
+    public void setFimDisponibilidade(Date fimDisponibilidade) {
+        this.fimDisponibilidade = fimDisponibilidade;
+    }
+
+    public Date getInicioDisponibilidade() {
+        return InicioDisponibilidade;
+    }
+
+    public Date getFimDisponibilidade() {
+        return fimDisponibilidade;
     }
 
     public String getMatricula() {
@@ -49,7 +72,7 @@ public class Carrinha {
         return numeroSeguro;
     }
 
-    public String getDataValidadeSeguro() {
+    public Date getDataValidadeSeguro() {
         return dataValidadeSeguro;
     }
 
@@ -81,7 +104,7 @@ public class Carrinha {
         this.numeroSeguro = numeroSeguro;
     }
 
-    public void setDataValidadeSeguro(String dataValidadeSeguro) {
+    public void setDataValidadeSeguro(Date dataValidadeSeguro) {
         this.dataValidadeSeguro = dataValidadeSeguro;
     }
 }
