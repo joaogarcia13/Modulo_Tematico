@@ -10,8 +10,7 @@ public class Carrinha {
     private String numeroSeguro;
     private String dataValidadeSeguro;
 
-    public Carrinha(String matricula, Date dataRegisto, Date dataRegistoSistema,
-                    String estado, String categoria, boolean disponibilidade, String numeroSeguro, String dataValidadeSeguro){
+    public Carrinha(String matricula, Date dataRegisto, Date dataRegistoSistema, String estado, String categoria, boolean disponibilidade, String numeroSeguro, String dataValidadeSeguro){
         this.matricula=matricula;
         this.dataRegisto=dataRegisto;
         this.dataRegistoSistema=dataRegistoSistema;
@@ -42,7 +41,7 @@ public class Carrinha {
         return categoria;
     }
 
-    public boolean isDisponibilidade() {
+    public boolean getDisponibilidade() {
         return disponibilidade;
     }
 
