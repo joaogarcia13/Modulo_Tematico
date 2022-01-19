@@ -11,13 +11,9 @@
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/nb-cache/subprojects.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/nb-cache/subprojects.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/.gradle/nb-cache/subprojects.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecto_Tematico/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/InterfaceMain.form" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/InterfaceMain.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/InterfaceMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/InterfaceMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/img/Carro.png" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/resources/images/Carro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/img/Ponto_interrogação.png" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/resources/images/Ponto_interrogação.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Tematico/src/main/java/img/calendario.png" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Tematico/src/main/resources/images/calendario.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Trabaho_Patrico_Es" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -129,6 +125,10 @@
       <workItem from="1639408229291" duration="87000" />
       <workItem from="1639422125370" duration="331000" />
       <workItem from="1639433456652" duration="677000" />
+      <workItem from="1639475779449" duration="53000" />
+      <workItem from="1639475890170" duration="431000" />
+      <workItem from="1639485752545" duration="113000" />
+      <workItem from="1639495418649" duration="29000" />
     </task>
     <servers />
   </component>
