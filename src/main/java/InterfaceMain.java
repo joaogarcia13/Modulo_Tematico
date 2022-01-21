@@ -1,9 +1,12 @@
 package main.java;
 
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -290,24 +293,24 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField7)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jRadioButton1)
-                                .addComponent(jRadioButton4)
-                                .addComponent(jRadioButton3)
-                                .addComponent(jRadioButton2))
-                            .addGap(54, 54, 54)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField10)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                                 .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGap(12, 12, 12)
                             .addComponent(jButton8)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton4)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton2))
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
@@ -359,7 +362,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jTextField10))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1661,11 +1664,20 @@ public class InterfaceMain extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
             Date DataActual = new Date();
-            //nao consigo formatar datas
-            /*Carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getText(), ComboModelo.getText(), 
-                ComboCilindrada.getText(), ComboPotencia.getText(), String.valueOf(ComboCombustivel.getText()), String.valueOf(ComboAno.getText()),
-                true, TextApolice.getText(), );
-            */
+            try {
+                Date ValIni = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataInicio.getText() + TextHoraInicio.getText());
+                Date ValFim = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataFim.getText() + TextHoraFim.getText());
+                Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
+                
+                Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), ComboModelo.getItemAt(ComboModelo.getSelectedIndex()), 
+                    ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
+                        ComboAno.getItemAt(ComboAno.getSelectedIndex()), true, TextApolice.getText(), ValApol, ValIni, ValFim);
+                
+                // Falta enviar para a base dados aqui
+
+            } catch (ParseException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }            
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 

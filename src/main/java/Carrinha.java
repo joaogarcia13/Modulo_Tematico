@@ -11,8 +11,8 @@ public class Carrinha {
     private String modelo;
     private String Cilindrada;
     private String Potencia;
-    private float combustivel;
-    private int ano;
+    private String combustivel;
+    private String ano;
     private boolean disponibilidade;
     private String numeroSeguro;
     private Date dataValidadeSeguro;
@@ -20,7 +20,7 @@ public class Carrinha {
     private Date fimDisponibilidade;
 
     public Carrinha(String matricula, Date dataRegistoSistema, String estado, String categoria, String marca, String modelo, String cilindrada,
-            String Potencia, float combustivel, int ano, boolean disponibilidade, String numeroSeguro, Date dataValidadeSeguro, Date Inicio, Date Fim){
+            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, Date dataValidadeSeguro, Date Inicio, Date Fim){
         
         this.matricula=matricula;
         this.dataRegistoSistema=dataRegistoSistema;
@@ -55,11 +55,11 @@ public class Carrinha {
         this.Potencia = Potencia;
     }
 
-    public void setCombustivel(float combustivel) {
+    public void setCombustivel(String combustivel) {
         this.combustivel = combustivel;
     }
 
-    public void setAno(int ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 
@@ -79,11 +79,11 @@ public class Carrinha {
         return Potencia;
     }
 
-    public float getCombustivel() {
+    public String getCombustivel() {
         return combustivel;
     }
 
-    public int getAno() {
+    public String getAno() {
         return ano;
     }
 
