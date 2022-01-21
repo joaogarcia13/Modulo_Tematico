@@ -20,7 +20,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-[a-zA-z]{2}$";
     private String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
     private String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
-    private String formatoData = "\\d{2}\\/\\d{2}\\/\\d{4}$";
+    private String formatoData = "^([0-9]{4}[-/]?((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])["
+            + "-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))|([0-9]{2}(([2468][048]|["
+            + "02468][48])|[13579][26])|([13579][26]|[02468][048])00)[-/]?02[-/]?29)$";
     private String formatoHora = "^\\d{2}:\\d{2}$";
     
     /**
@@ -1616,15 +1618,14 @@ public class InterfaceMain extends javax.swing.JFrame {
         try{
             Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
             Date todayDate = new Date();
-            System.out.println(todayDate);
-            //esse regex esta mal |falta confirmar data e hora e criar o objecto se nao tiver erros
-            if(ValApol.before(todayDate) || !Pattern.matches("(0?[1-9]|[12][0-9]|3[01])\\/(0?[1-9]|1[0-2])\\/([0-9]{4})",ValApol.toString())){
+            if(ValApol.before(todayDate) || !Pattern.matches(formatoData,ValApol.toString())){
+                System.out.println(ValApol.toString());
                 erro = true;
-                mensagem += "\nValidade do Seguro inválida.";
+                mensagem += "\nValidade do Seguro Inválida.";
             }
         }catch(Exception e){
             erro = true;
-            mensagem += "\nValidade do seguro não temo formato dd/mm/aaaa ou é inválida.";
+            mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa ou é inválida.";
         }
         
         if(erro){
