@@ -19,13 +19,9 @@ import javax.swing.JOptionPane;
 public class InterfaceMain extends javax.swing.JFrame {
     
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-[a-zA-z]{2}$";
-    private String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
-    private String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
-    private String formatoData = "^([0-9]{4}[-/]?((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])["
-            + "-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))|([0-9]{2}(([2468][048]|["
-            + "02468][48])|[13579][26])|([13579][26]|[02468][048])00)[-/]?02[-/]?29)$";
-    private String formatoHora = "^\\d{2}:\\d{2}$";
-    
+    private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
+    private final String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
+    private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
     /**
      * Creates new form InterfaceMain
      */
@@ -1616,6 +1612,9 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nNúmero de Apolice não é valido.";
         }
+        //Isto aqui esta a verificar a data mas ele nao verifica se a data existe
+        //eu nao sei como por isto a verificar se 30/02/2222 é um data inválida. Ele como está agora diz que é válida
+        //são estes 3 blocos
         try{
             Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
             Date todayDate = new Date();
@@ -1625,12 +1624,48 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }catch(Exception e){
             erro = true;
-            mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa ou é inválida.";
-        } 
+            mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa.";
+        }
+        try{
+            Date DataIni = new SimpleDateFormat("dd/MM/yyyy").parse(TextDataInicio.getText());
+            Date todayDate = new Date();
+            if(DataIni.before(todayDate)){
+                erro = true;
+                mensagem += "\nData de Inicio de Disponibilidade Inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Inicio de Disponibilidade não tem o formato dd/mm/aaaa.";
+        }
+        try{
+            Date DataFim = new SimpleDateFormat("dd/MM/yyyy").parse(TextDataFim.getText());
+            Date todayDate = new Date();
+            if(DataFim.before(todayDate)){
+                erro = true;
+                mensagem += "\nData de Fim de disponibilidade Inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Fim de disponibilidade não tem o formato dd/mm/aaaa.";
+        }
+        if(!Pattern.matches(formatoHora,TextHoraInicio.getText())){
+            erro = true;
+            mensagem += "\nHora de Inicio Disponibilidade inválida.";
+        }
+        if(!Pattern.matches(formatoHora,TextHoraFim.getText())){
+            erro = true;
+            mensagem += "\nHora de Fim Disponibilidade inválida.";
+        }
+        
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
-            //criar objecto carrinha  
+            Date DataActual = new Date();
+            //nao consigo formatar datas
+            /*Carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getText(), ComboModelo.getText(), 
+                ComboCilindrada.getText(), ComboPotencia.getText(), String.valueOf(ComboCombustivel.getText()), String.valueOf(ComboAno.getText()),
+                true, TextApolice.getText(), );
+            */
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 

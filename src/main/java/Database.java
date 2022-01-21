@@ -35,7 +35,6 @@ public class Database{
         String cmd; 
         cmd = "insert into carrinhas(matricula, dataRegisto, dataRegistoSistema, estado, categoria, disponibilidade, numeroSeguro, dataValidadeSeguro, proprietario)values(";
         cmd = cmd + "'" + c.getMatricula() + "', ";
-        cmd = cmd + "'" + c.getDataRegisto().toString() + "', ";
         cmd = cmd + "'" + c.getDataRegistoSistema().toString() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
         cmd = cmd + "'" + c.getCategoria() + "', ";
