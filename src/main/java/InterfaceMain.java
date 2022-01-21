@@ -1615,6 +1615,9 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nNúmero de Apolice não é valido.";
         }
+        
+        
+        /*
         try{
             Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
             Date todayDate = new Date();
@@ -1627,6 +1630,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa ou é inválida.";
         }
+        */
         
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
