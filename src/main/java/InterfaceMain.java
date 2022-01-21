@@ -2,6 +2,7 @@ package main.java;
 
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -1615,23 +1616,17 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nNúmero de Apolice não é valido.";
         }
-        
-        
-        /*
         try{
             Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
             Date todayDate = new Date();
-            if(ValApol.before(todayDate) || !Pattern.matches(formatoData,ValApol.toString())){
-                System.out.println(ValApol.toString());
+            if(ValApol.before(todayDate)){
                 erro = true;
                 mensagem += "\nValidade do Seguro Inválida.";
             }
         }catch(Exception e){
             erro = true;
             mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa ou é inválida.";
-        }
-        */
-        
+        } 
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
