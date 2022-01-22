@@ -46,19 +46,19 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        MatriculaTxt = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        LocalTxt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        DataAcidente = new javax.swing.JTextField();
+        HoraAcidente = new javax.swing.JTextField();
+        Acidente = new javax.swing.JRadioButton();
+        Avaria = new javax.swing.JRadioButton();
+        Roubo = new javax.swing.JRadioButton();
+        Outro = new javax.swing.JRadioButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        DescricaoAcidente = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -180,7 +180,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
-        jButton21 = new javax.swing.JButton();
+        BtnMainAcidente = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
@@ -192,6 +192,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
+        ReportarProblemas.setSize(new java.awt.Dimension(635, 582));
 
         jPanel1.setBackground(new java.awt.Color(239, 177, 74));
 
@@ -205,41 +206,41 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(217, 86, 74));
         jLabel12.setText("Matricula:");
 
-        jTextField6.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        MatriculaTxt.setBackground(new java.awt.Color(169, 202, 221));
+        MatriculaTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel13.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(217, 86, 74));
         jLabel13.setText("Local:");
 
-        jTextField7.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        LocalTxt.setBackground(new java.awt.Color(169, 202, 221));
+        LocalTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel14.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(217, 86, 74));
         jLabel14.setText("Dia e Hora:");
 
-        jTextField8.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DataAcidente.setBackground(new java.awt.Color(169, 202, 221));
+        DataAcidente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
-        jTextField9.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        HoraAcidente.setBackground(new java.awt.Color(169, 202, 221));
+        HoraAcidente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton1.setText("Acidente");
+        buttonGroup1.add(Acidente);
+        Acidente.setForeground(new java.awt.Color(217, 86, 74));
+        Acidente.setText("Acidente");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton2.setText("Avaria");
+        buttonGroup1.add(Avaria);
+        Avaria.setForeground(new java.awt.Color(217, 86, 74));
+        Avaria.setText("Avaria");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton3.setText("Roubo");
+        buttonGroup1.add(Roubo);
+        Roubo.setForeground(new java.awt.Color(217, 86, 74));
+        Roubo.setText("Roubo");
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton4.setText("Outro");
+        buttonGroup1.add(Outro);
+        Outro.setForeground(new java.awt.Color(217, 86, 74));
+        Outro.setText("Outro");
 
         jLabel15.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(217, 86, 74));
@@ -249,13 +250,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(217, 86, 74));
         jLabel16.setText("Descrição Detalhada:");
 
-        jTextField10.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DescricaoAcidente.setBackground(new java.awt.Color(169, 202, 221));
+        DescricaoAcidente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jButton4.setBackground(new java.awt.Color(60, 94, 115));
         jButton4.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton4.setForeground(new java.awt.Color(235, 244, 249));
         jButton4.setText("Confirmar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnRegistarAcidente(evt);
+            }
+        });
 
         jLabel17.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -263,6 +269,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(235, 244, 249));
         jButton5.setText("Reset");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnResetAcidente(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -287,30 +298,30 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(MatriculaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(75, 75, 75)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField7)))
+                                .addComponent(LocalTxt)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(DataAcidente, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGap(12, 12, 12)
                             .addComponent(jButton8)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(HoraAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton2))
+                            .addComponent(Acidente)
+                            .addComponent(Outro)
+                            .addComponent(Roubo)
+                            .addComponent(Avaria))
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(DescricaoAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
@@ -332,16 +343,16 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MatriculaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LocalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(HoraAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DataAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton8)))
@@ -352,14 +363,14 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(Acidente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(Avaria)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton3)
+                        .addComponent(Roubo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton4))
-                    .addComponent(jTextField10))
+                        .addComponent(Outro))
+                    .addComponent(DescricaoAcidente))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
@@ -1342,10 +1353,15 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel43.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
-        jButton21.setBackground(new java.awt.Color(60, 94, 115));
-        jButton21.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton21.setForeground(new java.awt.Color(235, 244, 249));
-        jButton21.setText("Reportar Acidente");
+        BtnMainAcidente.setBackground(new java.awt.Color(60, 94, 115));
+        BtnMainAcidente.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        BtnMainAcidente.setForeground(new java.awt.Color(235, 244, 249));
+        BtnMainAcidente.setText("Reportar Acidente");
+        BtnMainAcidente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MainAcidenteBtn(evt);
+            }
+        });
 
         jButton22.setBackground(new java.awt.Color(60, 94, 115));
         jButton22.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
@@ -1388,7 +1404,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
                 .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1446,7 +1462,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
@@ -1690,6 +1706,42 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_MarcaSelecionar
 
+    private void BtnRegistarAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistarAcidente
+        boolean erro = false;
+        String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
+        if(!Pattern.matches(formatoMatricula1, TxtMatricula.getText()) && !Pattern.matches(formatoMatricula2, TxtMatricula.getText()) 
+                && !Pattern.matches(formatoMatricula3, TxtMatricula.getText())){
+            erro = true;
+            mensagem += "\nMatricula deve ser do formato NN-CC-CC (Ex:34-EE-EE).";
+        }
+        if(LocalTxt.getText().equals("") ){
+            erro = true;
+            mensagem += "\nLocal do Acidente está vazio.";
+        }
+        if(DescricaoAcidente.getText().equals("") ){
+            erro = true;
+            mensagem += "\nLocal do Acidente está vazio.";
+        }
+        if( !Acidente.isSelected() && !Roubo.isSelected() && !Outro.isSelected() && !Avaria.isSelected()){
+            erro = true;
+            mensagem +=
+        }
+        
+        System.out.println(mensagem);
+    }//GEN-LAST:event_BtnRegistarAcidente
+
+    private void BtnResetAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnResetAcidente
+        MatriculaTxt.setText("");
+        DescricaoAcidente.setText("");
+        DataAcidente.setText("");
+        HoraAcidente.setText("");     
+        LocalTxt.setText("");
+    }//GEN-LAST:event_BtnResetAcidente
+
+    private void MainAcidenteBtn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainAcidenteBtn
+        ReportarProblemas.setVisible(true);
+    }//GEN-LAST:event_MainAcidenteBtn
+
     /**
      * @param args the command line arguments
      */
@@ -1726,22 +1778,32 @@ public class InterfaceMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton Acidente;
+    private javax.swing.JRadioButton Avaria;
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JButton BtnLimpar;
+    private javax.swing.JButton BtnMainAcidente;
     private javax.swing.JComboBox<String> ComboAno;
     private javax.swing.JComboBox<String> ComboCilindrada;
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboModelo;
     private javax.swing.JComboBox<String> ComboPotencia;
+    private javax.swing.JTextField DataAcidente;
+    private javax.swing.JTextField DescricaoAcidente;
+    private javax.swing.JTextField HoraAcidente;
     private javax.swing.JPanel InfoCarro;
     private javax.swing.JFrame ListarVeiculos;
+    private javax.swing.JTextField LocalTxt;
     private javax.swing.JPanel MainMenu;
+    private javax.swing.JTextField MatriculaTxt;
+    private javax.swing.JRadioButton Outro;
     private javax.swing.JFrame Pagamento;
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame Perfil_Utilizador;
     private javax.swing.JFrame RegistarVeiculo;
     private javax.swing.JFrame ReportarProblemas;
+    private javax.swing.JRadioButton Roubo;
     private javax.swing.JPanel SignUp;
     private javax.swing.JTextField TextApolice;
     private javax.swing.JTextField TextDataFim;
@@ -1760,7 +1822,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
@@ -1829,10 +1890,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
@@ -1841,7 +1898,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -1856,10 +1912,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblAno;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada;
