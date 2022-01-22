@@ -1681,18 +1681,21 @@ public class InterfaceMain extends javax.swing.JFrame {
         }else{
             Date DataActual = new Date();
             try {
-                Date ValIni = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataInicio.getText() + TextHoraInicio.getText());
-                Date ValFim = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataFim.getText() + TextHoraFim.getText());
+                Date ValIni = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataInicio.getText() + " " + TextHoraInicio.getText());
+                Date ValFim = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataFim.getText() + " " + TextHoraFim.getText());
                 Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
+                if(ValIni.after(ValFim))
+                    throw new Exception();
                 
+                //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
                 Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), ComboModelo.getItemAt(ComboModelo.getSelectedIndex()), 
                     ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
                         ComboAno.getItemAt(ComboAno.getSelectedIndex()), true, TextApolice.getText(), ValApol, ValIni, ValFim);
                 
                 // Falta enviar para a base dados aqui
 
-            } catch (ParseException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(new JOptionPane(), mensagem + "Data de Inicio aluguer não pode ser depois da Data Fim", "Erro", JOptionPane.ERROR_MESSAGE);
             }            
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
@@ -1709,8 +1712,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void BtnRegistarAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistarAcidente
         boolean erro = false;
         String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
-        if(!Pattern.matches(formatoMatricula1, TxtMatricula.getText()) && !Pattern.matches(formatoMatricula2, TxtMatricula.getText()) 
-                && !Pattern.matches(formatoMatricula3, TxtMatricula.getText())){
+        if(!Pattern.matches(formatoMatricula1, MatriculaTxt.getText()) && !Pattern.matches(formatoMatricula2, MatriculaTxt.getText()) 
+                && !Pattern.matches(formatoMatricula3, MatriculaTxt.getText())){
             erro = true;
             mensagem += "\nMatricula deve ser do formato NN-CC-CC (Ex:34-EE-EE).";
         }
@@ -1746,7 +1749,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         }else{
             Date DataAc = null;
             try {
-                DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + HoraAcidente.getText());
+                DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + " " + HoraAcidente.getText());
             } catch (ParseException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1755,7 +1758,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             //como sei qual o valor a pagar ?
             //como sei qual data de limite pagamento ?
             Acidente ac = new Acidente(0, DataAc, DescricaoAcidente.getText(), (float) 0, null, null);
-            //enviar para base de dados
+            //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
 
