@@ -1724,10 +1724,39 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
         if( !Acidente.isSelected() && !Roubo.isSelected() && !Outro.isSelected() && !Avaria.isSelected()){
             erro = true;
-            mensagem +=
+            mensagem += "\nPor favor selecione o tipo de problema.";
         }
-        
-        System.out.println(mensagem);
+        if( !Pattern.matches(formatoHora, HoraAcidente.getText())){
+            erro = true;
+            mensagem += "\nFormato de horas inválido";
+        }
+        try{
+            Date DataAcid = new SimpleDateFormat("dd/MM/yyyy").parse(DataAcidente.getText());
+            Date todayDate = new Date();
+            if(DataAcid.before(todayDate)){
+                erro = true;
+                mensagem += "\nData de Acidente Inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Acidente não tem o formato dd/mm/aaaa.";
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Date DataAc = null;
+            try {
+                DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + HoraAcidente.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //acidente tem de pedir o ultimo id á base de dados para criar o id novo
+            //como sei quem é o culpado ?
+            //como sei qual o valor a pagar ?
+            //como sei qual data de limite pagamento ?
+            Acidente ac = new Acidente(0, DataAc, DescricaoAcidente.getText(), (float) 0, null, null);
+            //enviar para base de dados
+        }
     }//GEN-LAST:event_BtnRegistarAcidente
 
     private void BtnResetAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnResetAcidente
