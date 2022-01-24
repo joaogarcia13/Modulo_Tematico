@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ModoluTematico">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/ModoluTematico.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
