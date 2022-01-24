@@ -3,7 +3,6 @@ package main.java;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +24,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
     private final String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
+    
     /**
      * Creates new form InterfaceMain
      */
@@ -1416,7 +1416,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
                     .addGroup(MainMenuLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1427,7 +1426,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGap(80, 80, 80)
                         .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainMenuLayout.createSequentialGroup()
@@ -1690,7 +1690,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
                 Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), ComboModelo.getItemAt(ComboModelo.getSelectedIndex()), 
                     ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                        ComboAno.getItemAt(ComboAno.getSelectedIndex()), true, TextApolice.getText(), ValApol, ValIni, ValFim);
+                        /* isto aqui tem de se mudar na interface para dta registo matricula com texto */ null, true, TextApolice.getText(), ValApol, ValIni, ValFim);
                 
                 // Falta enviar para a base dados aqui
 
@@ -1771,6 +1771,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnResetAcidente
 
     private void MainAcidenteBtn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainAcidenteBtn
+        //abrir thread aqui
         ReportarProblemas.setVisible(true);
     }//GEN-LAST:event_MainAcidenteBtn
 

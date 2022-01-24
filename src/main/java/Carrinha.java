@@ -12,7 +12,7 @@ public class Carrinha {
     private String Cilindrada;
     private String Potencia;
     private String combustivel;
-    private String ano;
+    private String DataRegistoMatricula;
     private boolean disponibilidade;
     private String numeroSeguro;
     private Date dataValidadeSeguro;
@@ -36,7 +36,7 @@ public class Carrinha {
         this.Cilindrada=cilindrada;
         this.Potencia = Potencia;
         this.combustivel = combustivel;
-        this.ano = ano;
+        this.DataRegistoMatricula = ano;
     }
 
     public void setMarca(String marca) {
@@ -60,7 +60,7 @@ public class Carrinha {
     }
 
     public void setAno(String ano) {
-        this.ano = ano;
+        this.DataRegistoMatricula = ano;
     }
 
     public String getMarca() {
@@ -84,7 +84,7 @@ public class Carrinha {
     }
 
     public String getAno() {
-        return ano;
+        return DataRegistoMatricula;
     }
 
     public boolean isDisponibilidade() {
