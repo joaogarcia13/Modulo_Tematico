@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Carrinha {
     private String matricula;
+    private String DataRegistoMatricula;
     private Date dataRegistoSistema;
     private String estado;
     private String categoria;
@@ -12,8 +13,7 @@ public class Carrinha {
     private String Cilindrada;
     private String Potencia;
     private String combustivel;
-    private String DataRegistoMatricula;
-    private boolean disponibilidade;
+    private Boolean disponibilidade;
     private String numeroSeguro;
     private Date dataValidadeSeguro;
     private Date InicioDisponibilidade;

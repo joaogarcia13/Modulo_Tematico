@@ -2,14 +2,15 @@ package main.java;
 
 import java.sql.*;
 import static java.sql.DriverManager.*;
+import javax.swing.JOptionPane;
 
 public class Database{
     private Connection cnn;
     private Statement stm;
     public void openConnection() throws SQLException {
-            cnn = getConnection("jdbc:mysql://localhost:3306",
-                    "teste",
-                    "123456Abc");
+            cnn = getConnection("estga-dev.clients.ua.pt3306",
+                    "PTDA_BD_1",
+                    "uhtin_45");
             stm = cnn.createStatement();
     }
     public ResultSet select(String cmd) throws SQLException {
@@ -17,7 +18,7 @@ public class Database{
         try{
             stm.close();
         }catch (SQLException e){
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(new JOptionPane(), e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
         return rs;
     }
