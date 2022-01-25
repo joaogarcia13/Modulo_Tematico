@@ -99,7 +99,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         RegistarVeiculo = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
-        ComboAno = new javax.swing.JComboBox<>();
         ComboCombustivel = new javax.swing.JComboBox<>();
         ComboPotencia = new javax.swing.JComboBox<>();
         ComboCilindrada = new javax.swing.JComboBox<>();
@@ -126,6 +125,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         TextApolice = new javax.swing.JTextField();
         ComboMarca = new javax.swing.JComboBox<>();
         TxtModelo = new javax.swing.JTextField();
+        TxtAno = new javax.swing.JTextField();
         SignUp = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -788,9 +788,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(239, 177, 74));
 
-        ComboAno.setBackground(new java.awt.Color(169, 202, 221));
-        ComboAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano", "Item 2", "Item 3", "Item 4" }));
-
         ComboCombustivel.setBackground(new java.awt.Color(169, 202, 221));
         ComboCombustivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combustivel", "Item 2", "Item 3", "Item 4" }));
 
@@ -877,6 +874,13 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         TxtModelo.setBackground(new java.awt.Color(169, 202, 221));
 
+        TxtAno.setBackground(new java.awt.Color(169, 202, 221));
+        TxtAno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtAnoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -897,15 +901,15 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ComboAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel30))
-                                    .addGap(54, 54, 54))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addGap(31, 31, 31)
                                     .addComponent(jLabel26)
-                                    .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel30))
+                                    .addGap(57, 57, 57))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -968,9 +972,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel29)
                     .addComponent(jLabel30))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
@@ -981,7 +985,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(ComboCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(jLabel32))
@@ -1749,7 +1753,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
         TxtMatricula.setText("");
         ComboMarca.setSelectedIndex(0);
-        ComboAno.setSelectedIndex(0);
         ComboCombustivel.setSelectedIndex(0);
         ComboPotencia.setSelectedIndex(0);
         ComboCilindrada.setSelectedIndex(0);
@@ -1763,7 +1766,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_LimparBtn_RegistarVeiculo
 
     private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
-        //falta verificar modelo e por para a carinha
+        
         boolean erro = false;
         String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
 
@@ -1774,11 +1777,20 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
         if(ComboMarca.getSelectedIndex() <= 0){
             erro = true;
-            mensagem += "\nNão foi selecionado a marca do carro.";
+            mensagem += "\nNão foi selecionado a marca do carrinha.";
         }
-        if(ComboAno.getSelectedIndex() <= 0){
+        try{
+            if(Integer.parseInt(TxtAno.getText()) < 1886){
+                erro = true;
+                mensagem += "\nAno não é válido.";
+            }
+        }catch(Exception e){
             erro = true;
-            mensagem += "\nNão foi selecionado o ano do carro.";
+            mensagem += "\nAno não é valido.";
+        }
+        if(TxtModelo.getText() == ""){
+            erro = true;
+            mensagem += "\nNão foi especificado o Modelo da carrinha.";
         }
         if(ComboMarca.getSelectedIndex() <= 0){
             erro = true;
@@ -1786,11 +1798,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
         if(ComboPotencia.getSelectedIndex() <= 0){
             erro = true;
-            mensagem += "\nNão foi selecionado a Potencia do carro.";
+            mensagem += "\nNão foi selecionado a Potencia do carrinha.";
         }
         if(ComboCilindrada.getSelectedIndex() <= 0){
             erro = true;
-            mensagem += "\nNão foi selecionado a cilindrada do carro.";
+            mensagem += "\nNão foi selecionado a cilindrada do carrinha.";
         }
         try{
             if(Integer.parseInt(TextApolice.getText()) < 0){
@@ -1801,9 +1813,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nNúmero de Apolice não é valido.";
         }
-        //Isto aqui esta a verificar a data mas ele nao verifica se a data existe
-        //eu nao sei como por isto a verificar se 30/02/2222 é um data inválida. Ele como está agora diz que é válida
-        //são estes 3 blocos
         try{
             Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
             Date todayDate = new Date();
@@ -1858,9 +1867,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                     throw new Exception();
                 
                 //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
-                Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, null, null, ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
+                Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
                     ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                        /* isto aqui tem de se mudar na interface para dta registo matricula com texto */ null, true, TextApolice.getText(), ValApol, ValIni, ValFim);
+                        TxtAno.getText(), true, TextApolice.getText(), ValApol, ValIni, ValFim);
                 
                 // Falta enviar para a base dados aqui
 
@@ -1947,6 +1956,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnRegistarAcidente
 
+    private void TxtAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtAnoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1986,7 +1999,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnMainAcidente;
-    private javax.swing.JComboBox<String> ComboAno;
     private javax.swing.JComboBox<String> ComboCilindrada;
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
@@ -2013,6 +2025,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField TextHoraFim;
     private javax.swing.JTextField TextHoraInicio;
     private javax.swing.JTextField TextValSeguro;
+    private javax.swing.JTextField TxtAno;
     private javax.swing.JTextField TxtMatricula;
     private javax.swing.JTextField TxtModelo;
     private javax.swing.ButtonGroup buttonGroup1;

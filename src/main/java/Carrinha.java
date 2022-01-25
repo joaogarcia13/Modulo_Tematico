@@ -6,7 +6,6 @@ public class Carrinha {
     private String matricula;
     private Date dataRegistoSistema;
     private String estado;
-    private String categoria;
     private String marca;
     private String modelo;
     private String Cilindrada;
@@ -19,13 +18,12 @@ public class Carrinha {
     private Date InicioDisponibilidade;
     private Date fimDisponibilidade;
 
-    public Carrinha(String matricula, Date dataRegistoSistema, String estado, String categoria, String marca, String modelo, String cilindrada,
+    public Carrinha(String matricula, Date dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
             String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, Date dataValidadeSeguro, Date Inicio, Date Fim){
         
         this.matricula=matricula;
         this.dataRegistoSistema=dataRegistoSistema;
         this.estado=estado;
-        this.categoria=categoria;
         this.disponibilidade=disponibilidade;
         this.numeroSeguro=numeroSeguro;
         this.dataValidadeSeguro=dataValidadeSeguro;
@@ -118,10 +116,6 @@ public class Carrinha {
         return estado;
     }
 
-    public String getCategoria() {
-        return categoria;
-    }
-
     public boolean getDisponibilidade() {
         return disponibilidade;
     }
@@ -143,10 +137,6 @@ public class Carrinha {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 
     public void setDisponibilidade(boolean disponibilidade) {

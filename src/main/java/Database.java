@@ -37,7 +37,6 @@ public class Database{
         cmd = cmd + "'" + c.getMatricula() + "', ";
         cmd = cmd + "'" + c.getDataRegistoSistema().toString() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
-        cmd = cmd + "'" + c.getCategoria() + "', ";
         cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
         cmd = cmd + "'" + c.getDataValidadeSeguro() + "', ";
