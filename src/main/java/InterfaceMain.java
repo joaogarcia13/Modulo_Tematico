@@ -24,7 +24,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
     private final String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
-    private final String formatoPass = "(^[a-zA-Z]\\d{0,}).{6,}"; //minino 6 caracteres, so pode conter letras minusculas, maiusculas ou numeros
     
     /**
      * Creates new form InterfaceMain
