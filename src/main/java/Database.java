@@ -6,6 +6,7 @@ import static java.sql.DriverManager.*;
 public class Database{
     private Connection cnn;
     private Statement stm;
+    
     public void openConnection() throws SQLException {
             cnn = getConnection("jdbc:mysql://localhost:3306",
                     "teste",
@@ -63,7 +64,6 @@ public class Database{
         cmd = cmd + "'" + a.getData().toString() + "', ";
         cmd = cmd + "'" + a.getDescricao() + "', ";
         cmd = cmd + "'" + a.getValorPagar() + "', ";
-        cmd = cmd + "'" + a.getCulpado() + "', ";
         cmd = cmd + "'" + a.getDataLimitePagamento() + "', ";
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeQuery(cmd);

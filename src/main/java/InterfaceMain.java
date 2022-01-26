@@ -43,7 +43,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         ReportarProblemas = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
-        DescricaoAcidente2 = new javax.swing.JTextField();
+        DataPagamentoAc = new javax.swing.JTextField();
         HoraAcidente = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -54,7 +54,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        DescricaoAcidente = new javax.swing.JTextField();
+        ValorPagarAc = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         MatriculaTxt = new javax.swing.JTextField();
@@ -201,8 +201,8 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(238, 177, 74));
 
-        DescricaoAcidente2.setBackground(new java.awt.Color(169, 202, 221));
-        DescricaoAcidente2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DataPagamentoAc.setBackground(new java.awt.Color(169, 202, 221));
+        DataPagamentoAc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         HoraAcidente.setBackground(new java.awt.Color(169, 202, 221));
         HoraAcidente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
@@ -249,8 +249,8 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel17.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
-        DescricaoAcidente.setBackground(new java.awt.Color(169, 202, 221));
-        DescricaoAcidente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        ValorPagarAc.setBackground(new java.awt.Color(169, 202, 221));
+        ValorPagarAc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel16.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(217, 86, 74));
@@ -321,11 +321,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DescricaoAcidente2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DataPagamentoAc, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DescricaoAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ValorPagarAc, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -362,8 +362,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel34))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DescricaoAcidente2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DescricaoAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DataPagamentoAc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ValorPagarAc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
                 .addGap(10, 10, 10)
@@ -1865,8 +1865,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
                 if(ValIni.after(ValFim))
                     throw new Exception();
-                
-                //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
+              
                 Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
                     ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
                         TxtAno.getText(), true, TextApolice.getText(), ValApol, ValIni, ValFim);
@@ -1902,7 +1901,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void BtnResetAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnResetAcidente
         MatriculaTxt.setText("");
-        DescricaoAcidente.setText("");
+        ValorPagarAc.setText("");
         DataAcidente.setText("");
         HoraAcidente.setText("");
         LocalTxt.setText("");
@@ -1920,13 +1919,22 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nLocal do Acidente está vazio.";
         }
-        if(DescricaoAcidente.getText().equals("") ){
+        if(ValorPagarAc.getText().equals("") ){
             erro = true;
             mensagem += "\nLocal do Acidente está vazio.";
         }
         if( !Pattern.matches(formatoHora, HoraAcidente.getText())){
             erro = true;
             mensagem += "\nFormato de horas inválido";
+        }
+        try{
+            if(Float.parseFloat(ValorPagarAc.getText()) < 0){
+                erro = true;
+                mensagem += "\nValor de pagamento é inválido.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nValor de pagamento é inválido.";
         }
         try{
             Date DataAcid = new SimpleDateFormat("dd/MM/yyyy").parse(DataAcidente.getText());
@@ -1939,19 +1947,31 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nData de Acidente não tem o formato dd/mm/aaaa.";
         }
+        try{
+            Date PagAcid = new SimpleDateFormat("dd/MM/yyyy").parse(DataAcidente.getText());
+            Date todayDate = new Date();
+            if(PagAcid.before(todayDate)){
+                erro = true;
+                mensagem += "\nData de Pagamento Inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Pagamento não tem o formato dd/mm/aaaa.";
+        }
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
             Date DataAc = null;
+            Date PagAcid = null;
             try {
                 DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + " " + HoraAcidente.getText());
+                PagAcid = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataPagamentoAc.getText());
             } catch (ParseException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
+            int id;
             //acidente tem de pedir o ultimo id á base de dados para criar o id novo
-            //como sei qual o valor a pagar ? -> ja esta falta fazer verificação
-            //como sei qual data de limite pagamento ?
-            Acidente ac = new Acidente(0, DataAc, DescricaoAcidente.getText(), (float) 0, null, null);
+            Acidente ac = new Acidente(0, DataAc, ValorPagarAc.getText(), Float.parseFloat(ValorPagarAc.getText()), PagAcid);
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
@@ -2004,9 +2024,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboPotencia;
     private javax.swing.JTextField DataAcidente;
-    private javax.swing.JTextField DescricaoAcidente;
+    private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DescricaoAcidente1;
-    private javax.swing.JTextField DescricaoAcidente2;
     private javax.swing.JTextField HoraAcidente;
     private javax.swing.JPanel InfoCarro;
     private javax.swing.JFrame ListarVeiculos;
@@ -2028,6 +2047,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField TxtAno;
     private javax.swing.JTextField TxtMatricula;
     private javax.swing.JTextField TxtModelo;
+    private javax.swing.JTextField ValorPagarAc;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel imagemCarroInfo;
     private javax.swing.JPanel imagemCarroInfo1;
