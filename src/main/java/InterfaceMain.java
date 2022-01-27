@@ -214,18 +214,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
-        Login = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
-        jLabel59 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JPasswordField();
-        jLabel60 = new javax.swing.JLabel();
-        btnConfirmar = new javax.swing.JButton();
->>>>>>> 283ed4e386eb4e67bcaa76bd2560f34ce5184ec4
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
@@ -1541,15 +1529,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(685, 520));
+        setMaximumSize(new java.awt.Dimension(100000000, 10000000));
         setPreferredSize(new java.awt.Dimension(685, 520));
         setResizable(false);
-        setSize(new java.awt.Dimension(350, 400));
+        setSize(new java.awt.Dimension(685, 520));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         Login.setBackground(new java.awt.Color(239, 177, 74));
         Login.setToolTipText("Sign Up");
-        Login.setPreferredSize(new java.awt.Dimension(355, 400));
+        Login.setMaximumSize(new java.awt.Dimension(685, 520));
+        Login.setPreferredSize(new java.awt.Dimension(685, 520));
 
         jLabel35.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(60, 94, 115));
@@ -1578,7 +1567,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         txtPassword.setBackground(new java.awt.Color(169, 202, 221));
         txtPassword.setForeground(new java.awt.Color(60, 94, 115));
-        txtPassword.setText("pasadwqdq");
 
         jLabel60.setForeground(new java.awt.Color(60, 94, 115));
         jLabel60.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -1597,8 +1585,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         Login.setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(178, 178, 178)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
+                .addContainerGap(202, Short.MAX_VALUE)
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel59)
                     .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1607,34 +1595,35 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(txtUsername)
                     .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPassword)
-                    .addComponent(btnConfirmar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(180, Short.MAX_VALUE))
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(167, 167, 167))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(77, 77, 77)
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel36)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel37)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(447, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         getContentPane().add(Login, "card2");
 
         MainMenu.setBackground(new java.awt.Color(239, 177, 74));
+        MainMenu.setMaximumSize(new java.awt.Dimension(685, 520));
         MainMenu.setPreferredSize(new java.awt.Dimension(685, 520));
 
         jLabel40.setFont(new java.awt.Font("Fira Sans", 1, 30)); // NOI18N
@@ -1720,11 +1709,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton25.setBackground(new java.awt.Color(239, 177, 74));
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SeekPng.com_male-symbol-png_410093.png"))); // NOI18N
         jButton25.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Consultar_Perfil(evt);
-            }
-        });
 
         javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
         MainMenu.setLayout(MainMenuLayout);
@@ -1797,11 +1781,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -2139,7 +2123,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                 rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
                 rs.next();
                 if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
-                    JOptionPane.showMessageDialog(new JOptionPane(), "aaaaa", "Erro", JOptionPane.ERROR_MESSAGE);
+                    Login.setVisible(false);
+                    MainMenu.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
@@ -2193,6 +2178,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 InterfaceMain main = new InterfaceMain();
+                main.setVisible(true);
                 main.MainMenu.setVisible(false);
                 try {
                     db.openConnection();
