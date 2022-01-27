@@ -8,10 +8,9 @@ public class Database{
     private Connection cnn;
     private Statement stm;
     
-    public void openConnection() throws SQLException {
-            cnn = getConnection("estga-dev.clients.ua.pt3306",
-                    "PTDA_BD_1",
-                    "uhtin_45");
+    public void openConnection() throws SQLException, ClassNotFoundException {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            cnn = DriverManager.getConnection("jdbc:mysql://estga-dev.clients.ua.pt:3306/PTDA_BD_1?user=PTDA_1&password=uhtin_45");
             stm = cnn.createStatement();
     }
     public ResultSet select(String cmd) throws SQLException {
