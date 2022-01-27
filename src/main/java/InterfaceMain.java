@@ -5,10 +5,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import static java.time.LocalDate.parse;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /*
@@ -207,6 +210,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         jLabel60 = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
@@ -1523,6 +1527,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        MainMenu1.setSize(new java.awt.Dimension(679, 505));
+
         MainMenu.setBackground(new java.awt.Color(239, 177, 74));
 
         jLabel40.setFont(new java.awt.Font("Fira Sans", 1, 30)); // NOI18N
@@ -1750,21 +1756,38 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("Saltar Para Menu");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Saltar_Login(evt);
+            }
+        });
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel59)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtUsername)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPassword)
-                    .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LoginLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtUsername)
+                            .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPassword)
+                            .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(LoginLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jToggleButton1)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
@@ -1782,7 +1805,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
+                .addGap(33, 33, 33)
+                .addComponent(jToggleButton1)
+                .addGap(32, 32, 32)
                 .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel60)
@@ -1945,9 +1970,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         //eu nao sei como por isto a verificar se 30/02/2222 é um data inválida. Ele como está agora diz que é válida
         //são estes 3 blocos
         try{
-            Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
-            Date todayDate = new Date();
-            if(ValApol.before(todayDate)){
+            LocalDateTime ValApol = LocalDateTime.parse(TextValSeguro.getText());
+            LocalDateTime todayDate = LocalDateTime.now();
+            if(ValApol.isBefore(todayDate)){
                 erro = true;
                 mensagem += "\nValidade do Seguro Inválida.";
             }
@@ -1997,6 +2022,12 @@ public class InterfaceMain extends javax.swing.JFrame {
                 if(ValIni.after(ValFim))
                     throw new Exception();
                 
+                //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
+                Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
+                    ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
+                        TxtAno.getText(), true, TextApolice.getText(), ValApol, ValIni, ValFim);
+                
+                // Falta enviar para a base dados aqui
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(new JOptionPane(), mensagem + "Data de Inicio aluguer não pode ser depois da Data Fim", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -2112,6 +2143,15 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void Saltar_Login(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Saltar_Login
+        this.setVisible(false);
+        MainMenu1.setVisible(true);
+    }//GEN-LAST:event_Saltar_Login
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2302,6 +2342,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lblAno;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada;
