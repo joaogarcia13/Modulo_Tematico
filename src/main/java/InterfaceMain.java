@@ -7,16 +7,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import static java.time.LocalDate.parse;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import static java.util.Objects.hash;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /*
@@ -34,6 +32,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
     private final String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
+    private LocalDate todayDate;
+    private LocalDateTime todayDate2;
     
     /**
      * Creates new form InterfaceMain
@@ -1674,11 +1674,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         BtnMainAcidente.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         BtnMainAcidente.setForeground(new java.awt.Color(235, 244, 249));
         BtnMainAcidente.setText("Reportar Acidente");
-        BtnMainAcidente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MainAcidenteBtn(evt);
-            }
-        });
         BtnMainAcidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnMainAcidenteActionPerformed(evt);
@@ -1890,7 +1885,10 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_LimparBtn_RegistarVeiculo
 
     private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
-        //falta verificar modelo e por para a carinha
+
+        LocalDateTime DataIni = null;
+        LocalDateTime DataFim = null;
+        LocalDate ValApol = null;
         boolean erro = false;
         String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
 
@@ -1924,79 +1922,55 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nNúmero de Apolice não é valido.";
         }
-        //Isto aqui esta a verificar a data mas ele nao verifica se a data existe
-        //eu nao sei como por isto a verificar se 30/02/2222 é um data inválida. Ele como está agora diz que é válida
-        //são estes 3 blocos
-        try{
-            LocalDateTime ValApol = LocalDateTime.parse(TextValSeguro.getText());
-            LocalDateTime todayDate = LocalDateTime.now();
-            if(ValApol.isBefore(todayDate)){
-                erro = true;
-                mensagem += "\nValidade do Seguro Inválida.";
+        if(isValid(TextValSeguro.getText())){
+            ValApol = StringtoDate(TextValSeguro.getText());
+            todayDate = LocalDate.now();
+            if(ValApol.isBefore(todayDate)) {
+            erro = true;
+            mensagem += "\nValidade do Seguro Inválida.";
             }
-        }catch(Exception e){
+        }else{
             erro = true;
-            mensagem += "\nValidade do seguro não tem o formato dd/mm/aaaa.";
+            mensagem += "\nValidade do Seguro não é uma data válida ou nao tem o formato dd-mm-aaaa.";
         }
-        try{
-            Date DataIni = new SimpleDateFormat("dd/MM/yyyy").parse(TextDataInicio.getText());
-            Date todayDate = new Date();
-            if(DataIni.before(todayDate)){
-                erro = true;
-                mensagem += "\nData de Inicio de Disponibilidade Inválida.";
+          
+        if(isValid(TextDataInicio.getText()) && Pattern.matches(formatoHora,TextHoraInicio.getText())){
+            DataIni = LocalDateTime.parse(TextDataInicio.getText() + TextHoraInicio.getText(), DateTimeFormatter.ISO_DATE);
+            todayDate2 = LocalDateTime.now();
+            if(DataIni.isBefore(todayDate2)) {
+            erro = true;
+            mensagem += "\nData de inicio disponibilidade inválida.";
             }
-        }catch(Exception e){
+        }else{
             erro = true;
-            mensagem += "\nData de Inicio de Disponibilidade não tem o formato dd/mm/aaaa.";
+            mensagem += "\nData de Inicio de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
         }
-        try{
-            Date DataFim = new SimpleDateFormat("dd/MM/yyyy").parse(TextDataFim.getText());
-            Date todayDate = new Date();
-            if(DataFim.before(todayDate)){
-                erro = true;
-                mensagem += "\nData de Fim de disponibilidade Inválida.";
+            
+        if(isValid(TextDataFim.getText()) && Pattern.matches(formatoHora,TextHoraInicio.getText())){
+            DataFim = LocalDateTime.parse(TextDataFim.getText() + TextHoraFim.getText(), DateTimeFormatter.ISO_DATE);
+            todayDate2 = LocalDateTime.now();
+            if(DataFim.isBefore(todayDate2)) {
+            erro = true;
+            mensagem += "\nData de fim de Disponibilidade inválida.";
             }
-        }catch(Exception e){
+        }else{
             erro = true;
-            mensagem += "\nData de Fim de disponibilidade não tem o formato dd/mm/aaaa.";
+            mensagem += "\nData de fim de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
         }
-        if(!Pattern.matches(formatoHora,TextHoraInicio.getText())){
-            erro = true;
-            mensagem += "\nHora de Inicio Disponibilidade inválida.";
-        }
-        if(!Pattern.matches(formatoHora,TextHoraFim.getText())){
-            erro = true;
-            mensagem += "\nHora de Fim Disponibilidade inválida.";
-        }
+        if(DataIni != null && DataFim !=null && DataIni.isBefore(DataFim))
         
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
-            Date DataActual = new Date();
-            try {
-                Date ValIni = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataInicio.getText() + " " + TextHoraInicio.getText());
-                Date ValFim = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(TextDataFim.getText() + " " + TextHoraFim.getText());
-                Date ValApol = new SimpleDateFormat("dd/MM/yyyy").parse(TextValSeguro.getText());
-                if(ValIni.after(ValFim))
-                    throw new Exception();
-                
-                //falta campos de objecto carrinha que nao sao pedidos aqui e estao na classe
-                Carrinha carrinha = new Carrinha(TxtMatricula.getText(), DataActual, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
-                    ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                        TxtAno.getText(), true, TextApolice.getText(), ValApol, ValIni, ValFim);
-                
+            LocalDateTime now = LocalDateTime.now();
+            
+            Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
+                ComboCilindrada.getItemAt(ComboCilindrada.getSelectedIndex()), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
+                TxtAno.getText(), true, TextApolice.getText(), ValApol, DataIni, DataFim);
                 // Falta enviar para a base dados aqui
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(new JOptionPane(), mensagem + "Data de Inicio aluguer não pode ser depois da Data Fim", "Erro", JOptionPane.ERROR_MESSAGE);
-            }            
+         
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
-
-    private void MainAcidenteBtn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainAcidenteBtn
-        //abrir thread aqui
-        ReportarProblemas.setVisible(true);
-    }//GEN-LAST:event_MainAcidenteBtn
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
@@ -2007,7 +1981,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
-        // TODO add your handling code here:
+        //abrir thread
+        ReportarProblemas.setVisible(true);
     }//GEN-LAST:event_BtnMainAcidenteActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -2023,6 +1998,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnResetAcidente
 
     private void BtnRegistarAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistarAcidente
+        
+        LocalDate DataAc = null;
+        LocalDate DataPag = null;
         boolean erro = false;
         String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
         if(!Pattern.matches(formatoMatricula1, MatriculaTxt.getText()) && !Pattern.matches(formatoMatricula2, MatriculaTxt.getText())
@@ -2042,30 +2020,28 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nFormato de horas inválido";
         }
-        
-        try{
-            Date DataAcid = new SimpleDateFormat("dd/MM/yyyy").parse(DataAcidente.getText());
-            Date todayDate = new Date();
-            if(DataAcid.before(todayDate)){
-                erro = true;
-                mensagem += "\nData de Acidente Inválida.";
-            }
-        }catch(Exception e){
+        if(isValid(DataAcidente.getText())){
+            DataAc = StringtoDate(TextValSeguro.getText());
+            todayDate = LocalDate.now();
+            if(DataAc.isBefore(todayDate)) {
             erro = true;
-            mensagem += "\nData de Acidente não tem o formato dd/mm/aaaa.";
-        }
-        try{
-            Date DataPag = new SimpleDateFormat("dd/MM/yyyy").parse(DataPagamentoAc.getText());
-            Date todayDate = new Date();
-            if(DataPag.before(todayDate)){
-                erro = true;
-                mensagem += "\nData de Pagamento Inválida.";
+            mensagem += "\nData do acidente Inválida.";
             }
-        }catch(Exception e){
+        }else{
             erro = true;
-            mensagem += "\nData de Pagamento não tem o formato dd/mm/aaaa.";
+            mensagem += "\nData do acidente não é uma data válida ou nao tem o formato dd-mm-aaaa.";
         }
-        
+        if(isValid(DataPagamentoAc.getText())){
+            DataPag = StringtoDate(TextValSeguro.getText());
+            todayDate = LocalDate.now();
+            if(DataPag.isBefore(todayDate)) {
+            erro = true;
+            mensagem += "\nData de pagamento Inválida.";
+            }
+        }else{
+            erro = true;
+            mensagem += "\nData de pagamento não é uma data válida ou nao tem o formato dd-mm-aaaa.";
+        }     
         try{
             if(Float.parseFloat(ValorPagarAc.getText()) < 0){
                 erro = true;
@@ -2078,32 +2054,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
-            Date DataAc = null;
-            Date DataPag = null;
-            try {
-                DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + " " + HoraAcidente.getText());
-                DataPag = new SimpleDateFormat("dd/MM/yyyy").parse(DataPagamentoAc.getText());
-            } catch (ParseException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
             //acidente tem de pedir o ultimo id á base de dados para criar o id novo
-            //como sei qual o valor a pagar ? -> ja esta falta fazer verificação
-            //como sei qual data de limite pagamento ?
             Acidente ac = new Acidente(MatriculaTxt.getText(), 0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataPag);
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
-    private String encriptar(String s) throws NoSuchAlgorithmException{
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));      
-        BigInteger number = new BigInteger(1, b); 
-        StringBuilder hexString = new StringBuilder(number.toString(16)); 
-        while (hexString.length() < 32) 
-        { 
-            hexString.insert(0, '0'); 
-        } 
-        return hexString.toString();
-    }
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
         ResultSet rs;
@@ -2205,6 +2160,54 @@ public class InterfaceMain extends javax.swing.JFrame {
                 }
             }
         });
+    }
+    
+    private String encriptar(String s) throws NoSuchAlgorithmException{
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));
+        
+        BigInteger number = new BigInteger(1, b); 
+  
+        // Convert message digest into hex value 
+        StringBuilder hexString = new StringBuilder(number.toString(16)); 
+  
+        // Pad with leading zeros
+        while (hexString.length() < 32) 
+        { 
+            hexString.insert(0, '0'); 
+        } 
+  
+        return hexString.toString();
+    }
+
+    public static boolean isValid(final String date) {
+
+        boolean valid = false;
+
+        try {
+
+            // ResolverStyle.STRICT for 30, 31 days checking, and also leap year.
+            LocalDate.parse(date,
+                    DateTimeFormatter.ofPattern("d-M-uuuu")
+                            .withResolverStyle(ResolverStyle.STRICT)
+            );
+
+            valid = true;
+
+        } catch (DateTimeParseException e) {
+            e.printStackTrace();
+            valid = false;
+        }
+
+        return valid;
+    }
+    
+    public static LocalDate StringtoDate(String date){
+        LocalDate d = LocalDate.parse(date,
+                    DateTimeFormatter.ofPattern("d-M-uuuu")
+                            .withResolverStyle(ResolverStyle.STRICT)
+            );
+        return d;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

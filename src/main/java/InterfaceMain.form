@@ -2851,7 +2851,6 @@
             <Property name="text" type="java.lang.String" value="Reportar Acidente"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MainAcidenteBtn"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMainAcidenteActionPerformed"/>
           </Events>
         </Component>
