@@ -1914,6 +1914,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void Click_Main_Registar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Click_Main_Registar
         //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
         RegistarVeiculo.setVisible(true);
+        Threads x = new Threads("ola");
+        x.start();
+                
     }//GEN-LAST:event_Click_Main_Registar
 
     private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
