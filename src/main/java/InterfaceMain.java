@@ -2107,19 +2107,13 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnRegistarAcidente
     private String encriptar(String s) throws NoSuchAlgorithmException{
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));
-        
+        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));      
         BigInteger number = new BigInteger(1, b); 
-  
-        // Convert message digest into hex value 
         StringBuilder hexString = new StringBuilder(number.toString(16)); 
-  
-        // Pad with leading zeros
         while (hexString.length() < 32) 
         { 
             hexString.insert(0, '0'); 
         } 
-  
         return hexString.toString();
     }
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
