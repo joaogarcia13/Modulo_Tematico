@@ -202,6 +202,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         jLabel60 = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         MainMenu = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
@@ -425,8 +426,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(2147483647, 600));
-        AlugarVeiculo.setPreferredSize(new java.awt.Dimension(885, 600));
         AlugarVeiculo.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(239, 177, 74));
@@ -1586,22 +1585,34 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
+            .addGroup(LoginLayout.createSequentialGroup()
                 .addContainerGap(202, Short.MAX_VALUE)
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel59)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtUsername)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPassword)
-                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(167, 167, 167))
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
+                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtUsername)
+                            .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPassword)
+                            .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(167, 167, 167))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(302, 302, 302))))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1622,7 +1633,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jButton3)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         getContentPane().add(Login, "card2");
@@ -1865,7 +1878,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void Click_Main_Registar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Click_Main_Registar
         //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
         RegistarVeiculo.setVisible(true);
-        Threads x = new Threads("ola");
+        Threads x = new Threads("Registar");
         x.start();
                 
     }//GEN-LAST:event_Click_Main_Registar
@@ -1983,6 +1996,8 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
         //abrir thread
+        Threads y = new Threads("acidente");
+        y.start();
         ReportarProblemas.setVisible(true);
     }//GEN-LAST:event_BtnMainAcidenteActionPerformed
 
@@ -2058,7 +2073,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             //acidente tem de pedir o ultimo id á base de dados para criar o id novo
             Acidente ac = new Acidente(MatriculaTxt.getText(), 0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataPag);
             //enviar para base de dados aqui
-        }
+        } 
+        Threads x = new Threads("acidente");
+        x.stop();
+        ReportarProblemas.setVisible(false);
     }//GEN-LAST:event_BtnRegistarAcidente
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
@@ -2118,6 +2136,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_btnFiltrarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+            Login.setVisible(false);
+            MainMenu.setVisible(true);       
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2267,6 +2290,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
