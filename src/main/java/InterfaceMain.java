@@ -594,7 +594,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addContainerGap(506, Short.MAX_VALUE)))
         );
 
-        Jpanelado.setBackground(new java.awt.Color(239, 177, 74))
+        
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
