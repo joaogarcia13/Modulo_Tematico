@@ -1,5 +1,6 @@
 package main.java;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Acidente {
@@ -44,10 +45,6 @@ public class Acidente {
         return valorPagar;
     }
 
-    public Date getDataLimitePagamento() {
-        return dataLimitePagamento;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -67,4 +64,9 @@ public class Acidente {
     public void setDataLimitePagamento(Date dataLimitePagamento) {
         this.dataLimitePagamento = dataLimitePagamento;
     }
+
+    public Date getDataLimitePagamento() {
+        return dataLimitePagamento;
+    }
+
 }
