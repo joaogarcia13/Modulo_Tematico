@@ -1,6 +1,10 @@
 package main.java;
 
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -8,6 +12,7 @@ import java.text.SimpleDateFormat;
 import static java.time.LocalDate.parse;
 import java.time.LocalDateTime;
 import java.util.Date;
+import static java.util.Objects.hash;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -210,7 +215,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         jLabel60 = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
@@ -599,8 +603,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(InfoCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(506, Short.MAX_VALUE)))
         );
-
-      
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1705,8 +1707,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(350, 400));
-        setPreferredSize(new java.awt.Dimension(360, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(350, 400));
 
@@ -1741,7 +1741,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         txtPassword.setBackground(new java.awt.Color(169, 202, 221));
         txtPassword.setForeground(new java.awt.Color(60, 94, 115));
-        txtPassword.setText("pasadwqdq");
 
         jLabel60.setForeground(new java.awt.Color(60, 94, 115));
         jLabel60.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -1756,38 +1755,21 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("Saltar Para Menu");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Saltar_Login(evt);
-            }
-        });
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel59)
-                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtUsername)
-                            .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPassword)
-                            .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jToggleButton1)))
+                .addGap(15, 15, 15)
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel59)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtUsername)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtPassword)
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
@@ -1805,13 +1787,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jToggleButton1)
-                .addGap(32, 32, 32)
+                .addGap(94, 94, 94)
                 .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel60)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2125,20 +2105,46 @@ public class InterfaceMain extends javax.swing.JFrame {
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
-
+    private String encriptar(String s) throws NoSuchAlgorithmException{
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));
+        
+        BigInteger number = new BigInteger(1, b); 
+  
+        // Convert message digest into hex value 
+        StringBuilder hexString = new StringBuilder(number.toString(16)); 
+  
+        // Pad with leading zeros
+        while (hexString.length() < 32) 
+        { 
+            hexString.insert(0, '0'); 
+        } 
+  
+        return hexString.toString();
+    }
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
         ResultSet rs;
         try {
             rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
-            rs.last();
-            JOptionPane.showMessageDialog(new JOptionPane(), txtUsername.getText() + "," + rs.getRow(), "Erro", JOptionPane.ERROR_MESSAGE);
-            if(rs.getRow() > 0){
-
+            int rowCount = 0;
+            while(rs.next()){
+                rowCount++;
+            }
+            if(rowCount == 1){
+                rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
+                rs.next();
+                if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "aaaaa", "Erro", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }else{
                  JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
@@ -2146,15 +2152,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void Saltar_Login(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Saltar_Login
-        this.setVisible(false);
-        MainMenu1.setVisible(true);
-    }//GEN-LAST:event_Saltar_Login
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2345,7 +2342,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lblAno;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada;
