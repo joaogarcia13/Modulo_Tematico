@@ -1,6 +1,10 @@
 package main.java;
 
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -8,6 +12,7 @@ import java.text.SimpleDateFormat;
 import static java.time.LocalDate.parse;
 import java.time.LocalDateTime;
 import java.util.Date;
+import static java.util.Objects.hash;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -209,6 +214,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        Login = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        jLabel60 = new javax.swing.JLabel();
+        btnConfirmar = new javax.swing.JButton();
+>>>>>>> 283ed4e386eb4e67bcaa76bd2560f34ce5184ec4
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
@@ -2092,20 +2109,46 @@ public class InterfaceMain extends javax.swing.JFrame {
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
-
+    private String encriptar(String s) throws NoSuchAlgorithmException{
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));
+        
+        BigInteger number = new BigInteger(1, b); 
+  
+        // Convert message digest into hex value 
+        StringBuilder hexString = new StringBuilder(number.toString(16)); 
+  
+        // Pad with leading zeros
+        while (hexString.length() < 32) 
+        { 
+            hexString.insert(0, '0'); 
+        } 
+  
+        return hexString.toString();
+    }
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
         ResultSet rs;
         try {
             rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
-            rs.last();
-            JOptionPane.showMessageDialog(new JOptionPane(), txtUsername.getText() + "," + rs.getRow(), "Erro", JOptionPane.ERROR_MESSAGE);
-            if(rs.getRow() > 0){
-
+            int rowCount = 0;
+            while(rs.next()){
+                rowCount++;
+            }
+            if(rowCount == 1){
+                rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
+                rs.next();
+                if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "aaaaa", "Erro", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }else{
                  JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed

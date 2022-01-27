@@ -15,11 +15,6 @@ public class Database{
     }
     public ResultSet select(String cmd) throws SQLException {
         ResultSet rs = stm.executeQuery(cmd);
-        try{
-            stm.close();
-        }catch (SQLException e){
-            JOptionPane.showMessageDialog(new JOptionPane(), e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-        }
         return rs;
     }
     public void eliminar(String tabela, String campoIdentificador, String valor) throws SQLException{
