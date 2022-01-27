@@ -1,6 +1,8 @@
 package main.java;
 
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import static java.time.LocalDate.parse;
@@ -22,7 +24,7 @@ import javax.swing.JOptionPane;
  * @author joaogarcia
  */
 public class InterfaceMain extends javax.swing.JFrame {
-    
+    private static Database db = new Database();
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-[a-zA-z]{2}$";
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-[a-zA-z]{2}$";
     private final String formatoMatricula3 = "^[a-zA-z]{2}-[a-zA-z]{2}-\\d{2}$";
@@ -597,6 +599,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(InfoCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(506, Short.MAX_VALUE)))
         );
+
+      
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1807,7 +1811,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel60)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1910,6 +1914,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void Click_Main_Registar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Click_Main_Registar
         //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
         RegistarVeiculo.setVisible(true);
+        Threads x = new Threads("ola");
+        x.start();
+                
     }//GEN-LAST:event_Click_Main_Registar
 
     private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
@@ -2134,6 +2141,19 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
+        ResultSet rs;
+        try {
+            rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
+            rs.last();
+            JOptionPane.showMessageDialog(new JOptionPane(), txtUsername.getText() + "," + rs.getRow(), "Erro", JOptionPane.ERROR_MESSAGE);
+            if(rs.getRow() > 0){
+
+            }else{
+                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
@@ -2182,6 +2202,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfaceMain().setVisible(true);
+                try {
+                    db.openConnection();
+                } catch (SQLException ex) {
+                    Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
