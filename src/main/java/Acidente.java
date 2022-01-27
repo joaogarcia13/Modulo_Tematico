@@ -4,18 +4,28 @@ import java.util.Date;
 
 public class Acidente {
     private int id;
+    private String matricula;
     private Date data;
     private String descricao;
     private float valorPagar;
     private Date dataLimitePagamento;
 
-    public Acidente(int id, Date data, String descricao, float valorPagar,
+    public Acidente(String matricula, int id, Date data, String descricao, float valorPagar,
                     Date dataLimitePagamento){
         this.id=id;
         this.data=data;
         this.descricao=descricao;
         this.valorPagar=valorPagar;
         this.dataLimitePagamento=dataLimitePagamento;
+        this.matricula=matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getMatricula() {
+        return matricula;
     }
 
     public int getId() {
