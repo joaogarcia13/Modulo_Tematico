@@ -7,16 +7,14 @@ public class Acidente {
     private Date data;
     private String descricao;
     private float valorPagar;
-    private String culpado;
     private Date dataLimitePagamento;
 
-    public Acidente(int id, Date data, String descricao, float valorPagar, String culpado,
+    public Acidente(int id, Date data, String descricao, float valorPagar,
                     Date dataLimitePagamento){
         this.id=id;
         this.data=data;
         this.descricao=descricao;
         this.valorPagar=valorPagar;
-        this.culpado=culpado;
         this.dataLimitePagamento=dataLimitePagamento;
     }
 
@@ -34,10 +32,6 @@ public class Acidente {
 
     public float getValorPagar() {
         return valorPagar;
-    }
-
-    public String getCulpado() {
-        return culpado;
     }
 
     public Date getDataLimitePagamento() {
@@ -58,10 +52,6 @@ public class Acidente {
 
     public void setValorPagar(float valorPagar) {
         this.valorPagar = valorPagar;
-    }
-
-    public void setCulpado(String culpado) {
-        this.culpado = culpado;
     }
 
     public void setDataLimitePagamento(Date dataLimitePagamento) {

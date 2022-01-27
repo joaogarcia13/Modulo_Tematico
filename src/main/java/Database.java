@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Database{
     private Connection cnn;
     private Statement stm;
+    
     public void openConnection() throws SQLException {
             cnn = getConnection("estga-dev.clients.ua.pt3306",
                     "PTDA_BD_1",
@@ -38,7 +39,6 @@ public class Database{
         cmd = cmd + "'" + c.getMatricula() + "', ";
         cmd = cmd + "'" + c.getDataRegistoSistema().toString() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
-        cmd = cmd + "'" + c.getCategoria() + "', ";
         cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
         cmd = cmd + "'" + c.getDataValidadeSeguro() + "', ";
@@ -65,7 +65,6 @@ public class Database{
         cmd = cmd + "'" + a.getData().toString() + "', ";
         cmd = cmd + "'" + a.getDescricao() + "', ";
         cmd = cmd + "'" + a.getValorPagar() + "', ";
-        cmd = cmd + "'" + a.getCulpado() + "', ";
         cmd = cmd + "'" + a.getDataLimitePagamento() + "', ";
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeQuery(cmd);
