@@ -573,7 +573,8 @@
                       <Color blue="4a" green="b1" red="ef" type="rgb"/>
                     </Property>
                   </Properties>
-                   <Layout>
+
+                  <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">

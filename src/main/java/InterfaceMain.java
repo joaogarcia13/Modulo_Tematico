@@ -2092,6 +2092,17 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nData de Acidente não tem o formato dd/mm/aaaa.";
         }
+        try{
+            Date DataPag = new SimpleDateFormat("dd/MM/yyyy").parse(DataPagamentoAc.getText());
+            Date todayDate = new Date();
+            if(DataPag.before(todayDate)){
+                erro = true;
+                mensagem += "\nData de Pagamento Inválida.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Pagamento não tem o formato dd/mm/aaaa.";
+        }
         
         try{
             if(Float.parseFloat(ValorPagarAc.getText()) < 0){
@@ -2106,15 +2117,17 @@ public class InterfaceMain extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
             Date DataAc = null;
+            Date DataPag = null;
             try {
                 DataAc = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(DataAcidente.getText() + " " + HoraAcidente.getText());
+                DataPag = new SimpleDateFormat("dd/MM/yyyy").parse(DataPagamentoAc.getText());
             } catch (ParseException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
             //acidente tem de pedir o ultimo id á base de dados para criar o id novo
             //como sei qual o valor a pagar ? -> ja esta falta fazer verificação
             //como sei qual data de limite pagamento ?
-            Acidente ac = new Acidente(MatriculaTxt.getText(), 0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataAc);
+            Acidente ac = new Acidente(MatriculaTxt.getText(), 0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataPag);
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
@@ -2128,7 +2141,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void Saltar_Login(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Saltar_Login
-        this.setVisible(false);
+        //this.setVisible(false);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        //this.setVisible(false);
         MainMenu1.setVisible(true);
     }//GEN-LAST:event_Saltar_Login
 
