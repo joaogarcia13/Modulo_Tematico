@@ -1527,9 +1527,6 @@
                   <Color blue="dd" green="ca" red="a9" type="rgb"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtAnoActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -2745,7 +2742,7 @@
       <Dimension value="[350, 400]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[350, 400]"/>
+      <Dimension value="[360, 400]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

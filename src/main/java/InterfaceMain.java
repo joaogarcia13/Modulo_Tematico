@@ -594,8 +594,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addContainerGap(506, Short.MAX_VALUE)))
         );
 
-        Jpanelado.setBackground(new java.awt.Color(239, 177, 74))
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -888,11 +886,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         TxtModelo.setBackground(new java.awt.Color(169, 202, 221));
 
         TxtAno.setBackground(new java.awt.Color(169, 202, 221));
-        TxtAno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtAnoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1703,7 +1696,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(350, 400));
-        setPreferredSize(new java.awt.Dimension(350, 400));
+        setPreferredSize(new java.awt.Dimension(360, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(350, 400));
 
@@ -2056,6 +2049,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nFormato de horas inválido";
         }
+        
         try{
             Date DataAcid = new SimpleDateFormat("dd/MM/yyyy").parse(DataAcidente.getText());
             Date todayDate = new Date();
@@ -2066,6 +2060,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         }catch(Exception e){
             erro = true;
             mensagem += "\nData de Acidente não tem o formato dd/mm/aaaa.";
+        }
+        
+        try{
+            if(Float.parseFloat(ValorPagarAc.getText()) < 0){
+                erro = true;
+                mensagem += "\nNumero de Apolice não é válido.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nNúmero de Apolice não é valido.";
         }
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
@@ -2079,7 +2083,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             //acidente tem de pedir o ultimo id á base de dados para criar o id novo
             //como sei qual o valor a pagar ? -> ja esta falta fazer verificação
             //como sei qual data de limite pagamento ?
-            Acidente ac = new Acidente(0, DataAc, DescricaoAcidente1.getText(), (float) 0, null, null);
+            Acidente ac = new Acidente(MatriculaTxt.getText(), 0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataAc);
             //enviar para base de dados aqui
         }
     }//GEN-LAST:event_BtnRegistarAcidente
