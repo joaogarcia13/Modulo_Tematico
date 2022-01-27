@@ -4,6 +4,7 @@ package main.java;
 public class Threads implements Runnable {
     private Thread G;
     private String NomeThread;
+    private Boolean sair=false;
      Threads(String nome){
         NomeThread = nome;
         G = new Thread (this, NomeThread);
@@ -11,7 +12,14 @@ public class Threads implements Runnable {
 
     @Override
     public void run() {
-        
+        while (!sair) {
+            try {
+                Thread.sleep(100);
+            }
+            catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
     }
     
     public void start(){
@@ -19,7 +27,6 @@ public class Threads implements Runnable {
         System.out.println("Start" + NomeThread);
     }
     public void stop(){
-        G.interrupt();
-        System.out.println("Stop" + NomeThread);
+        sair=true;
     }
 }
