@@ -31,11 +31,9 @@ public class Database{
         String cmd; 
         cmd = "insert into carrinhas(matricula, dataRegisto, dataRegistoSistema, estado, categoria, disponibilidade, numeroSeguro, dataValidadeSeguro, proprietario)values(";
         cmd = cmd + "'" + c.getMatricula() + "', ";
-        cmd = cmd + "'" + c.getDataRegistoSistema().toString() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
         cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
-        cmd = cmd + "'" + c.getDataValidadeSeguro() + "', ";
         cmd = cmd + "'" + proprietario + "') ";
         stm.executeQuery(cmd);
     }
@@ -56,10 +54,8 @@ public class Database{
     public void insertAcidente(Acidente a, String carrinha) throws SQLException{
         String cmd;
         cmd = "insert into acidentes(data, descricao, valorPagar, culpado, dataLimitePagamento, carrinha)values(";
-        cmd = cmd + "'" + a.getData().toString() + "', ";
         cmd = cmd + "'" + a.getDescricao() + "', ";
         cmd = cmd + "'" + a.getValorPagar() + "', ";
-        cmd = cmd + "'" + a.getDataLimitePagamento() + "', ";
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeQuery(cmd);
     }
