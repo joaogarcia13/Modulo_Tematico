@@ -2030,7 +2030,8 @@ public class InterfaceMain extends javax.swing.JFrame {
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(new JOptionPane(), mensagem + "Data de Inicio aluguer não pode ser depois da Data Fim", "Erro", JOptionPane.ERROR_MESSAGE);
-            }            
+            }   
+            
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
