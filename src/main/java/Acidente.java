@@ -1,17 +1,19 @@
 package main.java;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Acidente {
     private int id;
     private String matricula;
-    private Date data;
+    private LocalDate data;
     private String descricao;
     private float valorPagar;
-    private Date dataLimitePagamento;
+    private LocalDate dataLimitePagamento;
 
-    public Acidente(String matricula, int id, Date data, String descricao, float valorPagar,
-                    Date dataLimitePagamento){
+    public Acidente(String matricula, int id, LocalDate data, String descricao, float valorPagar,
+                    LocalDate dataLimitePagamento){
         this.id=id;
         this.data=data;
         this.descricao=descricao;
@@ -32,10 +34,6 @@ public class Acidente {
         return id;
     }
 
-    public Date getData() {
-        return data;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -44,16 +42,8 @@ public class Acidente {
         return valorPagar;
     }
 
-    public Date getDataLimitePagamento() {
-        return dataLimitePagamento;
-    }
-
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public void setDescricao(String descricao) {
@@ -64,7 +54,4 @@ public class Acidente {
         this.valorPagar = valorPagar;
     }
 
-    public void setDataLimitePagamento(Date dataLimitePagamento) {
-        this.dataLimitePagamento = dataLimitePagamento;
-    }
 }

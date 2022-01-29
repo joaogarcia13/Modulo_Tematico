@@ -3,8 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Utilizador/OneDrive/Ambiente%20de%20Trabalho/ESTGA/segudo%20ano/PTDA/projeto/Modulo_TematicoV0.3/Modulo_Tematico/src/main/java/Threads.java</file>
             <file>file:/C:/Users/Utilizador/OneDrive/Ambiente%20de%20Trabalho/ESTGA/segudo%20ano/PTDA/projeto/Modulo_TematicoV0.3/Modulo_Tematico/src/main/java/InterfaceMain.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/home/joaogarcia/1_Semestre_2_Ano_TI/Modulo_Tematico/Modulo_Tematico/src/main/java/InterfaceMain.java</file>
+            <file>file:/home/joaogarcia/1_Semestre_2_Ano_TI/Modulo_Tematico/Modulo_Tematico/src/main/java/Database.java</file>
+            <file>file:/home/joaogarcia/1_Semestre_2_Ano_TI/Modulo_Tematico/Modulo_Tematico/src/main/java/Acidente.java</file>
+=======
+            <file>file:/C:/Users/Asus/Desktop/Uni/2ano/ptda/Modulo_Tematico/src/main/java/InterfaceMain.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Uni/2ano/ptda/Modulo_Tematico/src/main/java/Acidente.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Uni/2ano/ptda/Modulo_Tematico/src/main/java/Database.java</file>
+>>>>>>> 3d863935dc533d49d848886a6f825b67397a8851
+>>>>>>> a4287faa0d75b4fdda1a0146afac3e6198e8b1ec
         </group>
     </open-files>
 </project-private>

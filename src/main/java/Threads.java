@@ -17,7 +17,7 @@ public class Threads implements Runnable {
                 Thread.sleep(100);
             }
             catch (InterruptedException e) {
-                System.out.println(e);
+                System.out.println("OLAAAAAAA"+e);
             }
         }
     }
@@ -27,6 +27,7 @@ public class Threads implements Runnable {
         System.out.println("Start" + NomeThread);
     }
     public void stop(){
+        G.interrupt();
         sair=true;
     }
 }

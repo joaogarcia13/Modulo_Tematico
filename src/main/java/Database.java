@@ -8,19 +8,13 @@ public class Database{
     private Connection cnn;
     private Statement stm;
     
-    public void openConnection() throws SQLException {
-            cnn = getConnection("estga-dev.clients.ua.pt3306",
-                    "PTDA_BD_1",
-                    "uhtin_45");
+    public void openConnection() throws SQLException, ClassNotFoundException {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            cnn = DriverManager.getConnection("jdbc:mysql://estga-dev.clients.ua.pt:3306/PTDA_BD_1?user=PTDA_1&password=uhtin_45");
             stm = cnn.createStatement();
     }
     public ResultSet select(String cmd) throws SQLException {
         ResultSet rs = stm.executeQuery(cmd);
-        try{
-            stm.close();
-        }catch (SQLException e){
-            JOptionPane.showMessageDialog(new JOptionPane(), e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-        }
         return rs;
     }
     public void eliminar(String tabela, String campoIdentificador, String valor) throws SQLException{
@@ -37,11 +31,9 @@ public class Database{
         String cmd; 
         cmd = "insert into carrinhas(matricula, dataRegisto, dataRegistoSistema, estado, categoria, disponibilidade, numeroSeguro, dataValidadeSeguro, proprietario)values(";
         cmd = cmd + "'" + c.getMatricula() + "', ";
-        cmd = cmd + "'" + c.getDataRegistoSistema().toString() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
         cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
-        cmd = cmd + "'" + c.getDataValidadeSeguro() + "', ";
         cmd = cmd + "'" + proprietario + "') ";
         stm.executeQuery(cmd);
     }
@@ -62,10 +54,8 @@ public class Database{
     public void insertAcidente(Acidente a, String carrinha) throws SQLException{
         String cmd;
         cmd = "insert into acidentes(data, descricao, valorPagar, culpado, dataLimitePagamento, carrinha)values(";
-        cmd = cmd + "'" + a.getData().toString() + "', ";
         cmd = cmd + "'" + a.getDescricao() + "', ";
         cmd = cmd + "'" + a.getValorPagar() + "', ";
-        cmd = cmd + "'" + a.getDataLimitePagamento() + "', ";
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeQuery(cmd);
     }

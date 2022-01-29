@@ -1,11 +1,13 @@
 package main.java;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Carrinha {
     private String matricula;
     private String DataRegistoMatricula;
-    private Date dataRegistoSistema;
+    private LocalDateTime dataRegistoSistema;
     private String estado;
     private String marca;
     private String modelo;
@@ -14,12 +16,12 @@ public class Carrinha {
     private String combustivel;
     private Boolean disponibilidade;
     private String numeroSeguro;
-    private Date dataValidadeSeguro;
-    private Date InicioDisponibilidade;
-    private Date fimDisponibilidade;
+    private LocalDate dataValidadeSeguro;
+    private LocalDateTime InicioDisponibilidade;
+    private LocalDateTime fimDisponibilidade;
 
-    public Carrinha(String matricula, Date dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
-            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, Date dataValidadeSeguro, Date Inicio, Date Fim){
+    public Carrinha(String matricula, LocalDateTime dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
+            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDateTime Inicio, LocalDateTime Fim){
         
         this.matricula=matricula;
         this.dataRegistoSistema=dataRegistoSistema;
@@ -89,29 +91,9 @@ public class Carrinha {
         return disponibilidade;
     }
 
-    public void setInicioDisponibilidade(Date InicioDisponibilidade) {
-        this.InicioDisponibilidade = InicioDisponibilidade;
-    }
-
-    public void setFimDisponibilidade(Date fimDisponibilidade) {
-        this.fimDisponibilidade = fimDisponibilidade;
-    }
-
-    public Date getInicioDisponibilidade() {
-        return InicioDisponibilidade;
-    }
-
-    public Date getFimDisponibilidade() {
-        return fimDisponibilidade;
-    }
-
     public String getMatricula() {
         return matricula;
     }
-    public Date getDataRegistoSistema() {
-        return dataRegistoSistema;
-    }
-
     public String getEstado() {
         return estado;
     }
@@ -124,15 +106,8 @@ public class Carrinha {
         return numeroSeguro;
     }
 
-    public Date getDataValidadeSeguro() {
-        return dataValidadeSeguro;
-    }
-
     public void setMatricula(String matricula) {
         this.matricula = matricula;
-    }
-    public void setDataRegistoSistema(Date dataRegistoSistema) {
-        this.dataRegistoSistema = dataRegistoSistema;
     }
 
     public void setEstado(String estado) {
@@ -146,8 +121,7 @@ public class Carrinha {
     public void setNumeroSeguro(String numeroSeguro) {
         this.numeroSeguro = numeroSeguro;
     }
-
-    public void setDataValidadeSeguro(Date dataValidadeSeguro) {
-        this.dataValidadeSeguro = dataValidadeSeguro;
-    }
+    
+    
+    
 }
