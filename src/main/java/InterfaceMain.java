@@ -34,6 +34,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
     private LocalDate todayDate;
     private LocalDateTime todayDate2;
+    private boolean selecionarModelo = false; 
     
     /**
      * Creates new form InterfaceMain
@@ -416,11 +417,14 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
+        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 600));
+        AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 600));
         AlugarVeiculo.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(239, 177, 74));
         jPanel5.setForeground(new java.awt.Color(239, 177, 74));
-        jPanel5.setMaximumSize(new java.awt.Dimension(32767, 600));
+        jPanel5.setMaximumSize(new java.awt.Dimension(885, 600));
+        jPanel5.setMinimumSize(new java.awt.Dimension(885, 600));
         jPanel5.setPreferredSize(new java.awt.Dimension(885, 600));
 
         jPanel2.setBackground(new java.awt.Color(239, 177, 74));
@@ -474,6 +478,12 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel58.setForeground(new java.awt.Color(217, 86, 74));
         jLabel58.setText("Marca");
 
+        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarModelos(evt);
+            }
+        });
+
         jLabel61.setForeground(new java.awt.Color(217, 86, 74));
         jLabel61.setText("Modelo");
 
@@ -488,41 +498,43 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(59, 59, 59))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1)
+                                .addContainerGap())
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel38)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel39)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel57)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel58)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel61)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel62)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbCombustível, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addComponent(btnFiltrar)
-                        .addGap(34, 34, 34))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel38)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel39)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel57)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel58)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel61)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel62)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cmbCombustível, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addComponent(btnFiltrar)
+                                .addGap(34, 34, 34))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,9 +560,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addComponent(jLabel58)
                                 .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel61)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(btnFiltrar)
                         .addGap(34, 34, 34)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -558,7 +570,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         scrollPanel.setBackground(new java.awt.Color(239, 177, 74));
-        scrollPanel.setPreferredSize(new java.awt.Dimension(654, 500));
+        scrollPanel.setMaximumSize(new java.awt.Dimension(885, 800));
+        scrollPanel.setPreferredSize(new java.awt.Dimension(885, 800));
 
         InfoCarro.setBackground(new java.awt.Color(239, 177, 74));
 
@@ -598,7 +611,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+            .addComponent(scrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 18, Short.MAX_VALUE))
@@ -609,7 +622,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1781,7 +1794,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -1964,6 +1977,27 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
+        AlugarVeiculo.setVisible(true);
+        try {
+            ResultSet rs = db.select("select * from marcas");
+            while(rs.next()){
+                cmbMarca.addItem(rs.getString("marca"));
+            }
+            
+            rs = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
+            while(rs.next()){
+                cmbModelo.addItem(rs.getString("modelo"));
+            }
+            selecionarModelo = true;
+            
+            rs = db.select("select distinct combustivel from carrinhas");
+            while(rs.next()){
+                cmbCombustível.addItem(rs.getString("combustivel"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
@@ -2094,11 +2128,21 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
         // TODO add your handling code here:
         
-        if(txtDataInicio.getText() != ""  && txtDataFim.getText() != ""){          
-            String query = "select carrinhas.matricula from aluguer inner join carrinha as carrinhas on matricula = carrinhas.matricula where ((dataInicio  > '" + txtDataInicio.getText() + "' and dataFim < '" + txtDataFim.getText() + ") or dataInicio < '" + txtDataInicio.getText() + 
-                    "') and carrinhas.marca = '" + cmbMarca.getSelectedIndex() + "' " +
-                    "and carrinhas.modelo = '" + cmbModelo.getSelectedIndex() + "' " +
-                    "and carrinhas.combustivel = '" + cmbCombustível.getSelectedIndex() + "'";
+        if(isValid(txtDataInicio.toString()) && isValid(txtDataFim.toString())){    
+            String filtro = "";
+            String query = "select carrinhas.matricula from aluguer inner join carrinha as carrinhas on matricula = carrinhas.matricula where ((dataInicio  > '" 
+                    + txtDataInicio.getText() 
+                    + "' and dataFim < '" + txtDataFim.getText() 
+                    + ") or dataInicio < '" + txtDataInicio.getText() + "')";
+            if(cmbMarca.getSelectedItem().toString() != "Todos"){
+                filtro += " and carrinhas.marca = '" + cmbMarca.getSelectedIndex() + "'";
+            }
+            if(cmbModelo.getSelectedItem().toString() != "Todos"){
+                filtro += "and carrinhas.modelo = '" + cmbModelo.getSelectedIndex() + "' ";
+            }
+            if(cmbModelo.getSelectedItem().toString() != "Todos"){
+                filtro += "and carrinhas.combustivel = '" + cmbCombustível.getSelectedIndex() + "' ";
+            }
          }else{
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar duas datas", "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -2121,6 +2165,23 @@ public class InterfaceMain extends javax.swing.JFrame {
         //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
         RegistarVeiculo.setVisible(true);
     }//GEN-LAST:event_Registar_MainMenu_Btn
+
+    private void atualizarModelos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarModelos
+        // TODO add your handling code here:
+        cmbModelo.removeAllItems();
+        if(selecionarModelo){
+             try {
+                ResultSet rs1 = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
+                while(rs1.next()){
+                    cmbModelo.addItem(rs1.getString("modelo"));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+       
+
+    }//GEN-LAST:event_atualizarModelos
 
     /**
      * @param args the command line arguments
