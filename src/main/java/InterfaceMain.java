@@ -2142,13 +2142,13 @@ public class InterfaceMain extends javax.swing.JFrame {
             String filtro = "";
             String queryCarrinhas = "select * from carrinhas where matricula <> ''";
             if(cmbMarca.getSelectedItem().toString() != "Todos"){
-                filtro += " and marca = '" + cmbMarca.getSelectedIndex() + "'";
+                filtro += " and marca = '" + cmbMarca.getSelectedItem().toString() + "'";
             }
             if(cmbModelo.getSelectedItem().toString() != "Todos"){
-                filtro += "and modelo = '" + cmbModelo.getSelectedIndex() + "'";
+                filtro += "and modelo = '" + cmbModelo.getSelectedItem().toString() + "'";
             }
-            if(cmbModelo.getSelectedItem().toString() != "Todos"){
-                filtro += "and combustivel = '" + cmbCombustível.getSelectedIndex() + "'";
+            if(cmbCombustível.getSelectedItem().toString() != "Todos"){
+                filtro += "and combustivel = '" + cmbCombustível.getSelectedItem().toString() + "'";
             }
             DefaultTableModel model = new DefaultTableModel(); 
             model.addColumn("Marca");
