@@ -7,7 +7,7 @@ import java.util.Date;
 public class Carrinha {
     private String matricula;
     private String DataRegistoMatricula;
-    private LocalDateTime dataRegistoSistema;
+    private LocalDate dataRegistoSistema;
     private String estado;
     private String marca;
     private String modelo;
@@ -17,11 +17,11 @@ public class Carrinha {
     private Boolean disponibilidade;
     private String numeroSeguro;
     private LocalDate dataValidadeSeguro;
-    private LocalDateTime InicioDisponibilidade;
-    private LocalDateTime fimDisponibilidade;
+    private LocalDate InicioDisponibilidade;
+    private LocalDate fimDisponibilidade;
 
-    public Carrinha(String matricula, LocalDateTime dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
-            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDateTime Inicio, LocalDateTime Fim){
+    public Carrinha(String matricula, LocalDate dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
+            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim){
         
         this.matricula=matricula;
         this.dataRegistoSistema=dataRegistoSistema;
