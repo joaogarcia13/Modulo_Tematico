@@ -14,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -2150,7 +2151,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             if(cmbCombustível.getSelectedItem().toString() != "Todos"){
                 filtro += "and combustivel = '" + cmbCombustível.getSelectedItem().toString() + "'";
             }
-            DefaultTableModel model = new DefaultTableModel(); 
+            DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                 public boolean isCellEditable(int row, int column) {
+                    return false;
+            }}; 
             model.addColumn("Marca");
             model.addColumn("Modelo");
             model.addColumn("Combustivel");
@@ -2181,11 +2186,16 @@ public class InterfaceMain extends javax.swing.JFrame {
                         contador++;
                     }
                     if(contador == 0){
-                        System.out.println(marca);
                         model.addRow(new Object[]{marca, modelo, combustivel});
                     }
                 }
+
                 tblCarrinhas.setModel(model);
+                for(int i = 0; i < tblCarrinhas.getColumnCount(); i++){
+                    for (int j = 0; j < tblCarrinhas.getRowCount(); j++) {
+                        tblCarrinhas.isCellEditable(i, j);
+                    }
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
