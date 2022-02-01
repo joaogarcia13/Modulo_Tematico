@@ -1,7 +1,6 @@
 package main.java;
 
 
-import java.awt.List;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -14,13 +13,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -146,20 +142,22 @@ public class InterfaceMain extends javax.swing.JFrame {
         Perfil_Utilizador = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         jButton26 = new javax.swing.JButton();
-        jTextField16 = new javax.swing.JTextField();
+        cartaConducao = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        morada = new javax.swing.JTextArea();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        docID = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        telemovel = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        nomeUtilizador = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
         PedidoAluguer = new javax.swing.JFrame();
         jPanel7 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
@@ -423,7 +421,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 600));
         AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 600));
         AlugarVeiculo.setResizable(false);
 
@@ -1042,6 +1039,8 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
+        Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
+
         jPanel6.setBackground(new java.awt.Color(239, 177, 74));
 
         jButton26.setBackground(new java.awt.Color(60, 94, 115));
@@ -1052,12 +1051,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
-        jTextField16.setBackground(new java.awt.Color(169, 202, 221));
+        cartaConducao.setEditable(false);
+        cartaConducao.setBackground(new java.awt.Color(169, 202, 221));
 
-        jTextArea3.setBackground(new java.awt.Color(169, 202, 221));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        morada.setEditable(false);
+        morada.setBackground(new java.awt.Color(169, 202, 221));
+        morada.setColumns(20);
+        morada.setRows(5);
+        jScrollPane3.setViewportView(morada);
 
         jLabel46.setForeground(new java.awt.Color(217, 86, 74));
         jLabel46.setText("Nome:");
@@ -1068,22 +1069,26 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel50.setForeground(new java.awt.Color(217, 86, 74));
         jLabel50.setText("Carta de condução: ");
 
-        jTextField12.setBackground(new java.awt.Color(169, 202, 221));
+        docID.setEditable(false);
+        docID.setBackground(new java.awt.Color(169, 202, 221));
 
         jLabel51.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel51.setText("Morada:");
+        jLabel51.setText("Email:");
 
-        jTextField13.setBackground(new java.awt.Color(169, 202, 221));
+        telemovel.setEditable(false);
+        telemovel.setBackground(new java.awt.Color(169, 202, 221));
 
         jLabel52.setForeground(new java.awt.Color(217, 86, 74));
         jLabel52.setText("Telemóvel:");
 
-        jTextField14.setBackground(new java.awt.Color(169, 202, 221));
+        nomeUtilizador.setEditable(false);
+        nomeUtilizador.setBackground(new java.awt.Color(169, 202, 221));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(60, 94, 115));
         jLabel48.setText("Perfil");
 
+        jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(169, 202, 221));
         jTextField15.setText("7/10");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
@@ -1095,34 +1100,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel49.setForeground(new java.awt.Color(217, 86, 74));
         jLabel49.setText("A sua classificação atual: ");
 
+        jLabel63.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel63.setText("Morada:");
+
+        email.setEditable(false);
+        email.setBackground(new java.awt.Color(169, 202, 221));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel51)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel50)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel52)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField13))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField14))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel48)
@@ -1135,6 +1122,37 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton26))))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaConducao, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(telemovel))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel46)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeUtilizador))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel51)
+                        .addGap(18, 18, 18)
+                        .addComponent(email))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane3)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1143,27 +1161,32 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nomeUtilizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cartaConducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel52)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(telemovel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout Perfil_UtilizadorLayout = new javax.swing.GroupLayout(Perfil_Utilizador.getContentPane());
@@ -2213,8 +2236,27 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
         String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
-        if(pesquisa != null){
-            //pedido base dados
+
+        
+        try{
+            ResultSet rs = null;
+            if(rs == null){
+                JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+            }else{
+                rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas " + "as pessoas on condutores.idPessoa = pessoas.idPessoa where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                Perfil_Utilizador.setVisible(true);
+
+                rs.next();
+                nomeUtilizador.setText(rs.getString("nome"));
+                docID.setText(rs.getString("numeroCC"));
+                cartaConducao.setText(rs.getString("numeroCartaConducao"));
+                telemovel.setText(rs.getString("numTelefone"));
+                email.setText(rs.getString("email"));
+                morada.setText(rs.getString("morada"));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Consultar_Perfil_Btn
 
@@ -2367,10 +2409,13 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFiltrar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField cartaConducao;
     private javax.swing.JComboBox<String> cmbCategoria;
     private javax.swing.JComboBox<String> cmbCombustível;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JComboBox<String> cmbModelo;
+    private javax.swing.JTextField docID;
+    private javax.swing.JTextField email;
     private javax.swing.JPanel imagemCarroInfo1;
     private javax.swing.JPanel infoCarro1;
     private javax.swing.JButton jButton1;
@@ -2453,6 +2498,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2473,13 +2519,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
@@ -2493,8 +2534,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel lblCombustivel1;
     private javax.swing.JLabel lblModeloVeiculo1;
     private javax.swing.JLabel lblPotencia1;
+    private javax.swing.JTextArea morada;
+    private javax.swing.JTextField nomeUtilizador;
     private javax.swing.JPanel scrollPanel;
     private javax.swing.JTable tblCarrinhas;
+    private javax.swing.JTextField telemovel;
     private javax.swing.JTextField txtDataFim;
     private javax.swing.JTextField txtDataInicio;
     private javax.swing.JPasswordField txtPassword;
