@@ -1,6 +1,7 @@
 package main.java;
 
 
+import java.awt.List;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -12,10 +13,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -78,7 +83,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCarrinhas = new javax.swing.JTable();
         txtDataInicio = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -434,7 +439,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(60, 94, 115));
         jLabel18.setText("Selecionar Veículo");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCarrinhas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -445,7 +450,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCarrinhas);
 
         txtDataInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1978,19 +1983,24 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
         AlugarVeiculo.setVisible(true);
+        cmbMarca.removeAllItems();
+        cmbModelo.removeAllItems();
+        cmbCombustível.removeAllItems();
         try {
             ResultSet rs = db.select("select * from marcas");
+            cmbMarca.addItem("Todos");
             while(rs.next()){
                 cmbMarca.addItem(rs.getString("marca"));
             }
-            
             rs = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
+            cmbModelo.addItem("Todos");
             while(rs.next()){
                 cmbModelo.addItem(rs.getString("modelo"));
             }
             selecionarModelo = true;
             
             rs = db.select("select distinct combustivel from carrinhas");
+            cmbCombustível.addItem("Todos");
             while(rs.next()){
                 cmbCombustível.addItem(rs.getString("combustivel"));
             }
@@ -2128,21 +2138,58 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
         // TODO add your handling code here:
         
-        if(isValid(txtDataInicio.toString()) && isValid(txtDataFim.toString())){    
+        if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText())){ 
             String filtro = "";
-            String query = "select carrinhas.matricula from aluguer inner join carrinha as carrinhas on matricula = carrinhas.matricula where ((dataInicio  > '" 
-                    + txtDataInicio.getText() 
-                    + "' and dataFim < '" + txtDataFim.getText() 
-                    + ") or dataInicio < '" + txtDataInicio.getText() + "')";
+            String queryCarrinhas = "select * from carrinhas where matricula <> ''";
             if(cmbMarca.getSelectedItem().toString() != "Todos"){
-                filtro += " and carrinhas.marca = '" + cmbMarca.getSelectedIndex() + "'";
+                filtro += " and marca = '" + cmbMarca.getSelectedIndex() + "'";
             }
             if(cmbModelo.getSelectedItem().toString() != "Todos"){
-                filtro += "and carrinhas.modelo = '" + cmbModelo.getSelectedIndex() + "' ";
+                filtro += "and modelo = '" + cmbModelo.getSelectedIndex() + "'";
             }
             if(cmbModelo.getSelectedItem().toString() != "Todos"){
-                filtro += "and carrinhas.combustivel = '" + cmbCombustível.getSelectedIndex() + "' ";
+                filtro += "and combustivel = '" + cmbCombustível.getSelectedIndex() + "'";
             }
+            DefaultTableModel model = new DefaultTableModel(); 
+            model.addColumn("Marca");
+            model.addColumn("Modelo");
+            model.addColumn("Combustivel");
+            ArrayList<String> matriculas = new ArrayList<String>();
+            ArrayList<String> marcas = new ArrayList<String>();
+            ArrayList<String> modelos = new ArrayList<String>();
+            ArrayList<String> combustiveis = new ArrayList<String>();
+            int contadorCarrinhas = 0;
+            try {
+                ResultSet rs = null;
+                rs = db.select(queryCarrinhas + filtro);
+                while(rs.next()){
+                    contadorCarrinhas++;
+                    matriculas.add(rs.getString("matricula"));
+                    marcas.add(rs.getString("marca"));
+                    modelos.add(rs.getString("modelo"));
+                    combustiveis.add(rs.getString("combustivel"));
+                }
+                for(int i = 0; i < contadorCarrinhas; i++){
+                    String matricula = matriculas.get(i);
+                    String marca = marcas.get(i);
+                    String modelo = modelos.get(i);
+                    String combustivel = combustiveis.get(i);
+                    rs = null;
+                    rs = db.select("select * from aluguer where carrinha = '" + matricula + "' and (dataInicio <= '" + StringtoDate(txtDataInicio.getText()).toString() + "' and (dataFim >= '" + StringtoDate(txtDataFim.getText()).toString() + "' or (dataFim <= '" + StringtoDate(txtDataFim.getText()).toString() + "' and dataFim >= '" + StringtoDate(txtDataInicio.getText()).toString() + "')))");
+                    int contador = 0;
+                    while(rs.next()){
+                        contador++;
+                    }
+                    if(contador == 0){
+                        System.out.println(marca);
+                        model.addRow(new Object[]{marca, modelo, combustivel});
+                    }
+                }
+                tblCarrinhas.setModel(model);
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
          }else{
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar duas datas", "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -2169,6 +2216,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void atualizarModelos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarModelos
         // TODO add your handling code here:
         cmbModelo.removeAllItems();
+        cmbModelo.addItem("Todos");
         if(selecionarModelo){
              try {
                 ResultSet rs1 = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
@@ -2414,7 +2462,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
@@ -2437,6 +2484,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel lblModeloVeiculo1;
     private javax.swing.JLabel lblPotencia1;
     private javax.swing.JPanel scrollPanel;
+    private javax.swing.JTable tblCarrinhas;
     private javax.swing.JTextField txtDataFim;
     private javax.swing.JTextField txtDataInicio;
     private javax.swing.JPasswordField txtPassword;
