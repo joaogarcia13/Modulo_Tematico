@@ -796,7 +796,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        RegistarVeiculo.setPreferredSize(new java.awt.Dimension(401, 470));
         RegistarVeiculo.setResizable(false);
         RegistarVeiculo.setSize(new java.awt.Dimension(401, 470));
 
