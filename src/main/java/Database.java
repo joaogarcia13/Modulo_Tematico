@@ -32,23 +32,24 @@ public class Database{
                 + "proprietario, marca, modelo, cilindrada, potencia, combustivel, dataInicioDisponibilidade, dataFimDisponibilidade,"
                 + "nrKm, precoDia, precoKmExtra, ano)values(";
         cmd = cmd + "'" + c.getMatricula() + "', ";
-        cmd = cmd + "'" + c.getDataRegistoSistem() + "'";
+        cmd = cmd + "'" + c.getDataRegistoSistem() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
         cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
-        cmd = cmd + "'" + c.getdatValidadeSeguro() + "'";
-        cmd = cmd + "'" + proprietario + "'";
-        cmd = cmd + "'" + c.getMarca() + "'";
-        cmd = cmd + "'" + c.getModelo() + "'";
-        cmd = cmd + "'" + c.getCilindrada() + "'";
-        cmd = cmd + "'" + c.getPotencia() + "'";
-        cmd = cmd + "'" + c.getCombustivel() + "'";
-        cmd = cmd + "'" + c.getInicioDisponibilidade() + "'";
-        cmd = cmd + "'" + c.getfimDisponibilidade() + "'";
-        cmd = cmd + "'" + c.getKilm() + "'";
-        cmd = cmd + "'" + 30.0 + "'"; //a mudar o preco
-        cmd = cmd + "'" + 0.20 + "'"; //mudar o preço
+        cmd = cmd + "'" + c.getdatValidadeSeguro() + "', ";
+        cmd = cmd + "'" + proprietario + "', ";
+        cmd = cmd + "'" + c.getMarca() + "', ";
+        cmd = cmd + "'" + c.getModelo() + "', ";
+        cmd = cmd + "'" + c.getCilindrada() + "', ";
+        cmd = cmd + "'" + c.getPotencia() + "', ";
+        cmd = cmd + "'" + c.getCombustivel() + "', ";
+        cmd = cmd + "'" + c.getInicioDisponibilidade() + "', ";
+        cmd = cmd + "'" + c.getfimDisponibilidade() + "', ";
+        cmd = cmd + "'" + c.getKilm() + "', ";
+        cmd = cmd + "'" + 30.0 + "', "; //a mudar o preco
+        cmd = cmd + "'" + 0.20 + "', "; //mudar o preço
         cmd = cmd + "'" + c.getAno() + "')";
+        System.out.println(cmd);
         stm.executeUpdate(cmd);
         
     }

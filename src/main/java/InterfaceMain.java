@@ -7,6 +7,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -33,9 +34,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-\\d{2}$";
     private final String formatoMatricula3 = "^\\d{2}-\\d{2}-[a-zA-z]{2}";
-    private final String formatoHora = "^(?:[01]?\\d|2[0-3])(?::[0-5]\\d){1,2}$";
     private LocalDate todayDate;
-    private LocalDateTime todayDate2;
     private boolean selecionarModelo = false; 
     private String id = null;
     
@@ -423,10 +422,8 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 650));
         AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 650));
         AlugarVeiculo.setUndecorated(true);
-        AlugarVeiculo.setPreferredSize(new java.awt.Dimension(885, 650));
         AlugarVeiculo.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(239, 177, 74));
@@ -912,7 +909,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         TextApolice.setBackground(new java.awt.Color(169, 202, 221));
 
         ComboMarca.setBackground(new java.awt.Color(169, 202, 221));
-        ComboMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca", "Citroen", "Mercedes", "Ferrari", "" }));
+        ComboMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "marca" }));
 
         TxtModelo.setBackground(new java.awt.Color(169, 202, 221));
 
@@ -1019,9 +1016,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel28)
-                        .addComponent(jLabel33)))
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel28))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1735,7 +1731,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton22.setBackground(new java.awt.Color(60, 94, 115));
         jButton22.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jButton22.setForeground(new java.awt.Color(235, 244, 249));
-        jButton22.setText("A Empresa");
+        jButton22.setText("Consultar Acidente");
 
         jButton23.setBackground(new java.awt.Color(60, 94, 115));
         jButton23.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
@@ -1756,6 +1752,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton24.setBackground(new java.awt.Color(239, 177, 74));
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toppng.com-book-icon-book-icon-1571x1452.png"))); // NOI18N
         jButton24.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jButton24.setEnabled(false);
 
         jButton25.setBackground(new java.awt.Color(239, 177, 74));
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SeekPng.com_male-symbol-png_410093.png"))); // NOI18N
@@ -1773,41 +1770,42 @@ public class InterfaceMain extends javax.swing.JFrame {
         MainMenuLayout.setHorizontalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
-            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
+            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(MainMenuLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainMenuLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(MainMenuLayout.createSequentialGroup()
+                            .addGap(9, 9, 9)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(MainMenuLayout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(70, 70, 70)
+                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         MainMenuLayout.setVerticalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2037,6 +2035,10 @@ public class InterfaceMain extends javax.swing.JFrame {
                 
             try {
                 db.insertCarrinha(carrinha, id);
+                JOptionPane.showMessageDialog(null, "Registo feito com sucesso.");
+                RegistarVeiculo.dispose();
+            }catch(SQLIntegrityConstraintViolationException e){
+                JOptionPane.showMessageDialog(new JOptionPane(), "Já existe um veiculo com esta matricula registado", "Erro", JOptionPane.ERROR_MESSAGE);
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2182,6 +2184,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         try {
             rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
             int rowCount = 0;
+            
             while(rs.next()){
                 rowCount++;
             }
@@ -2306,8 +2309,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas " 
                     + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" 
                     + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
-
-            if(rs == null){
+            
+            int rowcount = 0;
+            while (rs.next()){
+                rowcount ++;
+            }
+            if(rowcount == 0){
                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
             }else{
                 rs.next();
@@ -2319,9 +2326,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                 email.setText(rs.getString("email"));
                 morada.setText(rs.getString("morada"));
             }
-            System.out.println("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas " 
-                    + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" 
-                    + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
             
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -2334,13 +2338,24 @@ public class InterfaceMain extends javax.swing.JFrame {
         try{
             ResultSet rs = null;
             rs = db.select("SELECT * FROM pessoas where numeroCC= '" + pesquisa + "'");
-            if(rs == null){
-                JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado, por favor registe o cliente.");
+            
+            int rowcount = 0;
+            while(rs.next()){
+                rowcount++;
+            }
+            if(rowcount == 0l){
+                rowcount++;
+                JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado, por favor registe o cliente primeiro.");
             }else{
                 rs.next();
                 id = rs.getString("id");
                 RegistarVeiculo.setLocationRelativeTo(null);
                 RegistarVeiculo.setVisible(true);
+                
+                rs = db.select("select * from marcas");
+                while(rs.next()){
+                    ComboMarca.addItem(rs.getString("marca"));
+                }
             }
             
         } catch (SQLException ex) {
