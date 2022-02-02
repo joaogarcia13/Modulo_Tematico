@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+/*fazer ligacao ao cliente q pertence, nr quilometros
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -96,6 +96,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         cmbCombustível = new javax.swing.JComboBox<>();
         scrollPanel = new javax.swing.JPanel();
         InfoCarro = new javax.swing.JPanel();
+        btnAlugar = new javax.swing.JButton();
         Pagamento = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -421,14 +422,17 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 600));
+        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 650));
+        AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 650));
+        AlugarVeiculo.setUndecorated(true);
+        AlugarVeiculo.setPreferredSize(new java.awt.Dimension(885, 650));
         AlugarVeiculo.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(239, 177, 74));
         jPanel5.setForeground(new java.awt.Color(239, 177, 74));
-        jPanel5.setMaximumSize(new java.awt.Dimension(885, 600));
-        jPanel5.setMinimumSize(new java.awt.Dimension(885, 600));
-        jPanel5.setPreferredSize(new java.awt.Dimension(885, 600));
+        jPanel5.setMaximumSize(new java.awt.Dimension(885, 650));
+        jPanel5.setMinimumSize(new java.awt.Dimension(885, 650));
+        jPanel5.setPreferredSize(new java.awt.Dimension(885, 650));
 
         jPanel2.setBackground(new java.awt.Color(239, 177, 74));
 
@@ -589,11 +593,21 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addGap(0, 179, Short.MAX_VALUE)
         );
 
+        btnAlugar.setText("Alugar");
+        btnAlugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlugarVeiculo(evt);
+            }
+        });
+
         javax.swing.GroupLayout scrollPanelLayout = new javax.swing.GroupLayout(scrollPanel);
         scrollPanel.setLayout(scrollPanelLayout);
         scrollPanelLayout.setHorizontalGroup(
             scrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scrollPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAlugar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
             .addGroup(scrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(scrollPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -602,7 +616,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
         scrollPanelLayout.setVerticalGroup(
             scrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(scrollPanelLayout.createSequentialGroup()
+                .addComponent(btnAlugar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 755, Short.MAX_VALUE))
             .addGroup(scrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(scrollPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2006,6 +2022,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
+        AlugarVeiculo.setLocationRelativeTo(null);
         AlugarVeiculo.setVisible(true);
         cmbMarca.removeAllItems();
         cmbModelo.removeAllItems();
@@ -2179,29 +2196,35 @@ public class InterfaceMain extends javax.swing.JFrame {
                  public boolean isCellEditable(int row, int column) {
                     return false;
             }}; 
+            model.addColumn("Matricula");
             model.addColumn("Marca");
             model.addColumn("Modelo");
             model.addColumn("Combustivel");
-            ArrayList<String> matriculas = new ArrayList<String>();
-            ArrayList<String> marcas = new ArrayList<String>();
-            ArrayList<String> modelos = new ArrayList<String>();
-            ArrayList<String> combustiveis = new ArrayList<String>();
+            model.addColumn("Potencia");
+            model.addColumn("Cilindrada");
+            ArrayList<Carrinha> carrinhas = new ArrayList<Carrinha>();
             int contadorCarrinhas = 0;
             try {
                 ResultSet rs = null;
                 rs = db.select(queryCarrinhas + filtro);
                 while(rs.next()){
                     contadorCarrinhas++;
-                    matriculas.add(rs.getString("matricula"));
-                    marcas.add(rs.getString("marca"));
-                    modelos.add(rs.getString("modelo"));
-                    combustiveis.add(rs.getString("combustivel"));
+                    Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, selecionarModelo, filtro, todayDate, todayDate, todayDate);
+                    tmp.setMatricula(rs.getString("matricula"));
+                    tmp.setMarca(rs.getString("marca"));
+                    tmp.setModelo(rs.getString("modelo"));
+                    tmp.setCombustivel(rs.getString("combustivel"));
+                    tmp.setPotencia(rs.getString("potencia"));
+                    tmp.setCilindrada(rs.getString("cilindrada"));
+                    carrinhas.add(tmp);
                 }
                 for(int i = 0; i < contadorCarrinhas; i++){
-                    String matricula = matriculas.get(i);
-                    String marca = marcas.get(i);
-                    String modelo = modelos.get(i);
-                    String combustivel = combustiveis.get(i);
+                    String matricula = carrinhas.get(i).getMatricula();
+                    String marca = carrinhas.get(i).getMarca();
+                    String modelo = carrinhas.get(i).getModelo();
+                    String combustivel = carrinhas.get(i).getCombustivel();
+                    String potencia = carrinhas.get(i).getPotencia();
+                    String cilindrada = carrinhas.get(i).getCilindrada();
                     rs = null;
                     rs = db.select("select * from aluguer where carrinha = '" + matricula + "' and (dataInicio <= '" + StringtoDate(txtDataInicio.getText()).toString() + "' and (dataFim >= '" + StringtoDate(txtDataFim.getText()).toString() + "' or (dataFim <= '" + StringtoDate(txtDataFim.getText()).toString() + "' and dataFim >= '" + StringtoDate(txtDataInicio.getText()).toString() + "')))");
                     int contador = 0;
@@ -2209,7 +2232,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         contador++;
                     }
                     if(contador == 0){
-                        model.addRow(new Object[]{marca, modelo, combustivel});
+                        model.addRow(new Object[]{matricula, marca, modelo, combustivel, potencia, cilindrada});
                     }
                 }
 
@@ -2282,6 +2305,29 @@ public class InterfaceMain extends javax.swing.JFrame {
        
 
     }//GEN-LAST:event_atualizarModelos
+
+    private void AlugarVeiculo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculo
+        // TODO add your handling code here:
+        if(tblCarrinhas.getSelectedRowCount() != 1){
+            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
+        }else{
+            String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+            try{
+                ResultSet rs = null;
+                rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                if(rs == null){
+                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+                }else{
+                    rs.next();
+                    String id = rs.getString("id");
+                    System.out.println(id);
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_AlugarVeiculo
 
     /**
      * @param args the command line arguments
@@ -2406,6 +2452,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField TxtMatricula;
     private javax.swing.JTextField TxtModelo;
     private javax.swing.JTextField ValorPagarAc;
+    private javax.swing.JButton btnAlugar;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFiltrar;
     private javax.swing.ButtonGroup buttonGroup1;

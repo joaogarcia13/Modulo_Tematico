@@ -39,6 +39,10 @@ public class Carrinha {
         this.DataRegistoMatricula = ano;
     }
 
+    Carrinha() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setMarca(String marca) {
         this.marca = marca;
     }
