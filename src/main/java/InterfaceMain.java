@@ -1736,7 +1736,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton23.setBackground(new java.awt.Color(60, 94, 115));
         jButton23.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jButton23.setForeground(new java.awt.Color(235, 244, 249));
-        jButton23.setText("Informações");
+        jButton23.setText("Entrega de Veículo");
 
         jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -1750,7 +1750,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel45.setText("Sobre nós");
 
         jButton24.setBackground(new java.awt.Color(239, 177, 74));
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/toppng.com-book-icon-book-icon-1571x1452.png"))); // NOI18N
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registar.png"))); // NOI18N
         jButton24.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jButton24.setEnabled(false);
 
@@ -2187,18 +2187,18 @@ public class InterfaceMain extends javax.swing.JFrame {
             
             while(rs.next()){
                 rowCount++;
-            }
-            if(rowCount == 1){
-                rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
-                rs.next();
-                if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
-                    Login.setVisible(false);
-                    MainMenu.setVisible(true);
+                if(rowCount == 1){
+                    rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
+                    rs.next();
+                    if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
+                        Login.setVisible(false);
+                        MainMenu.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
                 }else{
-                    JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
-            }else{
-                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -2313,8 +2313,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             int rowcount = 0;
             while (rs.next()){
                 rowcount ++;
-            }
-            if(rowcount == 0){
+                if(rowcount == 0){
                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
             }else{
                 rs.next();
@@ -2325,6 +2324,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 telemovel.setText(rs.getString("numTelefone"));
                 email.setText(rs.getString("email"));
                 morada.setText(rs.getString("morada"));
+            }
             }
             
         } catch (SQLException ex) {
