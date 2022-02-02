@@ -6,25 +6,26 @@ import java.util.Date;
 
 public class Carrinha {
     private String matricula;
-    private String DataRegistoMatricula;
-    private LocalDate dataRegistoSistema;
+    private LocalDate DataRegistoSistema;
+    private String ano;
     private String estado;
     private String marca;
     private String modelo;
     private String Cilindrada;
     private String Potencia;
     private String combustivel;
-    private Boolean disponibilidade;
+    private String disponibilidade;
     private String numeroSeguro;
     private LocalDate dataValidadeSeguro;
     private LocalDate InicioDisponibilidade;
     private LocalDate fimDisponibilidade;
+    private String kilm;
 
     public Carrinha(String matricula, LocalDate dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
-            String Potencia, String combustivel, String ano, boolean disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim){
+            String Potencia, String combustivel, String ano, String disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim, String km){
         
         this.matricula=matricula;
-        this.dataRegistoSistema=dataRegistoSistema;
+        this.ano=ano;
         this.estado=estado;
         this.disponibilidade=disponibilidade;
         this.numeroSeguro=numeroSeguro;
@@ -36,9 +37,38 @@ public class Carrinha {
         this.Cilindrada=cilindrada;
         this.Potencia = Potencia;
         this.combustivel = combustivel;
-        this.DataRegistoMatricula = ano;
+        this.DataRegistoSistema = dataRegistoSistema;
+        this.kilm = km;
     }
 
+    public String getDisponibilidade(){
+        return disponibilidade;
+    }
+    
+    public LocalDate getDataRegistoSistem(){
+        return DataRegistoSistema;
+    }
+
+    public void setDataRegistoSistema(LocalDate DataRegistoSistema) {
+        this.DataRegistoSistema = DataRegistoSistema;
+    }
+    
+    public LocalDate getdatValidadeSeguro(){
+        return dataValidadeSeguro;
+    }
+    
+    public LocalDate getInicioDisponibilidade(){
+        return InicioDisponibilidade;
+    }
+    
+    public LocalDate getfimDisponibilidade(){
+        return fimDisponibilidade;
+    }
+    
+    public String getKilm(){
+        return kilm;
+    }
+    
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -57,10 +87,6 @@ public class Carrinha {
 
     public void setCombustivel(String combustivel) {
         this.combustivel = combustivel;
-    }
-
-    public void setAno(String ano) {
-        this.DataRegistoMatricula = ano;
     }
 
     public String getMarca() {
@@ -84,10 +110,10 @@ public class Carrinha {
     }
 
     public String getAno() {
-        return DataRegistoMatricula;
+        return ano;
     }
 
-    public boolean isDisponibilidade() {
+    public String isDisponibilidade() {
         return disponibilidade;
     }
 
@@ -96,10 +122,6 @@ public class Carrinha {
     }
     public String getEstado() {
         return estado;
-    }
-
-    public boolean getDisponibilidade() {
-        return disponibilidade;
     }
 
     public String getNumeroSeguro() {
@@ -114,12 +136,32 @@ public class Carrinha {
         this.estado = estado;
     }
 
-    public void setDisponibilidade(boolean disponibilidade) {
+    public void setDisponibilidade(String disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
     public void setNumeroSeguro(String numeroSeguro) {
         this.numeroSeguro = numeroSeguro;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public void setDataValidadeSeguro(LocalDate dataValidadeSeguro) {
+        this.dataValidadeSeguro = dataValidadeSeguro;
+    }
+
+    public void setInicioDisponibilidade(LocalDate InicioDisponibilidade) {
+        this.InicioDisponibilidade = InicioDisponibilidade;
+    }
+
+    public void setFimDisponibilidade(LocalDate fimDisponibilidade) {
+        this.fimDisponibilidade = fimDisponibilidade;
+    }
+
+    public void setKilm(String kilm) {
+        this.kilm = kilm;
     }
     
     

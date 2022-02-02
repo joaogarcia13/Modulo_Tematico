@@ -6,28 +6,18 @@ import java.util.Date;
 
 public class Acidente {
     private int id;
-    private String matricula;
     private LocalDate data;
     private String descricao;
     private float valorPagar;
     private LocalDate dataLimitePagamento;
 
-    public Acidente(String matricula, int id, LocalDate data, String descricao, float valorPagar,
+    public Acidente(int id, LocalDate data, String descricao, float valorPagar,
                     LocalDate dataLimitePagamento){
         this.id=id;
         this.data=data;
         this.descricao=descricao;
         this.valorPagar=valorPagar;
         this.dataLimitePagamento=dataLimitePagamento;
-        this.matricula=matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getMatricula() {
-        return matricula;
     }
 
     public int getId() {
@@ -53,5 +43,22 @@ public class Acidente {
     public void setValorPagar(float valorPagar) {
         this.valorPagar = valorPagar;
     }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public LocalDate getDataLimitePagamento() {
+        return dataLimitePagamento;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public void setDataLimitePagamento(LocalDate dataLimitePagamento) {
+        this.dataLimitePagamento = dataLimitePagamento;
+    }
+    
 
 }
