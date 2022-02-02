@@ -37,7 +37,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private LocalDate todayDate;
     private boolean selecionarModelo = false; 
     private String id = null;
-    
+    private String idUtilizador;
     /**
      * Creates new form InterfaceMain
      */
@@ -2187,15 +2187,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             
             while(rs.next()){
                 rowCount++;
-                if(rowCount == 1){
-                    rs = db.select("select password from pessoas where username = '" + txtUsername.getText() + "'");
-                    rs.next();
-                    if(encriptar(txtPassword.getText()).equals(rs.getString(1))){
-                        Login.setVisible(false);
-                        MainMenu.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
-                    }
+            }
+            if(rowCount == 1){
+                rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
+                rs.next();
+                if(encriptar(txtPassword.getText()).equals(rs.getString("password"))){
+                    Login.setVisible(false);
+                    MainMenu.setVisible(true);
+                    idUtilizador = rs.getString("id");
                 }else{
                      JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
@@ -2389,12 +2388,25 @@ public class InterfaceMain extends javax.swing.JFrame {
             try{
                 ResultSet rs = null;
                 rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
-                if(rs == null){
+                int rowCount = 0;
+                String id = "";
+                while(rs.next()){
+                    rowCount++;
+                    id = rs.getString("id");
+                }
+                if(rowCount == 0){
                      JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
                 }else{
                     rs.next();
-                    String id = rs.getString("id");
-                    System.out.println(id);
+                    String cmd = "insert into aluguer(carrinha, dataInicio, dataFim, dataRegisto, condutor, funcionario, pago)values(" +
+                    "'" + tblCarrinhas.getValueAt(tblCarrinhas.getSelectedRow(), 0) + "', " +
+                    "'" + StringtoDate(txtDataInicio.getText()) + "', " +
+                    "'" + StringtoDate(txtDataFim.getText()) + "', " +
+                    "'" + LocalDate.now().toString() + "', " +
+                    "'" + id + "', " +
+                    "'" + idUtilizador + "', " +
+                    "'Nao')";
+                    db.executeInsert(cmd);
                 }
                 
             } catch (SQLException ex) {
@@ -2501,6 +2513,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             );
         return d;
     }
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
