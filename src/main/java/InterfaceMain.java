@@ -201,10 +201,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblCarrinhas1 = new javax.swing.JTable();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        tblFunc = new javax.swing.JTable();
+        Editar_func = new javax.swing.JButton();
+        Remover_Func = new javax.swing.JButton();
+        Registar_Func = new javax.swing.JButton();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -448,6 +448,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(60, 94, 115));
         jLabel18.setText("Selecionar Veículo");
 
+        tblCarrinhas.setBackground(new java.awt.Color(169, 202, 221));
         tblCarrinhas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -1053,7 +1054,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel23)
                     .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1603,7 +1604,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel65.setForeground(new java.awt.Color(60, 94, 115));
         jLabel65.setText("Selecionar Funcionário");
 
-        tblCarrinhas1.setModel(new javax.swing.table.DefaultTableModel(
+        tblFunc.setBackground(new java.awt.Color(169, 202, 221));
+        tblFunc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -1614,19 +1616,22 @@ public class InterfaceMain extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane4.setViewportView(tblCarrinhas1);
+        jScrollPane4.setViewportView(tblFunc);
 
-        jButton10.setBackground(new java.awt.Color(60, 94, 115));
-        jButton10.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton10.setText("Editar Funcionário");
+        Editar_func.setBackground(new java.awt.Color(60, 94, 115));
+        Editar_func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        Editar_func.setForeground(new java.awt.Color(235, 244, 249));
+        Editar_func.setText("Editar Funcionário");
 
-        jButton12.setBackground(new java.awt.Color(60, 94, 115));
-        jButton12.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton12.setText("Remover Funcionário");
+        Remover_Func.setBackground(new java.awt.Color(60, 94, 115));
+        Remover_Func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        Remover_Func.setForeground(new java.awt.Color(235, 244, 249));
+        Remover_Func.setText("Remover Funcionário");
 
-        jButton11.setBackground(new java.awt.Color(60, 94, 115));
-        jButton11.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton11.setText("Registar Funcionário");
+        Registar_Func.setBackground(new java.awt.Color(60, 94, 115));
+        Registar_Func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        Registar_Func.setForeground(new java.awt.Color(235, 244, 249));
+        Registar_Func.setText("Registar Funcionário");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1641,11 +1646,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Registar_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Editar_func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -1656,9 +1661,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Registar_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Editar_func, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63))
         );
 
@@ -2162,7 +2167,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
-        AlugarVeiculo.setLocationRelativeTo(null);
+        //AlugarVeiculo.setLocationRelativeTo(null);
         AlugarVeiculo.setVisible(true);
         cmbMarca.removeAllItems();
         cmbModelo.removeAllItems();
@@ -2340,9 +2345,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDataFimActionPerformed
 
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-        // TODO add your handling code here:
-        
-        if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText())){ 
+            if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText())){ 
             String filtro = "";
             String queryCarrinhas = "select * from carrinhas where matricula <> ''";
             if(cmbMarca.getSelectedItem().toString() != "Todos"){
@@ -2412,7 +2415,6 @@ public class InterfaceMain extends javax.swing.JFrame {
          }else{
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar duas datas", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-            
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -2537,6 +2539,36 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void RegistarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncActionPerformed
         GerirFuncionario.setVisible(true);
+        DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                 public boolean isCellEditable(int row, int column) {
+                    return false;
+            }}; 
+            model.addColumn("Nome");
+            model.addColumn("Numero CC");
+            model.addColumn("Morada");
+            model.addColumn("Data Registo");
+            model.addColumn("Data Nascimento");
+            model.addColumn("Telefone");
+            model.addColumn("Email");
+            model.addColumn("Cargo");
+            try {
+                ResultSet rs = null;
+                rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas left outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
+                while(rs.next()){
+                    model.addRow(new Object[]{rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
+                        rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
+                }
+                tblFunc.setModel(model);
+                for(int i = 0; i < tblFunc.getColumnCount(); i++){
+                    for (int j = 0; j < tblFunc.getRowCount(); j++) {
+                        tblFunc.isCellEditable(i, j);
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
     }//GEN-LAST:event_RegistarFuncActionPerformed
 
     /**
@@ -2651,6 +2683,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField DataAcidente;
     private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DescricaoAcidente1;
+    private javax.swing.JButton Editar_func;
     private javax.swing.JFrame GerirFuncionario;
     private javax.swing.JPanel InfoCarro;
     private javax.swing.JTextField LocalTxt;
@@ -2662,6 +2695,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JFrame Perfil_Utilizador;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JFrame RegistarVeiculo;
+    private javax.swing.JButton Registar_Func;
+    private javax.swing.JButton Remover_Func;
     private javax.swing.JFrame ReportarProblemas;
     private javax.swing.JPanel SignUp;
     private javax.swing.JFrame SignUpFrame;
@@ -2689,9 +2724,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel imagemCarroInfo1;
     private javax.swing.JPanel infoCarro1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
@@ -2813,7 +2845,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField nomeUtilizador;
     private javax.swing.JPanel scrollPanel;
     private javax.swing.JTable tblCarrinhas;
-    private javax.swing.JTable tblCarrinhas1;
+    private javax.swing.JTable tblFunc;
     private javax.swing.JTextField telemovel;
     private javax.swing.JTextField txtDataFim;
     private javax.swing.JTextField txtDataInicio;
