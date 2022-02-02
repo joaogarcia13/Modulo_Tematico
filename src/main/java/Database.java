@@ -77,4 +77,7 @@ public class Database{
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeUpdate(cmd);
     }
+    public void executeInsert(String cmd) throws SQLException{
+        stm.executeUpdate(cmd);
+    }
 }
