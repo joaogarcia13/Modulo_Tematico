@@ -1627,6 +1627,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         Remover_Func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         Remover_Func.setForeground(new java.awt.Color(235, 244, 249));
         Remover_Func.setText("Remover Funcionário");
+        Remover_Func.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Remover_FuncActionPerformed(evt);
+            }
+        });
 
         Registar_Func.setBackground(new java.awt.Color(60, 94, 115));
         Registar_Func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
@@ -2167,7 +2172,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
-        //AlugarVeiculo.setLocationRelativeTo(null);
+        AlugarVeiculo.setLocationRelativeTo(null);
         AlugarVeiculo.setVisible(true);
         cmbMarca.removeAllItems();
         cmbModelo.removeAllItems();
@@ -2544,6 +2549,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                  public boolean isCellEditable(int row, int column) {
                     return false;
             }}; 
+            model.addColumn("id");
             model.addColumn("Nome");
             model.addColumn("Numero CC");
             model.addColumn("Morada");
@@ -2554,9 +2560,9 @@ public class InterfaceMain extends javax.swing.JFrame {
             model.addColumn("Cargo");
             try {
                 ResultSet rs = null;
-                rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas left outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
+                rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
                 while(rs.next()){
-                    model.addRow(new Object[]{rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
+                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
                         rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
                 }
                 tblFunc.setModel(model);
@@ -2570,6 +2576,50 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         
     }//GEN-LAST:event_RegistarFuncActionPerformed
+
+    private void Remover_FuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remover_FuncActionPerformed
+        if(tblFunc.getSelectedRowCount() != 1){
+            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma linha da tabela.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            try {
+                db.eliminar("funcionarios", "idPessoa", tblFunc.getValueAt(tblFunc.getSelectedRow(), 0).toString());
+                db.update("pessoas", "username", "", "id", tblFunc.getValueAt(tblFunc.getSelectedRow(), 0).toString());
+                db.update("pessoas", "password", "", "id", tblFunc.getValueAt(tblFunc.getSelectedRow(), 0).toString());
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                 public boolean isCellEditable(int row, int column) {
+                    return false;
+            }}; 
+            model.addColumn("id");
+            model.addColumn("Nome");
+            model.addColumn("Numero CC");
+            model.addColumn("Morada");
+            model.addColumn("Data Registo");
+            model.addColumn("Data Nascimento");
+            model.addColumn("Telefone");
+            model.addColumn("Email");
+            model.addColumn("Cargo");
+            try {
+                ResultSet rs = null;
+                rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
+                while(rs.next()){
+                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
+                        rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
+                }
+                tblFunc.setModel(model);
+                for(int i = 0; i < tblFunc.getColumnCount(); i++){
+                    for (int j = 0; j < tblFunc.getRowCount(); j++) {
+                        tblFunc.isCellEditable(i, j);
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_Remover_FuncActionPerformed
 
     /**
      * @param args the command line arguments

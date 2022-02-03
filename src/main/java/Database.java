@@ -18,12 +18,12 @@ public class Database{
     }
     public void eliminar(String tabela, String campoIdentificador, String valor) throws SQLException{
         String cmd;
-        cmd = "delete * from " + tabela + "where " + campoIdentificador + " = '" + valor + "'";
-        stm.executeQuery(cmd);
+        cmd = "delete from " + tabela + " where " + campoIdentificador + " = '" + valor + "'";
+        stm.executeUpdate(cmd);
     }
     public void update(String tabela, String campoAMudar, String valorNovo, String campoIdentificador, String valor) throws SQLException{
         String cmd;
-        cmd = "update " + tabela + "set " + campoAMudar + " = '" + valorNovo + "' where " + campoIdentificador + " = '" + valor + "'";
+        cmd = "update " + tabela + " set " + campoAMudar + " = '" + valorNovo + "' where " + campoIdentificador + " = '" + valor + "'";
         stm.executeUpdate(cmd);
     }
     public void insertCarrinha(Carrinha c, String proprietario) throws SQLException{
