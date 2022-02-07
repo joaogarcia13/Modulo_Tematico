@@ -13,7 +13,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -233,18 +235,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         Cargo1 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         DataRegisto1 = new javax.swing.JTextField();
-        ReceberVeiculo = new javax.swing.JFrame();
-        SignUp1 = new javax.swing.JPanel();
+        ReceberVeiculoFrame = new javax.swing.JFrame();
+        Receberveiculo = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtkm = new javax.swing.JTextField();
         jLabel86 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jLabel80 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtNota = new javax.swing.JTextField();
         jLabel81 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtMatricula = new javax.swing.JTextField();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -1984,17 +1986,18 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        ReceberVeiculo.setMaximumSize(new java.awt.Dimension(350, 235));
-        ReceberVeiculo.setMinimumSize(new java.awt.Dimension(350, 235));
-        ReceberVeiculo.setPreferredSize(new java.awt.Dimension(350, 235));
-        ReceberVeiculo.setSize(new java.awt.Dimension(400, 445));
+        ReceberVeiculoFrame.setMaximumSize(new java.awt.Dimension(370, 275));
+        ReceberVeiculoFrame.setMinimumSize(new java.awt.Dimension(370, 275));
+        ReceberVeiculoFrame.setPreferredSize(new java.awt.Dimension(370, 275));
+        ReceberVeiculoFrame.setResizable(false);
+        ReceberVeiculoFrame.setSize(new java.awt.Dimension(370, 275));
 
-        SignUp1.setBackground(new java.awt.Color(239, 177, 74));
-        SignUp1.setToolTipText("Sign Up");
-        SignUp1.setMaximumSize(new java.awt.Dimension(350, 235));
-        SignUp1.setMinimumSize(new java.awt.Dimension(350, 235));
-        SignUp1.setPreferredSize(new java.awt.Dimension(350, 235));
-        SignUp1.setRequestFocusEnabled(false);
+        Receberveiculo.setBackground(new java.awt.Color(239, 177, 74));
+        Receberveiculo.setToolTipText("Sign Up");
+        Receberveiculo.setMaximumSize(new java.awt.Dimension(370, 275));
+        Receberveiculo.setMinimumSize(new java.awt.Dimension(370, 275));
+        Receberveiculo.setPreferredSize(new java.awt.Dimension(370, 275));
+        Receberveiculo.setRequestFocusEnabled(false);
 
         jLabel77.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(60, 94, 115));
@@ -2007,13 +2010,13 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel79.setForeground(new java.awt.Color(217, 86, 74));
         jLabel79.setText("Km:");
 
-        jTextField6.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField6.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtkm.setBackground(new java.awt.Color(169, 202, 221));
+        txtkm.setForeground(new java.awt.Color(60, 94, 115));
+        txtkm.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtkm.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        txtkm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtkmActionPerformed(evt);
             }
         });
 
@@ -2024,18 +2027,23 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton13.setForeground(new java.awt.Color(235, 244, 249));
         jButton13.setText("Confirmar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jLabel80.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(217, 86, 74));
         jLabel80.setText("Nota:");
 
-        jTextField7.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField7.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtNota.setBackground(new java.awt.Color(169, 202, 221));
+        txtNota.setForeground(new java.awt.Color(60, 94, 115));
+        txtNota.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNota.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        txtNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtNotaActionPerformed(evt);
             }
         });
 
@@ -2043,86 +2051,88 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel81.setForeground(new java.awt.Color(217, 86, 74));
         jLabel81.setText("Matricula");
 
-        jTextField8.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField8.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtMatricula.setBackground(new java.awt.Color(169, 202, 221));
+        txtMatricula.setForeground(new java.awt.Color(60, 94, 115));
+        txtMatricula.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtMatricula.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        txtMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtMatriculaActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout SignUp1Layout = new javax.swing.GroupLayout(SignUp1);
-        SignUp1.setLayout(SignUp1Layout);
-        SignUp1Layout.setHorizontalGroup(
-            SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp1Layout.createSequentialGroup()
+        javax.swing.GroupLayout ReceberveiculoLayout = new javax.swing.GroupLayout(Receberveiculo);
+        Receberveiculo.setLayout(ReceberveiculoLayout);
+        ReceberveiculoLayout.setHorizontalGroup(
+            ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReceberveiculoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(SignUp1Layout.createSequentialGroup()
+                    .addGroup(ReceberveiculoLayout.createSequentialGroup()
+                        .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                        .addGap(122, 122, 122))
+                    .addGroup(ReceberveiculoLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(SignUp1Layout.createSequentialGroup()
+                        .addGroup(ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ReceberveiculoLayout.createSequentialGroup()
                                 .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtkm, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SignUp1Layout.createSequentialGroup()
+                                .addComponent(txtNota))
+                            .addGroup(ReceberveiculoLayout.createSequentialGroup()
                                 .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
-        SignUp1Layout.setVerticalGroup(
-            SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp1Layout.createSequentialGroup()
+        ReceberveiculoLayout.setVerticalGroup(
+            ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReceberveiculoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel77)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel79)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtkm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel80)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ReceberveiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel81)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel86)
                 .addGap(18, 18, 18)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout ReceberVeiculoLayout = new javax.swing.GroupLayout(ReceberVeiculo.getContentPane());
-        ReceberVeiculo.getContentPane().setLayout(ReceberVeiculoLayout);
-        ReceberVeiculoLayout.setHorizontalGroup(
-            ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout ReceberVeiculoFrameLayout = new javax.swing.GroupLayout(ReceberVeiculoFrame.getContentPane());
+        ReceberVeiculoFrame.getContentPane().setLayout(ReceberVeiculoFrameLayout);
+        ReceberVeiculoFrameLayout.setHorizontalGroup(
+            ReceberVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 355, Short.MAX_VALUE)
-            .addGroup(ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ReceberVeiculoLayout.createSequentialGroup()
+            .addGroup(ReceberVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ReceberVeiculoFrameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Receberveiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-        ReceberVeiculoLayout.setVerticalGroup(
-            ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        ReceberVeiculoFrameLayout.setVerticalGroup(
+            ReceberVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 782, Short.MAX_VALUE)
-            .addGroup(ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ReceberVeiculoLayout.createSequentialGroup()
+            .addGroup(ReceberVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ReceberVeiculoFrameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Receberveiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -2284,6 +2294,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton23.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jButton23.setForeground(new java.awt.Color(235, 244, 249));
         jButton23.setText("Receber Veículo");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -2394,7 +2409,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -3134,17 +3149,63 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtkmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtkmActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtNotaActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatriculaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtMatriculaActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        ReceberVeiculoFrame.setVisible(true);
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if(txtkm.getText().equals("") || txtNota.getText().equals("") || txtMatricula.getText().equals("")){
+            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de preencher os 3 campos.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            try {
+                ResultSet rs = db.select("select * from carrinhas where matricula = '" + txtMatricula.getText() + "'");
+                int counter = 0;
+                float precoDia = 0;
+                float precoExtra = 0;
+                int km = 0;
+                while(rs.next()){
+                    counter++;
+                    precoDia = Float.parseFloat(rs.getString("precoDia"));
+                    precoExtra = Float.parseFloat(rs.getString("precoKmExtra"));
+                    km = Integer.parseInt(rs.getString("nrKm"));
+                }
+                if(counter == 0){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Matricula não existe", "Erro", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    float aPagar = 0;
+                    float kmNovos = Integer.parseInt(txtkm.getText());
+                    rs = db.select("select * from aluguer where carrinha = '" + TxtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'");
+                    LocalDate dtIni = StringtoDate2(rs.getString("dataInicio"));
+                    LocalDate dtFim = StringtoDate2(rs.getString("dataFim"));
+                    int nrDias = (int) ChronoUnit.DAYS.between(dtIni, dtFim);
+                    if(kmNovos - km > (100 * nrDias)){
+                        aPagar += (kmNovos - km - (100 * nrDias)) * precoExtra;
+                        aPagar += nrDias * precoDia;
+                    }else{
+                        aPagar += nrDias * precoDia;
+                    }
+                    JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "Erro", JOptionPane.ERROR_MESSAGE);
+                    
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3282,14 +3343,14 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
-    private javax.swing.JFrame ReceberVeiculo;
+    private javax.swing.JFrame ReceberVeiculoFrame;
+    private javax.swing.JPanel Receberveiculo;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JFrame RegistarVeiculo;
     private javax.swing.JButton Registar_Func;
     private javax.swing.JButton Remover_Func;
     private javax.swing.JFrame ReportarProblemas;
     private javax.swing.JPanel SignUp;
-    private javax.swing.JPanel SignUp1;
     private javax.swing.JFrame SignUpFrame;
     private javax.swing.JTextField TextApolice;
     private javax.swing.JTextField TextDataFim;
@@ -3450,9 +3511,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada1;
     private javax.swing.JLabel lblCombustivel1;
@@ -3471,8 +3529,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField telemovel1;
     private javax.swing.JTextField txtDataFim;
     private javax.swing.JTextField txtDataInicio;
+    private javax.swing.JTextField txtMatricula;
+    private javax.swing.JTextField txtNota;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtkm;
     private javax.swing.JTextField username1;
     // End of variables declaration//GEN-END:variables
 }
