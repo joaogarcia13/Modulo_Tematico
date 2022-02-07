@@ -9,19 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-/*fazer ligacao ao cliente q pertence, nr quilometros
+//no receber veiculo
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -76,8 +74,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         MatriculaTxt = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         AlugarVeiculo = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
@@ -262,13 +260,13 @@ public class InterfaceMain extends javax.swing.JFrame {
         MainMenu = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        RegistarVeiculoBtn = new javax.swing.JButton();
+        AlugarVeiculoBtn = new javax.swing.JButton();
+        ConsultarVeiculoBtn = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
         BtnMainAcidente = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
+        ConsultarAcidenteBtn = new javax.swing.JButton();
+        ReceberVeiculoBtn = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
@@ -357,11 +355,9 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(239, 177, 74));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario.png"))); // NOI18N
-        jButton8.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
         jLabel11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendario.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -389,13 +385,13 @@ public class InterfaceMain extends javax.swing.JFrame {
                             .addGap(75, 75, 75)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LocalTxt)))
+                                .addComponent(LocalTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                                 .addComponent(DataAcidente, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(12, 12, 12)
-                            .addComponent(jButton8)))
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,14 +421,14 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(LocalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DataAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton8)))
-                .addGap(29, 29, 29)
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel34))
@@ -450,7 +446,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout ReportarProblemasLayout = new javax.swing.GroupLayout(ReportarProblemas.getContentPane());
@@ -507,23 +503,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblCarrinhas);
 
-        txtDataInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataInicioActionPerformed(evt);
-            }
-        });
-
         jLabel38.setForeground(new java.awt.Color(217, 86, 74));
         jLabel38.setText("Data Inicio: ");
 
         jLabel39.setForeground(new java.awt.Color(217, 86, 74));
         jLabel39.setText("Data Fim:");
-
-        txtDataFim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataFimActionPerformed(evt);
-            }
-        });
 
         btnFiltrar.setText("Filtrar");
         btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
@@ -722,11 +706,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jRadioButton5.setBackground(new java.awt.Color(239, 177, 74));
         jRadioButton5.setForeground(new java.awt.Color(217, 86, 74));
         jRadioButton5.setText("PayPau");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
-            }
-        });
 
         jRadioButton6.setBackground(new java.awt.Color(239, 177, 74));
         jRadioButton6.setForeground(new java.awt.Color(217, 86, 74));
@@ -735,11 +714,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jRadioButton7.setBackground(new java.awt.Color(239, 177, 74));
         jRadioButton7.setForeground(new java.awt.Color(217, 86, 74));
         jRadioButton7.setText("Transferencia Bancaria");
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
-            }
-        });
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(60, 94, 115));
@@ -937,11 +911,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                 LimparBtn_RegistarVeiculo(evt);
             }
         });
-        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnLimparActionPerformed(evt);
-            }
-        });
 
         jLabel30.setForeground(new java.awt.Color(217, 86, 74));
         jLabel30.setText("Ano");
@@ -1126,11 +1095,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         perfilHistorico.setBackground(new java.awt.Color(60, 94, 115));
         perfilHistorico.setForeground(new java.awt.Color(235, 244, 249));
         perfilHistorico.setText("Consultar histórico de aluguer");
-        perfilHistorico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilHistoricoActionPerformed(evt);
-            }
-        });
 
         cartaConducao.setEditable(false);
         cartaConducao.setBackground(new java.awt.Color(169, 202, 221));
@@ -1172,11 +1136,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(169, 202, 221));
         jTextField15.setText("7/10");
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
-            }
-        });
 
         jLabel49.setForeground(new java.awt.Color(217, 86, 74));
         jLabel49.setText("A sua classificação atual: ");
@@ -1192,54 +1151,56 @@ public class InterfaceMain extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel49)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(perfilHistorico))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(perfilHistorico))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel50)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cartaConducao, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel52)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(telemovel))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeUtilizador))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel51)
-                        .addGap(18, 18, 18)
-                        .addComponent(email))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel47)
+                                .addComponent(jLabel50)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cartaConducao, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel52)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(telemovel))
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel63)
+                                .addComponent(jLabel46)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                                .addComponent(nomeUtilizador))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addGap(18, 18, 18)
+                                .addComponent(email))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel47)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel63)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane3)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap(23, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel48)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
                 .addComponent(jLabel48)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(nomeUtilizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1289,11 +1250,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton28.setBackground(new java.awt.Color(217, 86, 74));
         jButton28.setForeground(new java.awt.Color(235, 244, 249));
         jButton28.setText("Limpar");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
-            }
-        });
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(60, 94, 115));
@@ -1301,55 +1257,25 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jTextField17.setBackground(new java.awt.Color(169, 202, 221));
         jTextField17.setText("hh:mm");
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
-            }
-        });
 
         jTextField18.setBackground(new java.awt.Color(169, 202, 221));
         jTextField18.setText("   --/--/--");
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
-            }
-        });
 
         jComboBox1.setBackground(new java.awt.Color(169, 202, 221));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jTextField19.setBackground(new java.awt.Color(169, 202, 221));
         jTextField19.setText("   --/--/--");
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
-            }
-        });
 
         jLabel54.setForeground(new java.awt.Color(217, 86, 74));
         jLabel54.setText("Data e hora de ínicio de aluguer");
 
         jTextField20.setBackground(new java.awt.Color(169, 202, 221));
         jTextField20.setText("hh:mm");
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
-            }
-        });
 
         jButton27.setBackground(new java.awt.Color(60, 94, 115));
         jButton27.setForeground(new java.awt.Color(235, 244, 249));
         jButton27.setText("Pesquisar");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
-            }
-        });
 
         jLabel55.setForeground(new java.awt.Color(217, 86, 74));
         jLabel55.setText("Data e hora de fim de aluguer");
@@ -1440,11 +1366,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(60, 94, 115));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(217, 86, 74));
@@ -1454,11 +1375,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField2.setForeground(new java.awt.Color(60, 94, 115));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(217, 86, 74));
@@ -1468,11 +1384,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField3.setForeground(new java.awt.Color(60, 94, 115));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
 
         jLabel6.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(217, 86, 74));
@@ -1482,11 +1393,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField4.setForeground(new java.awt.Color(60, 94, 115));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
 
         jLabel7.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(217, 86, 74));
@@ -1496,11 +1402,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField5.setForeground(new java.awt.Color(60, 94, 115));
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(217, 86, 74));
@@ -2015,11 +1916,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtkm.setForeground(new java.awt.Color(60, 94, 115));
         txtkm.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtkm.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        txtkm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtkmActionPerformed(evt);
-            }
-        });
 
         jLabel86.setForeground(new java.awt.Color(60, 94, 115));
         jLabel86.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -2028,6 +1924,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton13.setForeground(new java.awt.Color(235, 244, 249));
         jButton13.setText("Confirmar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarReceberVeiculoBtn(evt);
+            }
+        });
 
         jLabel80.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(217, 86, 74));
@@ -2037,11 +1938,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtNota.setForeground(new java.awt.Color(60, 94, 115));
         txtNota.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtNota.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        txtNota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNotaActionPerformed(evt);
-            }
-        });
 
         jLabel81.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(217, 86, 74));
@@ -2051,11 +1947,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtMatricula.setForeground(new java.awt.Color(60, 94, 115));
         txtMatricula.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtMatricula.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        txtMatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMatriculaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ReceberVeiculoLayout = new javax.swing.GroupLayout(ReceberVeiculo);
         ReceberVeiculo.setLayout(ReceberVeiculoLayout);
@@ -2242,30 +2133,30 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel41.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
-        jButton18.setBackground(new java.awt.Color(60, 94, 115));
-        jButton18.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(235, 244, 249));
-        jButton18.setText("Registar Veículo");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        RegistarVeiculoBtn.setBackground(new java.awt.Color(60, 94, 115));
+        RegistarVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        RegistarVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
+        RegistarVeiculoBtn.setText("Registar Veículo");
+        RegistarVeiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Registar_MainMenu_Btn(evt);
             }
         });
 
-        jButton19.setBackground(new java.awt.Color(60, 94, 115));
-        jButton19.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(235, 244, 249));
-        jButton19.setText("Alugar Veículo");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        AlugarVeiculoBtn.setBackground(new java.awt.Color(60, 94, 115));
+        AlugarVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        AlugarVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
+        AlugarVeiculoBtn.setText("Alugar Veículo");
+        AlugarVeiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                AlugarVeiculoMainMenuBtn(evt);
             }
         });
 
-        jButton20.setBackground(new java.awt.Color(60, 94, 115));
-        jButton20.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(235, 244, 249));
-        jButton20.setText("Consultar Veículo");
+        ConsultarVeiculoBtn.setBackground(new java.awt.Color(60, 94, 115));
+        ConsultarVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        ConsultarVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
+        ConsultarVeiculoBtn.setText("Consultar Veículo");
 
         jLabel43.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -2279,15 +2170,15 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setBackground(new java.awt.Color(60, 94, 115));
-        jButton22.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(235, 244, 249));
-        jButton22.setText("Consultar Acidente");
+        ConsultarAcidenteBtn.setBackground(new java.awt.Color(60, 94, 115));
+        ConsultarAcidenteBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        ConsultarAcidenteBtn.setForeground(new java.awt.Color(235, 244, 249));
+        ConsultarAcidenteBtn.setText("Consultar Acidente");
 
-        jButton23.setBackground(new java.awt.Color(60, 94, 115));
-        jButton23.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(235, 244, 249));
-        jButton23.setText("Receber Veículo");
+        ReceberVeiculoBtn.setBackground(new java.awt.Color(60, 94, 115));
+        ReceberVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        ReceberVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
+        ReceberVeiculoBtn.setText("Receber Veículo");
 
         jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -2327,19 +2218,19 @@ public class InterfaceMain extends javax.swing.JFrame {
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AlugarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegistarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConsultarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ReceberVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConsultarAcidenteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -2382,15 +2273,15 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RegistarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConsultarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AlugarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ReceberVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConsultarAcidenteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2406,74 +2297,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
-
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
-
-    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnLimparActionPerformed
-
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
-
-    private void perfilHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilHistoricoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_perfilHistoricoActionPerformed
-
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
-
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
-
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton27ActionPerformed
-
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton28ActionPerformed
 
     private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
         TxtMatricula.setText("");
@@ -2601,8 +2424,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
+    private void AlugarVeiculoMainMenuBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculoMainMenuBtn
         AlugarVeiculo.setLocationRelativeTo(null);
         AlugarVeiculo.setVisible(true);
         cmbMarca.removeAllItems();
@@ -2630,7 +2452,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_AlugarVeiculoMainMenuBtn
 
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
         //abrir thread
@@ -2772,16 +2594,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         //pedir á base de dados pela carta
     }//GEN-LAST:event_Consultar_Perfil
 
-    private void txtDataInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataInicioActionPerformed
-
-    private void txtDataFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataFimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataFimActionPerformed
-
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-            if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText())){ 
+            if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){ 
             String filtro = "";
             String queryCarrinhas = "select * from carrinhas where matricula <> ''";
             if(cmbMarca.getSelectedItem().toString() != "Todos"){
@@ -2849,7 +2663,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
 
          }else{
-            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar duas datas", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JOptionPane(), "Nãoforam selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
@@ -3133,7 +2947,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
             try {
-                //falta fazer verificação de erros
                 db.update("pessoas", "nome", nomeUtilizador1.getText(), "id", id);
                 db.update("pessoas", "numeroCC", docID1.getText(), "id", id);
                 db.update("pessoas", "numTelefone", telemovel1.getText(), "id", id);
@@ -3177,25 +2990,13 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
-    private void txtkmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtkmActionPerformed
-
-    private void txtNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNotaActionPerformed
-
-    private void txtMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatriculaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMatriculaActionPerformed
-
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
         ReceberVeiculoFrame.setVisible(true);
     }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
+    private void ConfirmarReceberVeiculoBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarReceberVeiculoBtn
+        //verificar se os km inseridos sao maiores que os que a carrinha tinha quando saiu
         if(txtkm.getText().equals("") || txtNota.getText().equals("") || txtMatricula.getText().equals("")){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de preencher os 3 campos.", "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
@@ -3233,7 +3034,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_ConfirmarReceberVeiculoBtn
 
     /**
      * @param args the command line arguments
@@ -3346,6 +3147,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame AlugarVeiculo;
+    private javax.swing.JButton AlugarVeiculoBtn;
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnMainAcidente;
@@ -3353,6 +3155,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboPotencia;
+    private javax.swing.JButton ConsultarAcidenteBtn;
+    private javax.swing.JButton ConsultarVeiculoBtn;
     private javax.swing.JTextField DataAcidente;
     private javax.swing.JTextField DataNascimento1;
     private javax.swing.JTextField DataPagamentoAc;
@@ -3372,9 +3176,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
     private javax.swing.JPanel ReceberVeiculo;
+    private javax.swing.JButton ReceberVeiculoBtn;
     private javax.swing.JFrame ReceberVeiculoFrame;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JFrame RegistarVeiculo;
+    private javax.swing.JButton RegistarVeiculoBtn;
     private javax.swing.JButton Registar_Func;
     private javax.swing.JButton Remover_Func;
     private javax.swing.JFrame ReportarProblemas;
@@ -3409,12 +3215,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
@@ -3423,7 +3224,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -3506,6 +3306,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
