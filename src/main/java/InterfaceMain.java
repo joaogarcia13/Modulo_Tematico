@@ -233,6 +233,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         Cargo1 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         DataRegisto1 = new javax.swing.JTextField();
+        ReceberVeiculo = new javax.swing.JFrame();
+        SignUp1 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
+        jLabel80 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel81 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -262,7 +274,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        ReportarProblemas.setPreferredSize(new java.awt.Dimension(635, 620));
         ReportarProblemas.setResizable(false);
         ReportarProblemas.setSize(new java.awt.Dimension(635, 600));
 
@@ -1973,6 +1984,148 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ReceberVeiculo.setMaximumSize(new java.awt.Dimension(350, 235));
+        ReceberVeiculo.setMinimumSize(new java.awt.Dimension(350, 235));
+        ReceberVeiculo.setPreferredSize(new java.awt.Dimension(350, 235));
+        ReceberVeiculo.setSize(new java.awt.Dimension(400, 445));
+
+        SignUp1.setBackground(new java.awt.Color(239, 177, 74));
+        SignUp1.setToolTipText("Sign Up");
+        SignUp1.setMaximumSize(new java.awt.Dimension(350, 235));
+        SignUp1.setMinimumSize(new java.awt.Dimension(350, 235));
+        SignUp1.setPreferredSize(new java.awt.Dimension(350, 235));
+        SignUp1.setRequestFocusEnabled(false);
+
+        jLabel77.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel77.setText("Receber Veiculo");
+
+        jLabel78.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel78.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jLabel79.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel79.setText("Km:");
+
+        jTextField6.setBackground(new java.awt.Color(169, 202, 221));
+        jTextField6.setForeground(new java.awt.Color(60, 94, 115));
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        jLabel86.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel86.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jButton13.setBackground(new java.awt.Color(60, 94, 115));
+        jButton13.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(235, 244, 249));
+        jButton13.setText("Confirmar");
+
+        jLabel80.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel80.setText("Nota:");
+
+        jTextField7.setBackground(new java.awt.Color(169, 202, 221));
+        jTextField7.setForeground(new java.awt.Color(60, 94, 115));
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+
+        jLabel81.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel81.setText("Matricula");
+
+        jTextField8.setBackground(new java.awt.Color(169, 202, 221));
+        jTextField8.setForeground(new java.awt.Color(60, 94, 115));
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SignUp1Layout = new javax.swing.GroupLayout(SignUp1);
+        SignUp1.setLayout(SignUp1Layout);
+        SignUp1Layout.setHorizontalGroup(
+            SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(SignUp1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(SignUp1Layout.createSequentialGroup()
+                                .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SignUp1Layout.createSequentialGroup()
+                                .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        SignUp1Layout.setVerticalGroup(
+            SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel77)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel79)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel80)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel86)
+                .addGap(18, 18, 18)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(225, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ReceberVeiculoLayout = new javax.swing.GroupLayout(ReceberVeiculo.getContentPane());
+        ReceberVeiculo.getContentPane().setLayout(ReceberVeiculoLayout);
+        ReceberVeiculoLayout.setHorizontalGroup(
+            ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 355, Short.MAX_VALUE)
+            .addGroup(ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ReceberVeiculoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        ReceberVeiculoLayout.setVerticalGroup(
+            ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 782, Short.MAX_VALUE)
+            .addGroup(ReceberVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ReceberVeiculoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(100000000, 10000000));
         setResizable(false);
@@ -2981,6 +3134,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3117,12 +3282,14 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
+    private javax.swing.JFrame ReceberVeiculo;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JFrame RegistarVeiculo;
     private javax.swing.JButton Registar_Func;
     private javax.swing.JButton Remover_Func;
     private javax.swing.JFrame ReportarProblemas;
     private javax.swing.JPanel SignUp;
+    private javax.swing.JPanel SignUp1;
     private javax.swing.JFrame SignUpFrame;
     private javax.swing.JTextField TextApolice;
     private javax.swing.JTextField TextDataFim;
@@ -3152,6 +3319,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
@@ -3243,7 +3411,13 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3276,6 +3450,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada1;
     private javax.swing.JLabel lblCombustivel1;
