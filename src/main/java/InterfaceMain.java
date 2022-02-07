@@ -34,6 +34,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-\\d{2}$";
     private final String formatoMatricula3 = "^\\d{2}-\\d{2}-[a-zA-z]{2}";
+    private final String formatoEmail = "^(.+)@(.+)$";
+    private final String formatoTelefone = "^\\d{9}$";
     private LocalDate todayDate;
     private boolean selecionarModelo = false; 
     private String id = null;
@@ -230,9 +232,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         IDUtil = new javax.swing.JLabel();
         IDFunc = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
-        Cargo1 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         DataRegisto1 = new javax.swing.JTextField();
+        ComboCargo = new javax.swing.JComboBox<>();
         ReceberVeiculo = new javax.swing.JFrame();
         SignUp1 = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
@@ -1839,14 +1841,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel68.setForeground(new java.awt.Color(217, 86, 74));
         jLabel68.setText("Documento de identificação:");
 
-        Cargo1.setEditable(false);
-        Cargo1.setBackground(new java.awt.Color(169, 202, 221));
-
         jLabel76.setForeground(new java.awt.Color(217, 86, 74));
         jLabel76.setText("Username:");
 
         DataRegisto1.setEditable(false);
         DataRegisto1.setBackground(new java.awt.Color(169, 202, 221));
+
+        ComboCargo.setBackground(new java.awt.Color(169, 202, 221));
+        ComboCargo.setEditable(true);
+        ComboCargo.setForeground(new java.awt.Color(100, 100, 100));
+        ComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cargo", "admin", "funcionario" }));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1876,7 +1880,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                                                 .addGap(32, 32, 32)
                                                 .addComponent(jLabel72)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Cargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(ComboCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGroup(jPanel10Layout.createSequentialGroup()
                                                 .addComponent(jLabel68)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1947,7 +1951,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel70)
                     .addComponent(telemovel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel72)
-                    .addComponent(Cargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel69)
@@ -1962,7 +1966,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel75)
                     .addComponent(pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel76))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel74)
                     .addComponent(DataRegisto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1987,6 +1991,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         ReceberVeiculo.setMaximumSize(new java.awt.Dimension(350, 235));
         ReceberVeiculo.setMinimumSize(new java.awt.Dimension(350, 235));
         ReceberVeiculo.setPreferredSize(new java.awt.Dimension(350, 235));
+        ReceberVeiculo.setResizable(false);
         ReceberVeiculo.setSize(new java.awt.Dimension(400, 445));
 
         SignUp1.setBackground(new java.awt.Color(239, 177, 74));
@@ -2079,7 +2084,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         SignUp1Layout.setVerticalGroup(
             SignUp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2102,7 +2107,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel86)
                 .addGap(18, 18, 18)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ReceberVeiculoLayout = new javax.swing.GroupLayout(ReceberVeiculo.getContentPane());
@@ -2989,8 +2994,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                 ResultSet rs = null;
                 rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
                 while(rs.next()){
-                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
-                        rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
+                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), DatetoString(StringtoDate2(rs.getString("dataRegistoSistema"))), 
+                        DatetoString(StringtoDate2(rs.getString("dataNascimento"))), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
                 }
                 tblFunc.setModel(model);
                 for(int i = 0; i < tblFunc.getColumnCount(); i++){
@@ -3034,8 +3039,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                 ResultSet rs = null;
                 rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
                 while(rs.next()){
-                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
-                        rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
+                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), DatetoString(StringtoDate2(rs.getString("dataRegistoSistema"))), 
+                        DatetoString(StringtoDate2(rs.getString("dataNascimento"))), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
                 }
                 tblFunc.setModel(model);
                 for(int i = 0; i < tblFunc.getColumnCount(); i++){
@@ -3065,10 +3070,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 morada1.setText(rs.getString("morada"));
                 username1.setText(rs.getString("username"));
                 IDFunc.setText(rs.getString("id"));
-                Cargo1.setText(rs.getString("cargo"));
-                DataNascimento1.setText(rs.getString("dataNascimento"));
-                System.out.println(DataNascimento1.getText());
-                DataRegisto1.setText(rs.getString("dataRegistoSistema"));
+                ComboCargo.setSelectedItem((rs.getString("cargo")));
+                DataNascimento1.setText(DatetoString(StringtoDate2(rs.getString("dataNascimento"))));
+                DataRegisto1.setText(DatetoString(StringtoDate2(rs.getString("dataRegistoSistema"))));
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3085,54 +3089,93 @@ public class InterfaceMain extends javax.swing.JFrame {
         username1.setEditable(true);
         DataNascimento1.setEditable(true);
         pass1.setEditable(true);
-        Cargo1.setEditable(true);
+        ComboCargo.setEditable(true);
     }//GEN-LAST:event_EditarFuncBtn
 
     private void ConfirmarEditarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarEditarFuncBtn
         String id = IDFunc.getText();
+        boolean erro = false;
+        int count = 0;
+        String mensagem = "Foram detectados os seguintes erros:\n";
+        
+        //email\ telefone,\ username\, cargo, verificar se a pass e nula\
+        if(!Pattern.matches(email.getText(), formatoEmail)){
+            erro = true;
+            mensagem += "\nEmail com formato inválido.";
+        }
+        ResultSet rs = null;
         try {
-            //falta fazer verificação de erros
-            db.update("pessoas", "nome", nomeUtilizador1.getText(), "id", id);
-            db.update("pessoas", "numeroCC", docID1.getText(), "id", id);
-            db.update("pessoas", "numTelefone", telemovel1.getText(), "id", id);
-            db.update("pessoas", "email", email1.getText(), "id", id);
-            db.update("pessoas", "morada", morada1.getText(), "id", id);
-            db.update("pessoas", "username", username1.getText(), "id", id);
-            db.update("funcionarios", "cargo", Cargo1.getText(), "idPessoa", id);
-            db.update("pessoas", "dataNascimento", DatetoString2(StringtoDate2(DataNascimento1.getText())), "id", id); //isto at dar erro com as datas
-            //verifica se a password nao e nula -> esperar pelo codigo feito pela LYLY para a validação
-            
-            DefaultTableModel model = new DefaultTableModel(){
-                @Override
-                 public boolean isCellEditable(int row, int column) {
-                    return false;
-            }}; 
-            model.addColumn("id");
-            model.addColumn("Nome");
-            model.addColumn("Numero CC");
-            model.addColumn("Morada");
-            model.addColumn("Data Registo");
-            model.addColumn("Data Nascimento");
-            model.addColumn("Telefone");
-            model.addColumn("Email");
-            model.addColumn("Cargo");
-            
-            ResultSet rs = null;
-            rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
-            while(rs.next()){
-                model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
-                    rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
-            }
-            tblFunc.setModel(model);
-            for(int i = 0; i < tblFunc.getColumnCount(); i++){
-                for (int j = 0; j < tblFunc.getRowCount(); j++) {
-                    tblFunc.isCellEditable(i, j);
-                }
-            }
+            rs = db.select("select * from pessoas where username = '" + username1.getText() + "'");
+            while (rs.next()){
+            count ++;
+        }
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-        PerfilFunc.dispose();
+        if(count != 0){
+            erro = true;
+            mensagem += "\nO username já existe.";
+        }
+        if(!Pattern.matches(telemovel1.getText(), formatoTelefone)){
+            erro = true;
+            mensagem += "\nNumero telefone/telemovél inválido.";
+        }
+        if(pass1.getText() == "" || pass1.getText() == null){
+            erro = true;
+            mensagem +="\nNova password não pode ser nula.";
+        }
+        try{
+            LocalDate date = StringtoDate(DataNascimento1.getText());
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nData de Nascimento inválida";
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            try {
+                //falta fazer verificação de erros
+                db.update("pessoas", "nome", nomeUtilizador1.getText(), "id", id);
+                db.update("pessoas", "numeroCC", docID1.getText(), "id", id);
+                db.update("pessoas", "numTelefone", telemovel1.getText(), "id", id);
+                db.update("pessoas", "email", email1.getText(), "id", id);
+                db.update("pessoas", "morada", morada1.getText(), "id", id);
+                db.update("pessoas", "username", username1.getText(), "id", id);
+                db.update("funcionarios", "cargo", ComboCargo.getSelectedItem().toString(), "idPessoa", id);
+                db.update("pessoas", "dataNascimento", DatetoString2(StringtoDate2(DataNascimento1.getText())), "id", id); //isto at dar erro com as datas
+
+                DefaultTableModel model = new DefaultTableModel(){
+                    @Override
+                     public boolean isCellEditable(int row, int column) {
+                        return false;
+                }}; 
+                model.addColumn("id");
+                model.addColumn("Nome");
+                model.addColumn("Numero CC");
+                model.addColumn("Morada");
+                model.addColumn("Data Registo");
+                model.addColumn("Data Nascimento");
+                model.addColumn("Telefone");
+                model.addColumn("Email");
+                model.addColumn("Cargo");
+
+                rs = null;
+                rs = db.select("select pessoas.*, funcionarios.* from PTDA_BD_1.pessoas as pessoas right outer join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa");
+                while(rs.next()){
+                    model.addRow(new Object[]{rs.getString("id"), rs.getString("nome"), rs.getString("numeroCC"), rs.getString("morada"), rs.getString("dataRegistoSistema"), 
+                        rs.getString("dataNascimento"), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
+                }
+                tblFunc.setModel(model);
+                for(int i = 0; i < tblFunc.getColumnCount(); i++){
+                    for (int j = 0; j < tblFunc.getRowCount(); j++) {
+                        tblFunc.isCellEditable(i, j);
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            PerfilFunc.dispose();
+        }
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
@@ -3261,7 +3304,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnMainAcidente;
-    private javax.swing.JTextField Cargo1;
+    private javax.swing.JComboBox<String> ComboCargo;
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboPotencia;
