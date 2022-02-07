@@ -262,7 +262,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        ReportarProblemas.setPreferredSize(new java.awt.Dimension(635, 620));
         ReportarProblemas.setResizable(false);
         ReportarProblemas.setSize(new java.awt.Dimension(635, 600));
 
@@ -2913,8 +2912,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 username1.setText(rs.getString("username"));
                 IDFunc.setText(rs.getString("id"));
                 Cargo1.setText(rs.getString("cargo"));
-                DataNascimento1.setText(DatetoString(StringtoDate2(rs.getString("dataNascimento"))));
-                DataRegisto1.setText(DatetoString(StringtoDate2(rs.getString("dataRegistoSistema"))));
+                DataNascimento1.setText(rs.getString("dataNascimento"));
+                System.out.println(DataNascimento1.getText());
+                DataRegisto1.setText(rs.getString("dataRegistoSistema"));
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2938,7 +2938,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         String id = IDFunc.getText();
         try {
             //falta fazer verificação de erros
-            //isto tem de ser um procedimento na base dados
             db.update("pessoas", "nome", nomeUtilizador1.getText(), "id", id);
             db.update("pessoas", "numeroCC", docID1.getText(), "id", id);
             db.update("pessoas", "numTelefone", telemovel1.getText(), "id", id);
@@ -2979,6 +2978,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
+        PerfilFunc.dispose();
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
     /**
