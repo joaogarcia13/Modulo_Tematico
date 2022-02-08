@@ -176,28 +176,31 @@ public class InterfaceMain extends javax.swing.JFrame {
         jTextField20 = new javax.swing.JTextField();
         jButton27 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
-        SignUpFrame = new javax.swing.JFrame();
-        SignUp = new javax.swing.JPanel();
+        RegistarFuncFrame = new javax.swing.JFrame();
+        RegistarFunc1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        EmailRegistoFunc = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        NomeRegistoFunc = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        ContactoRegistoFunc = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        MoradaRegistoFunc = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel9 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        CCRegistoFunc = new javax.swing.JTextField();
+        jLabel100 = new javax.swing.JLabel();
+        DataNascimentoRegistoFunc = new javax.swing.JTextField();
+        jLabel101 = new javax.swing.JLabel();
+        UsernameFuncRegisto1 = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        PasswordRegistoFunc1 = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        CargoRegistoFunc = new javax.swing.JComboBox<>();
         GerirFuncionario = new javax.swing.JFrame();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -247,6 +250,33 @@ public class InterfaceMain extends javax.swing.JFrame {
         txtNota = new javax.swing.JTextField();
         jLabel81 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
+        RegistarClienteFrame = new javax.swing.JFrame();
+        RegistarCliente = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        EmailRegistoCliente1 = new javax.swing.JTextField();
+        jLabel90 = new javax.swing.JLabel();
+        NomeRegistoCliente1 = new javax.swing.JTextField();
+        jLabel91 = new javax.swing.JLabel();
+        ContactoRegistoCliente1 = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
+        MoradaRegistoCliente1 = new javax.swing.JTextField();
+        jLabel93 = new javax.swing.JLabel();
+        ValidadeCartaRegisto2 = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel95 = new javax.swing.JLabel();
+        CCRegistoCliente1 = new javax.swing.JTextField();
+        jLabel96 = new javax.swing.JLabel();
+        CartaConducaoRegisto2 = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        DataEmissaoRegisto2 = new javax.swing.JTextField();
+        jLabel98 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel99 = new javax.swing.JLabel();
+        ValidadeCartaRegisto3 = new javax.swing.JTextField();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -1348,12 +1378,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        SignUp.setBackground(new java.awt.Color(239, 177, 74));
-        SignUp.setToolTipText("Sign Up");
+        RegistarFunc1.setBackground(new java.awt.Color(239, 177, 74));
+        RegistarFunc1.setToolTipText("Sign Up");
 
         jLabel1.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel1.setText("Registar Cliente");
+        jLabel1.setText("Registar Funcionário");
 
         jLabel2.setForeground(new java.awt.Color(60, 94, 115));
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -1362,62 +1392,41 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(217, 86, 74));
         jLabel3.setText("Email:");
 
-        jTextField1.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField1.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        EmailRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        EmailRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        EmailRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        EmailRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel4.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(217, 86, 74));
         jLabel4.setText("Nome:");
 
-        jTextField2.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField2.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        NomeRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        NomeRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        NomeRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        NomeRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel5.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(217, 86, 74));
         jLabel5.setText("Nº Telemovél:");
 
-        jTextField3.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField3.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        ContactoRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        ContactoRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        ContactoRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ContactoRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel6.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(217, 86, 74));
         jLabel6.setText("Morada:");
 
-        jTextField4.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField4.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        MoradaRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        MoradaRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        MoradaRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MoradaRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel7.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(217, 86, 74));
         jLabel7.setText("Nº Documento Identificaçao:");
-
-        jTextField5.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField5.setForeground(new java.awt.Color(60, 94, 115));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-
-        jLabel8.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel8.setText("Password:");
-
-        jPasswordField1.setBackground(new java.awt.Color(169, 202, 221));
-        jPasswordField1.setForeground(new java.awt.Color(60, 94, 115));
-        jPasswordField1.setText("pasadwqdq");
-
-        jLabel9.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel9.setText("Confirmar Password:");
-
-        jPasswordField2.setBackground(new java.awt.Color(169, 202, 221));
-        jPasswordField2.setForeground(new java.awt.Color(60, 94, 115));
-        jPasswordField2.setText("pasadwqdq");
 
         jLabel10.setForeground(new java.awt.Color(60, 94, 115));
         jLabel10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -1432,50 +1441,85 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(235, 244, 249));
         jButton2.setText("Confirmar");
 
-        jButton9.setBackground(new java.awt.Color(239, 177, 74));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ponto_interrogação.png"))); // NOI18N
-        jButton9.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        CCRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        CCRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        CCRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CCRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
-        javax.swing.GroupLayout SignUpLayout = new javax.swing.GroupLayout(SignUp);
-        SignUp.setLayout(SignUpLayout);
-        SignUpLayout.setHorizontalGroup(
-            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignUpLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
-            .addGroup(SignUpLayout.createSequentialGroup()
-                .addGroup(SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUpLayout.createSequentialGroup()
+        jLabel100.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel100.setText("Username:");
+
+        DataNascimentoRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        DataNascimentoRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
+        DataNascimentoRegistoFunc.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DataNascimentoRegistoFunc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel101.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel101.setText("Password:");
+
+        UsernameFuncRegisto1.setBackground(new java.awt.Color(169, 202, 221));
+        UsernameFuncRegisto1.setForeground(new java.awt.Color(60, 94, 115));
+        UsernameFuncRegisto1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        UsernameFuncRegisto1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel83.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel83.setText("Data Nascimento:");
+
+        PasswordRegistoFunc1.setBackground(new java.awt.Color(169, 202, 221));
+        PasswordRegistoFunc1.setForeground(new java.awt.Color(60, 94, 115));
+        PasswordRegistoFunc1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        PasswordRegistoFunc1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel84.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel84.setText("Cargo:");
+
+        CargoRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
+        CargoRegistoFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "funcionario" }));
+
+        javax.swing.GroupLayout RegistarFunc1Layout = new javax.swing.GroupLayout(RegistarFunc1);
+        RegistarFunc1.setLayout(RegistarFunc1Layout);
+        RegistarFunc1Layout.setHorizontalGroup(
+            RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addGroup(SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPasswordField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(SignUpLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(MoradaRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ContactoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NomeRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(EmailRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CCRegistoFunc)
+                            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(DataNascimentoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel101, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(UsernameFuncRegisto1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(PasswordRegistoFunc1)
+                            .addComponent(jLabel84, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(CargoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
-        SignUpLayout.setVerticalGroup(
-            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUpLayout.createSequentialGroup()
+        RegistarFunc1Layout.setVerticalGroup(
+            RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarFunc1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1483,60 +1527,66 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EmailRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NomeRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ContactoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MoradaRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addComponent(CCRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel100)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(UsernameFuncRegisto1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel101)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PasswordRegistoFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DataNascimentoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel84)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CargoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout SignUpFrameLayout = new javax.swing.GroupLayout(SignUpFrame.getContentPane());
-        SignUpFrame.getContentPane().setLayout(SignUpFrameLayout);
-        SignUpFrameLayout.setHorizontalGroup(
-            SignUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout RegistarFuncFrameLayout = new javax.swing.GroupLayout(RegistarFuncFrame.getContentPane());
+        RegistarFuncFrame.getContentPane().setLayout(RegistarFuncFrameLayout);
+        RegistarFuncFrameLayout.setHorizontalGroup(
+            RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 355, Short.MAX_VALUE)
-            .addGroup(SignUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(SignUpFrameLayout.createSequentialGroup()
+            .addGroup(RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistarFuncFrameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegistarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-        SignUpFrameLayout.setVerticalGroup(
-            SignUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        RegistarFuncFrameLayout.setVerticalGroup(
+            RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 782, Short.MAX_VALUE)
-            .addGroup(SignUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(SignUpFrameLayout.createSequentialGroup()
+            .addGroup(RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistarFuncFrameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegistarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -1891,7 +1941,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         ReceberVeiculoFrame.setMinimumSize(new java.awt.Dimension(350, 235));
-        ReceberVeiculoFrame.setPreferredSize(new java.awt.Dimension(350, 270));
         ReceberVeiculoFrame.setResizable(false);
         ReceberVeiculoFrame.setSize(new java.awt.Dimension(350, 270));
 
@@ -2019,6 +2068,234 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(ReceberVeiculoFrameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(ReceberVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        RegistarCliente.setBackground(new java.awt.Color(239, 177, 74));
+        RegistarCliente.setToolTipText("Sign Up");
+
+        jLabel8.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel8.setText("Registar Cliente");
+
+        jLabel9.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jLabel89.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel89.setText("Email:");
+
+        EmailRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
+        EmailRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
+        EmailRegistoCliente1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        EmailRegistoCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel90.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel90.setText("Nome:");
+
+        NomeRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
+        NomeRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
+        NomeRegistoCliente1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        NomeRegistoCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel91.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel91.setText("Nº Telemovél:");
+
+        ContactoRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
+        ContactoRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
+        ContactoRegistoCliente1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ContactoRegistoCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel92.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel92.setText("Morada:");
+
+        MoradaRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
+        MoradaRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
+        MoradaRegistoCliente1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MoradaRegistoCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel93.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel93.setText("Nº Documento Identificaçao:");
+
+        ValidadeCartaRegisto2.setBackground(new java.awt.Color(169, 202, 221));
+        ValidadeCartaRegisto2.setForeground(new java.awt.Color(60, 94, 115));
+        ValidadeCartaRegisto2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ValidadeCartaRegisto2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel94.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel94.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jButton8.setBackground(new java.awt.Color(217, 86, 74));
+        jButton8.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(235, 244, 249));
+        jButton8.setText("Reset");
+
+        jButton9.setBackground(new java.awt.Color(60, 94, 115));
+        jButton9.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(235, 244, 249));
+        jButton9.setText("Confirmar");
+
+        jLabel95.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel95.setText("Data Emissao Carta COndução:");
+
+        CCRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
+        CCRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
+        CCRegistoCliente1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CCRegistoCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel96.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel96.setText("Carta Condução:");
+
+        CartaConducaoRegisto2.setBackground(new java.awt.Color(169, 202, 221));
+        CartaConducaoRegisto2.setForeground(new java.awt.Color(60, 94, 115));
+        CartaConducaoRegisto2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CartaConducaoRegisto2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel97.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel97.setText("Categoria Carta Condução:");
+
+        DataEmissaoRegisto2.setBackground(new java.awt.Color(169, 202, 221));
+        DataEmissaoRegisto2.setForeground(new java.awt.Color(60, 94, 115));
+        DataEmissaoRegisto2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DataEmissaoRegisto2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel98.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel98.setText("Validade Carta Condução:");
+
+        jComboBox3.setBackground(new java.awt.Color(169, 202, 221));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A1", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE" }));
+
+        jLabel99.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel99.setText("Data Nascimento:");
+
+        ValidadeCartaRegisto3.setBackground(new java.awt.Color(169, 202, 221));
+        ValidadeCartaRegisto3.setForeground(new java.awt.Color(60, 94, 115));
+        ValidadeCartaRegisto3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ValidadeCartaRegisto3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        javax.swing.GroupLayout RegistarClienteLayout = new javax.swing.GroupLayout(RegistarCliente);
+        RegistarCliente.setLayout(RegistarClienteLayout);
+        RegistarClienteLayout.setHorizontalGroup(
+            RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarClienteLayout.createSequentialGroup()
+                .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarClienteLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistarClienteLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel93, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(ValidadeCartaRegisto2)
+                                .addComponent(MoradaRegistoCliente1)
+                                .addComponent(ContactoRegistoCliente1)
+                                .addComponent(NomeRegistoCliente1)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(EmailRegistoCliente1)
+                                .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel95, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel96, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(CartaConducaoRegisto2)
+                                .addComponent(jLabel97, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(DataEmissaoRegisto2)
+                                .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                .addComponent(ValidadeCartaRegisto3, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        RegistarClienteLayout.setVerticalGroup(
+            RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarClienteLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel89)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EmailRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel90)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NomeRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel91)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ContactoRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel92)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MoradaRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel96)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CartaConducaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel95)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DataEmissaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel98)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ValidadeCartaRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel97)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel99)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ValidadeCartaRegisto3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout RegistarClienteFrameLayout = new javax.swing.GroupLayout(RegistarClienteFrame.getContentPane());
+        RegistarClienteFrame.getContentPane().setLayout(RegistarClienteFrameLayout);
+        RegistarClienteFrameLayout.setHorizontalGroup(
+            RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 355, Short.MAX_VALUE)
+            .addGroup(RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        RegistarClienteFrameLayout.setVerticalGroup(
+            RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 970, Short.MAX_VALUE)
+            .addGroup(RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -3161,18 +3438,28 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnMainAcidente;
+    private javax.swing.JTextField CCRegistoCliente1;
+    private javax.swing.JTextField CCRegistoFunc;
+    private javax.swing.JComboBox<String> CargoRegistoFunc;
+    private javax.swing.JTextField CartaConducaoRegisto2;
     private javax.swing.JComboBox<String> ComboCargo;
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboPotencia;
     private javax.swing.JButton ConsultarAcidenteBtn;
     private javax.swing.JButton ConsultarVeiculoBtn;
+    private javax.swing.JTextField ContactoRegistoCliente1;
+    private javax.swing.JTextField ContactoRegistoFunc;
     private javax.swing.JTextField DataAcidente;
+    private javax.swing.JTextField DataEmissaoRegisto2;
     private javax.swing.JTextField DataNascimento1;
+    private javax.swing.JTextField DataNascimentoRegistoFunc;
     private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DataRegisto1;
     private javax.swing.JTextField DescricaoAcidente1;
     private javax.swing.JButton Editar_func;
+    private javax.swing.JTextField EmailRegistoCliente1;
+    private javax.swing.JTextField EmailRegistoFunc;
     private javax.swing.JFrame GerirFuncionario;
     private javax.swing.JTextField IDFunc;
     private javax.swing.JLabel IDUtil;
@@ -3181,21 +3468,28 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel Login;
     private javax.swing.JPanel MainMenu;
     private javax.swing.JTextField MatriculaTxt;
+    private javax.swing.JTextField MoradaRegistoCliente1;
+    private javax.swing.JTextField MoradaRegistoFunc;
+    private javax.swing.JTextField NomeRegistoCliente1;
+    private javax.swing.JTextField NomeRegistoFunc;
     private javax.swing.JFrame Pagamento;
+    private javax.swing.JTextField PasswordRegistoFunc1;
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
     private javax.swing.JPanel ReceberVeiculo;
     private javax.swing.JButton ReceberVeiculoBtn;
     private javax.swing.JFrame ReceberVeiculoFrame;
+    private javax.swing.JPanel RegistarCliente;
+    private javax.swing.JFrame RegistarClienteFrame;
     private javax.swing.JButton RegistarFunc;
+    private javax.swing.JPanel RegistarFunc1;
+    private javax.swing.JFrame RegistarFuncFrame;
     private javax.swing.JFrame RegistarVeiculo;
     private javax.swing.JButton RegistarVeiculoBtn;
     private javax.swing.JButton Registar_Func;
     private javax.swing.JButton Remover_Func;
     private javax.swing.JFrame ReportarProblemas;
-    private javax.swing.JPanel SignUp;
-    private javax.swing.JFrame SignUpFrame;
     private javax.swing.JTextField TextApolice;
     private javax.swing.JTextField TextDataFim;
     private javax.swing.JTextField TextDataInicio;
@@ -3205,6 +3499,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField TxtKilomet;
     private javax.swing.JTextField TxtMatricula;
     private javax.swing.JTextField TxtModelo;
+    private javax.swing.JTextField UsernameFuncRegisto1;
+    private javax.swing.JTextField ValidadeCartaRegisto2;
+    private javax.swing.JTextField ValidadeCartaRegisto3;
     private javax.swing.JTextField ValorPagarAc;
     private javax.swing.JButton btnAlugar;
     private javax.swing.JButton btnConfirmar;
@@ -3234,10 +3531,14 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -3317,8 +3618,21 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -3329,8 +3643,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
@@ -3340,16 +3652,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblAno1;
     private javax.swing.JLabel lblCelindrada1;
     private javax.swing.JLabel lblCombustivel1;
