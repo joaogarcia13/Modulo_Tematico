@@ -1,6 +1,5 @@
 package main.java;
 
-
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -19,12 +18,14 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-//no receber veiculo
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+//ToDo:
+
+//-ver se nao temos classes que nao sao usadas
 /**
  *
  * @author joaogarcia
@@ -273,9 +274,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel97 = new javax.swing.JLabel();
         DataEmissaoRegisto2 = new javax.swing.JTextField();
         jLabel98 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        CategoriaRegistoCliente = new javax.swing.JComboBox<>();
         jLabel99 = new javax.swing.JLabel();
-        ValidadeCartaRegisto3 = new javax.swing.JTextField();
+        DataNascimentoRegistoCliente = new javax.swing.JTextField();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -2089,8 +2090,13 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        RegistarClienteFrame.setMaximumSize(new java.awt.Dimension(732, 664));
+        RegistarClienteFrame.setPreferredSize(new java.awt.Dimension(732, 664));
+        RegistarClienteFrame.setSize(new java.awt.Dimension(732, 664));
+
         RegistarCliente.setBackground(new java.awt.Color(239, 177, 74));
         RegistarCliente.setToolTipText("Sign Up");
+        RegistarCliente.setMaximumSize(new java.awt.Dimension(732, 664));
 
         jLabel8.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(60, 94, 115));
@@ -2151,6 +2157,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton8.setForeground(new java.awt.Color(235, 244, 249));
         jButton8.setText("Reset");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetRegistarClienteBtn(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(60, 94, 115));
         jButton9.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
@@ -2188,57 +2199,63 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel98.setForeground(new java.awt.Color(217, 86, 74));
         jLabel98.setText("Validade Carta Condução:");
 
-        jComboBox3.setBackground(new java.awt.Color(169, 202, 221));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A1", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE" }));
+        CategoriaRegistoCliente.setBackground(new java.awt.Color(169, 202, 221));
+        CategoriaRegistoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria", "A1", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE" }));
 
         jLabel99.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel99.setForeground(new java.awt.Color(217, 86, 74));
         jLabel99.setText("Data Nascimento:");
 
-        ValidadeCartaRegisto3.setBackground(new java.awt.Color(169, 202, 221));
-        ValidadeCartaRegisto3.setForeground(new java.awt.Color(60, 94, 115));
-        ValidadeCartaRegisto3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        ValidadeCartaRegisto3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DataNascimentoRegistoCliente.setBackground(new java.awt.Color(169, 202, 221));
+        DataNascimentoRegistoCliente.setForeground(new java.awt.Color(60, 94, 115));
+        DataNascimentoRegistoCliente.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DataNascimentoRegistoCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         javax.swing.GroupLayout RegistarClienteLayout = new javax.swing.GroupLayout(RegistarCliente);
         RegistarCliente.setLayout(RegistarClienteLayout);
         RegistarClienteLayout.setHorizontalGroup(
             RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistarClienteLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistarClienteLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistarClienteLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistarClienteLayout.createSequentialGroup()
                         .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel93, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(ValidadeCartaRegisto2)
-                                .addComponent(MoradaRegistoCliente1)
-                                .addComponent(ContactoRegistoCliente1)
-                                .addComponent(NomeRegistoCliente1)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EmailRegistoCliente1)
-                                .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel95, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel96, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(CartaConducaoRegisto2)
-                                .addComponent(jLabel97, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(DataEmissaoRegisto2)
-                                .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addComponent(ValidadeCartaRegisto3, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(jLabel94, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(RegistarClienteLayout.createSequentialGroup()
+                                .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel93, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                    .addComponent(MoradaRegistoCliente1)
+                                    .addComponent(ContactoRegistoCliente1)
+                                    .addComponent(NomeRegistoCliente1)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EmailRegistoCliente1)
+                                    .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ValidadeCartaRegisto2)
+                                    .addComponent(jLabel95, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel96, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CartaConducaoRegisto2)
+                                    .addComponent(jLabel97, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(DataEmissaoRegisto2)
+                                    .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CategoriaRegistoCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(DataNascimentoRegistoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(24, 24, 24))))
+            .addGroup(RegistarClienteLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegistarClienteLayout.setVerticalGroup(
             RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2248,73 +2265,67 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(jLabel89)
+                .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel89)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EmailRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel90)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NomeRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel91)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ContactoRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel92)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MoradaRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel93)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistarClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel96)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CartaConducaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel95)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DataEmissaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel98)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValidadeCartaRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel97)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CategoriaRegistoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel99)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DataNascimentoRegistoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel90)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel91)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContactoRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel92)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MoradaRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel93)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CCRegistoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel96)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CartaConducaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel95)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DataEmissaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel98)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ValidadeCartaRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel97)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel99)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ValidadeCartaRegisto3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RegistarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout RegistarClienteFrameLayout = new javax.swing.GroupLayout(RegistarClienteFrame.getContentPane());
         RegistarClienteFrame.getContentPane().setLayout(RegistarClienteFrameLayout);
         RegistarClienteFrameLayout.setHorizontalGroup(
             RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
-            .addGroup(RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(RegistarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         RegistarClienteFrameLayout.setVerticalGroup(
             RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
-            .addGroup(RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
+                .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 335, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2516,6 +2527,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         RegistarClienteBtn.setBackground(new java.awt.Color(239, 177, 74));
         RegistarClienteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registarCliente.png"))); // NOI18N
         RegistarClienteBtn.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        RegistarClienteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistarClienteBtn(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
         MainMenu.setLayout(MainMenuLayout);
@@ -3437,6 +3453,24 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarRegistoFunc
 
+    private void RegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarClienteBtn
+        RegistarClienteFrame.setVisible(true);
+        RegistarClienteFrame.setLocationRelativeTo(null);
+    }//GEN-LAST:event_RegistarClienteBtn
+
+    private void ResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistarClienteBtn
+        EmailRegistoCliente1.setText("");
+        NomeRegistoCliente1.setText("");
+        CCRegistoCliente1.setText("");
+        MoradaRegistoCliente1.setText("");
+        CCRegistoCliente1.setText("");
+        CartaConducaoRegisto2.setText("");
+        DataEmissaoRegisto2.setText("");
+        ValidadeCartaRegisto2.setText("");
+        DataNascimentoRegistoCliente.setText("");
+        CategoriaRegistoCliente.setSelectedIndex(0);
+    }//GEN-LAST:event_ResetRegistarClienteBtn
+
     /**
      * @param args the command line arguments
      */
@@ -3556,6 +3590,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField CCRegistoFunc;
     private javax.swing.JComboBox<String> CargoRegistoFunc;
     private javax.swing.JTextField CartaConducaoRegisto2;
+    private javax.swing.JComboBox<String> CategoriaRegistoCliente;
     private javax.swing.JComboBox<String> ComboCargo;
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
@@ -3567,6 +3602,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField DataAcidente;
     private javax.swing.JTextField DataEmissaoRegisto2;
     private javax.swing.JTextField DataNascimento1;
+    private javax.swing.JTextField DataNascimentoRegistoCliente;
     private javax.swing.JTextField DataNascimentoRegistoFunc;
     private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DataRegisto1;
@@ -3616,7 +3652,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField TxtModelo;
     private javax.swing.JTextField UsernameFuncRegisto1;
     private javax.swing.JTextField ValidadeCartaRegisto2;
-    private javax.swing.JTextField ValidadeCartaRegisto3;
     private javax.swing.JTextField ValorPagarAc;
     private javax.swing.JButton btnAlugar;
     private javax.swing.JButton btnConfirmar;
@@ -3648,7 +3683,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
