@@ -76,7 +76,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         AlugarVeiculo = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -2047,7 +2046,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel86)
                 .addGap(18, 18, 18)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ReceberVeiculoFrameLayout = new javax.swing.GroupLayout(ReceberVeiculoFrame.getContentPane());
@@ -3298,9 +3297,14 @@ public class InterfaceMain extends javax.swing.JFrame {
                 if(counter == 0){
                     JOptionPane.showMessageDialog(new JOptionPane(), "Matricula não existe", "Erro", JOptionPane.ERROR_MESSAGE);
                 }else{
+                    rs = null;
                     float aPagar = 0;
                     float kmNovos = Integer.parseInt(txtkm.getText());
-                    rs = db.select("select * from aluguer where carrinha = '" + TxtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'");
+                    String cmd = "select * from aluguer where carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'";
+                    System.out.println(cmd);
+                    rs = db.select(cmd);
+                    rs.next();//verificar se o aluguer ja foi pago e se os quilometros novos < quilometros velhos
+                    
                     LocalDate dtIni = StringtoDate2(rs.getString("dataInicio"));
                     LocalDate dtFim = StringtoDate2(rs.getString("dataFim"));
                     int nrDias = (int) ChronoUnit.DAYS.between(dtIni, dtFim);
@@ -3310,8 +3314,10 @@ public class InterfaceMain extends javax.swing.JFrame {
                     }else{
                         aPagar += nrDias * precoDia;
                     }
-                    JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "Erro", JOptionPane.ERROR_MESSAGE);
-                    
+                    JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "A pagar:", JOptionPane.ERROR_MESSAGE);
+                    cmd = "update aluguer set pago = 'Sim', kmRecebido = '" + txtkm.getText() + "' where carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'";
+                    System.out.println(cmd);
+                    db.executeInsert(cmd);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -3506,7 +3512,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton btnAlugar;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFiltrar;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cartaConducao;
     private javax.swing.JComboBox<String> cmbCategoria;
     private javax.swing.JComboBox<String> cmbCombustível;
