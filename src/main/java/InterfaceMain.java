@@ -1353,7 +1353,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel1.setText("Registar Conta");
+        jLabel1.setText("Registar Cliente");
 
         jLabel2.setForeground(new java.awt.Color(60, 94, 115));
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
@@ -1891,8 +1891,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         ReceberVeiculoFrame.setMinimumSize(new java.awt.Dimension(350, 235));
+        ReceberVeiculoFrame.setPreferredSize(new java.awt.Dimension(350, 270));
         ReceberVeiculoFrame.setResizable(false);
-        ReceberVeiculoFrame.setSize(new java.awt.Dimension(400, 445));
+        ReceberVeiculoFrame.setSize(new java.awt.Dimension(350, 270));
 
         ReceberVeiculo.setBackground(new java.awt.Color(239, 177, 74));
         ReceberVeiculo.setToolTipText("Sign Up");
@@ -2179,6 +2180,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         ReceberVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         ReceberVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
         ReceberVeiculoBtn.setText("Receber Veículo");
+        ReceberVeiculoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReceberVeiculoBtnActionPerformed(evt);
+            }
+        });
 
         jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -3035,6 +3041,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ConfirmarReceberVeiculoBtn
+
+    private void ReceberVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceberVeiculoBtnActionPerformed
+        ReceberVeiculoFrame.setVisible(true);
+    }//GEN-LAST:event_ReceberVeiculoBtnActionPerformed
 
     /**
      * @param args the command line arguments
