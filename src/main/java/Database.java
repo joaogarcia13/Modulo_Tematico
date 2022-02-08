@@ -76,6 +76,28 @@ public class Database{
         cmd = cmd + "'" + carrinha + "') ";
         stm.executeUpdate(cmd);
     }
+    public void insertFuncionario(Funcionario f) throws SQLException{
+        String cmd;
+        cmd = "insert into pessoas(nome, numeroCC, morada, dataRegistoSistema, dataNascimento, numTelefone, email, username, password)values(";
+        cmd = cmd + "'" + f.getNome() + "', ";
+        cmd = cmd + "'" + f.getNumeroCidadao()+ "', ";
+        cmd = cmd + "'" + f.getMorada() + "', ";
+        cmd = cmd + "'" + f.getDataRegistoSistema().toString() + "', ";
+        cmd = cmd + "'" + f.getDataNascimento().toString() + "', ";
+        cmd = cmd + "'" + f.getNumTelefone()+ "', ";
+        cmd = cmd + "'" + f.getEmail() + "', ";
+        cmd = cmd + "'" + f.getUsername() + "', ";
+        cmd = cmd + "'" + f.getPassword()+ "') ";
+        stm.executeUpdate(cmd);
+        ResultSet rs = null;
+        rs = select("select id from pessoas where numeroCC='" + f.getNumeroCidadao() +"'");
+        rs.next();
+        cmd = "insert into funcionarios (idPessoa, cargo)values(";
+        cmd = cmd + "'" + rs.getString("id") + "',";
+        cmd = cmd + "'" + f.getCargo() + "') ";
+        stm.executeUpdate(cmd);
+        
+    }
     public void executeInsert(String cmd) throws SQLException{
         stm.executeUpdate(cmd);
     }

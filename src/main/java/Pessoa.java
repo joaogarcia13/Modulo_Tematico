@@ -1,14 +1,14 @@
 package main.java;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Pessoa {
     protected String nome;
     protected int id;
     protected String numeroCidadao;
     protected String morada;
-    protected Date dataRegistoSistema;
-    protected Date dataNascimento;
+    protected LocalDate dataRegistoSistema;
+    protected LocalDate dataNascimento;
     protected int numTelefone;
     protected String email;
     protected String username;
@@ -16,8 +16,8 @@ public class Pessoa {
 
     public Pessoa(){};
 
-    public Pessoa(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
-    Date dataNascimento, int numTelefone, String email, String username, String password){
+    public Pessoa(String nome, int id, String numeroCidadao, String morada, LocalDate dataRegistoSistema,
+    LocalDate dataNascimento, int numTelefone, String email, String username, String password){
 
         this.nome=nome;
         this.id=id;
@@ -64,19 +64,19 @@ public class Pessoa {
         this.morada = morada;
     }
 
-    public Date getDataRegistoSistema() {
+    public LocalDate getDataRegistoSistema() {
         return dataRegistoSistema;
     }
 
-    public void setDataRegistoSistema(Date dataRegistoSistema) {
+    public void setDataRegistoSistema(LocalDate dataRegistoSistema) {
         this.dataRegistoSistema = dataRegistoSistema;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -111,4 +111,5 @@ public class Pessoa {
     public void setPassword(String password) {
         this.password = password;
     }
+    
 }

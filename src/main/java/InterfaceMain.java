@@ -33,7 +33,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private static Database db = new Database();
     private final String formatoMatricula1 = "^\\d{2}-[a-zA-z]{2}-\\d{2}$";
     private final String formatoMatricula2 = "^[a-zA-z]{2}-\\d{2}-\\d{2}$";
-    private final String formatoMatricula3 = "^\\d{2}-\\d{2}-[a-zA-z]{2}";
+    private final String formatoMatricula3 = "^\\d{2}-\\d{2}-[a-zA-z]{2}$";
     private final String formatoEmail = "^(.+)@(.+)$";
     private final String formatoTelefone = "^\\d{9}$";
     private LocalDate todayDate;
@@ -197,9 +197,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel101 = new javax.swing.JLabel();
         UsernameFuncRegisto1 = new javax.swing.JTextField();
         jLabel83 = new javax.swing.JLabel();
-        PasswordRegistoFunc1 = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
         CargoRegistoFunc = new javax.swing.JComboBox<>();
+        PasswordRegistoFunc1 = new javax.swing.JPasswordField();
         GerirFuncionario = new javax.swing.JFrame();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -303,6 +303,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         RegistarFunc = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
+        RegistarClienteBtn = new javax.swing.JButton();
 
         ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ReportarProblemas.setResizable(false);
@@ -1377,8 +1378,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        RegistarFuncFrame.setPreferredSize(new java.awt.Dimension(680, 610));
+        RegistarFuncFrame.setSize(new java.awt.Dimension(680, 610));
+
         RegistarFunc1.setBackground(new java.awt.Color(239, 177, 74));
         RegistarFunc1.setToolTipText("Sign Up");
+        RegistarFunc1.setPreferredSize(new java.awt.Dimension(680, 610));
 
         jLabel1.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(60, 94, 115));
@@ -1434,11 +1439,21 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(235, 244, 249));
         jButton1.setText("Reset");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetRegistoFunc(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(60, 94, 115));
         jButton2.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(235, 244, 249));
         jButton2.setText("Confirmar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarRegistoFunc(evt);
+            }
+        });
 
         CCRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
         CCRegistoFunc.setForeground(new java.awt.Color(60, 94, 115));
@@ -1467,54 +1482,54 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel83.setForeground(new java.awt.Color(217, 86, 74));
         jLabel83.setText("Data Nascimento:");
 
-        PasswordRegistoFunc1.setBackground(new java.awt.Color(169, 202, 221));
-        PasswordRegistoFunc1.setForeground(new java.awt.Color(60, 94, 115));
-        PasswordRegistoFunc1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        PasswordRegistoFunc1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-
         jLabel84.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(217, 86, 74));
         jLabel84.setText("Cargo:");
 
         CargoRegistoFunc.setBackground(new java.awt.Color(169, 202, 221));
-        CargoRegistoFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "funcionario" }));
+        CargoRegistoFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o cargo", "admin", "funcionario" }));
+
+        PasswordRegistoFunc1.setBackground(new java.awt.Color(169, 202, 221));
 
         javax.swing.GroupLayout RegistarFunc1Layout = new javax.swing.GroupLayout(RegistarFunc1);
         RegistarFunc1.setLayout(RegistarFunc1Layout);
         RegistarFunc1Layout.setHorizontalGroup(
             RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
+            .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistarFunc1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
                         .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(MoradaRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ContactoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NomeRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(EmailRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
                             .addComponent(CCRegistoFunc)
-                            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(DataNascimentoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel101, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jLabel101, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(UsernameFuncRegisto1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                            .addComponent(PasswordRegistoFunc1)
-                            .addComponent(jLabel84, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                            .addComponent(CargoRegistoFunc, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel84, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CargoRegistoFunc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PasswordRegistoFunc1)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         RegistarFunc1Layout.setVerticalGroup(
             RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1524,67 +1539,66 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(jLabel3)
+                .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CCRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel100)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(UsernameFuncRegisto1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel101)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PasswordRegistoFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel83))
+                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EmailRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NomeRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ContactoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(RegistarFunc1Layout.createSequentialGroup()
+                        .addComponent(DataNascimentoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel84)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CargoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MoradaRegistoFunc))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContactoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MoradaRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CCRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel100)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(UsernameFuncRegisto1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel101)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PasswordRegistoFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel83)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DataNascimentoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel84)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CargoRegistoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(RegistarFunc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout RegistarFuncFrameLayout = new javax.swing.GroupLayout(RegistarFuncFrame.getContentPane());
         RegistarFuncFrame.getContentPane().setLayout(RegistarFuncFrameLayout);
         RegistarFuncFrameLayout.setHorizontalGroup(
             RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
             .addGroup(RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistarFuncFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(RegistarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(RegistarFunc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegistarFuncFrameLayout.setVerticalGroup(
             RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
+            .addGap(0, 610, Short.MAX_VALUE)
             .addGroup(RegistarFuncFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(RegistarFuncFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(RegistarFunc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -1642,6 +1656,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         Registar_Func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         Registar_Func.setForeground(new java.awt.Color(235, 244, 249));
         Registar_Func.setText("Registar Funcionário");
+        Registar_Func.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistarFuncBtn(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2474,7 +2493,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel45.setText("Sobre nós");
 
         RegistarFunc.setBackground(new java.awt.Color(239, 177, 74));
-        RegistarFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registar.png"))); // NOI18N
+        RegistarFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registarFunc.png"))); // NOI18N
         RegistarFunc.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         RegistarFunc.setEnabled(false);
         RegistarFunc.addActionListener(new java.awt.event.ActionListener() {
@@ -2484,7 +2503,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         });
 
         jButton25.setBackground(new java.awt.Color(239, 177, 74));
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SeekPng.com_male-symbol-png_410093.png"))); // NOI18N
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarCliente.png"))); // NOI18N
         jButton25.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2494,16 +2513,20 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/monkey-head-silhouette-illustration.png"))); // NOI18N
 
+        RegistarClienteBtn.setBackground(new java.awt.Color(239, 177, 74));
+        RegistarClienteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registarCliente.png"))); // NOI18N
+        RegistarClienteBtn.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+
         javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
         MainMenu.setLayout(MainMenuLayout);
         MainMenuLayout.setHorizontalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(41, 41, 41)
                 .addComponent(AlugarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(RegistarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(36, 36, 36)
                 .addComponent(ConsultarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(MainMenuLayout.createSequentialGroup()
@@ -2517,24 +2540,25 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addGroup(MainMenuLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(MainMenuLayout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(MainMenuLayout.createSequentialGroup()
-                            .addGap(29, 29, 29)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MainMenuLayout.createSequentialGroup()
                             .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(70, 70, 70)
-                            .addComponent(RegistarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                            .addComponent(RegistarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(RegistarClienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MainMenuLayout.createSequentialGroup()
+                            .addGap(9, 9, 9)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainMenuLayout.setVerticalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2544,14 +2568,15 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
+                            .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(MainMenuLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                            .addComponent(RegistarFunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(4, 4, 4)))
+                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                                .addComponent(RegistarClienteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(RegistarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2571,7 +2596,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -2954,37 +2979,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             MainMenu.setVisible(true);       
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
-        String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
-
-        try{
-            ResultSet rs = null;
-            rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas " 
-                    + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" 
-                    + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
-            
-            int rowcount = 0;
-            while (rs.next()){
-                rowcount ++;
-                if(rowcount == 0){
-                JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
-            }else{
-                rs.next();
-                Perfil_Utilizador.setVisible(true);
-                nomeUtilizador.setText(rs.getString("nome"));
-                docID.setText(rs.getString("numeroCC"));
-                cartaConducao.setText(rs.getString("numeroCartaConducao"));
-                telemovel.setText(rs.getString("numTelefone"));
-                email.setText(rs.getString("email"));
-                morada.setText(rs.getString("morada"));
-            }
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Consultar_Perfil_Btn
-
     private void Registar_MainMenu_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registar_MainMenu_Btn
         //Tem de se abrir uma thread para a nova janela e dps iniciar a frame na thread para quando se fechar a thread o menu inicial continuar ativo.
         String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão do cliente:");
@@ -3071,6 +3065,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void RegistarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncActionPerformed
         GerirFuncionario.setVisible(true);
+        GerirFuncionario.setLocationRelativeTo(null);
         DefaultTableModel model = new DefaultTableModel(){
                 @Override
                  public boolean isCellEditable(int row, int column) {
@@ -3155,6 +3150,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             ResultSet rs = null;
             try {
                 PerfilFunc.setVisible(true);
+                PerfilFunc.setLocationRelativeTo(null);
                 rs = db.select("select pessoas.*, funcionarios.cargo from PTDA_BD_1.pessoas as pessoas inner join funcionarios as funcionarios on pessoas.id = funcionarios.idPessoa where pessoas.id ='" + tblFunc.getValueAt(tblFunc.getSelectedRow(), 0) + "'");
                 rs.next();
                 nomeUtilizador1.setText(rs.getString("nome"));
@@ -3192,9 +3188,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         boolean erro = false;
         int count = 0;
         String mensagem = "Foram detectados os seguintes erros:\n";
-        
-        //email\ telefone,\ username\, cargo, verificar se a pass e nula\
-        if(!Pattern.matches(email.getText(), formatoEmail)){
+        if(!Pattern.matches(formatoEmail, email.getText())){
             erro = true;
             mensagem += "\nEmail com formato inválido.";
         }
@@ -3268,6 +3262,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
+            JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             PerfilFunc.dispose();
         }
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
@@ -3327,7 +3322,120 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void ReceberVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceberVeiculoBtnActionPerformed
         ReceberVeiculoFrame.setVisible(true);
+        ReceberVeiculoFrame.setLocationRelativeTo(null);
     }//GEN-LAST:event_ReceberVeiculoBtnActionPerformed
+
+    private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
+        String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+
+        try{
+            ResultSet rs = null;
+            rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas "
+                + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '"
+                + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+
+            int rowcount = 0;
+            while (rs.next()){
+                rowcount ++;
+                if(rowcount == 0){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+                }else{
+                    rs.next();
+                    Perfil_Utilizador.setVisible(true);
+                    Perfil_Utilizador.setLocationRelativeTo(null);
+                    nomeUtilizador.setText(rs.getString("nome"));
+                    docID.setText(rs.getString("numeroCC"));
+                    cartaConducao.setText(rs.getString("numeroCartaConducao"));
+                    telemovel.setText(rs.getString("numTelefone"));
+                    email.setText(rs.getString("email"));
+                    morada.setText(rs.getString("morada"));
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Consultar_Perfil_Btn
+
+    private void RegistarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncBtn
+        RegistarFuncFrame.setVisible(true);
+        RegistarFuncFrame.setLocationRelativeTo(null);
+    }//GEN-LAST:event_RegistarFuncBtn
+
+    private void ResetRegistoFunc(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistoFunc
+        UsernameFuncRegisto1.setText("");
+        EmailRegistoFunc.setText("");
+        NomeRegistoFunc.setText("");
+        ContactoRegistoFunc.setText("");
+        MoradaRegistoFunc.setText("");
+        CCRegistoFunc.setText("");
+        PasswordRegistoFunc1.setText("");
+        DataNascimentoRegistoFunc.setText("");
+        CargoRegistoFunc.setSelectedIndex(0);
+    }//GEN-LAST:event_ResetRegistoFunc
+
+    private void ConfirmarRegistoFunc(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoFunc
+        boolean erro = false;
+        String mensagem = "Os seguintes erros foram encontrados:\n";
+        
+        if(!Pattern.matches(formatoEmail, EmailRegistoFunc.getText())){
+            erro = true;
+            mensagem += "\nEmail com formato inválido.";
+        }
+        if(!Pattern.matches(formatoTelefone, ContactoRegistoFunc.getText())){
+            erro = true;
+            mensagem += "\nContacto telefónico inválido.";
+        }
+        if(CargoRegistoFunc.getSelectedIndex() == 0){
+            erro = true;
+            mensagem +="\nNão foi selecionado um cargo.";
+        }
+        if(!isValid(DataNascimentoRegistoFunc.getText())){
+            erro = true;
+            mensagem += "\nData de nascimento inválida.";
+        }
+        if(PasswordRegistoFunc1 == null || PasswordRegistoFunc1.equals("")){
+            erro = true;
+            mensagem += "\nCampo de password nao pode estar vazio.";
+        }
+        ResultSet rs = null;
+        try {
+            rs = db.select("select username from pessoas");
+            while(rs.next()){
+                if(UsernameFuncRegisto1.getText().equals(rs.getString("username"))){
+                    erro = true;
+                    mensagem += "\nUsername já existe.";
+                }
+            }
+            rs = db.select("select email from pessoas");
+            while(rs.next()){
+                if(EmailRegistoFunc.getText().equals(rs.getString("email"))){
+                    erro = true;
+                    mensagem += "\nEmail já está associado a uma conta existente.";
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            //criar funcionario
+            LocalDate Nascimento = StringtoDate(DataNascimentoRegistoFunc.getText());
+            try {
+                Funcionario fc = new Funcionario(NomeRegistoFunc.getText(), 0, CCRegistoFunc.getText(), MoradaRegistoFunc.getText(),
+                        todayDate.now(), Nascimento, Integer.parseInt(ContactoRegistoFunc.getText()), EmailRegistoFunc.getText(), UsernameFuncRegisto1.getText(),
+                        encriptar(PasswordRegistoFunc1.getText()), CargoRegistoFunc.getSelectedItem().toString());
+                db.insertFuncionario(fc);
+                JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                RegistarFuncFrame.dispose();
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_ConfirmarRegistoFunc
 
     /**
      * @param args the command line arguments
@@ -3479,7 +3587,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField NomeRegistoCliente1;
     private javax.swing.JTextField NomeRegistoFunc;
     private javax.swing.JFrame Pagamento;
-    private javax.swing.JTextField PasswordRegistoFunc1;
+    private javax.swing.JPasswordField PasswordRegistoFunc1;
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
@@ -3487,6 +3595,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton ReceberVeiculoBtn;
     private javax.swing.JFrame ReceberVeiculoFrame;
     private javax.swing.JPanel RegistarCliente;
+    private javax.swing.JButton RegistarClienteBtn;
     private javax.swing.JFrame RegistarClienteFrame;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JPanel RegistarFunc1;

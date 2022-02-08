@@ -1,12 +1,12 @@
 package main.java;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Fornecedor extends Pessoa{
 
 
-    public Fornecedor(String nome, int id, String numeroCidadao, String morada, Date dataRegistoSistema,
-                      Date dataNascimento, int numTelefone, String email, String username, String password){
+    public Fornecedor(String nome, int id, String numeroCidadao, String morada, LocalDate dataRegistoSistema,
+                      LocalDate dataNascimento, int numTelefone, String email, String username, String password){
 
         this.nome=nome;
         this.id=id;
