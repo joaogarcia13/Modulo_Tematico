@@ -1642,7 +1642,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         Editar_func.setBackground(new java.awt.Color(60, 94, 115));
         Editar_func.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         Editar_func.setForeground(new java.awt.Color(235, 244, 249));
-        Editar_func.setText("Editar Funcionário");
+        Editar_func.setText("Consultar Funcionário");
         Editar_func.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Editar_funcActionPerformed(evt);
@@ -1674,19 +1674,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Registar_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(Editar_func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Registar_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Editar_func, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -1699,7 +1696,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Registar_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Editar_func, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Remover_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63))
         );
 
@@ -1709,14 +1706,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout GerirFuncionarioLayout = new javax.swing.GroupLayout(GerirFuncionario.getContentPane());
@@ -1862,7 +1859,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                                                 .addComponent(jLabel68)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(docID1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 18, Short.MAX_VALUE)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(17, 17, 17))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(jLabel73)
@@ -1958,7 +1955,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         PerfilFunc.getContentPane().setLayout(PerfilFuncLayout);
         PerfilFuncLayout.setHorizontalGroup(
             PerfilFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
         );
         PerfilFuncLayout.setVerticalGroup(
             PerfilFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3014,14 +3011,13 @@ public class InterfaceMain extends javax.swing.JFrame {
             
             int rowcount = 0;
             while(rs.next()){
+                id = rs.getString("id");
                 rowcount++;
             }
-            if(rowcount == 0l){
+            if(rowcount == 0){
                 rowcount++;
                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado, por favor registe o cliente primeiro.");
             }else{
-                rs.next();
-                id = rs.getString("id");
                 RegistarVeiculo.setLocationRelativeTo(null);
                 RegistarVeiculo.setVisible(true);
                 
@@ -3081,6 +3077,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     "'" + idUtilizador + "', " +
                     "'Nao')";
                     db.executeInsert(cmd);
+                    AlugarVeiculo.dispose();
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
                 }
                 
             } catch (SQLException ex) {
@@ -3214,24 +3212,26 @@ public class InterfaceMain extends javax.swing.JFrame {
         boolean erro = false;
         int count = 0;
         String mensagem = "Foram detectados os seguintes erros:\n";
-        if(!Pattern.matches(formatoEmail, email.getText())){
+        if(!Pattern.matches(formatoEmail, email1.getText())){
             erro = true;
             mensagem += "\nEmail com formato inválido.";
         }
         ResultSet rs = null;
+        String nomeUser = null;
         try {
             rs = db.select("select * from pessoas where username = '" + username1.getText() + "'");
             while (rs.next()){
-            count ++;
-        }
+                nomeUser = rs.getString("username");
+                count ++;
+            }
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(count != 0){
+        if(count != 0 && !nomeUser.equals(username1.getText())){
             erro = true;
             mensagem += "\nO username já existe.";
         }
-        if(!Pattern.matches(telemovel1.getText(), formatoTelefone)){
+        if(!Pattern.matches(formatoTelefone, telemovel1.getText())){
             erro = true;
             mensagem += "\nNumero telefone/telemovél inválido.";
         }
@@ -3256,7 +3256,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 db.update("pessoas", "morada", morada1.getText(), "id", id);
                 db.update("pessoas", "username", username1.getText(), "id", id);
                 db.update("funcionarios", "cargo", ComboCargo.getSelectedItem().toString(), "idPessoa", id);
-                db.update("pessoas", "dataNascimento", DatetoString2(StringtoDate2(DataNascimento1.getText())), "id", id); //isto at dar erro com as datas
+                db.update("pessoas", "dataNascimento", DatetoString2(StringtoDate(DataNascimento1.getText())), "id", id); //isto at dar erro com as datas
 
                 DefaultTableModel model = new DefaultTableModel(){
                     @Override
@@ -3389,11 +3389,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             int rowcount = 0;
             while (rs.next()){
                 rowcount ++;
-                if(rowcount == 0){
-                    JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
-                }else{
-                    rs.next();
-                    Perfil_Utilizador.setVisible(true);
+                Perfil_Utilizador.setVisible(true);
                     Perfil_Utilizador.setLocationRelativeTo(null);
                     nomeUtilizador.setText(rs.getString("nome"));
                     docID.setText(rs.getString("numeroCC"));
@@ -3401,8 +3397,10 @@ public class InterfaceMain extends javax.swing.JFrame {
                     telemovel.setText(rs.getString("numTelefone"));
                     email.setText(rs.getString("email"));
                     morada.setText(rs.getString("morada"));
-                }
             }
+            if(rowcount == 0){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+                }
 
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -3778,11 +3776,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     }
     
     public static String DatetoString(LocalDate date){
-        return date.format(DateTimeFormatter.ofPattern("d-M-uuuu"));
+        return date.format(DateTimeFormatter.ofPattern("dd-MM-uuuu"));
     }
     
     public static String DatetoString2(LocalDate date){
-        return date.format(DateTimeFormatter.ofPattern("uuuu-M-d"));
+        return date.format(DateTimeFormatter.ofPattern("uuuu-MM-dd"));
     }
 
     
