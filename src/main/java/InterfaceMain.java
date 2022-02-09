@@ -719,13 +719,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        RegistarVeiculo.setMaximumSize(new java.awt.Dimension(380, 500));
+        RegistarVeiculo.setMinimumSize(new java.awt.Dimension(380, 500));
+        RegistarVeiculo.setPreferredSize(new java.awt.Dimension(390, 500));
         RegistarVeiculo.setResizable(false);
-        RegistarVeiculo.setSize(new java.awt.Dimension(401, 470));
+        RegistarVeiculo.setSize(new java.awt.Dimension(380, 500));
 
         jPanel4.setBackground(new java.awt.Color(239, 177, 74));
-        jPanel4.setMaximumSize(new java.awt.Dimension(480, 452));
-        jPanel4.setMinimumSize(new java.awt.Dimension(480, 452));
-        jPanel4.setPreferredSize(new java.awt.Dimension(480, 452));
+        jPanel4.setMaximumSize(new java.awt.Dimension(480, 430));
+        jPanel4.setMinimumSize(new java.awt.Dimension(480, 430));
+        jPanel4.setPreferredSize(new java.awt.Dimension(480, 430));
 
         ComboCombustivel.setBackground(new java.awt.Color(169, 202, 221));
         ComboCombustivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combustivel", "Gasolina", "Diesel", "GPL" }));
@@ -817,69 +820,66 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(BtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(BtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(BtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(BtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextValSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel25))
-                                .addGap(24, 24, 24)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel32)
-                                    .addComponent(TextApolice, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TextValSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel32)
+                            .addComponent(TextApolice, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel24)
+                                .addComponent(jLabel28)
+                                .addComponent(jLabel29)
+                                .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addGap(78, 78, 78)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel24)
-                                        .addComponent(jLabel28)
-                                        .addComponent(jLabel29)
-                                        .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addGap(78, 78, 78)
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel30)))
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addGap(51, 51, 51)
-                                            .addComponent(jLabel26)))
-                                    .addGap(57, 57, 57))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel23)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TextDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(152, 152, 152))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TxtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel31))
-                                        .addGap(62, 62, 62)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel27)
-                                            .addComponent(ComboMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel42)
-                                        .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel30)))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addGap(51, 51, 51)
+                                    .addComponent(jLabel26)))
+                            .addGap(57, 57, 57))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(ComboCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel23)
+                                .addGap(18, 18, 18)
+                                .addComponent(TextDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(152, 152, 152))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel33)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(ComboPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TxtCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                    .addComponent(TxtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel31))
+                                .addGap(62, 62, 62)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel27)
+                                    .addComponent(ComboMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel42)
+                                .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(ComboCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(ComboPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(TxtCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -932,7 +932,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel23)
                     .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -943,18 +943,20 @@ public class InterfaceMain extends javax.swing.JFrame {
         RegistarVeiculo.getContentPane().setLayout(RegistarVeiculoLayout);
         RegistarVeiculoLayout.setHorizontalGroup(
             RegistarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         RegistarVeiculoLayout.setVerticalGroup(
             RegistarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
+        Perfil_Utilizador.setMaximumSize(new java.awt.Dimension(444, 350));
         Perfil_Utilizador.setResizable(false);
         Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
 
         jPanel6.setBackground(new java.awt.Color(239, 177, 74));
-        jPanel6.setMaximumSize(new java.awt.Dimension(444, 332));
+        jPanel6.setMaximumSize(new java.awt.Dimension(444, 350));
+        jPanel6.setPreferredSize(new java.awt.Dimension(444, 350));
 
         cartaConducao.setEditable(false);
         cartaConducao.setBackground(new java.awt.Color(169, 202, 221));
@@ -1094,7 +1096,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
         Perfil_UtilizadorLayout.setVerticalGroup(
             Perfil_UtilizadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
         );
 
         PedidoAluguer.setResizable(false);
@@ -2442,7 +2444,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -2450,133 +2452,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
-        TxtMatricula.setText("");
-        ComboMarca.setSelectedIndex(0);
-        ComboCombustivel.setSelectedIndex(0);
-        ComboPotencia.setSelectedIndex(0);
-        TxtCilindrada.setText("");
-        TextValSeguro.setText("");
-        TextApolice.setText("");
-        TextDataInicio.setText("");
-        TextDataFim.setText("");
-        TxtKilomet.setText("");
-        
-    }//GEN-LAST:event_LimparBtn_RegistarVeiculo
-
-    private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
-        LocalDate DataIni = null;
-        LocalDate DataFim = null;
-        LocalDate ValApol = null;
-        boolean erro = false;
-        String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
-
-        if(!Pattern.matches(formatoMatricula1, TxtMatricula.getText()) && !Pattern.matches(formatoMatricula2, TxtMatricula.getText()) 
-                && !Pattern.matches(formatoMatricula3, TxtMatricula.getText())){
-            erro = true;
-            mensagem += "\nMatricula deve ser do formato NN-CC-CC (Ex:34-EE-EE).";
-        }
-        if(ComboMarca.getSelectedIndex() <= 0){
-            erro = true;
-            mensagem += "\nNão foi selecionado a marca do carro.";
-        }
-        if(ComboMarca.getSelectedIndex() <= 0){
-            erro = true;
-            mensagem += "\nNão foi selecionado o tipo de combustível.";
-        }
-        if(ComboPotencia.getSelectedIndex() <= 0){
-            erro = true;
-            mensagem += "\nNão foi selecionado a Potencia do carro.";
-        }
-        
-        try{
-            if(Integer.parseInt(TxtCilindrada.getText()) < 900 ){
-                erro = true;
-                mensagem += "\nCilindrada demasiado baixa.";
-            }
-        }catch(Exception e){
-            erro = true;
-            mensagem += "\nCilindrada inválida.";
-        }
-        
-        try{
-            if(Integer.parseInt(TextApolice.getText()) < 0){
-                erro = true;
-                mensagem += "\nNumero de Apolice não é válido.";
-            }
-        }catch(Exception e){
-            erro = true;
-            mensagem += "\nNúmero de Apolice não é valido.";
-        }
-        if(isValid(TextValSeguro.getText())){
-            ValApol = StringtoDate(TextValSeguro.getText());
-            todayDate = LocalDate.now();
-            if(ValApol.isBefore(todayDate)) {
-            erro = true;
-            mensagem += "\nValidade do Seguro Inválida.";
-            }
-        }else{
-            erro = true;
-            mensagem += "\nValidade do Seguro não é uma data válida ou nao tem o formato dd-mm-aaaa.";
-        }
-          
-        if(isValid(TextDataInicio.getText())){
-            DataIni = StringtoDate(TextDataInicio.getText());
-            todayDate = LocalDate.now();
-            if(DataIni.isBefore(todayDate)) {
-            erro = true;
-            mensagem += "\nData de inicio disponibilidade inválida.";
-            }
-        }else{
-            erro = true;
-            mensagem += "\nData de Inicio de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
-        }
-            
-        if(isValid(TextDataFim.getText())){
-            DataFim = StringtoDate(TextDataFim.getText());
-            todayDate = LocalDate.now();
-            if(DataFim.isBefore(todayDate)) {
-            erro = true;
-            mensagem += "\nData de fim de Disponibilidade inválida.";
-            }
-        }else{
-            erro = true;
-            mensagem += "\nData de fim de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
-        }
-        if(DataIni != null && DataFim !=null && DataIni.isAfter(DataFim)){
-            erro = true;
-            mensagem += "\nData de inicio nao pode ser depois da data fim";
-        }
-        try{
-            if(Integer.parseInt(TxtKilomet.getText()) < 0){
-                erro = true;
-                mensagem += "\nOs Kilometros estão negativos.";
-            }
-        }catch(Exception e){
-            erro = true;
-            mensagem += "\nNumero de Kilometros invalido.";
-        }
-        if(erro){
-            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
-        }else{
-            LocalDate now = LocalDate.now();
-            
-            Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Disponivél", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
-                TxtCilindrada.getText(), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                TxtAno.getText(), TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText());
-                
-            try {
-                db.insertCarrinha(carrinha, id);
-                JOptionPane.showMessageDialog(null, "Registo feito com sucesso.");
-                RegistarVeiculo.dispose();
-            }catch(SQLIntegrityConstraintViolationException e){
-                JOptionPane.showMessageDialog(new JOptionPane(), "Já existe um veiculo com esta matricula registado", "Erro", JOptionPane.ERROR_MESSAGE);
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
     private void AlugarVeiculoMainMenuBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculoMainMenuBtn
         AlugarVeiculo.setLocationRelativeTo(null);
@@ -3509,6 +3384,132 @@ public class InterfaceMain extends javax.swing.JFrame {
     private void DataPagamentoAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPagamentoAcActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DataPagamentoAcActionPerformed
+
+    private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
+        TxtMatricula.setText("");
+        ComboMarca.setSelectedIndex(0);
+        ComboCombustivel.setSelectedIndex(0);
+        ComboPotencia.setSelectedIndex(0);
+        TxtCilindrada.setText("");
+        TextValSeguro.setText("");
+        TextApolice.setText("");
+        TextDataInicio.setText("");
+        TextDataFim.setText("");
+        TxtKilomet.setText("");
+    }//GEN-LAST:event_LimparBtn_RegistarVeiculo
+
+    private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
+        LocalDate DataIni = null;
+        LocalDate DataFim = null;
+        LocalDate ValApol = null;
+        boolean erro = false;
+        String mensagem = "Por favor verifique se a informação foi introduzida corretamente. Os seguintes erros foram detectados:";
+
+        if(!Pattern.matches(formatoMatricula1, TxtMatricula.getText()) && !Pattern.matches(formatoMatricula2, TxtMatricula.getText())
+            && !Pattern.matches(formatoMatricula3, TxtMatricula.getText())){
+            erro = true;
+            mensagem += "\nMatricula deve ser do formato NN-CC-CC (Ex:34-EE-EE).";
+        }
+        if(ComboMarca.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado a marca do carro.";
+        }
+        if(ComboMarca.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado o tipo de combustível.";
+        }
+        if(ComboPotencia.getSelectedIndex() <= 0){
+            erro = true;
+            mensagem += "\nNão foi selecionado a Potencia do carro.";
+        }
+
+        try{
+            if(Integer.parseInt(TxtCilindrada.getText()) < 900 ){
+                erro = true;
+                mensagem += "\nCilindrada demasiado baixa.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nCilindrada inválida.";
+        }
+
+        try{
+            if(Integer.parseInt(TextApolice.getText()) < 0){
+                erro = true;
+                mensagem += "\nNumero de Apolice não é válido.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nNúmero de Apolice não é valido.";
+        }
+        if(isValid(TextValSeguro.getText())){
+            ValApol = StringtoDate(TextValSeguro.getText());
+            todayDate = LocalDate.now();
+            if(ValApol.isBefore(todayDate)) {
+                erro = true;
+                mensagem += "\nValidade do Seguro Inválida.";
+            }
+        }else{
+            erro = true;
+            mensagem += "\nValidade do Seguro não é uma data válida ou nao tem o formato dd-mm-aaaa.";
+        }
+
+        if(isValid(TextDataInicio.getText())){
+            DataIni = StringtoDate(TextDataInicio.getText());
+            todayDate = LocalDate.now();
+            if(DataIni.isBefore(todayDate)) {
+                erro = true;
+                mensagem += "\nData de inicio disponibilidade inválida.";
+            }
+        }else{
+            erro = true;
+            mensagem += "\nData de Inicio de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
+        }
+
+        if(isValid(TextDataFim.getText())){
+            DataFim = StringtoDate(TextDataFim.getText());
+            todayDate = LocalDate.now();
+            if(DataFim.isBefore(todayDate)) {
+                erro = true;
+                mensagem += "\nData de fim de Disponibilidade inválida.";
+            }
+        }else{
+            erro = true;
+            mensagem += "\nData de fim de Disponibilidade não tem o formato dd-mm-aaaa hh:mm.";
+        }
+        if(DataIni != null && DataFim !=null && DataIni.isAfter(DataFim)){
+            erro = true;
+            mensagem += "\nData de inicio nao pode ser depois da data fim";
+        }
+        try{
+            if(Integer.parseInt(TxtKilomet.getText()) < 0){
+                erro = true;
+                mensagem += "\nOs Kilometros estão negativos.";
+            }
+        }catch(Exception e){
+            erro = true;
+            mensagem += "\nNumero de Kilometros invalido.";
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            LocalDate now = LocalDate.now();
+
+            Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Disponivél", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(),
+                TxtCilindrada.getText(), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
+                TxtAno.getText(), TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText());
+
+            try {
+                db.insertCarrinha(carrinha, id);
+                JOptionPane.showMessageDialog(null, "Registo feito com sucesso.");
+                RegistarVeiculo.dispose();
+            }catch(SQLIntegrityConstraintViolationException e){
+                JOptionPane.showMessageDialog(new JOptionPane(), "Já existe um veiculo com esta matricula registado", "Erro", JOptionPane.ERROR_MESSAGE);
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
     /**
      * @param args the command line arguments
