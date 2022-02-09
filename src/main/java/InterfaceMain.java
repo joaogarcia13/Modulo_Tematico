@@ -2181,7 +2181,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel95.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel95.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel95.setText("Data Emissao Carta COndução:");
+        jLabel95.setText("Data Emissao Carta Condução:");
 
         CCRegistoCliente1.setBackground(new java.awt.Color(169, 202, 221));
         CCRegistoCliente1.setForeground(new java.awt.Color(60, 94, 115));
@@ -3532,7 +3532,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
                 }
             }
-            rs = db.select("select numeroCartaConducao from cartasConducao");
+            rs = db.select("select numeroCartaConducao from cartasconducao");
             while(rs.next()){
                 if(rs.getString("numeroCartaConducao").equals(CartaConducaoRegisto2.getText())){
                     erro = true;
@@ -3552,6 +3552,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     EmailRegistoCliente1.getText(),CartaConducaoRegisto2.getText());
             try {
                 db.insertCondutor(condutor, carta);
+                JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                RegistarClienteFrame.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
