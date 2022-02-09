@@ -124,7 +124,7 @@ public class Database{
         rs.next();
         cmd = "insert into condutores (numeroCartaConducao, classificacao, idPessoa)values(";
         cmd = cmd + "'" + f.getNumeroCartaConducao() + "',";
-        cmd = cmd + "'" + 10 +"',";
+        cmd = cmd + "'" + 0 +"',";
         cmd = cmd + "'" + rs.getString("id") + "') ";
         stm.executeUpdate(cmd);
         

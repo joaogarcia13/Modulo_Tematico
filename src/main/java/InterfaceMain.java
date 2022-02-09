@@ -30,7 +30,6 @@ import javax.swing.table.DefaultTableModel;
     -registos diferentes para quem aluga e para quem fornece ?
     -por campo de observaçoes quando se recebe carrinha ?
     -aumentar preco consoante a classificaçao do condutor ?
-    -TESTAR REGISTAR CLIENTE
 */
 
 /**
@@ -2190,7 +2189,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         jLabel96.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel96.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel96.setText("Carta Condução:");
+        jLabel96.setText("Número Carta Condução:");
 
         CartaConducaoRegisto2.setBackground(new java.awt.Color(169, 202, 221));
         CartaConducaoRegisto2.setForeground(new java.awt.Color(60, 94, 115));
@@ -3447,7 +3446,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
-            //criar funcionario
             LocalDate Nascimento = StringtoDate(DataNascimentoRegistoFunc.getText());
             try {
                 Funcionario fc = new Funcionario(NomeRegistoFunc.getText(), 0, CCRegistoFunc.getText(), MoradaRegistoFunc.getText(),
@@ -3465,8 +3463,41 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmarRegistoFunc
 
     private void RegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarClienteBtn
-        RegistarClienteFrame.setVisible(true);
-        RegistarClienteFrame.setLocationRelativeTo(null);
+        Object [] ob = {"Não", "Sim"};
+        int i = JOptionPane.showOptionDialog(null, "O Cliente que quer registar já tem conta de fornecedor ?", "Registo", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, ob, null);
+        System.out.println(i);
+        if(i == 0){
+            RegistarClienteFrame.setVisible(true);
+            RegistarClienteFrame.setLocationRelativeTo(null);
+        }
+        if(i == 1){
+            String num = JOptionPane.showInputDialog(null, "Qual é o numero de cidadão ?");
+            ResultSet rs = null;
+            try {
+                rs = db.select("select * from pessoas where numeroCC = '" + num + "'");
+                try{
+                    rs.next();
+                    NomeRegistoCliente1.setText(rs.getString("nome"));
+                    MoradaRegistoCliente1.setText(rs.getString("morada"));
+                    DataNascimentoRegistoCliente.setText(rs.getString("dataNascimento"));
+                    ContactoRegistoCliente1.setText(rs.getString("numTelefone"));
+                    EmailRegistoCliente1.setText(rs.getString("email"));
+                    CCRegistoCliente1.setText(rs.getString("numeroCC"));
+                    DataNascimentoRegistoCliente.setEditable(false);
+                    CCRegistoCliente1.setEditable(false);
+                    CartaConducaoRegisto2.setEditable(false);
+                    DataEmissaoRegisto.setEditable(false);                    
+                    
+                    RegistarClienteFrame.setVisible(true);
+                    RegistarClienteFrame.setLocationRelativeTo(null);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Não existe nenhuma pessoa na base de dados associada a este numero de cidadão", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }//GEN-LAST:event_RegistarClienteBtn
 
     private void ResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistarClienteBtn
