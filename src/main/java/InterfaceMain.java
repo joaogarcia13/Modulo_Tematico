@@ -954,6 +954,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
 
         jPanel6.setBackground(new java.awt.Color(239, 177, 74));
+        jPanel6.setMaximumSize(new java.awt.Dimension(444, 332));
 
         cartaConducao.setEditable(false);
         cartaConducao.setBackground(new java.awt.Color(169, 202, 221));
@@ -1078,11 +1079,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel63))
-                .addGap(38, 38, 38)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout Perfil_UtilizadorLayout = new javax.swing.GroupLayout(Perfil_Utilizador.getContentPane());
