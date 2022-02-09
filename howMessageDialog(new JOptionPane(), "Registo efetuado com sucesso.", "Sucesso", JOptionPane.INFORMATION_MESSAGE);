@@ -1,0 +1,1352 @@
+[33mcommit 0ac018a64abc528738b0a9aceb18bb2de5546f52[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: b09b5fd 286de4a
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 18:35:34 2022 +0000
+
+    conflitos ?
+
+[33mcommit b09b5fdaa265c00ca2cc5fc1b0415a1558cf0a7c[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 18:33:36 2022 +0000
+
+    ffff
+
+[33mcommit 286de4ab5ead95e0839bc215a47004470b63a497[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Feb 9 17:08:36 2022 +0000
+
+    rceber done
+
+[33mcommit c91cb8d81507e2febbd848255ac3c70a895c841a[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 16:40:22 2022 +0000
+
+    registar cliente acabado e a funcionar
+
+[33mcommit ff24bdfe50c94cb63adc5c8f12a76a1383bdfa1b[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 16:00:13 2022 +0000
+
+    efew
+
+[33mcommit 819e0a26db8cc23f517450b632274b067cd4ebad[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 15:25:05 2022 +0000
+
+    erros
+
+[33mcommit 44695f2d0d32f35c229ea72d8e9467e9c7ad73a7[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Wed Feb 9 12:58:22 2022 +0000
+
+    registo cliente feito, falta testar
+
+[33mcommit c54fec80c66ae675b643716ed70243d88db699d1[m
+Author: Joao Garcia <joaobernardogarcia@gmail.com>
+Date:   Tue Feb 8 23:16:05 2022 +0000
+
+    nao tinha o email associado ao git
+
+[33mcommit 09bc2cdb6c5bfc9616e4c8bf2b04e6c467cecca8[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 23:09:23 2022 +0000
+
+    Reset Registar funcionario, falta botao validaçao e registar na base de dados
+
+[33mcommit 49bc690af321ec39fee97d33ca7d584d39475a0b[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 22:57:41 2022 +0000
+
+    Registar funcionario a funcionar
+
+[33mcommit 246138607e3d5267d7847c2fd7941daee52dfbf5[m
+Merge: 6e7e2b0 844c129
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 16:06:29 2022 +0000
+
+    fff
+
+[33mcommit 6e7e2b022af6510560893a37704f73046df0f72d[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 16:04:54 2022 +0000
+
+    ddd
+
+[33mcommit 844c12990a71cc08e01591772e020850cb871afe[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 8 16:04:21 2022 +0000
+
+    receber feito
+
+[33mcommit 76a90698cb6ea2dba7cd1d940c887b9e339995ad[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 15:32:38 2022 +0000
+
+    reset dos resets
+
+[33mcommit 832e4de520cf47e8fdffd4b1aee72777a9880cba[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 15:31:11 2022 +0000
+
+    Reset dos resets
+
+[33mcommit 47aa731806f8f5f4280a16f8d9e69873a3e4a56e[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 8 15:17:26 2022 +0000
+
+    fdx
+
+[33mcommit f8e17e4a6508b5e264a42249629a67536eec5316[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 20:32:16 2022 +0000
+
+    fixes menores e limpeza de codigo
+
+[33mcommit 6e8e7ba4718a1240ab52760ba37a33fa072f80bf[m
+Merge: ffd57bd 2a5cce3
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 18:16:48 2022 +0000
+
+    editar funcionarios funciona 100%
+
+[33mcommit ffd57bdef73d49285a9e44e13d4237744d04cf05[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 18:10:47 2022 +0000
+
+    funcionarios editar feito
+
+[33mcommit 2a5cce314058eac6fba18a4bdebf7fc546cfa152[m
+Merge: 8ad96c6 29c5274
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Feb 7 18:10:25 2022 +0000
+
+    aksjd
+
+[33mcommit 8ad96c6f5f8c1fe2f996c3d288fef7923e218b1c[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Feb 7 18:07:54 2022 +0000
+
+    wajd
+
+[33mcommit 29c5274a55b0210bc1c29dff6b5b842147d01a85[m
+Merge: 1cdac7d c6bb3ad
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 17:29:42 2022 +0000
+
+    fff
+
+[33mcommit 1cdac7d3ced61edf0ef70e58418d743c793e3560[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 16:57:40 2022 +0000
+
+    git pls
+
+[33mcommit c6bb3ad2c2582514c27e3e164720bf8babd43f51[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Feb 7 16:57:19 2022 +0000
+
+    receber
+
+[33mcommit 8169dcb1be3b6b42c4e31170e775f60133e8cacd[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Feb 7 16:16:52 2022 +0000
+
+    afogou
+
+[33mcommit b0478746a2e8c6b5d7b62bf21923dc8f1ccdff0b[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Feb 5 18:02:40 2022 +0000
+
+    funcionarios e cenas
+
+[33mcommit 747182af39b9d2bcad6633dcdfaad03ae8e0aa8c[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Feb 3 10:02:38 2022 +0000
+
+    fff
+
+[33mcommit 80d5a8df1bf6fb0eeeb847300c39ef21ae7ea7ca[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 23:59:40 2022 +0000
+
+    ddd
+
+[33mcommit 6686a167e37be0528a852ea85413fe83648dc587[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 22:55:48 2022 +0000
+
+    weeeeeeeeeeeeeeeeeeeeeeeeeeee.cnf
+
+[33mcommit 14186b4d6d6f0934199bf7568dae909c2d374a20[m
+Merge: 7e2b0f4 e5f9cc2
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 22:27:21 2022 +0000
+
+    alugameaalma.png
+
+[33mcommit 7e2b0f47a9026b1e84a84fd6c5e14b65f0d746ef[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 22:25:42 2022 +0000
+
+    euchoroconflitos.txt
+
+[33mcommit e5f9cc28320bedb9f794a7d261acac602a5353d6[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Feb 2 22:23:48 2022 +0000
+
+    aluguer feito
+
+[33mcommit e9ae24cb07815b110fb7275902981e40a0e7df06[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 21:48:01 2022 +0000
+
+    push
+
+[33mcommit 63ca170e1961ac464286a367112aeb760e77cfde[m
+Merge: b782776 45c0ae1
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 20:31:20 2022 +0000
+
+    abra cadabra conflitos da cabra
+
+[33mcommit b7827763581c624e3f5eaf940671a216c0c8cde1[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Feb 2 20:26:17 2022 +0000
+
+    ddd
+
+[33mcommit 45c0ae18198a4df05f6c61cd08116e96f428cd2e[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Feb 2 20:23:53 2022 +0000
+
+    supercommit
+
+[33mcommit 3bea951df61fb83e950f359ee5fe537d15da1ede[m
+Merge: aae822f f181b10
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit aae822ff35c831369ffe0e1b3a566ea52927901f[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Feb 2 15:02:07 2022 +0000
+
+    lkasd
+
+[33mcommit f181b101fc59879b029435cfd26c6113bba8bc2e[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 1 18:53:24 2022 +0000
+
+    utilizador pesquisa
+
+[33mcommit 9b31acbb44e55d193c092967e0e0c4b9fb0b9d74[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 18:16:48 2022 +0000
+
+    O GARCIA CONSEGUIU
+
+[33mcommit 894c71c368473719e9d78f621dab10a530945d59[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 17:31:13 2022 +0000
+
+    akjdss
+
+[33mcommit a23c5a0e787755558a7d8c769159ecaaab9ab025[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 17:16:23 2022 +0000
+
+    alugar veiculo done
+
+[33mcommit 9eb604b8df9de23084ed6da53d84b81288deab6b[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 15:49:43 2022 +0000
+
+    reset
+
+[33mcommit fbd88d62581dfb7cba826d2004cdfe99fa69c69b[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 15:05:41 2022 +0000
+
+    librarie
+
+[33mcommit 2eaf570b5236971adc9b774867b92e218c173927[m
+Merge: 8de9c3d ca3ddcc
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 1 15:00:36 2022 +0000
+
+    ddd
+
+[33mcommit 8de9c3d79dbd2ff721a5145f9bb51329954d7ee0[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Feb 1 14:59:22 2022 +0000
+
+    dddd
+
+[33mcommit ca3ddcc81e0eeb995edd4b4eaad434a6e36f8bfc[m
+Merge: f999980 95da6a0
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Feb 1 14:58:50 2022 +0000
+
+    asd
+
+[33mcommit 95da6a0b60dd56150bf3f9e8141a497a64c67325[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 31 16:15:44 2022 +0000
+
+    Datas fix
+
+[33mcommit f999980dd667df1ff4ddd176df3e4a6232661bee[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Jan 31 16:15:32 2022 +0000
+
+    filtros
+
+[33mcommit 5e964921447f81099da7d972761d1bcf9f0cd08c[m
+Merge: 3ef3e86 d987e7e
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Jan 31 14:41:37 2022 +0000
+
+    asd
+
+[33mcommit d987e7e40b33a0d85c118993c118feda3a39d91a[m
+Merge: 9831519 ed39b57
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 31 14:40:17 2022 +0000
+
+    fff
+
+[33mcommit 3ef3e86adc5c301fe2811727f801b26944f234e8[m
+Merge: 179df1d ed39b57
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit 179df1d007d29782e52e3dd355ba80e313172aea[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Jan 31 14:38:48 2022 +0000
+
+    asda
+
+[33mcommit 983151992208237f83677e923268f0fa4343e558[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 31 14:38:41 2022 +0000
+
+    ddd
+
+[33mcommit ed39b57e0c6b6ca56542eb1d1f3b927df195a6a7[m
+Merge: a32db7c a4287fa
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sat Jan 29 15:58:34 2022 +0000
+
+    ola
+
+[33mcommit a32db7c533ea30c6440f9c8ab7ae25f2e7bffa44[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sat Jan 29 15:24:27 2022 +0000
+
+    bom dia
+
+[33mcommit a4287faa0d75b4fdda1a0146afac3e6198e8b1ec[m
+Merge: 1975e9e 2a3de0f
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit 1975e9e07e505bc071863837acb755262ac28186[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Fri Jan 28 12:52:38 2022 +0000
+
+    afsada
+
+[33mcommit 2a3de0f2fda8d21e7fc8eb2f7723361609f6fa6a[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 28 12:43:43 2022 +0000
+
+    imports
+
+[33mcommit 5f41efe2ffdf26beaf75244b521ecb7f1a04b347[m
+Merge: cf0efb0 3d86393
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 28 12:33:18 2022 +0000
+
+    Datas: 100/30/2020 ja não e valido
+
+[33mcommit cf0efb0d47419bc39a24255cfd8d90c985465606[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 28 12:32:19 2022 +0000
+
+    Datas: 100/30/2020 ja não e valido
+
+[33mcommit e1d7ae5c3fb31384e6026ac06029899a167b91af[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 28 12:30:19 2022 +0000
+
+    Datas: 100/30/2020 ja não e valido
+
+[33mcommit 3d863935dc533d49d848886a6f825b67397a8851[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Fri Jan 28 12:19:47 2022 +0000
+
+    alterações alugar veiculo
+
+[33mcommit f6fd4c4afd27422887da022118365c7739f3e92a[m
+Merge: 323fda0 e7938f6
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit 323fda0e38c32545dd0186c8e18cd3019a279d52[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 20:02:28 2022 +0000
+
+    aaaa
+
+[33mcommit e7938f6b2507614771544374555979f1203efd11[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 20:02:06 2022 +0000
+
+    git buchas
+
+[33mcommit c5b6b0dada835ff981515388725f77353aecc2d5[m
+Merge: 9a2e44a 283ed4e
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 19:46:13 2022 +0000
+
+    dddd
+
+[33mcommit 9a2e44a6ac147a96283720423138eaf096b1061b[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 19:45:10 2022 +0000
+
+    login
+
+[33mcommit 283ed4e386eb4e67bcaa76bd2560f34ce5184ec4[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 19:44:45 2022 +0000
+
+    adss
+
+[33mcommit bc9340dac76d546d4ea9c98967a9a0a7aceb2246[m
+Merge: 4ddcb5a ac5d693
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 19:22:45 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+    
+    # Conflicts:
+    #       build/built-jar.properties
+    #       build/classes/main/java/Acidente.class
+    #       build/classes/main/java/InterfaceMain$33.class
+    #       build/classes/main/java/InterfaceMain.class
+    #       build/classes/main/java/InterfaceMain.form
+
+[33mcommit 4ddcb5a305238847b65cf169c1a2397f4e03c605[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 19:20:59 2022 +0000
+
+     ffff
+
+[33mcommit ac5d693a9900ba39d75dd0ea1e5086defc8bb2c7[m
+Merge: 82c1906 8e7eaea
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit 82c1906be3f25a2fe635fb4b4a00469acf2a1306[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 19:17:03 2022 +0000
+
+    TAUAS
+
+[33mcommit e577dbb03050d411d447f6bfc136e39d9dcd1a38[m
+Merge: ace03e2 43554d2
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:53:32 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       build/classes/main/java/Database.class
+    #       build/classes/main/java/InterfaceMain$1.class
+    #       build/classes/main/java/InterfaceMain$2.class
+    #       build/classes/main/java/InterfaceMain$24.class
+    #       build/classes/main/java/InterfaceMain$25.class
+    #       build/classes/main/java/InterfaceMain$26.class
+    #       build/classes/main/java/InterfaceMain$27.class
+    #       build/classes/main/java/InterfaceMain$28.class
+    #       build/classes/main/java/InterfaceMain$29.class
+    #       build/classes/main/java/InterfaceMain$3.class
+    #       build/classes/main/java/InterfaceMain$30.class
+    #       build/classes/main/java/InterfaceMain$31.class
+    #       build/classes/main/java/InterfaceMain$4.class
+    #       build/classes/main/java/InterfaceMain.class
+    #       build/classes/main/java/InterfaceMain.form
+    #       nbproject/private/private.properties
+
+[33mcommit 8e7eaea53d87352e389f1ebc94f7ca78113b6ff1[m
+Merge: 7a98f4b 43554d2
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Thu Jan 27 17:42:50 2022 +0000
+
+    thread.start
+
+[33mcommit ace03e21c34812c57a347d7715a56b298048c254[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 17:39:21 2022 +0000
+
+    adsd
+
+[33mcommit 7a98f4bcce77ff66990b97f7fabd44d348b95140[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Thu Jan 27 17:38:56 2022 +0000
+
+    panelado
+
+[33mcommit 43554d2129254e969006e93c7b10d63ecb2917cf[m
+Merge: b20ae3d a968759
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 17:38:09 2022 +0000
+
+    pusha
+
+[33mcommit b20ae3db63796dab1922312199cadd2c15833ff4[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 17:37:10 2022 +0000
+
+    pusha gonçalo
+
+[33mcommit a968759bbad5df904e34e8c83edcfbc45666abcf[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Thu Jan 27 17:19:06 2022 +0000
+
+    sad
+
+[33mcommit d4a18b9dc7521ba4307687549e9fd8ae48067cae[m
+Merge: 0fb2542 6aca04f
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Thu Jan 27 16:59:58 2022 +0000
+
+    proximo
+
+[33mcommit 0fb25422e0f4347a59c000566128414eff7e3ffb[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Thu Jan 27 16:56:02 2022 +0000
+
+    igual
+
+[33mcommit 6aca04fa25f060421a9609d06c8d57fc2260bf9a[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 16:54:29 2022 +0000
+
+    merge
+
+[33mcommit 97db85615179d46791eb23b6ea6af0a40f753060[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 16:37:06 2022 +0000
+
+    a
+
+[33mcommit 0dce6a2e2b3fc2f3006aea9fcea62e97cf8a6ac3[m
+Merge: 02bbb23 c1d8256
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 16:33:16 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       build/classes/main/java/Acidente.class
+    #       build/classes/main/java/Administrador.class
+    #       build/classes/main/java/Aluguer.class
+    #       build/classes/main/java/Carrinha.class
+    #       build/classes/main/java/CartaDeConducao.class
+    #       build/classes/main/java/Condutor.class
+    #       build/classes/main/java/Cor.class
+    #       build/classes/main/java/Database.class
+    #       build/classes/main/java/Fornecedor.class
+    #       build/classes/main/java/Funcionario.class
+    #       build/classes/main/java/InterfaceMain$1.class
+    #       build/classes/main/java/InterfaceMain$10.class
+    #       build/classes/main/java/InterfaceMain$11.class
+    #       build/classes/main/java/InterfaceMain$12.class
+    #       build/classes/main/java/InterfaceMain$13.class
+    #       build/classes/main/java/InterfaceMain$14.class
+    #       build/classes/main/java/InterfaceMain$15.class
+    #       build/classes/main/java/InterfaceMain$16.class
+    #       build/classes/main/java/InterfaceMain$17.class
+    #       build/classes/main/java/InterfaceMain$18.class
+    #       build/classes/main/java/InterfaceMain$19.class
+    #       build/classes/main/java/InterfaceMain$2.class
+    #       build/classes/main/java/InterfaceMain$20.class
+    #       build/classes/main/java/InterfaceMain$21.class
+    #       build/classes/main/java/InterfaceMain$22.class
+    #       build/classes/main/java/InterfaceMain$23.class
+    #       build/classes/main/java/InterfaceMain$24.class
+    #       build/classes/main/java/InterfaceMain$25.class
+    #       build/classes/main/java/InterfaceMain$26.class
+    #       build/classes/main/java/InterfaceMain$27.class
+    #       build/classes/main/java/InterfaceMain$28.class
+    #       build/classes/main/java/InterfaceMain$29.class
+    #       build/classes/main/java/InterfaceMain$3.class
+    #       build/classes/main/java/InterfaceMain$4.class
+    #       build/classes/main/java/InterfaceMain$5.class
+    #       build/classes/main/java/InterfaceMain$6.class
+    #       build/classes/main/java/InterfaceMain$7.class
+    #       build/classes/main/java/InterfaceMain$8.class
+    #       build/classes/main/java/InterfaceMain$9.class
+    #       build/classes/main/java/InterfaceMain.class
+    #       build/classes/main/java/InterfaceMain.form
+    #       build/classes/main/java/Pessoa.class
+    #       nbproject/private/private.xml
+    #       src/main/java/InterfaceMain.java
+
+[33mcommit 02bbb232ae87a51fd0289c2700fae637e922c94c[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Jan 27 16:31:49 2022 +0000
+
+    adsad
+
+[33mcommit c1d8256ef8aa7d159f25ad6eb958613cafba8811[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Jan 27 14:15:13 2022 +0000
+
+    xml
+
+[33mcommit f5d30953c3cc7ee4b061dd30043bf29c27588f02[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Jan 26 19:25:37 2022 +0000
+
+    oops
+
+[33mcommit 68b52be2412b9b41072ead10b34f379b47955cc5[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Jan 26 19:17:51 2022 +0000
+
+    formato Pass
+
+[33mcommit e8d08ebae4178067e51734228f7c712bf4eaee39[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Wed Jan 26 18:50:51 2022 +0000
+
+    mais um pouco de sopa
+
+[33mcommit 515e508f6e19e1c62866b3acc9559624f5ce2c93[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Jan 25 16:51:37 2022 +0000
+
+    dsadas
+
+[33mcommit a80c85f4409acd4bc18d3a90c22ad5f700cd0440[m
+Merge: 4c2fbe9 83f60d3
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Jan 25 16:44:56 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       .idea/.gitignore
+    #       .idea/misc.xml
+    #       build/built-jar.properties
+    #       build/classes/main/java/Database.class
+    #       build/classes/main/java/InterfaceMain$1.class
+    #       build/classes/main/java/InterfaceMain$10.class
+    #       build/classes/main/java/InterfaceMain$11.class
+    #       build/classes/main/java/InterfaceMain$12.class
+    #       build/classes/main/java/InterfaceMain$13.class
+    #       build/classes/main/java/InterfaceMain$14.class
+    #       build/classes/main/java/InterfaceMain$15.class
+    #       build/classes/main/java/InterfaceMain$16.class
+    #       build/classes/main/java/InterfaceMain$17.class
+    #       build/classes/main/java/InterfaceMain$18.class
+    #       build/classes/main/java/InterfaceMain$19.class
+    #       build/classes/main/java/InterfaceMain$2.class
+    #       build/classes/main/java/InterfaceMain$20.class
+    #       build/classes/main/java/InterfaceMain$21.class
+    #       build/classes/main/java/InterfaceMain$22.class
+    #       build/classes/main/java/InterfaceMain$23.class
+    #       build/classes/main/java/InterfaceMain$24.class
+    #       build/classes/main/java/InterfaceMain$25.class
+    #       build/classes/main/java/InterfaceMain$26.class
+    #       build/classes/main/java/InterfaceMain$27.class
+    #       build/classes/main/java/InterfaceMain$28.class
+    #       build/classes/main/java/InterfaceMain$29.class
+    #       build/classes/main/java/InterfaceMain$3.class
+    #       build/classes/main/java/InterfaceMain$4.class
+    #       build/classes/main/java/InterfaceMain$5.class
+    #       build/classes/main/java/InterfaceMain$6.class
+    #       build/classes/main/java/InterfaceMain$7.class
+    #       build/classes/main/java/InterfaceMain$8.class
+    #       build/classes/main/java/InterfaceMain$9.class
+    #       build/classes/main/java/InterfaceMain.class
+    #       build/classes/main/java/InterfaceMain.form
+    #       dist/ModoluTematico.jar
+    #       nbproject/private/private.xml
+    #       src/main/java/InterfaceMain.java
+
+[33mcommit 4c2fbe96a3e571be5d74571d6c01bc79f7d704d8[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Jan 25 16:43:30 2022 +0000
+
+    ajfhsk
+
+[33mcommit 83f60d37dd7ef0a66a61622d1d59e2ad57ab2b44[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Jan 25 16:43:06 2022 +0000
+
+    dewqdw
+
+[33mcommit 0c9c4c51e686b302adb0dfddfe8ca194597593da[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Tue Jan 25 15:49:11 2022 +0000
+
+    pastas a mais
+
+[33mcommit c5aca7d60837c6ddb741b6be7364de52e98ac9a4[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 24 21:49:41 2022 +0000
+
+    faltava um ;
+
+[33mcommit d909e9c6eba2f436e4761fb18f40edcf2110b3d7[m
+Merge: 92b86f3 6f9c403
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 24 21:45:55 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 92b86f3e1900b5d05f13ad7a5f5950d130e91db6[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 24 21:45:51 2022 +0000
+
+    dede
+
+[33mcommit 6f9c403e4c58b6e0eb8fc659a278d465a3b98b32[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Jan 24 17:02:38 2022 +0000
+
+    ola
+
+[33mcommit ab58c4f9ea3881fc79fc7832444473fc3a6f4b1d[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Jan 24 16:14:44 2022 +0000
+
+    aspeto aspecioso bonito
+
+[33mcommit b1ea45ccfeceb78904539fee239b5c5af2089ecb[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Jan 22 18:26:20 2022 +0000
+
+    ffff registo
+
+[33mcommit 4076412c87aa81f6d7ef3bf92b23475a2420b519[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Jan 22 18:13:17 2022 +0000
+
+    acidente verifica feito, há campos que nao sao pedidos que estao no objecto acidente, e campos que sao pedidos que nao estao na classe acidente
+
+[33mcommit dbc0e1267a9e93661c5ed4de949bbc2da853bcd8[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Jan 22 11:50:15 2022 +0000
+
+    interface acidente a meio
+
+[33mcommit ebc164de3ba4b0731eb1a02347ab723f76d9bc4f[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 15:58:12 2022 +0000
+
+    registar carro esta feita mais ou menos, tem de se ver as datas e a classe carrinha não esta como deve de ser para os dados que estamos a pedir
+
+[33mcommit 1ae065142ed01dedbcba9e9e5c99f199978acd8f[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 15:35:52 2022 +0000
+
+    dsadsa
+
+[33mcommit dfa50227a5645c0ff237a0afae385d1a118f96c3[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 15:07:50 2022 +0000
+
+    f
+
+[33mcommit 139301165fd279174079c9996eebc6a47cebd979[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 11:06:18 2022 +0000
+
+    fds ja tirei a merdas das pastas do gradle que vieram aqui parar nao sei como
+
+[33mcommit b16aefdd0539fb57c2dcf5a1f1d10f917a5554d4[m
+Merge: f1aea40 eb51cde
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 11:01:21 2022 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit f1aea40ec16bd701a7a70cb4a3bef4711270eb44[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Fri Jan 21 10:57:33 2022 +0000
+
+    dsad
+
+[33mcommit eb51cde3a148558846a368c2fc4425ca11001e7e[m
+Merge: c0b75bc 146ece3
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Wed Jan 19 13:56:29 2022 +0000
+
+    ola
+
+[33mcommit c0b75bcd8fe1493751bc108ea1c717bf7882bad5[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Wed Jan 19 13:53:29 2022 +0000
+
+    ola mundo
+
+[33mcommit 146ece3c7ad78e717e99236c0f2905c7efd2524e[m
+Author: João Garcia <71498088+joaogarcia13@users.noreply.github.com>
+Date:   Mon Jan 17 18:27:26 2022 +0000
+
+    Create README.md
+
+[33mcommit 02d7f80dd84d69a145dcc07e6631f0df0e1badb9[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 17 18:25:20 2022 +0000
+
+    Datas e horas passam, mas nao ficam validas :/
+
+[33mcommit 9bc468e7b17269ae4667c435d21f8eb85a27fc60[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 17 14:28:27 2022 +0000
+
+    tirei o graddle
+
+[33mcommit f58cea1f4c02f68651c05731590028b2fc635529[m
+Merge: 1146eea 747f239
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 17 14:03:48 2022 +0000
+
+    ewq
+
+[33mcommit 1146eeab50390c5e13a297882b4df70cfab93d68[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Jan 17 14:00:22 2022 +0000
+
+    dwqd
+
+[33mcommit 747f23944da77d9d03bbcc22b397a0fba984674b[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Dec 29 19:35:12 2021 +0000
+
+    gorilaDB
+
+[33mcommit d1e87c17fe132548a985b830c87360b3fdad73a8[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Dec 29 18:28:37 2021 +0000
+
+    conflitos
+
+[33mcommit 046fa7c237833ec04a7a189ad9324d6287c0ffa6[m
+Merge: ac45d3d c0b1d87
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Wed Dec 29 18:28:04 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       Projecto_Tematico/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock
+    #       Projecto_Tematico/.gradle/buildOutputCleanup/cache.properties
+    #       Projecto_Tematico/.gradle/checksums/checksums.lock
+    #       Projecto_Tematico/.gradle/nb-cache/Projecto_Tematico-1300335386/project-info.ser
+    #       Projecto_Tematico/.gradle/nb-cache/subprojects.ser
+    #       Projecto_Tematico/build/tmp/compileJava/previous-compilation-data.bin
+    #       Projecto_Tematico/src/main/java/InterfaceMain.form
+    #       Projecto_Tematico/src/main/java/InterfaceMain.java
+
+[33mcommit c0b1d87671d392b0b215cb421c4bb6ff2c99ad26[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 13:45:46 2021 +0000
+
+    hhhhhhhaaaa
+
+[33mcommit 3f481bcbe1d59d5120ab4a9bcea18a6990cc83c5[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 13:29:37 2021 +0000
+
+    gradle morreu
+
+[33mcommit ac45d3dc1f2e8a481a4b0aece3dcb7b160d460b0[m
+Merge: f813280 a950a79
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 13:20:38 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       README.md
+
+[33mcommit a950a79ee6ef95ae1b16138d8fb1b7db319d4f40[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 13:18:37 2021 +0000
+
+    ddsadsa
+
+[33mcommit f8132809de00dca647e8021ea7a1bc2132dc3737[m
+Merge: 951ec2a b390578
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 13:16:29 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+    
+    # Conflicts:
+    #       Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.bin
+    #       Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.lock
+    #       Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.bin
+    #       Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.lock
+    #       Projecto_Tematico/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+
+[33mcommit 951ec2ad1a538b57d65778486fb62e32632f206b[m
+Merge: 15877ad e58156a
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 13:14:30 2021 +0000
+
+    a
+
+[33mcommit b390578a81ae8799bf630987730f27fe2679b3c4[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 13:12:30 2021 +0000
+
+     boradas
+
+[33mcommit 15877ad2d3b69cc545a5cdcfd8f412bd846b1356[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 12:57:05 2021 +0000
+
+    a
+
+[33mcommit e58156a0be4f536a3bf9847cc14c68e63f1882e5[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 12:54:48 2021 +0000
+
+    normal e ser fixe
+
+[33mcommit 0f1e13df798dd2c04d764905a8eb4d04a02a2fc8[m
+Merge: 39cfd2f fa6ee51
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 12:44:39 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 39cfd2fb48030eef0c0aac744053a91cb147f472[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Thu Dec 23 12:44:21 2021 +0000
+
+    medo
+
+[33mcommit fa6ee51cdc014e7070fd38c33e31da1e2f879a96[m
+Merge: ea97cf3 3cfb2d3
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 12:43:12 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+
+[33mcommit ea97cf33b4c5ba3b2471a57bab9363a32f3a2d5b[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Thu Dec 23 12:42:43 2021 +0000
+
+    uhuhuahah
+
+[33mcommit 3cfb2d3532a26a9f39abca4c0032a96c9c235a58[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 22:58:05 2021 +0000
+
+    Amanha almoço salmao fumado
+
+[33mcommit a499c9f321a03fe5c2ef2f0b909b8ecbb3926a66[m
+Merge: 85a2dbb a535dc3
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 22:39:01 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 85a2dbb1aaf097ea1d63d0aaa4bf1c163702da24[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 22:38:46 2021 +0000
+
+    mao direita é penalti
+
+[33mcommit a535dc3bf8bfc88b931884f2433dbd44b698a98b[m
+Merge: ba1ea2f b382cdf
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 13 22:26:22 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit ba1ea2ff3c1d51e540c1f8d2a440e28ad2654cc7[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 13 22:26:07 2021 +0000
+
+    a interface esta a morrer mas ¯\_(ツ)_/¯
+
+[33mcommit b382cdfbfefa15be7b450bda73796a9260b62955[m
+Merge: 5791d8d cb8bbd8
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 19:46:31 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 5791d8d19c1dea9bc0b3139b2e849c0332abfaa5[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 19:46:05 2021 +0000
+
+    ja nao tenho forks!
+
+[33mcommit cb8bbd86eb68445a2e15950d8842b975b39b2973[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 13 19:08:12 2021 +0000
+
+    as imagens tao crazy
+
+[33mcommit 262d196c6fb9f5332d527d9da10580334cda34d8[m
+Merge: e86c350 dca522d
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 13 17:34:46 2021 +0000
+
+    dwqdqw
+
+[33mcommit e86c3501a0bcbe3706f566b93d339c1bde5a8554[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 13 17:33:28 2021 +0000
+
+    dwqdqw
+
+[33mcommit dca522d79bc82168d36f3f145bf5ac84daa5affd[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 16:58:05 2021 +0000
+
+    macaco
+
+[33mcommit 716983dfc6093ed112d72963ade7c72e211dce85[m
+Merge: 2e0adfa 547df36
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 16:57:47 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+    
+    # Conflicts:
+    #       .idea/workspace.xml
+    #       README.md
+
+[33mcommit 2e0adfa12f8ae8c56f6f224bfcc51e8f6eea33fd[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 13 16:56:27 2021 +0000
+
+    macaco
+
+[33mcommit 547df360090d1bbb09a69835493422ac22a75123[m
+Merge: becb62e 90ca8ab
+Author: Eliana <73837109+elianaddo@users.noreply.github.com>
+Date:   Mon Dec 13 16:48:28 2021 +0000
+
+    Merge pull request #1 from elianaddo/main
+    
+    Merge pull request #1 from joaogarcia13/main
+
+[33mcommit 90ca8ab6cc0ab883022eb0e30aa71f5c6ae001f1[m
+Merge: 4262172 becb62e
+Author: João Garcia <71498088+joaogarcia13@users.noreply.github.com>
+Date:   Mon Dec 13 16:44:47 2021 +0000
+
+    Merge pull request #1 from joaogarcia13/main
+    
+    forks e colheres
+
+[33mcommit becb62eb96bf5172fe24a310ae0d5e91bad32844[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sun Dec 12 23:19:48 2021 +0000
+
+    sign upas
+
+[33mcommit 83b72b3d2e2df55401b2e752a752fff52b20c1a8[m
+Merge: 8534ce1 f998f94
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sun Dec 12 20:12:52 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+    
+    # Conflicts:
+    #       .idea/workspace.xml
+
+[33mcommit 8534ce164ce35b7bf2c6927a06d4796b920c93e9[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sun Dec 12 20:12:27 2021 +0000
+
+    conflitos
+
+[33mcommit f998f9444d95f56ab7b716985304d9ceeaea6b90[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sun Dec 12 00:37:01 2021 +0000
+
+    gonçalo ta
+
+[33mcommit fdc6ba3509ebbf77cc78fee9cd73ddc03c2e3ba5[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sun Dec 12 00:11:57 2021 +0000
+
+    inter cara
+
+[33mcommit e13b4f0ba9410743e2f40fe531da1058ee419e82[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sat Dec 11 22:31:50 2021 +0000
+
+    vamos fazer swing?
+
+[33mcommit 4b7b7ba278d3e3cf4569b3921ffe7d9ec8ac4dc0[m
+Merge: bdd787b 19eeb8b
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sat Dec 11 19:49:34 2021 +0000
+
+    conflituoso
+
+[33mcommit bdd787bb420e1279e442c86462c7638126e3b14a[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Sat Dec 11 19:46:47 2021 +0000
+
+    mais um dia
+
+[33mcommit 19eeb8bd52f870136aaf0ac127c14685d029e9c6[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Dec 11 16:14:55 2021 +0000
+
+    Cores e Companhia
+
+[33mcommit b015f3cf8f4e44ae5f2c6fca94e86ceb7eab01ea[m
+Merge: ae1e803 b350b39
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Dec 11 16:01:02 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit ae1e8036a591ca1eac8f17cd382fe915a2a07357[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Sat Dec 11 16:00:53 2021 +0000
+
+    Arrenda renda
+
+[33mcommit b350b396b73024b5b371976827567066c09a0e51[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Tue Dec 7 12:11:12 2021 +0000
+
+    nao
+
+[33mcommit fcf5e7ae57ba20bb5d4e32943dcf85c3d773b399[m
+Author: diogofig24 <diogo-figueiredo1@hotmail.com>
+Date:   Mon Dec 6 23:47:56 2021 +0000
+
+    teste
+
+[33mcommit bb63f00ae9ebfb39244c9855fba9c6f884dafb7f[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 23:42:42 2021 +0000
+
+    push do medo
+
+[33mcommit ddc870186624fefa851708161193187a533ac6d7[m
+Merge: f778519 4037d71
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 23:42:18 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+    
+    # Conflicts:
+    #       .idea/misc.xml
+    #       .idea/workspace.xml
+    #       Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.bin
+    #       Projecto_Tematico/.gradle/7.1/executionHistory/executionHistory.lock
+    #       Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.bin
+    #       Projecto_Tematico/.gradle/7.1/fileHashes/fileHashes.lock
+    #       Projecto_Tematico/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+    #       Projecto_Tematico/build/tmp/compileJava/previous-compilation-data.bin
+
+[33mcommit f778519c972fee014a860ab56260c6e07a08afdb[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 23:35:33 2021 +0000
+
+    push do medo
+
+[33mcommit 4037d71e37f6e6d8367a082c781a193ac1785b71[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:28:53 2021 +0000
+
+    tinha cromos repetidos, agora ja nao tem
+
+[33mcommit f4e3c27629cf67179dfdc7aa51df100fe055090c[m
+Merge: bc6e160 ba62dc1
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:23:10 2021 +0000
+
+    misk
+
+[33mcommit bc6e160f8590ea9e6619e392879114faaeea921a[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:22:16 2021 +0000
+
+    não te esquecas do add
+
+[33mcommit 3de7b8cbad5630588dd102f25a93ec5bc5906415[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:21:05 2021 +0000
+
+    erros errados
+
+[33mcommit ba62dc1efb20c571d2a3ff0603244abc342f8678[m
+Merge: c563a70 409f552
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 23:20:12 2021 +0000
+
+    nao sei quem sou, nao tenho ID
+
+[33mcommit c563a708ad48a2f41e5e40c4dfe2e7903afa2a8d[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 23:19:51 2021 +0000
+
+    nao sei quem sou, nao tenho ID
+
+[33mcommit 409f5521e29b4f187af89095bb8aa4152aa16597[m
+Merge: 0906394 90de6b0
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:11:06 2021 +0000
+
+    familia
+
+[33mcommit 0906394b0bb791b6aa9b88ac4b8499ea81b6de87[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 23:08:59 2021 +0000
+
+    liga ao toretto para festejar
+
+[33mcommit 90de6b035dfa69eac6c5d14ebf7e9b2ee08ac725[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:57:16 2021 +0000
+
+    temos carta git add .! wooooo vida louca
+
+[33mcommit 047dabee053b07bc4783abb6ae04ad039591b70b[m
+Merge: 32bdaa0 cae1fbc
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:51:43 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 32bdaa0146b6641824e5c903983f828479b58864[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:50:31 2021 +0000
+
+    Date night
+
+[33mcommit cae1fbc212f4a802e888fde95f15c720bbe7710d[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 22:50:29 2021 +0000
+
+    ola migoooooooos
+
+[33mcommit 42621728dd8d3a9c534e09c598951d248eab5a97[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 22:49:05 2021 +0000
+
+    gorila
+
+[33mcommit d106bf5e37d64c110f5ce7394568b3cf5a5ed2b9[m
+Merge: 925fc5e 5fae27a
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 6 22:43:11 2021 +0000
+
+    2nd
+
+[33mcommit 925fc5e92c8bccfbd2e2d0c9163707035154aa45[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 6 22:41:46 2021 +0000
+
+    2nd commit
+
+[33mcommit 5fae27aeeeaba24a5a17f606f81fedbe1c0425b4[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:40:03 2021 +0000
+
+    Fornecedor
+
+[33mcommit 11465621cd034b767c07354d6facec9d13ea2686[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:35:48 2021 +0000
+
+    Condutor
+
+[33mcommit bffe2460d4be8ab5839428027a346f8e9e511447[m
+Merge: d2c658f 922b0a9
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:35:32 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit d2c658f5d78350e3632221594749b99cf9c90795[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:35:23 2021 +0000
+
+    Condutor
+
+[33mcommit 922b0a9743534e1e83946bfd4d9d1c822f356dd6[m
+Merge: 9cb8816 3f099f9
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 22:33:34 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico into main
+
+[33mcommit 9cb88169a6fe47a9f1e4ff4740d9870d56b6c70e[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Mon Dec 6 22:33:22 2021 +0000
+
+    ola mundooooooooo
+
+[33mcommit 3f099f90f7796ad4e58ff40d5bb54f647f061579[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 22:25:02 2021 +0000
+
+    somos pessoas
+
+[33mcommit 6ccc550f04f42762e516ba662182e1763c3b805e[m
+Merge: 3533ecf f7f2b32
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 21:51:22 2021 +0000
+
+    Merge branch 'main' of https://github.com/joaogarcia13/Modulo_Tematico
+
+[33mcommit 3533ecf364948e87ac01c641f408289b72d8768f[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 21:50:44 2021 +0000
+
+    pessoa classe
+
+[33mcommit f7f2b32e7e7d2762b7b1d993d508972c4047aa3a[m
+Author: Eliana Oliveira <edo@ua.pt>
+Date:   Mon Dec 6 21:48:30 2021 +0000
+
+    1st commit
+
+[33mcommit 57860c1e84386c96ae4e34b15ff33bf15f06307e[m
+Author: Joao Garcia <joaogarcia@pop-os.localdomain>
+Date:   Mon Dec 6 21:39:03 2021 +0000
+
+    projecto
+
+[33mcommit f08224f61bbed08c5902e316f73921159cc65a0e[m
+Author: GoncaloGoncalves33 <74007189+GoncaloGoncalves33@users.noreply.github.com>
+Date:   Tue Oct 19 14:22:37 2021 +0100
+
+    Update README.md
+
+[33mcommit 5f87322936eb81fc58444636323c9c8228e99355[m
+Author: João Garcia <71498088+joaogarcia13@users.noreply.github.com>
+Date:   Tue Oct 19 14:17:30 2021 +0100
+
+    Initial commit
