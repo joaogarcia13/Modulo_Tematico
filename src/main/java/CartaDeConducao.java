@@ -1,14 +1,14 @@
 package main.java;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CartaDeConducao{
     private String numero;
-    private Date dataDeEmissao;
-    private Date dataDeValidade;
+    private LocalDate dataDeEmissao;
+    private LocalDate dataDeValidade;
     private String categoria;
 
-    public CartaDeConducao(String numero, Date DataDeEmissao, Date DataDeValidade, String Categoria){
+    public CartaDeConducao(String numero, LocalDate DataDeEmissao, LocalDate DataDeValidade, String Categoria){
         this.numero=numero;
         this.dataDeEmissao=dataDeEmissao;
         this.dataDeValidade=dataDeValidade;
@@ -19,11 +19,11 @@ public class CartaDeConducao{
         return numero;
     }
 
-    public Date getDataDeEmissao() {
+    public LocalDate getDataDeEmissao() {
         return dataDeEmissao;
     }
 
-    public Date getDataDeValidade() {
+    public LocalDate getDataDeValidade() {
         return dataDeValidade;
     }
 
@@ -35,11 +35,11 @@ public class CartaDeConducao{
         this.numero = numero;
     }
 
-    public void setDataDeEmissao(Date dataDeEmissao) {
+    public void setDataDeEmissao(LocalDate dataDeEmissao) {
         this.dataDeEmissao = dataDeEmissao;
     }
 
-    public void setDataDeValidade(Date dataDeValidade) {
+    public void setDataDeValidade(LocalDate dataDeValidade) {
         this.dataDeValidade = dataDeValidade;
     }
 

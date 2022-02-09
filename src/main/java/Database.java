@@ -98,6 +98,33 @@ public class Database{
         stm.executeUpdate(cmd);
         
     }
+    public void insertCondutor(Condutor f, CartaDeConducao c) throws SQLException{
+        String cmd;
+        cmd = "insert into pessoas(nome, numeroCC, morada, dataRegistoSistema, dataNascimento, numTelefone, email)values(";
+        cmd = cmd + "'" + f.getNome() + "', ";
+        cmd = cmd + "'" + f.getNumeroCidadao()+ "', ";
+        cmd = cmd + "'" + f.getMorada() + "', ";
+        cmd = cmd + "'" + f.getDataRegistoSistema().toString() + "', ";
+        cmd = cmd + "'" + f.getDataNascimento().toString() + "', ";
+        cmd = cmd + "'" + f.getNumTelefone()+ "', ";
+        cmd = cmd + "'" + f.getEmail() + "') ";
+        stm.executeUpdate(cmd);
+        ResultSet rs = null;
+        rs = select("select id from pessoas where numeroCC='" + f.getNumeroCidadao() +"'");
+        rs.next();
+        cmd = "insert into condutores (numeroCartaConducao, classificacao, idPessoa)values(";
+        cmd = cmd + "'" + f.getNumeroCartaConducao() + "',";
+        cmd = cmd + "'" + 10 +"',";
+        cmd = cmd + "'" + rs.getString("id") + "') ";
+        stm.executeUpdate(cmd);
+        cmd = "insert into cartasconducao (numeroCartaConducao, dataEmissao, dataValidade, categoria)values(";
+        cmd = cmd + "'" + c.getNumero() + "', ";
+        cmd = cmd + "'" + c.getDataDeEmissao().toString() + "', ";
+        cmd = cmd + "'" + c.getDataDeValidade().toString() + "', ";
+        cmd = cmd + "'" + c.getCategoria() + "')";
+        stm.executeUpdate(cmd);
+        
+    }
     public void executeInsert(String cmd) throws SQLException{
         stm.executeUpdate(cmd);
     }

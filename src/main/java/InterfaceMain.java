@@ -23,9 +23,16 @@ import javax.swing.table.DefaultTableModel;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-//ToDo:
+/*ToDo:
 
-//-ver se nao temos classes que nao sao usadas
+    -ver se nao temos classes que nao sao usadas
+    -quando se aluga uma carrinha tem de se ver se a carta expirou
+    -registos diferentes para quem aluga e para quem fornece ?
+    -por campo de observaçoes quando se recebe carrinha ?
+    -aumentar preco consoante a classificaçao do condutor ?
+    -TESTAR REGISTAR CLIENTE
+*/
+
 /**
  *
  * @author joaogarcia
@@ -1379,7 +1386,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        RegistarFuncFrame.setPreferredSize(new java.awt.Dimension(680, 610));
         RegistarFuncFrame.setSize(new java.awt.Dimension(680, 610));
 
         RegistarFunc1.setBackground(new java.awt.Color(239, 177, 74));
@@ -2167,6 +2173,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
         jButton9.setForeground(new java.awt.Color(235, 244, 249));
         jButton9.setText("Confirmar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jLabel95.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel95.setForeground(new java.awt.Color(217, 86, 74));
@@ -2325,7 +2336,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             RegistarClienteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistarClienteFrameLayout.createSequentialGroup()
                 .addComponent(RegistarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 335, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3470,6 +3481,82 @@ public class InterfaceMain extends javax.swing.JFrame {
         DataNascimentoRegistoCliente.setText("");
         CategoriaRegistoCliente.setSelectedIndex(0);
     }//GEN-LAST:event_ResetRegistarClienteBtn
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        //Dta emissao|,|validade, |datanasmineto, |tele, |email ja existe, !cc ja existe, carta ja existe
+        boolean erro = false;
+        String mensagem = "Os seguintes erros foram encontrados:\n";
+        ResultSet rs = null;
+        if(!Pattern.matches(formatoEmail, EmailRegistoCliente1.getText())){
+            erro = true;
+            mensagem += "\nEmail inválido.";
+        }
+        if(!Pattern.matches(formatoTelefone, ContactoRegistoCliente1.getText())){
+            erro = true;
+            mensagem += "\nNumero Contacto inválido.";
+        }
+        try{
+            LocalDate data = StringtoDate(DataEmissaoRegisto2.getText());
+        }catch(Exception e){
+            erro = true;
+            mensagem +="\nData de emissão da carta inválida.";
+        }
+        try{
+            LocalDate data = StringtoDate(DataNascimentoRegistoCliente.getText());
+        }catch(Exception e){
+            erro = true;
+            mensagem +="\nData Nascimento inválida.";
+        }
+        try{
+            LocalDate data = StringtoDate(ValidadeCartaRegisto2.getText());
+        }catch(Exception e){
+            erro = true;
+            mensagem +="\nValidade da carta inválida.";
+        }
+        if(todayDate.now().isAfter(StringtoDate(ValidadeCartaRegisto2.getText()))){
+            erro = true;
+            mensagem += "\nValidade da carta de condução está expirada.";
+        }
+        try {
+            rs = db.select("select email from pessoas");
+            while(rs.next()){
+                if(rs.getString("email").equals(EmailRegistoCliente1.getText())){
+                    erro = true;
+                    mensagem += "\nEste email já está associado a outro utilizador.";
+                }
+            }
+            rs = db.select("select numeroCC from pessoas");
+            while(rs.next()){
+                if(rs.getString("numeroCC").equals(CCRegistoCliente1.getText())){
+                    erro = true;
+                    mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
+                }
+            }
+            rs = db.select("select numeroCartaConducao from cartasConducao");
+            while(rs.next()){
+                if(rs.getString("numeroCartaConducao").equals(CartaConducaoRegisto2.getText())){
+                    erro = true;
+                    mensagem +="\nJá existe um utilizador com esta carta de condução.";
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            CartaDeConducao carta = new CartaDeConducao(CartaConducaoRegisto2.getText(), StringtoDate(DataEmissaoRegisto2.getText()), 
+                    StringtoDate(ValidadeCartaRegisto2.getText()), CategoriaRegistoCliente.getSelectedItem().toString());
+            Condutor condutor = new Condutor(NomeRegistoCliente1.getText(), 0, CCRegistoCliente1.getText(), MoradaRegistoCliente1.getText(),
+                    todayDate.now(), StringtoDate(DataNascimentoRegistoCliente.getText()), Integer.parseInt(ContactoRegistoCliente1.getText()), 
+                    EmailRegistoCliente1.getText(),CartaConducaoRegisto2.getText());
+            try {
+                db.insertCondutor(condutor, carta);
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
