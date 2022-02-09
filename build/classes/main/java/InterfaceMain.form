@@ -3800,7 +3800,7 @@
                 <Property name="text" type="java.lang.String" value="Confirmar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmarRegistoClienteBtn"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel95">
@@ -3840,7 +3840,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="4a" green="56" red="d9" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Carta Condu&#xe7;&#xe3;o:"/>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero Carta Condu&#xe7;&#xe3;o:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="CartaConducaoRegisto2">
