@@ -25,13 +25,15 @@ import javax.swing.table.DefaultTableModel;
 
 /*ToDo:
 
-    -ver se nao temos classes que nao sao usadas
     -quando se aluga uma carrinha tem de se ver se a carta expirou
-    -registos diferentes para quem aluga e para quem fornece ?
     -por campo de observaçoes quando se recebe carrinha ?
-    -aumentar preco consoante a classificaçao do condutor ?
     -arranjar frame de aluguer
-
+    -tirar historico de consultar perfil
+    -botao de editar funcionario
+    -ajustar frames em geral
+    -Threads
+    -Testes
+    -perguntar no registar veiculo se ja tem conta fornecedor, senao criar um
 */
 
 /**
