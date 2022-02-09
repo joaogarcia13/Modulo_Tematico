@@ -3505,7 +3505,7 @@
                                           <Component id="jLabel96" alignment="0" max="32767" attributes="0"/>
                                           <Component id="CartaConducaoRegisto2" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel97" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="DataEmissaoRegisto2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="DataEmissaoRegisto" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel98" alignment="0" max="32767" attributes="0"/>
                                           <Component id="CategoriaRegistoCliente" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel99" alignment="0" max="32767" attributes="0"/>
@@ -3563,7 +3563,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel95" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DataEmissaoRegisto2" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="DataEmissaoRegisto" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -3878,7 +3878,7 @@
                 <Property name="text" type="java.lang.String" value="Categoria Carta Condu&#xe7;&#xe3;o:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DataEmissaoRegisto2">
+            <Component class="javax.swing.JTextField" name="DataEmissaoRegisto">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="dd" green="ca" red="a9" type="rgb"/>

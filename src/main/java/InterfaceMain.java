@@ -279,7 +279,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel96 = new javax.swing.JLabel();
         CartaConducaoRegisto2 = new javax.swing.JTextField();
         jLabel97 = new javax.swing.JLabel();
-        DataEmissaoRegisto2 = new javax.swing.JTextField();
+        DataEmissaoRegisto = new javax.swing.JTextField();
         jLabel98 = new javax.swing.JLabel();
         CategoriaRegistoCliente = new javax.swing.JComboBox<>();
         jLabel99 = new javax.swing.JLabel();
@@ -2201,10 +2201,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel97.setForeground(new java.awt.Color(217, 86, 74));
         jLabel97.setText("Categoria Carta Condução:");
 
-        DataEmissaoRegisto2.setBackground(new java.awt.Color(169, 202, 221));
-        DataEmissaoRegisto2.setForeground(new java.awt.Color(60, 94, 115));
-        DataEmissaoRegisto2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        DataEmissaoRegisto2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DataEmissaoRegisto.setBackground(new java.awt.Color(169, 202, 221));
+        DataEmissaoRegisto.setForeground(new java.awt.Color(60, 94, 115));
+        DataEmissaoRegisto.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DataEmissaoRegisto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
 
         jLabel98.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel98.setForeground(new java.awt.Color(217, 86, 74));
@@ -2255,7 +2255,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                                     .addComponent(jLabel96, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(CartaConducaoRegisto2)
                                     .addComponent(jLabel97, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(DataEmissaoRegisto2)
+                                    .addComponent(DataEmissaoRegisto)
                                     .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(CategoriaRegistoCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2304,7 +2304,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jLabel95)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DataEmissaoRegisto2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DataEmissaoRegisto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel98)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3476,7 +3476,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         MoradaRegistoCliente1.setText("");
         CCRegistoCliente1.setText("");
         CartaConducaoRegisto2.setText("");
-        DataEmissaoRegisto2.setText("");
+        DataEmissaoRegisto.setText("");
         ValidadeCartaRegisto2.setText("");
         DataNascimentoRegistoCliente.setText("");
         CategoriaRegistoCliente.setSelectedIndex(0);
@@ -3487,6 +3487,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         boolean erro = false;
         String mensagem = "Os seguintes erros foram encontrados:\n";
         ResultSet rs = null;
+        LocalDate dataEmissao = null;
+        LocalDate validade = null;
+        LocalDate nascimento = null;
         if(!Pattern.matches(formatoEmail, EmailRegistoCliente1.getText())){
             erro = true;
             mensagem += "\nEmail inválido.";
@@ -3496,24 +3499,24 @@ public class InterfaceMain extends javax.swing.JFrame {
             mensagem += "\nNumero Contacto inválido.";
         }
         try{
-            LocalDate data = StringtoDate(DataEmissaoRegisto2.getText());
+            dataEmissao = StringtoDate(DataEmissaoRegisto.getText());
         }catch(Exception e){
             erro = true;
             mensagem +="\nData de emissão da carta inválida.";
         }
         try{
-            LocalDate data = StringtoDate(DataNascimentoRegistoCliente.getText());
+            nascimento = StringtoDate(DataNascimentoRegistoCliente.getText());
         }catch(Exception e){
             erro = true;
             mensagem +="\nData Nascimento inválida.";
         }
         try{
-            LocalDate data = StringtoDate(ValidadeCartaRegisto2.getText());
+            validade = StringtoDate(ValidadeCartaRegisto2.getText());
         }catch(Exception e){
             erro = true;
             mensagem +="\nValidade da carta inválida.";
         }
-        if(todayDate.now().isAfter(StringtoDate(ValidadeCartaRegisto2.getText()))){
+        if(todayDate.now().isAfter(validade)){
             erro = true;
             mensagem += "\nValidade da carta de condução está expirada.";
         }
@@ -3544,11 +3547,12 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
         if(erro){
             JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+
         }else{
-            CartaDeConducao carta = new CartaDeConducao(CartaConducaoRegisto2.getText(), StringtoDate(DataEmissaoRegisto2.getText()), 
-                    StringtoDate(ValidadeCartaRegisto2.getText()), CategoriaRegistoCliente.getSelectedItem().toString());
+            CartaDeConducao carta = new CartaDeConducao(CartaConducaoRegisto2.getText(), dataEmissao, 
+                    validade, CategoriaRegistoCliente.getSelectedItem().toString());
             Condutor condutor = new Condutor(NomeRegistoCliente1.getText(), 0, CCRegistoCliente1.getText(), MoradaRegistoCliente1.getText(),
-                    todayDate.now(), StringtoDate(DataNascimentoRegistoCliente.getText()), Integer.parseInt(ContactoRegistoCliente1.getText()), 
+                    todayDate.now(), nascimento, Integer.parseInt(ContactoRegistoCliente1.getText()), 
                     EmailRegistoCliente1.getText(),CartaConducaoRegisto2.getText());
             try {
                 db.insertCondutor(condutor, carta);
@@ -3689,7 +3693,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField ContactoRegistoCliente1;
     private javax.swing.JTextField ContactoRegistoFunc;
     private javax.swing.JTextField DataAcidente;
-    private javax.swing.JTextField DataEmissaoRegisto2;
+    private javax.swing.JTextField DataEmissaoRegisto;
     private javax.swing.JTextField DataNascimento1;
     private javax.swing.JTextField DataNascimentoRegistoCliente;
     private javax.swing.JTextField DataNascimentoRegistoFunc;

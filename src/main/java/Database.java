@@ -113,12 +113,15 @@ public class Database{
         rs = select("select id from pessoas where numeroCC='" + f.getNumeroCidadao() +"'");
         rs.next();
         cmd = "insert into cartasconducao (idPessoa, numeroCartaConducao, dataEmissao, dataValidade, categoria)values(";
-        cmd = cmd + "´" + rs.getString("id") + "', ";
+        System.out.println(c.getDataDeEmissao());
+        cmd = cmd + "'" + rs.getString("id") + "', ";
         cmd = cmd + "'" + c.getNumero() + "', ";
         cmd = cmd + "'" + c.getDataDeEmissao().toString() + "', ";
         cmd = cmd + "'" + c.getDataDeValidade().toString() + "', ";
         cmd = cmd + "'" + c.getCategoria() + "')";
         stm.executeUpdate(cmd);
+        rs = select("select id from pessoas where numeroCC='" + f.getNumeroCidadao() +"'");
+        rs.next();
         cmd = "insert into condutores (numeroCartaConducao, classificacao, idPessoa)values(";
         cmd = cmd + "'" + f.getNumeroCartaConducao() + "',";
         cmd = cmd + "'" + 10 +"',";

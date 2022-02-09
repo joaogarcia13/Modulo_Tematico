@@ -9,10 +9,10 @@ public class CartaDeConducao{
     private String categoria;
 
     public CartaDeConducao(String numero, LocalDate DataDeEmissao, LocalDate DataDeValidade, String Categoria){
-        this.numero=numero;
-        this.dataDeEmissao=dataDeEmissao;
-        this.dataDeValidade=dataDeValidade;
-        this.categoria=categoria;
+        this.numero = numero;
+        this.dataDeEmissao = DataDeEmissao;
+        this.dataDeValidade = DataDeValidade;
+        this.categoria = Categoria;
     }
 
     public String getNumero() {
