@@ -31,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
     -por campo de observaçoes quando se recebe carrinha ?
     -aumentar preco consoante a classificaçao do condutor ?
     -arranjar frame de aluguer
+
 */
 
 /**
