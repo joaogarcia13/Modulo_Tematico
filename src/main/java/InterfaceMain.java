@@ -30,6 +30,7 @@ import javax.swing.table.DefaultTableModel;
     -registos diferentes para quem aluga e para quem fornece ?
     -por campo de observaçoes quando se recebe carrinha ?
     -aumentar preco consoante a classificaçao do condutor ?
+    -arranjar frame de aluguer
 */
 
 /**
@@ -2852,13 +2853,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nValor a pagar não é valido ou tem formato errado.";
         }
-        if(DataPag.isBefore(DataAc)){
-            erro = true;
-            mensagem += "\nData de pagamento não pode ser antes da data do acidente.";
-        }
         if(DataAc == null || DataPag == null){
             erro = true;
             mensagem += "\nData de acidente ou de pagamento vazia..";
+        }else{
+            if(DataPag.isBefore(DataAc)){
+                erro = true;
+                mensagem += "\nData de pagamento não pode ser antes da data do acidente.";
+            }
         }
         try{
             ResultSet rs = null;
@@ -3776,11 +3778,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     }
     
     public static String DatetoString(LocalDate date){
-        return date.format(DateTimeFormatter.ofPattern("dd-MM-uuuu"));
+        return date.format(DateTimeFormatter.ofPattern("d-M-uuuu"));
     }
     
     public static String DatetoString2(LocalDate date){
-        return date.format(DateTimeFormatter.ofPattern("uuuu-MM-dd"));
+        return date.format(DateTimeFormatter.ofPattern("uuuu-M-d"));
     }
 
     
