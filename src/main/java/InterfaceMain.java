@@ -2174,7 +2174,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton9.setText("Confirmar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                ConfirmarRegistoClienteBtn(evt);
             }
         });
 
@@ -3479,14 +3479,12 @@ public class InterfaceMain extends javax.swing.JFrame {
                     rs.next();
                     NomeRegistoCliente1.setText(rs.getString("nome"));
                     MoradaRegistoCliente1.setText(rs.getString("morada"));
-                    DataNascimentoRegistoCliente.setText(rs.getString("dataNascimento"));
+                    DataNascimentoRegistoCliente.setText(DatetoString(StringtoDate2(rs.getString("dataNascimento"))));
                     ContactoRegistoCliente1.setText(rs.getString("numTelefone"));
                     EmailRegistoCliente1.setText(rs.getString("email"));
                     CCRegistoCliente1.setText(rs.getString("numeroCC"));
                     DataNascimentoRegistoCliente.setEditable(false);
-                    CCRegistoCliente1.setEditable(false);
-                    CartaConducaoRegisto2.setEditable(false);
-                    DataEmissaoRegisto.setEditable(false);                    
+                    CCRegistoCliente1.setEditable(false);                 
                     
                     RegistarClienteFrame.setVisible(true);
                     RegistarClienteFrame.setLocationRelativeTo(null);
@@ -3513,87 +3511,146 @@ public class InterfaceMain extends javax.swing.JFrame {
         CategoriaRegistoCliente.setSelectedIndex(0);
     }//GEN-LAST:event_ResetRegistarClienteBtn
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        //Dta emissao|,|validade, |datanasmineto, |tele, |email ja existe, !cc ja existe, carta ja existe
+    private void ConfirmarRegistoClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoClienteBtn
         boolean erro = false;
         String mensagem = "Os seguintes erros foram encontrados:\n";
         ResultSet rs = null;
         LocalDate dataEmissao = null;
         LocalDate validade = null;
         LocalDate nascimento = null;
-        if(!Pattern.matches(formatoEmail, EmailRegistoCliente1.getText())){
-            erro = true;
-            mensagem += "\nEmail inválido.";
-        }
-        if(!Pattern.matches(formatoTelefone, ContactoRegistoCliente1.getText())){
-            erro = true;
-            mensagem += "\nNumero Contacto inválido.";
-        }
-        try{
-            dataEmissao = StringtoDate(DataEmissaoRegisto.getText());
-        }catch(Exception e){
-            erro = true;
-            mensagem +="\nData de emissão da carta inválida.";
-        }
-        try{
-            nascimento = StringtoDate(DataNascimentoRegistoCliente.getText());
-        }catch(Exception e){
-            erro = true;
-            mensagem +="\nData Nascimento inválida.";
-        }
-        try{
-            validade = StringtoDate(ValidadeCartaRegisto2.getText());
-        }catch(Exception e){
-            erro = true;
-            mensagem +="\nValidade da carta inválida.";
-        }
-        if(todayDate.now().isAfter(validade)){
-            erro = true;
-            mensagem += "\nValidade da carta de condução está expirada.";
-        }
-        try {
-            rs = db.select("select email from pessoas");
-            while(rs.next()){
-                if(rs.getString("email").equals(EmailRegistoCliente1.getText())){
-                    erro = true;
-                    mensagem += "\nEste email já está associado a outro utilizador.";
+            try {
+                rs= db.select("select count(id) as num from pessoas where numeroCC ='" + CCRegistoCliente1.getText() + "'");
+                rs.next();
+                if(Integer.parseInt(rs.getString("num")) == 0){
+                    if(!Pattern.matches(formatoEmail, EmailRegistoCliente1.getText())){
+                        erro = true;
+                        mensagem += "\nEmail inválido.";
+                    }
+                    if(!Pattern.matches(formatoTelefone, ContactoRegistoCliente1.getText())){
+                        erro = true;
+                        mensagem += "\nNumero Contacto inválido.";
+                    }
+                    try{
+                        dataEmissao = StringtoDate(DataEmissaoRegisto.getText());
+                    }catch(Exception e){
+                        erro = true;
+                        mensagem +="\nData de emissão da carta inválida.";
+                    }
+                    try{
+                        nascimento = StringtoDate(DataNascimentoRegistoCliente.getText());
+                    }catch(Exception e){
+                        erro = true;
+                        mensagem +="\nData Nascimento inválida.";
+                    }
+                    try{
+                        validade = StringtoDate(ValidadeCartaRegisto2.getText());
+                    }catch(Exception e){
+                        erro = true;
+                        mensagem +="\nValidade da carta inválida.";
+                    }
+                    if(todayDate.now().isAfter(validade)){
+                        erro = true;
+                        mensagem += "\nValidade da carta de condução está expirada.";
+                    }
+                    try {
+                        rs = db.select("select email from pessoas");
+                        while(rs.next()){
+                            if(rs.getString("email").equals(EmailRegistoCliente1.getText())){
+                                erro = true;
+                                mensagem += "\nEste email já está associado a outro utilizador.";
+                            }
+                        }
+                        rs = db.select("select numeroCC from pessoas");
+                        while(rs.next()){
+                            if(rs.getString("numeroCC").equals(CCRegistoCliente1.getText())){
+                                erro = true;
+                                mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
+                            }
+                        }
+                        rs = db.select("select numeroCartaConducao from cartasconducao");
+                        while(rs.next()){
+                            if(rs.getString("numeroCartaConducao").equals(CartaConducaoRegisto2.getText())){
+                                erro = true;
+                                mensagem +="\nJá existe um utilizador com esta carta de condução.";
+                            }
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if(erro){
+                        JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+
+                    }else{
+                        CartaDeConducao carta = new CartaDeConducao(CartaConducaoRegisto2.getText(), dataEmissao, 
+                        validade, CategoriaRegistoCliente.getSelectedItem().toString());
+                        Condutor condutor = new Condutor(NomeRegistoCliente1.getText(), 0, CCRegistoCliente1.getText(), MoradaRegistoCliente1.getText(),
+                        todayDate.now(), nascimento, Integer.parseInt(ContactoRegistoCliente1.getText()), 
+                        EmailRegistoCliente1.getText(),CartaConducaoRegisto2.getText());
+                        try {
+                            db.insertCondutor(condutor, carta);
+                            JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                            RegistarClienteFrame.dispose();
+                        } catch (SQLException ex) {
+                            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }else{
+                    try{
+                        if(!Pattern.matches(formatoEmail, EmailRegistoCliente1.getText())){
+                        erro = true;
+                        mensagem += "\nEmail inválido.";
+                        }
+                        if(!Pattern.matches(formatoTelefone, ContactoRegistoCliente1.getText())){
+                            erro = true;
+                            mensagem += "\nNumero Contacto inválido.";
+                        }
+                        try{
+                            dataEmissao = StringtoDate(DataEmissaoRegisto.getText());
+                        }catch(Exception e){
+                            erro = true;
+                            mensagem +="\nData de emissão da carta inválida.";
+                        }
+                        try{
+                            nascimento = StringtoDate(DataNascimentoRegistoCliente.getText());
+                        }catch(Exception e){
+                            erro = true;
+                            mensagem +="\nData Nascimento inválida.";
+                        }
+                        try{
+                            validade = StringtoDate(ValidadeCartaRegisto2.getText());
+                        }catch(Exception e){
+                            erro = true;
+                            mensagem +="\nValidade da carta inválida.";
+                        }
+                        if(todayDate.now().isAfter(validade)){
+                            erro = true;
+                            mensagem += "\nValidade da carta de condução está expirada.";
+                        }
+                        db.executeInsert("update pessoas set nome = ' " + NomeRegistoCliente1.getText() + "', morada = '" + MoradaRegistoCliente1.getText() + "',"
+                                + " numTelefone = '" + ContactoRegistoCliente1.getText() + "', email = '" + EmailRegistoCliente1.getText() + "' where numeroCC ='"+
+                                CCRegistoCliente1.getText() +"'");
+                        
+                        rs = db.select("select id from pessoas where numeroCC = '" + CCRegistoCliente1.getText() + "'");
+                        rs.next();
+                        db.executeInsert("insert into cartasconducao (idPessoa,numeroCartaConducao, DataEmissao, dataValidade, categoria)values('" + rs.getString("id") + "', '" 
+                                + CartaConducaoRegisto2.getText() + "', '" + StringtoDate(DataEmissaoRegisto.getText()) + "', '" + StringtoDate(ValidadeCartaRegisto2.getText())
+                                + "', '" + CategoriaRegistoCliente.getSelectedItem().toString() + "')");
+                        
+                        rs = db.select("select id from pessoas where numeroCC = '" + CCRegistoCliente1.getText() + "'");
+                        rs.next();
+                        db.executeInsert("insert into condutores (numeroCartaConducao, classificacao, idPessoa) values('" + CartaConducaoRegisto2.getText() +"', '0', '" +
+                                rs.getString("id") + "')");
+                        
+                        JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                            RegistarClienteFrame.dispose();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-            }
-            rs = db.select("select numeroCC from pessoas");
-            while(rs.next()){
-                if(rs.getString("numeroCC").equals(CCRegistoCliente1.getText())){
-                    erro = true;
-                    mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
-                }
-            }
-            rs = db.select("select numeroCartaConducao from cartasconducao");
-            while(rs.next()){
-                if(rs.getString("numeroCartaConducao").equals(CartaConducaoRegisto2.getText())){
-                    erro = true;
-                    mensagem +="\nJá existe um utilizador com esta carta de condução.";
-                }
-            }
-        } catch (SQLException ex) {
+            } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(erro){
-            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
-
-        }else{
-            CartaDeConducao carta = new CartaDeConducao(CartaConducaoRegisto2.getText(), dataEmissao, 
-                    validade, CategoriaRegistoCliente.getSelectedItem().toString());
-            Condutor condutor = new Condutor(NomeRegistoCliente1.getText(), 0, CCRegistoCliente1.getText(), MoradaRegistoCliente1.getText(),
-                    todayDate.now(), nascimento, Integer.parseInt(ContactoRegistoCliente1.getText()), 
-                    EmailRegistoCliente1.getText(),CartaConducaoRegisto2.getText());
-            try {
-                db.insertCondutor(condutor, carta);
-                JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                RegistarClienteFrame.dispose();
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_ConfirmarRegistoClienteBtn
 
     /**
      * @param args the command line arguments

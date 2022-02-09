@@ -3806,7 +3806,7 @@
                 <Property name="text" type="java.lang.String" value="Confirmar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmarRegistoClienteBtn"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel95">
