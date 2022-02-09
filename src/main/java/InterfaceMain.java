@@ -98,8 +98,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         txtDataFim = new javax.swing.JTextField();
         btnFiltrar = new javax.swing.JButton();
-        cmbCategoria = new javax.swing.JComboBox<>();
-        jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         cmbMarca = new javax.swing.JComboBox<>();
         jLabel61 = new javax.swing.JLabel();
@@ -325,6 +323,11 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         DataPagamentoAc.setBackground(new java.awt.Color(169, 202, 221));
         DataPagamentoAc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+        DataPagamentoAc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DataPagamentoAcActionPerformed(evt);
+            }
+        });
 
         jLabel34.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(217, 86, 74));
@@ -513,9 +516,11 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 650));
-        AlugarVeiculo.setUndecorated(true);
+        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 645));
+        AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 645));
+        AlugarVeiculo.setPreferredSize(new java.awt.Dimension(885, 645));
         AlugarVeiculo.setResizable(false);
+        AlugarVeiculo.setSize(new java.awt.Dimension(885, 645));
 
         jPanel5.setBackground(new java.awt.Color(239, 177, 74));
         jPanel5.setForeground(new java.awt.Color(239, 177, 74));
@@ -544,12 +549,18 @@ public class InterfaceMain extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblCarrinhas);
 
+        txtDataInicio.setBackground(new java.awt.Color(169, 202, 221));
+
         jLabel38.setForeground(new java.awt.Color(217, 86, 74));
         jLabel38.setText("Data Inicio: ");
 
         jLabel39.setForeground(new java.awt.Color(217, 86, 74));
         jLabel39.setText("Data Fim:");
 
+        txtDataFim.setBackground(new java.awt.Color(169, 202, 221));
+
+        btnFiltrar.setBackground(new java.awt.Color(60, 94, 115));
+        btnFiltrar.setForeground(new java.awt.Color(235, 244, 249));
         btnFiltrar.setText("Filtrar");
         btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -557,12 +568,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
 
-        jLabel57.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel57.setText("Categoria");
-
         jLabel58.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel58.setText("Marca");
+        jLabel58.setText("Marca:");
 
+        cmbMarca.setBackground(new java.awt.Color(169, 202, 221));
         cmbMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atualizarModelos(evt);
@@ -570,10 +579,14 @@ public class InterfaceMain extends javax.swing.JFrame {
         });
 
         jLabel61.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel61.setText("Modelo");
+        jLabel61.setText("Modelo:");
+
+        cmbModelo.setBackground(new java.awt.Color(169, 202, 221));
 
         jLabel62.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel62.setText("Combustível");
+        jLabel62.setText("Combustível:");
+
+        cmbCombustível.setBackground(new java.awt.Color(169, 202, 221));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -587,68 +600,57 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGap(59, 59, 59))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1)
-                                .addContainerGap())
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel61))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cmbModelo, 0, 137, Short.MAX_VALUE)
+                                    .addComponent(txtDataInicio))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel38)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel39)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel57)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel58)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel61)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel62)
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cmbCombustível, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addComponent(btnFiltrar)
-                                .addGap(34, 34, 34))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(12, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel38)
                             .addComponent(txtDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel39)
-                            .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel57))
+                            .addComponent(jLabel58)
+                            .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cmbCombustível, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel62))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel58)
-                                .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel61)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbCombustível, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel62)
+                            .addComponent(cmbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel61))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addComponent(btnFiltrar)
+                        .addComponent(btnFiltrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(34, 34, 34)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -671,6 +673,8 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addGap(0, 179, Short.MAX_VALUE)
         );
 
+        btnAlugar.setBackground(new java.awt.Color(60, 94, 115));
+        btnAlugar.setForeground(new java.awt.Color(235, 244, 249));
         btnAlugar.setText("Alugar");
         btnAlugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -685,7 +689,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scrollPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAlugar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGap(16, 16, 16))
             .addGroup(scrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(scrollPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -711,7 +715,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(scrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -731,7 +735,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
         AlugarVeiculoLayout.setVerticalGroup(
             AlugarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         Pagamento.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2547,19 +2551,19 @@ public class InterfaceMain extends javax.swing.JFrame {
         MainMenuLayout.setHorizontalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(32, 32, 32)
                 .addComponent(AlugarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(RegistarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(46, 46, 46)
                 .addComponent(ConsultarVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(31, 31, 31)
                 .addComponent(BtnMainAcidente, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(ReceberVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ReceberVeiculoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(ConsultarAcidenteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
             .addGroup(MainMenuLayout.createSequentialGroup()
@@ -2583,7 +2587,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MainMenuLayout.createSequentialGroup()
                             .addGap(9, 9, 9)
                             .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         MainMenuLayout.setVerticalGroup(
             MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2621,7 +2625,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -2927,79 +2931,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         //pedir á base de dados pela carta
     }//GEN-LAST:event_Consultar_Perfil
 
-    private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-            if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){ 
-            String filtro = "";
-            String queryCarrinhas = "select * from carrinhas where matricula <> ''";
-            if(cmbMarca.getSelectedItem().toString() != "Todos"){
-                filtro += " and marca = '" + cmbMarca.getSelectedItem().toString() + "'";
-            }
-            if(cmbModelo.getSelectedItem().toString() != "Todos"){
-                filtro += "and modelo = '" + cmbModelo.getSelectedItem().toString() + "'";
-            }
-            if(cmbCombustível.getSelectedItem().toString() != "Todos"){
-                filtro += "and combustivel = '" + cmbCombustível.getSelectedItem().toString() + "'";
-            }
-            DefaultTableModel model = new DefaultTableModel(){
-                @Override
-                 public boolean isCellEditable(int row, int column) {
-                    return false;
-            }}; 
-            model.addColumn("Matricula");
-            model.addColumn("Marca");
-            model.addColumn("Modelo");
-            model.addColumn("Combustivel");
-            model.addColumn("Potencia");
-            model.addColumn("Cilindrada");
-            ArrayList<Carrinha> carrinhas = new ArrayList<Carrinha>();
-            int contadorCarrinhas = 0;
-            try {
-                ResultSet rs = null;
-                rs = db.select(queryCarrinhas + filtro);
-                while(rs.next()){
-                    contadorCarrinhas++;
-                    Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro);
-                    tmp.setMatricula(rs.getString("matricula"));
-                    tmp.setMarca(rs.getString("marca"));
-                    tmp.setModelo(rs.getString("modelo"));
-                    tmp.setCombustivel(rs.getString("combustivel"));
-                    tmp.setPotencia(rs.getString("potencia"));
-                    tmp.setCilindrada(rs.getString("cilindrada"));
-                    carrinhas.add(tmp);
-                }
-                for(int i = 0; i < contadorCarrinhas; i++){
-                    String matricula = carrinhas.get(i).getMatricula();
-                    String marca = carrinhas.get(i).getMarca();
-                    String modelo = carrinhas.get(i).getModelo();
-                    String combustivel = carrinhas.get(i).getCombustivel();
-                    String potencia = carrinhas.get(i).getPotencia();
-                    String cilindrada = carrinhas.get(i).getCilindrada();
-                    rs = null;
-                    rs = db.select("select * from aluguer where carrinha = '" + matricula + "' and (dataInicio <= '" + StringtoDate(txtDataInicio.getText()).toString() + "' and (dataFim >= '" + StringtoDate(txtDataFim.getText()).toString() + "' or (dataFim <= '" + StringtoDate(txtDataFim.getText()).toString() + "' and dataFim >= '" + StringtoDate(txtDataInicio.getText()).toString() + "')))");
-                    int contador = 0;
-                    while(rs.next()){
-                        contador++;
-                    }
-                    if(contador == 0){
-                        model.addRow(new Object[]{matricula, marca, modelo, combustivel, potencia, cilindrada});
-                    }
-                }
-
-                tblCarrinhas.setModel(model);
-                for(int i = 0; i < tblCarrinhas.getColumnCount(); i++){
-                    for (int j = 0; j < tblCarrinhas.getRowCount(); j++) {
-                        tblCarrinhas.isCellEditable(i, j);
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-         }else{
-            JOptionPane.showMessageDialog(new JOptionPane(), "Nãoforam selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnFiltrarActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
             Login.setVisible(false);
             MainMenu.setVisible(true);       
@@ -3034,61 +2965,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Registar_MainMenu_Btn
-
-    private void atualizarModelos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarModelos
-        cmbModelo.removeAllItems();
-        cmbModelo.addItem("Todos");
-        if(selecionarModelo){
-             try {
-                ResultSet rs1 = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
-                while(rs1.next()){
-                    cmbModelo.addItem(rs1.getString("modelo"));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-       
-
-    }//GEN-LAST:event_atualizarModelos
-
-    private void AlugarVeiculo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculo
-        // TODO add your handling code here:
-        if(tblCarrinhas.getSelectedRowCount() != 1){
-            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
-        }else{
-            String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
-            try{
-                ResultSet rs = null;
-                rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
-                int rowCount = 0;
-                String id = "";
-                while(rs.next()){
-                    rowCount++;
-                    id = rs.getString("id");
-                }
-                if(rowCount == 0){
-                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
-                }else{
-                    rs.next();
-                    String cmd = "insert into aluguer(carrinha, dataInicio, dataFim, dataRegisto, condutor, funcionario, pago)values(" +
-                    "'" + tblCarrinhas.getValueAt(tblCarrinhas.getSelectedRow(), 0) + "', " +
-                    "'" + StringtoDate(txtDataInicio.getText()) + "', " +
-                    "'" + StringtoDate(txtDataFim.getText()) + "', " +
-                    "'" + LocalDate.now().toString() + "', " +
-                    "'" + id + "', " +
-                    "'" + idUtilizador + "', " +
-                    "'Nao')";
-                    db.executeInsert(cmd);
-                    AlugarVeiculo.dispose();
-                    JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
-                }
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_AlugarVeiculo
 
     private void RegistarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncActionPerformed
         GerirFuncionario.setVisible(true);
@@ -3679,6 +3555,136 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarRegistoClienteBtn
 
+    private void AlugarVeiculo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculo
+        // TODO add your handling code here:
+        if(tblCarrinhas.getSelectedRowCount() != 1){
+            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
+        }else{
+            String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+            try{
+                ResultSet rs = null;
+                rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                int rowCount = 0;
+                String id = "";
+                while(rs.next()){
+                    rowCount++;
+                    id = rs.getString("id");
+                }
+                if(rowCount == 0){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+                }else{
+                    rs.next();
+                    String cmd = "insert into aluguer(carrinha, dataInicio, dataFim, dataRegisto, condutor, funcionario, pago)values(" +
+                    "'" + tblCarrinhas.getValueAt(tblCarrinhas.getSelectedRow(), 0) + "', " +
+                    "'" + StringtoDate(txtDataInicio.getText()) + "', " +
+                    "'" + StringtoDate(txtDataFim.getText()) + "', " +
+                    "'" + LocalDate.now().toString() + "', " +
+                    "'" + id + "', " +
+                    "'" + idUtilizador + "', " +
+                    "'Nao')";
+                    db.executeInsert(cmd);
+                    AlugarVeiculo.dispose();
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_AlugarVeiculo
+
+    private void atualizarModelos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarModelos
+        cmbModelo.removeAllItems();
+        cmbModelo.addItem("Todos");
+        if(selecionarModelo){
+            try {
+                ResultSet rs1 = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
+                while(rs1.next()){
+                    cmbModelo.addItem(rs1.getString("modelo"));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_atualizarModelos
+
+    private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
+        if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){
+            String filtro = "";
+            String queryCarrinhas = "select * from carrinhas where matricula <> ''";
+            if(cmbMarca.getSelectedItem().toString() != "Todos"){
+                filtro += " and marca = '" + cmbMarca.getSelectedItem().toString() + "'";
+            }
+            if(cmbModelo.getSelectedItem().toString() != "Todos"){
+                filtro += "and modelo = '" + cmbModelo.getSelectedItem().toString() + "'";
+            }
+            if(cmbCombustível.getSelectedItem().toString() != "Todos"){
+                filtro += "and combustivel = '" + cmbCombustível.getSelectedItem().toString() + "'";
+            }
+            DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }};
+                model.addColumn("Matricula");
+                model.addColumn("Marca");
+                model.addColumn("Modelo");
+                model.addColumn("Combustivel");
+                model.addColumn("Potencia");
+                model.addColumn("Cilindrada");
+                ArrayList<Carrinha> carrinhas = new ArrayList<Carrinha>();
+                int contadorCarrinhas = 0;
+                try {
+                    ResultSet rs = null;
+                    rs = db.select(queryCarrinhas + filtro);
+                    while(rs.next()){
+                        contadorCarrinhas++;
+                        Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro);
+                        tmp.setMatricula(rs.getString("matricula"));
+                        tmp.setMarca(rs.getString("marca"));
+                        tmp.setModelo(rs.getString("modelo"));
+                        tmp.setCombustivel(rs.getString("combustivel"));
+                        tmp.setPotencia(rs.getString("potencia"));
+                        tmp.setCilindrada(rs.getString("cilindrada"));
+                        carrinhas.add(tmp);
+                    }
+                    for(int i = 0; i < contadorCarrinhas; i++){
+                        String matricula = carrinhas.get(i).getMatricula();
+                        String marca = carrinhas.get(i).getMarca();
+                        String modelo = carrinhas.get(i).getModelo();
+                        String combustivel = carrinhas.get(i).getCombustivel();
+                        String potencia = carrinhas.get(i).getPotencia();
+                        String cilindrada = carrinhas.get(i).getCilindrada();
+                        rs = null;
+                        rs = db.select("select * from aluguer where carrinha = '" + matricula + "' and (dataInicio <= '" + StringtoDate(txtDataInicio.getText()).toString() + "' and (dataFim >= '" + StringtoDate(txtDataFim.getText()).toString() + "' or (dataFim <= '" + StringtoDate(txtDataFim.getText()).toString() + "' and dataFim >= '" + StringtoDate(txtDataInicio.getText()).toString() + "')))");
+                        int contador = 0;
+                        while(rs.next()){
+                            contador++;
+                        }
+                        if(contador == 0){
+                            model.addRow(new Object[]{matricula, marca, modelo, combustivel, potencia, cilindrada});
+                        }
+                    }
+
+                    tblCarrinhas.setModel(model);
+                    for(int i = 0; i < tblCarrinhas.getColumnCount(); i++){
+                        for (int j = 0; j < tblCarrinhas.getRowCount(); j++) {
+                            tblCarrinhas.isCellEditable(i, j);
+                        }
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }else{
+                JOptionPane.showMessageDialog(new JOptionPane(), "Nãoforam selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnFiltrarActionPerformed
+
+    private void DataPagamentoAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPagamentoAcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataPagamentoAcActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3865,7 +3871,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFiltrar;
     private javax.swing.JTextField cartaConducao;
-    private javax.swing.JComboBox<String> cmbCategoria;
     private javax.swing.JComboBox<String> cmbCombustível;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JComboBox<String> cmbModelo;
@@ -3945,7 +3950,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
