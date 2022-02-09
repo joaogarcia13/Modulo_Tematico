@@ -2096,8 +2096,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        RegistarClienteFrame.setMaximumSize(new java.awt.Dimension(732, 664));
-        RegistarClienteFrame.setPreferredSize(new java.awt.Dimension(732, 664));
         RegistarClienteFrame.setSize(new java.awt.Dimension(732, 664));
 
         RegistarCliente.setBackground(new java.awt.Color(239, 177, 74));
@@ -3305,11 +3303,23 @@ public class InterfaceMain extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de preencher os 3 campos.", "Erro", JOptionPane.ERROR_MESSAGE);
         }else{
             try {
-                ResultSet rs = db.select("select * from carrinhas where matricula = '" + txtMatricula.getText() + "'");
+                ResultSet rs = null;
+                
+                rs = db.select("select condutor from aluguer where  carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'");
+                rs.next();
+                String condutor = rs.getString("condutor");
+                rs = db.select("SELECT count(id) as numeroAlugueres FROM PTDA_BD_1.aluguer where condutor = '" + condutor + "';");
+                rs.next();
+                int numeroAlugueres = Integer.parseInt(rs.getString("numeroAlugueres"));
+                rs = db.select("select classificacao from condutores where id = '" + condutor + "'");
+                rs.next();
+                float notaVelha = Float.parseFloat(rs.getString("classificacao"));
+                float notaNova = (notaVelha + Float.parseFloat(txtNota.getText())) / (numeroAlugueres + 1);
                 int counter = 0;
                 float precoDia = 0;
                 float precoExtra = 0;
                 int km = 0;
+                rs = db.select("select * from carrinhas where matricula = '" + txtMatricula.getText() + "'");
                 while(rs.next()){
                     counter++;
                     precoDia = Float.parseFloat(rs.getString("precoDia"));
@@ -3336,9 +3346,23 @@ public class InterfaceMain extends javax.swing.JFrame {
                     }else{
                         aPagar += nrDias * precoDia;
                     }
-                    JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "A pagar:", JOptionPane.ERROR_MESSAGE);
+                    float aPagarDesconto = 0;
+                    if(notaNova > 7 && notaNova < 8){
+                        aPagarDesconto = (float) (aPagar * 0.9);
+                    }else if(notaNova > 8 && notaNova < 9){
+                        aPagarDesconto = (float) (aPagar * 0.8);
+                    }else if(notaNova > 9){
+                        aPagarDesconto = (float) (aPagar * 0.7);
+                    }
+                    if(aPagarDesconto > 0){
+                        JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "Devido á sua nota o preço passou de " + aPagar + " euros para " + aPagarDesconto + " euros!", JOptionPane.ERROR_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(new JOptionPane(), aPagar, "Preço: " + aPagar + " euros!", JOptionPane.ERROR_MESSAGE);
+                    }
                     cmd = "update aluguer set pago = 'Sim', kmRecebido = '" + txtkm.getText() + "' where carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'";
                     System.out.println(cmd);
+                    db.executeInsert(cmd);
+                    cmd = "update condutores set classificacao = '" + notaNova + "' where id = '" + condutor + "'";
                     db.executeInsert(cmd);
                 }
             } catch (SQLException ex) {
