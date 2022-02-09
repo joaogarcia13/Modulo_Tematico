@@ -14,7 +14,6 @@ public class Carrinha {
     private String Cilindrada;
     private String Potencia;
     private String combustivel;
-    private String disponibilidade;
     private String numeroSeguro;
     private LocalDate dataValidadeSeguro;
     private LocalDate InicioDisponibilidade;
@@ -22,12 +21,11 @@ public class Carrinha {
     private String kilm;
 
     public Carrinha(String matricula, LocalDate dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
-            String Potencia, String combustivel, String ano, String disponibilidade, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim, String km){
+            String Potencia, String combustivel, String ano, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim, String km){
         
         this.matricula=matricula;
         this.ano=ano;
         this.estado=estado;
-        this.disponibilidade=disponibilidade;
         this.numeroSeguro=numeroSeguro;
         this.dataValidadeSeguro=dataValidadeSeguro;
         this.InicioDisponibilidade = Inicio;
@@ -39,10 +37,6 @@ public class Carrinha {
         this.combustivel = combustivel;
         this.DataRegistoSistema = dataRegistoSistema;
         this.kilm = km;
-    }
-
-    public String getDisponibilidade(){
-        return disponibilidade;
     }
     
     public LocalDate getDataRegistoSistem(){
@@ -113,10 +107,6 @@ public class Carrinha {
         return ano;
     }
 
-    public String isDisponibilidade() {
-        return disponibilidade;
-    }
-
     public String getMatricula() {
         return matricula;
     }
@@ -134,10 +124,6 @@ public class Carrinha {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public void setDisponibilidade(String disponibilidade) {
-        this.disponibilidade = disponibilidade;
     }
 
     public void setNumeroSeguro(String numeroSeguro) {

@@ -27,7 +27,6 @@ import javax.swing.table.DefaultTableModel;
 
     -quando se aluga uma carrinha tem de se ver se a carta expirou
     -por campo de observaçoes quando se recebe carrinha ?
-    -arranjar frame de aluguer
     -tirar historico de consultar perfil
     -botao de editar funcionario
     -ajustar frames em geral
@@ -2644,6 +2643,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         TextApolice.setText("");
         TextDataInicio.setText("");
         TextDataFim.setText("");
+        TxtKilomet.setText("");
         
     }//GEN-LAST:event_LimparBtn_RegistarVeiculo
 
@@ -2744,9 +2744,9 @@ public class InterfaceMain extends javax.swing.JFrame {
         }else{
             LocalDate now = LocalDate.now();
             
-            Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Apto", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
+            Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Disponivél", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(), 
                 TxtCilindrada.getText(), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                TxtAno.getText(), "Disponivél", TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText());
+                TxtAno.getText(), TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText());
                 
             try {
                 db.insertCarrinha(carrinha, id);
@@ -2826,16 +2826,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nLocal do Acidente está vazio.";
         }
-        if(isValid(DataAcidente.getText())){
-            DataAc = StringtoDate(DataAcidente.getText());
-            todayDate = LocalDate.now();
-            if(DataAc.isBefore(todayDate)) {
-            erro = true;
-            mensagem += "\nData do acidente Inválida.";
-            }
-        }else{
+        if(!isValid(DataAcidente.getText())){
             erro = true;
             mensagem += "\nData do acidente não é uma data válida ou nao tem o formato dd-mm-aaaa.";
+        }
+        DataAc = StringtoDate(DataAcidente.getText());
+        if(DataAc.isAfter(LocalDate.now())){
+            erro = true;
+            mensagem = "\nData do acidente inválida.";
         }
         if(isValid(DataPagamentoAc.getText())){
             DataPag = StringtoDate(DataPagamentoAc.getText());
@@ -2867,15 +2865,22 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
         try{
-            ResultSet rs = null;
-            rs = db.select("select * from carrinhas where matricula = '" + MatriculaTxt.getText() + "'");
-            rs.next();
-            LocalDate DataReg = StringtoDate2(rs.getString("dataRegistoSistema"));
-            if(DataReg.isAfter(DataPag)){
-                erro = true;
-                mensagem += "\nData de pagamento não pode ser anterior á data de registo do veiculo no sistema que é " + rs.getString("dataRegistoSistema") +".";
+            if(erro == false){
+                ResultSet rs = null;
+                rs = db.select("select * from carrinhas where matricula = '" + MatriculaTxt.getText() + "'");
+                int count = 0;
+                LocalDate DataReg = null;
+                while(rs.next()){
+                    DataReg = StringtoDate2(rs.getString("dataRegistoSistema"));
+                    count ++;
+                }
+                if(count == 1){
+                    if(DataReg.isAfter(DataPag)){
+                        erro = true;
+                        mensagem += "\nData de pagamento não pode ser anterior á data de registo do veiculo no sistema que é " + rs.getString("dataRegistoSistema") +".";
+                    }
+                }
             }
-                    
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2886,12 +2891,13 @@ public class InterfaceMain extends javax.swing.JFrame {
             Acidente ac = new Acidente(0, DataAc, DescricaoAcidente1.getText(), Float.valueOf(ValorPagarAc.getText()), DataPag);
             try {
                 db.insertAcidente(ac, MatriculaTxt.getText());
+                db.executeInsert("update carrinhas set estado = 'Indisponivel' where matricula = '"  + MatriculaTxt.getText() + "'");
+                JOptionPane.showMessageDialog(null, "Registo feito com sucesso.");
+                ReportarProblemas.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        System.out.println(DataPag.toString());
-        ReportarProblemas.setVisible(false);
     }//GEN-LAST:event_BtnRegistarAcidente
     private void LoginConfirmarBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginConfirmarBtn
         // TODO add your handling code here:
@@ -3639,7 +3645,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     rs = db.select(queryCarrinhas + filtro);
                     while(rs.next()){
                         contadorCarrinhas++;
-                        Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro);
+                        Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro);
                         tmp.setMatricula(rs.getString("matricula"));
                         tmp.setMarca(rs.getString("marca"));
                         tmp.setModelo(rs.getString("modelo"));

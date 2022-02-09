@@ -27,13 +27,12 @@ public class Database{
     }
     public void insertCarrinha(Carrinha c, String proprietario) throws SQLException{
         String cmd; 
-        cmd = "insert into carrinhas(matricula, dataRegistoSistema, estado, disponibilidade, numeroSeguro, dataValidadeSeguro, "
+        cmd = "insert into carrinhas(matricula, dataRegistoSistema, estado, numeroSeguro, dataValidadeSeguro, "
                 + "proprietario, marca, modelo, cilindrada, potencia, combustivel, dataInicioDisponibilidade, dataFimDisponibilidade,"
                 + "nrKm, precoDia, precoKmExtra, ano)values(";
         cmd = cmd + "'" + c.getMatricula() + "', ";
         cmd = cmd + "'" + c.getDataRegistoSistem() + "', ";
         cmd = cmd + "'" + c.getEstado() + "', ";
-        cmd = cmd + "'" + c.getDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getNumeroSeguro() + "', ";
         cmd = cmd + "'" + c.getdatValidadeSeguro() + "', ";
         cmd = cmd + "'" + proprietario + "', ";
