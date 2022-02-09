@@ -285,6 +285,29 @@ public class InterfaceMain extends javax.swing.JFrame {
         CCRegistoFornecedor = new javax.swing.JTextField();
         jLabel112 = new javax.swing.JLabel();
         DataNascimentoRegistoFornecedor = new javax.swing.JTextField();
+        ConsultarVeiculoFrame = new javax.swing.JFrame();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblCarrinhas1 = new javax.swing.JTable();
+        txtMatriculaV = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        btnFiltrar1 = new javax.swing.JButton();
+        scrollPanel1 = new javax.swing.JPanel();
+        InfoCarro1 = new javax.swing.JPanel();
+        ConsultarAcidenteFrame = new javax.swing.JFrame();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblAcidentes = new javax.swing.JTable();
+        txtMatriculaV1 = new javax.swing.JTextField();
+        jLabel85 = new javax.swing.JLabel();
+        btnFiltrar2 = new javax.swing.JButton();
+        scrollPanel2 = new javax.swing.JPanel();
+        InfoCarro2 = new javax.swing.JPanel();
+        btnConcluir = new javax.swing.JButton();
         Login = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -2365,7 +2388,312 @@ public class InterfaceMain extends javax.swing.JFrame {
             RegistarFornecedorFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistarFornecedorFrameLayout.createSequentialGroup()
                 .addComponent(RegistarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)));
+        ConsultarVeiculoFrame.setMaximumSize(new java.awt.Dimension(885, 650));
+        ConsultarVeiculoFrame.setMinimumSize(new java.awt.Dimension(885, 650));
+        ConsultarVeiculoFrame.setPreferredSize(new java.awt.Dimension(885, 650));
+        ConsultarVeiculoFrame.setResizable(false);
+        ConsultarVeiculoFrame.setSize(new java.awt.Dimension(885, 650));
+
+        jPanel11.setBackground(new java.awt.Color(239, 177, 74));
+        jPanel11.setForeground(new java.awt.Color(239, 177, 74));
+        jPanel11.setMaximumSize(new java.awt.Dimension(885, 650));
+        jPanel11.setMinimumSize(new java.awt.Dimension(885, 650));
+
+        jPanel3.setBackground(new java.awt.Color(239, 177, 74));
+
+        jLabel19.setBackground(new java.awt.Color(239, 177, 74));
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel19.setText("Selecionar Veículo");
+
+        tblCarrinhas1.setBackground(new java.awt.Color(169, 202, 221));
+        tblCarrinhas1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane6.setViewportView(tblCarrinhas1);
+
+        txtMatriculaV.setBackground(new java.awt.Color(169, 202, 221));
+
+        jLabel57.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel57.setText("Matricula");
+
+        btnFiltrar1.setBackground(new java.awt.Color(60, 94, 115));
+        btnFiltrar1.setForeground(new java.awt.Color(235, 244, 249));
+        btnFiltrar1.setText("Filtrar");
+        btnFiltrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFiltrar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 826, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMatriculaV, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnFiltrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(36, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMatriculaV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57)
+                    .addComponent(btnFiltrar1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        scrollPanel1.setBackground(new java.awt.Color(239, 177, 74));
+        scrollPanel1.setMaximumSize(new java.awt.Dimension(885, 800));
+        scrollPanel1.setPreferredSize(new java.awt.Dimension(885, 800));
+
+        InfoCarro1.setBackground(new java.awt.Color(239, 177, 74));
+
+        javax.swing.GroupLayout InfoCarro1Layout = new javax.swing.GroupLayout(InfoCarro1);
+        InfoCarro1.setLayout(InfoCarro1Layout);
+        InfoCarro1Layout.setHorizontalGroup(
+            InfoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 546, Short.MAX_VALUE)
+        );
+        InfoCarro1Layout.setVerticalGroup(
+            InfoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 179, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout scrollPanel1Layout = new javax.swing.GroupLayout(scrollPanel1);
+        scrollPanel1.setLayout(scrollPanel1Layout);
+        scrollPanel1Layout.setHorizontalGroup(
+            scrollPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scrollPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(333, Short.MAX_VALUE))
+        );
+        scrollPanel1Layout.setVerticalGroup(
+            scrollPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scrollPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(615, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ConsultarVeiculoFrameLayout = new javax.swing.GroupLayout(ConsultarVeiculoFrame.getContentPane());
+        ConsultarVeiculoFrame.getContentPane().setLayout(ConsultarVeiculoFrameLayout);
+        ConsultarVeiculoFrameLayout.setHorizontalGroup(
+            ConsultarVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ConsultarVeiculoFrameLayout.setVerticalGroup(
+            ConsultarVeiculoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        ConsultarAcidenteFrame.setMaximumSize(new java.awt.Dimension(885, 650));
+        ConsultarAcidenteFrame.setMinimumSize(new java.awt.Dimension(885, 650));
+        ConsultarAcidenteFrame.setPreferredSize(new java.awt.Dimension(885, 650));
+        ConsultarAcidenteFrame.setSize(new java.awt.Dimension(885, 650));
+
+        jPanel12.setBackground(new java.awt.Color(239, 177, 74));
+        jPanel12.setForeground(new java.awt.Color(239, 177, 74));
+        jPanel12.setMaximumSize(new java.awt.Dimension(885, 650));
+        jPanel12.setMinimumSize(new java.awt.Dimension(885, 650));
+
+        jPanel13.setBackground(new java.awt.Color(239, 177, 74));
+
+        jLabel20.setBackground(new java.awt.Color(239, 177, 74));
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel20.setText("Selecionar Acidente");
+
+        tblAcidentes.setBackground(new java.awt.Color(169, 202, 221));
+        tblAcidentes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane7.setViewportView(tblAcidentes);
+
+        txtMatriculaV1.setBackground(new java.awt.Color(169, 202, 221));
+
+        jLabel85.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel85.setText("Matricula");
+
+        btnFiltrar2.setBackground(new java.awt.Color(60, 94, 115));
+        btnFiltrar2.setForeground(new java.awt.Color(235, 244, 249));
+        btnFiltrar2.setText("Filtrar");
+        btnFiltrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFiltrar2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 826, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel85)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMatriculaV1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnFiltrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(36, Short.MAX_VALUE))))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMatriculaV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel85)
+                    .addComponent(btnFiltrar2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        scrollPanel2.setBackground(new java.awt.Color(239, 177, 74));
+        scrollPanel2.setMaximumSize(new java.awt.Dimension(885, 800));
+        scrollPanel2.setPreferredSize(new java.awt.Dimension(885, 800));
+
+        InfoCarro2.setBackground(new java.awt.Color(239, 177, 74));
+
+        javax.swing.GroupLayout InfoCarro2Layout = new javax.swing.GroupLayout(InfoCarro2);
+        InfoCarro2.setLayout(InfoCarro2Layout);
+        InfoCarro2Layout.setHorizontalGroup(
+            InfoCarro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 546, Short.MAX_VALUE)
+        );
+        InfoCarro2Layout.setVerticalGroup(
+            InfoCarro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 179, Short.MAX_VALUE)
+        );
+
+        btnConcluir.setBackground(new java.awt.Color(60, 94, 115));
+        btnConcluir.setForeground(new java.awt.Color(235, 244, 249));
+        btnConcluir.setText("Concluir");
+        btnConcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout scrollPanel2Layout = new javax.swing.GroupLayout(scrollPanel2);
+        scrollPanel2.setLayout(scrollPanel2Layout);
+        scrollPanel2Layout.setHorizontalGroup(
+            scrollPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scrollPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnConcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+        );
+        scrollPanel2Layout.setVerticalGroup(
+            scrollPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scrollPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(scrollPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(scrollPanel2Layout.createSequentialGroup()
+                        .addComponent(InfoCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(scrollPanel2Layout.createSequentialGroup()
+                        .addComponent(btnConcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(791, 791, 791))))
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ConsultarAcidenteFrameLayout = new javax.swing.GroupLayout(ConsultarAcidenteFrame.getContentPane());
+        ConsultarAcidenteFrame.getContentPane().setLayout(ConsultarAcidenteFrameLayout);
+        ConsultarAcidenteFrameLayout.setHorizontalGroup(
+            ConsultarAcidenteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ConsultarAcidenteFrameLayout.setVerticalGroup(
+            ConsultarAcidenteFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2504,6 +2832,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         ConsultarVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
         ConsultarVeiculoBtn.setForeground(new java.awt.Color(235, 244, 249));
         ConsultarVeiculoBtn.setText("Consultar Veículo");
+        ConsultarVeiculoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarVeiculoBtnActionPerformed(evt);
+            }
+        });
 
         jLabel43.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
 
@@ -2521,6 +2854,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         ConsultarAcidenteBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         ConsultarAcidenteBtn.setForeground(new java.awt.Color(235, 244, 249));
         ConsultarAcidenteBtn.setText("Consultar Acidente");
+        ConsultarAcidenteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarAcidenteBtnActionPerformed(evt);
+            }
+        });
 
         ReceberVeiculoBtn.setBackground(new java.awt.Color(60, 94, 115));
         ReceberVeiculoBtn.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
@@ -2652,7 +2990,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -3587,7 +3925,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 }
 
             }else{
-                JOptionPane.showMessageDialog(new JOptionPane(), "Nãoforam selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JOptionPane(), "Não foram selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
@@ -3790,6 +4128,146 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
+    private void btnFiltrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrar1ActionPerformed
+        // TODO add your handling code here:
+        populateTblCarrinhas(txtMatriculaV.getText());
+        
+    }//GEN-LAST:event_btnFiltrar1ActionPerformed
+    private void populateTblCarrinhas(String matricula){
+        ResultSet rs = null;
+        try {
+            if(matricula.equals("a")){
+                rs = db.select("select matricula, estado, marca, modelo, cilindrada, potencia, combustivel, precoDia from carrinhas");
+            }else{
+                if(Pattern.matches(formatoMatricula1, txtMatriculaV.getText()) || Pattern.matches(formatoMatricula2, txtMatriculaV.getText()) || Pattern.matches(formatoMatricula3, txtMatriculaV.getText())){
+                    rs = db.select("select * from carrinhas where matricula = '" + txtMatriculaV.getText() + "'");
+                    int c = 0;
+                    while(rs.next()){
+                        c++;
+                    }
+                    if(c > 0){
+                        rs = db.select("select matricula, estado, marca, modelo, cilindrada, potencia, combustivel, precoDia from carrinhas where matricula = '" + txtMatriculaV.getText() + "'");
+                    }else{
+                        JOptionPane.showMessageDialog(new JOptionPane(), "Matricula Inexistente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Matricula Inválida.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+            
+            DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }};
+                model.addColumn("Matricula");
+                model.addColumn("Estado");
+                model.addColumn("Marca");
+                model.addColumn("Modelo");
+                model.addColumn("Cilindrada");
+                model.addColumn("Potencia");
+                model.addColumn("Combustivel");
+                model.addColumn("Preço");
+                ArrayList<Carrinha> carrinhas = new ArrayList<Carrinha>();
+                while(rs.next()){
+                    model.addRow(new Object[]{rs.getString("matricula"), rs.getString("estado"), rs.getString("marca"), rs.getString("modelo"), rs.getString("cilindrada"), rs.getString("potencia"), rs.getString("combustivel"), rs.getString("precoDia")});
+                }
+                tblCarrinhas1.setModel(model);
+             } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private void ConsultarVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVeiculoBtnActionPerformed
+        // TODO add your handling code here:
+        ConsultarVeiculoFrame.setVisible(true);
+        ConsultarVeiculoFrame.setLocationRelativeTo(null);
+        populateTblCarrinhas("a");
+        
+    }//GEN-LAST:event_ConsultarVeiculoBtnActionPerformed
+
+    private void btnFiltrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrar2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            populateAcidentes(txtMatriculaV1.getText());
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnFiltrar2ActionPerformed
+    private void populateAcidentes(String matricula) throws SQLException{
+        ResultSet rs = null;
+        String cmd = "";
+        if(matricula.equals("a")){
+            cmd = "select * from acidentes where concluido <> 'Sim' order by data desc";
+        }else{
+               if(Pattern.matches(formatoMatricula1, matricula) || Pattern.matches(formatoMatricula2, matricula) || Pattern.matches(formatoMatricula3, matricula)){
+                    cmd = "select * from carrinhas where matricula = '" + matricula + "'";
+                    rs = db.select(cmd);
+                    int c = 0;
+                    while(rs.next()){
+                        c++;
+                    }
+                    if(c > 0){
+                        cmd = "select * from acidentes where carrinha = '" + matricula + "' and concluido <> 'Sim'";
+                    }else{
+                        JOptionPane.showMessageDialog(new JOptionPane(), "Matricula Inexistente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Matricula Inválida.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }     
+        }
+        rs = db.select(cmd);
+        int c = 0;
+        while(rs.next()){
+            c++;
+        }
+        if(c > 0){
+            rs = db.select(cmd);
+            DefaultTableModel model = new DefaultTableModel(){
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }};
+                model.addColumn("Data");
+                model.addColumn("Descricao");
+                model.addColumn("Valor");
+                model.addColumn("Carrinha");
+                ArrayList<Carrinha> carrinhas = new ArrayList<Carrinha>();
+                while(rs.next()){
+                    model.addRow(new Object[]{rs.getString("data"), rs.getString("descricao"), rs.getString("valorPagar"), rs.getString("carrinha")});
+                }
+                tblAcidentes.setModel(model);
+        }
+        
+    }
+    private void ConsultarAcidenteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarAcidenteBtnActionPerformed
+        // TODO add your handling code here:
+        ConsultarAcidenteFrame.setVisible(true);
+        ConsultarAcidenteFrame.setLocationRelativeTo(null);
+        try {
+            populateAcidentes("a");
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ConsultarAcidenteBtnActionPerformed
+
+    private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
+        // TODO add your handling code here:
+        if(tblAcidentes.getSelectedRowCount() != 1){
+            JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar um e apenas um acidente");
+        }else{
+            try {
+                db.executeInsert("update acidentes set concluido = 'Sim' where carrinha = '" + tblAcidentes.getValueAt(tblAcidentes.getSelectedRow(), 3) + "' and data = '" + tblAcidentes.getValueAt(tblAcidentes.getSelectedRow(), 0) + "'");
+                db.executeInsert("update carrinhas set estado = 'Disponivel' where matricula = '" + tblAcidentes.getValueAt(tblAcidentes.getSelectedRow(), 3) + "'");
+                populateAcidentes("a");
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnConcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3919,7 +4397,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton ConfirmarPerfilCLienteBtn;
     private javax.swing.JButton ConfirmarRegistoFornecedor;
     private javax.swing.JButton ConsultarAcidenteBtn;
+    private javax.swing.JFrame ConsultarAcidenteFrame;
     private javax.swing.JButton ConsultarVeiculoBtn;
+    private javax.swing.JFrame ConsultarVeiculoFrame;
     private javax.swing.JTextField ContactoRegistoCliente1;
     private javax.swing.JTextField ContactoRegistoFornecedor;
     private javax.swing.JTextField ContactoRegistoFunc;
@@ -3941,6 +4421,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField IDFunc;
     private javax.swing.JLabel IDUtil;
     private javax.swing.JPanel InfoCarro;
+    private javax.swing.JPanel InfoCarro1;
+    private javax.swing.JPanel InfoCarro2;
     private javax.swing.JTextField LocalTxt;
     private javax.swing.JPanel Login;
     private javax.swing.JPanel MainMenu;
@@ -3985,8 +4467,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField ValidadeCartaRegisto2;
     private javax.swing.JTextField ValorPagarAc;
     private javax.swing.JButton btnAlugar;
+    private javax.swing.JButton btnConcluir;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFiltrar;
+    private javax.swing.JButton btnFiltrar1;
+    private javax.swing.JButton btnFiltrar2;
     private javax.swing.JTextField cartaConducao;
     private javax.swing.JComboBox<String> cmbCombustível;
     private javax.swing.JComboBox<String> cmbMarca;
@@ -4068,6 +4553,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
@@ -4098,6 +4584,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
@@ -4113,7 +4600,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -4125,6 +4616,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
@@ -4137,13 +4630,19 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField nomeUtilizador1;
     private javax.swing.JTextField pass1;
     private javax.swing.JPanel scrollPanel;
+    private javax.swing.JPanel scrollPanel1;
+    private javax.swing.JPanel scrollPanel2;
+    private javax.swing.JTable tblAcidentes;
     private javax.swing.JTable tblCarrinhas;
+    private javax.swing.JTable tblCarrinhas1;
     private javax.swing.JTable tblFunc;
     private javax.swing.JTextField telemovel;
     private javax.swing.JTextField telemovel1;
     private javax.swing.JTextField txtDataFim;
     private javax.swing.JTextField txtDataInicio;
     private javax.swing.JTextField txtMatricula;
+    private javax.swing.JTextField txtMatriculaV;
+    private javax.swing.JTextField txtMatriculaV1;
     private javax.swing.JTextField txtNota;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
