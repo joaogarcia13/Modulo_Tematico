@@ -27,8 +27,6 @@ import javax.swing.table.DefaultTableModel;
 
     -quando se aluga uma carrinha tem de se ver se a carta expirou
     -por campo de observaçoes quando se recebe carrinha ?
-    -tirar historico de consultar perfil
-    -botao de editar funcionario
     -ajustar frames em geral
     -Threads
     -Testes
@@ -106,22 +104,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         scrollPanel = new javax.swing.JPanel();
         InfoCarro = new javax.swing.JPanel();
         btnAlugar = new javax.swing.JButton();
-        Pagamento = new javax.swing.JFrame();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jLabel20 = new javax.swing.JLabel();
-        infoCarro1 = new javax.swing.JPanel();
-        imagemCarroInfo1 = new javax.swing.JPanel();
-        lblModeloVeiculo1 = new javax.swing.JLabel();
-        lblPotencia1 = new javax.swing.JLabel();
-        lblCelindrada1 = new javax.swing.JLabel();
-        lblAno1 = new javax.swing.JLabel();
-        lblCombustivel1 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         RegistarVeiculo = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
         ComboCombustivel = new javax.swing.JComboBox<>();
@@ -153,7 +135,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         TxtCilindrada = new javax.swing.JTextField();
         Perfil_Utilizador = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
-        perfilHistorico = new javax.swing.JButton();
         cartaConducao = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         morada = new javax.swing.JTextArea();
@@ -237,8 +218,8 @@ public class InterfaceMain extends javax.swing.JFrame {
         username1 = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         pass1 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        EditarPeriflCliente = new javax.swing.JButton();
+        ConfirmarPerfilCLienteBtn = new javax.swing.JButton();
         IDUtil = new javax.swing.JLabel();
         IDFunc = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
@@ -737,169 +718,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        Pagamento.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        Pagamento.setBackground(new java.awt.Color(239, 177, 74));
-        Pagamento.setResizable(false);
-
-        jPanel3.setBackground(new java.awt.Color(239, 177, 74));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel19.setText("Finalizar Aluguer");
-
-        jRadioButton5.setBackground(new java.awt.Color(239, 177, 74));
-        jRadioButton5.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton5.setText("PayPau");
-
-        jRadioButton6.setBackground(new java.awt.Color(239, 177, 74));
-        jRadioButton6.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton6.setText("GooglePau");
-
-        jRadioButton7.setBackground(new java.awt.Color(239, 177, 74));
-        jRadioButton7.setForeground(new java.awt.Color(217, 86, 74));
-        jRadioButton7.setText("Transferencia Bancaria");
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel20.setText("Pagamento");
-
-        infoCarro1.setBackground(new java.awt.Color(239, 177, 74));
-        infoCarro1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        infoCarro1.setName(""); // NOI18N
-
-        imagemCarroInfo1.setBackground(new java.awt.Color(255, 51, 51));
-
-        javax.swing.GroupLayout imagemCarroInfo1Layout = new javax.swing.GroupLayout(imagemCarroInfo1);
-        imagemCarroInfo1.setLayout(imagemCarroInfo1Layout);
-        imagemCarroInfo1Layout.setHorizontalGroup(
-            imagemCarroInfo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 75, Short.MAX_VALUE)
-        );
-        imagemCarroInfo1Layout.setVerticalGroup(
-            imagemCarroInfo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        lblModeloVeiculo1.setForeground(new java.awt.Color(217, 86, 74));
-        lblModeloVeiculo1.setText("jLabel3");
-
-        lblPotencia1.setForeground(new java.awt.Color(217, 86, 74));
-        lblPotencia1.setText("jLabel4");
-
-        lblCelindrada1.setForeground(new java.awt.Color(217, 86, 74));
-        lblCelindrada1.setText("jLabel5");
-
-        lblAno1.setForeground(new java.awt.Color(217, 86, 74));
-        lblAno1.setText("jLabel6");
-
-        lblCombustivel1.setForeground(new java.awt.Color(217, 86, 74));
-        lblCombustivel1.setText("jLabel7");
-
-        javax.swing.GroupLayout infoCarro1Layout = new javax.swing.GroupLayout(infoCarro1);
-        infoCarro1.setLayout(infoCarro1Layout);
-        infoCarro1Layout.setHorizontalGroup(
-            infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoCarro1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imagemCarroInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblModeloVeiculo1)
-                    .addGroup(infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(infoCarro1Layout.createSequentialGroup()
-                            .addComponent(lblAno1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblCombustivel1))
-                        .addGroup(infoCarro1Layout.createSequentialGroup()
-                            .addComponent(lblPotencia1)
-                            .addGap(71, 71, 71)
-                            .addComponent(lblCelindrada1))))
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        infoCarro1Layout.setVerticalGroup(
-            infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoCarro1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infoCarro1Layout.createSequentialGroup()
-                        .addComponent(lblModeloVeiculo1)
-                        .addGap(18, 18, 18)
-                        .addGroup(infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPotencia1)
-                            .addComponent(lblCelindrada1))
-                        .addGap(27, 27, 27)
-                        .addGroup(infoCarro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAno1)
-                            .addComponent(lblCombustivel1))
-                        .addGap(0, 11, Short.MAX_VALUE))
-                    .addComponent(imagemCarroInfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jButton6.setBackground(new java.awt.Color(60, 94, 115));
-        jButton6.setForeground(new java.awt.Color(235, 244, 249));
-        jButton6.setText("Confirmar");
-
-        jButton7.setBackground(new java.awt.Color(217, 86, 74));
-        jButton7.setForeground(new java.awt.Color(235, 244, 249));
-        jButton7.setText("cancelar");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(jRadioButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infoCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 39, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoCarro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton6)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout PagamentoLayout = new javax.swing.GroupLayout(Pagamento.getContentPane());
-        Pagamento.getContentPane().setLayout(PagamentoLayout);
-        PagamentoLayout.setHorizontalGroup(
-            PagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        PagamentoLayout.setVerticalGroup(
-            PagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         RegistarVeiculo.setResizable(false);
         RegistarVeiculo.setSize(new java.awt.Dimension(401, 470));
@@ -1132,13 +950,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
+        Perfil_Utilizador.setResizable(false);
         Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
 
         jPanel6.setBackground(new java.awt.Color(239, 177, 74));
-
-        perfilHistorico.setBackground(new java.awt.Color(60, 94, 115));
-        perfilHistorico.setForeground(new java.awt.Color(235, 244, 249));
-        perfilHistorico.setText("Consultar histórico de aluguer");
 
         cartaConducao.setEditable(false);
         cartaConducao.setBackground(new java.awt.Color(169, 202, 221));
@@ -1198,12 +1013,9 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel49)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(perfilHistorico))
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1266,13 +1078,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel63))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(perfilHistorico)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout Perfil_UtilizadorLayout = new javax.swing.GroupLayout(Perfil_Utilizador.getContentPane());
@@ -1285,6 +1095,8 @@ public class InterfaceMain extends javax.swing.JFrame {
             Perfil_UtilizadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        PedidoAluguer.setResizable(false);
 
         jPanel7.setBackground(new java.awt.Color(239, 177, 74));
 
@@ -1392,6 +1204,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        RegistarFuncFrame.setResizable(false);
         RegistarFuncFrame.setSize(new java.awt.Dimension(680, 610));
 
         RegistarFunc1.setBackground(new java.awt.Color(239, 177, 74));
@@ -1616,6 +1429,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        GerirFuncionario.setResizable(false);
         GerirFuncionario.setSize(new java.awt.Dimension(885, 630));
 
         jPanel8.setBackground(new java.awt.Color(239, 177, 74));
@@ -1733,6 +1547,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        PerfilFunc.setResizable(false);
         PerfilFunc.setSize(new java.awt.Dimension(462, 500));
 
         jPanel10.setBackground(new java.awt.Color(239, 177, 74));
@@ -1793,21 +1608,22 @@ public class InterfaceMain extends javax.swing.JFrame {
         pass1.setEditable(false);
         pass1.setBackground(new java.awt.Color(169, 202, 221));
 
-        jButton10.setBackground(new java.awt.Color(60, 94, 115));
-        jButton10.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(235, 244, 249));
-        jButton10.setText("Editar");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        EditarPeriflCliente.setBackground(new java.awt.Color(60, 94, 115));
+        EditarPeriflCliente.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
+        EditarPeriflCliente.setForeground(new java.awt.Color(235, 244, 249));
+        EditarPeriflCliente.setText("Editar");
+        EditarPeriflCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditarFuncBtn(evt);
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(60, 94, 115));
-        jButton11.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(235, 244, 249));
-        jButton11.setText("Confirmar");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        ConfirmarPerfilCLienteBtn.setBackground(new java.awt.Color(60, 94, 115));
+        ConfirmarPerfilCLienteBtn.setFont(new java.awt.Font("Fira Sans", 0, 18)); // NOI18N
+        ConfirmarPerfilCLienteBtn.setForeground(new java.awt.Color(235, 244, 249));
+        ConfirmarPerfilCLienteBtn.setText("Confirmar");
+        ConfirmarPerfilCLienteBtn.setEnabled(false);
+        ConfirmarPerfilCLienteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmarEditarFuncBtn(evt);
             }
@@ -1890,7 +1706,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditarPeriflCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(jLabel76)
                                 .addGap(12, 12, 12)
@@ -1904,7 +1720,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addGap(12, 12, 12))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ConfirmarPerfilCLienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41))))))
         );
         jPanel10Layout.setVerticalGroup(
@@ -1952,8 +1768,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(DataRegisto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EditarPeriflCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConfirmarPerfilCLienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
 
@@ -2075,7 +1891,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel86)
                 .addGap(18, 18, 18)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ReceberVeiculoFrameLayout = new javax.swing.GroupLayout(ReceberVeiculoFrame.getContentPane());
@@ -2099,6 +1915,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        RegistarClienteFrame.setResizable(false);
         RegistarClienteFrame.setSize(new java.awt.Dimension(732, 664));
 
         RegistarCliente.setBackground(new java.awt.Color(239, 177, 74));
@@ -2624,7 +2441,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenu, "card3");
@@ -3080,6 +2897,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_Editar_funcActionPerformed
 
     private void EditarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarFuncBtn
+        ConfirmarPerfilCLienteBtn.setEnabled(true);
         nomeUtilizador1.setEditable(true);
         docID1.setEditable(true);
         telemovel1.setEditable(true);
@@ -3815,6 +3633,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboCombustivel;
     private javax.swing.JComboBox<String> ComboMarca;
     private javax.swing.JComboBox<String> ComboPotencia;
+    private javax.swing.JButton ConfirmarPerfilCLienteBtn;
     private javax.swing.JButton ConsultarAcidenteBtn;
     private javax.swing.JButton ConsultarVeiculoBtn;
     private javax.swing.JTextField ContactoRegistoCliente1;
@@ -3827,6 +3646,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DataRegisto1;
     private javax.swing.JTextField DescricaoAcidente1;
+    private javax.swing.JButton EditarPeriflCliente;
     private javax.swing.JButton Editar_func;
     private javax.swing.JTextField EmailRegistoCliente1;
     private javax.swing.JTextField EmailRegistoFunc;
@@ -3842,7 +3662,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField MoradaRegistoFunc;
     private javax.swing.JTextField NomeRegistoCliente1;
     private javax.swing.JTextField NomeRegistoFunc;
-    private javax.swing.JFrame Pagamento;
     private javax.swing.JPasswordField PasswordRegistoFunc1;
     private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
@@ -3884,11 +3703,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField docID1;
     private javax.swing.JTextField email;
     private javax.swing.JTextField email1;
-    private javax.swing.JPanel imagemCarroInfo1;
-    private javax.swing.JPanel infoCarro1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton25;
@@ -3897,8 +3712,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -3914,9 +3727,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -4002,16 +3813,12 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -4023,17 +3830,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JLabel lblAno1;
-    private javax.swing.JLabel lblCelindrada1;
-    private javax.swing.JLabel lblCombustivel1;
-    private javax.swing.JLabel lblModeloVeiculo1;
-    private javax.swing.JLabel lblPotencia1;
     private javax.swing.JTextArea morada;
     private javax.swing.JTextArea morada1;
     private javax.swing.JTextField nomeUtilizador;
     private javax.swing.JTextField nomeUtilizador1;
     private javax.swing.JTextField pass1;
-    private javax.swing.JButton perfilHistorico;
     private javax.swing.JPanel scrollPanel;
     private javax.swing.JTable tblCarrinhas;
     private javax.swing.JTable tblFunc;
