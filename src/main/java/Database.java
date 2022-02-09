@@ -53,7 +53,7 @@ public class Database{
     }
     public void insertPessoa(Pessoa p) throws SQLException{
         String cmd;
-        cmd = "insert into pessoas(nome, numeroCC, morada, dataRegistoSistema, dataNascimento, numTelef, email, username, password)values(";
+        cmd = "insert into pessoas(nome, numeroCC, morada, dataRegistoSistema, dataNascimento, numTelefone, email, username, password)values(";
         cmd = cmd + "'" + p.getNome() + "', ";
         cmd = cmd + "'" + p.getNumeroCidadao()+ "', ";
         cmd = cmd + "'" + p.getMorada() + "', ";
