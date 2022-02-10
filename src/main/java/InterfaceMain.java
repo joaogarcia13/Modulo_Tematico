@@ -3731,25 +3731,35 @@ public class InterfaceMain extends javax.swing.JFrame {
                 rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
                 int rowCount = 0;
                 String id = "";
+                String carta = "";
                 while(rs.next()){
                     rowCount++;
                     id = rs.getString("id");
+                    carta = rs.getString("numeroCartaConducao");
                 }
                 if(rowCount == 0){
                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
                 }else{
+                    rs = db.select("select * from cartasconducao where numeroCartaConducao = '" + carta + "'");
                     rs.next();
-                    String cmd = "insert into aluguer(carrinha, dataInicio, dataFim, dataRegisto, condutor, funcionario, pago)values(" +
-                    "'" + tblCarrinhas.getValueAt(tblCarrinhas.getSelectedRow(), 0) + "', " +
-                    "'" + StringtoDate(txtDataInicio.getText()) + "', " +
-                    "'" + StringtoDate(txtDataFim.getText()) + "', " +
-                    "'" + LocalDate.now().toString() + "', " +
-                    "'" + id + "', " +
-                    "'" + idUtilizador + "', " +
-                    "'Nao')";
-                    db.executeInsert(cmd);
-                    AlugarVeiculo.dispose();
-                    JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
+                    LocalDate data = StringtoDate2(rs.getString("dataValidade"));
+                    if(data.isBefore(LocalDate.now())){
+                         JOptionPane.showMessageDialog(new JOptionPane(), "Carta fora de validade.");
+                         return;
+                    }else{
+                        String cmd = "insert into aluguer(carrinha, dataInicio, dataFim, dataRegisto, condutor, funcionario, pago)values(" +
+                        "'" + tblCarrinhas.getValueAt(tblCarrinhas.getSelectedRow(), 0) + "', " +
+                        "'" + StringtoDate(txtDataInicio.getText()) + "', " +
+                        "'" + StringtoDate(txtDataFim.getText()) + "', " +
+                        "'" + LocalDate.now().toString() + "', " +
+                        "'" + id + "', " +
+                        "'" + idUtilizador + "', " +
+                        "'Nao')";
+                        db.executeInsert(cmd);
+                        AlugarVeiculo.dispose();
+                        JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
+                        }
+                    
                 }
 
             } catch (SQLException ex) {
