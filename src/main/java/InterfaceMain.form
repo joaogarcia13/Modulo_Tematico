@@ -3738,6 +3738,7 @@
             </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[732, 531]"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4a" green="b1" red="ef" type="rgb"/>
             </Property>
@@ -3748,7 +3749,6 @@
               <Dimension value="[885, 650]"/>
             </Property>
           </Properties>
-
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -3803,6 +3803,7 @@
                       <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                   </Group>
               </Group>
+            </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -4286,6 +4287,7 @@
             </Container>
           </SubComponents>
         </Container>
+      </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="ConsultarAcidenteFrame">
@@ -4563,6 +4565,9 @@
         </Container>
       </SubComponents>
     </Container>
+  </Property>
+  </Properties>
+  </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>

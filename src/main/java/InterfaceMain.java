@@ -24,13 +24,9 @@ import javax.swing.table.DefaultTableModel;
  */
 
 /*ToDo:
-
-    -quando se aluga uma carrinha tem de se ver se a carta expirou
-    -por campo de observaçoes quando se recebe carrinha ?
     -Threads
     -Testes
-    -perguntar no registar veiculo se ja tem conta fornecedor, senao criar um
-    -pesquisar cliente se for fornecedor mostrar sem carta
+    -pesquisar cliente se for fornecedor mostrar dados sem carta
     -reportar acidente tem de ir buscar o condutor
 */
 
