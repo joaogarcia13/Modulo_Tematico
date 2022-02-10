@@ -4,7 +4,7 @@ package main.java;
 public class Threads implements Runnable {
     private Thread G;
     private String NomeThread;
-    private Boolean sair=false;
+    private Boolean sair = false;
      Threads(String nome){
         NomeThread = nome;
         G = new Thread (this, NomeThread);
