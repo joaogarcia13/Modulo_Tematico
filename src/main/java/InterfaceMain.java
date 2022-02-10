@@ -28,6 +28,7 @@ import javax.swing.table.DefaultTableModel;
     -Testes
     -pesquisar cliente se for fornecedor mostrar dados sem carta
     -reportar acidente tem de ir buscar o condutor
+    -gg
 */
 
 /**
@@ -263,6 +264,24 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel99 = new javax.swing.JLabel();
         DataNascimentoRegistoCliente = new javax.swing.JTextField();
         RegistarFornecedorFrame = new javax.swing.JFrame();
+        RegistarFronecedor = new javax.swing.JPanel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        EmailRegistoFornecedor = new javax.swing.JTextField();
+        jLabel103 = new javax.swing.JLabel();
+        NomeRegistoFornecedor = new javax.swing.JTextField();
+        jLabel104 = new javax.swing.JLabel();
+        ContactoRegistoFornecedor = new javax.swing.JTextField();
+        jLabel105 = new javax.swing.JLabel();
+        MoradaRegistoFornecedor = new javax.swing.JTextField();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        CCRegistoFornecedor = new javax.swing.JTextField();
+        jLabel112 = new javax.swing.JLabel();
+        DataNascimentoRegistoFornecedor = new javax.swing.JTextField();
         ConsultarVeiculoFrame = new javax.swing.JFrame();
         jPanel11 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -517,9 +536,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
-        AlugarVeiculo.setMaximumSize(new java.awt.Dimension(885, 645));
         AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 645));
-        AlugarVeiculo.setPreferredSize(new java.awt.Dimension(885, 645));
         AlugarVeiculo.setResizable(false);
         AlugarVeiculo.setSize(new java.awt.Dimension(885, 645));
 
@@ -2178,12 +2195,187 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        RegistarFornecedorFrame.setMinimumSize(new java.awt.Dimension(732, 531));
-        RegistarFornecedorFrame.setSize(new java.awt.Dimension(732, 531));
+        RegistarFornecedorFrame.setMaximumSize(new java.awt.Dimension(732, 538));
+        RegistarFornecedorFrame.setMinimumSize(new java.awt.Dimension(732, 538));
+        RegistarFornecedorFrame.setSize(new java.awt.Dimension(732, 538));
+        RegistarFornecedorFrame.getContentPane().setLayout(null);
 
-        ConsultarVeiculoFrame.setMaximumSize(new java.awt.Dimension(885, 650));
+        RegistarFronecedor.setBackground(new java.awt.Color(239, 177, 74));
+        RegistarFronecedor.setToolTipText("Sign Up");
+        RegistarFronecedor.setMaximumSize(new java.awt.Dimension(732, 538));
+        RegistarFronecedor.setMinimumSize(new java.awt.Dimension(732, 538));
+
+        jLabel87.setFont(new java.awt.Font("Fira Sans", 1, 22)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel87.setText("Registar Fornecedor");
+
+        jLabel88.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel88.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jLabel102.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel102.setText("Email:");
+
+        EmailRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        EmailRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        EmailRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        EmailRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel103.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel103.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel103.setText("Nome:");
+
+        NomeRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        NomeRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        NomeRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        NomeRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel104.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel104.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel104.setText("Nº Telemovél:");
+
+        ContactoRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        ContactoRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        ContactoRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ContactoRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel105.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel105.setText("Morada:");
+
+        MoradaRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        MoradaRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        MoradaRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MoradaRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel106.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel106.setText("Nº Documento Identificaçao:");
+
+        jLabel107.setForeground(new java.awt.Color(60, 94, 115));
+        jLabel107.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(60, 94, 115)));
+
+        jButton10.setBackground(new java.awt.Color(217, 86, 74));
+        jButton10.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(235, 244, 249));
+        jButton10.setText("Reset");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetRegistoFornecedorResetRegistarClienteBtn(evt);
+            }
+        });
+
+        jButton11.setBackground(new java.awt.Color(60, 94, 115));
+        jButton11.setFont(new java.awt.Font("Fira Sans", 1, 16)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(235, 244, 249));
+        jButton11.setText("Confirmar");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn(evt);
+            }
+        });
+
+        CCRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        CCRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        CCRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CCRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        jLabel112.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(217, 86, 74));
+        jLabel112.setText("Data Nascimento:");
+
+        DataNascimentoRegistoFornecedor.setBackground(new java.awt.Color(169, 202, 221));
+        DataNascimentoRegistoFornecedor.setForeground(new java.awt.Color(60, 94, 115));
+        DataNascimentoRegistoFornecedor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DataNascimentoRegistoFornecedor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
+
+        javax.swing.GroupLayout RegistarFronecedorLayout = new javax.swing.GroupLayout(RegistarFronecedor);
+        RegistarFronecedor.setLayout(RegistarFronecedorLayout);
+        RegistarFronecedorLayout.setHorizontalGroup(
+            RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                        .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistarFronecedorLayout.createSequentialGroup()
+                        .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel107, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                                .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel104, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ContactoRegistoFornecedor)
+                                    .addComponent(NomeRegistoFornecedor)
+                                    .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                    .addComponent(EmailRegistoFornecedor)
+                                    .addComponent(jLabel102, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel103, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel105, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel106, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                                        .addComponent(MoradaRegistoFornecedor)
+                                        .addComponent(CCRegistoFornecedor, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel112, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(DataNascimentoRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)))
+                        .addGap(24, 24, 24))))
+            .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        RegistarFronecedorLayout.setVerticalGroup(
+            RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel87)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                        .addComponent(jLabel102)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EmailRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel103)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NomeRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel104)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ContactoRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistarFronecedorLayout.createSequentialGroup()
+                        .addComponent(jLabel105)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MoradaRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel106)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CCRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel112)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DataNascimentoRegistoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addGroup(RegistarFronecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        RegistarFornecedorFrame.getContentPane().add(RegistarFronecedor);
+        RegistarFronecedor.setBounds(0, 0, 732, 538);
+
         ConsultarVeiculoFrame.setMinimumSize(new java.awt.Dimension(885, 650));
-        ConsultarVeiculoFrame.setPreferredSize(new java.awt.Dimension(885, 650));
         ConsultarVeiculoFrame.setResizable(false);
         ConsultarVeiculoFrame.setSize(new java.awt.Dimension(885, 650));
 
@@ -2327,9 +2519,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        ConsultarAcidenteFrame.setMaximumSize(new java.awt.Dimension(885, 650));
         ConsultarAcidenteFrame.setMinimumSize(new java.awt.Dimension(885, 650));
-        ConsultarAcidenteFrame.setPreferredSize(new java.awt.Dimension(885, 650));
         ConsultarAcidenteFrame.setResizable(false);
 
         jPanel12.setBackground(new java.awt.Color(239, 177, 74));
@@ -4187,6 +4377,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnMainAcidente;
     private javax.swing.JTextField CCRegistoCliente1;
+    private javax.swing.JTextField CCRegistoFornecedor;
     private javax.swing.JTextField CCRegistoFunc;
     private javax.swing.JComboBox<String> CargoRegistoFunc;
     private javax.swing.JTextField CartaConducaoRegisto2;
@@ -4201,11 +4392,13 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton ConsultarVeiculoBtn;
     private javax.swing.JFrame ConsultarVeiculoFrame;
     private javax.swing.JTextField ContactoRegistoCliente1;
+    private javax.swing.JTextField ContactoRegistoFornecedor;
     private javax.swing.JTextField ContactoRegistoFunc;
     private javax.swing.JTextField DataAcidente;
     private javax.swing.JTextField DataEmissaoRegisto;
     private javax.swing.JTextField DataNascimento1;
     private javax.swing.JTextField DataNascimentoRegistoCliente;
+    private javax.swing.JTextField DataNascimentoRegistoFornecedor;
     private javax.swing.JTextField DataNascimentoRegistoFunc;
     private javax.swing.JTextField DataPagamentoAc;
     private javax.swing.JTextField DataRegisto1;
@@ -4213,6 +4406,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton EditarPeriflCliente;
     private javax.swing.JButton Editar_func;
     private javax.swing.JTextField EmailRegistoCliente1;
+    private javax.swing.JTextField EmailRegistoFornecedor;
     private javax.swing.JTextField EmailRegistoFunc;
     private javax.swing.JFrame GerirFuncionario;
     private javax.swing.JTextField IDFunc;
@@ -4225,8 +4419,10 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel MainMenu;
     private javax.swing.JTextField MatriculaTxt;
     private javax.swing.JTextField MoradaRegistoCliente1;
+    private javax.swing.JTextField MoradaRegistoFornecedor;
     private javax.swing.JTextField MoradaRegistoFunc;
     private javax.swing.JTextField NomeRegistoCliente1;
+    private javax.swing.JTextField NomeRegistoFornecedor;
     private javax.swing.JTextField NomeRegistoFunc;
     private javax.swing.JPasswordField PasswordRegistoFunc1;
     private javax.swing.JFrame PedidoAluguer;
@@ -4239,6 +4435,7 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton RegistarClienteBtn;
     private javax.swing.JFrame RegistarClienteFrame;
     private javax.swing.JFrame RegistarFornecedorFrame;
+    private javax.swing.JPanel RegistarFronecedor;
     private javax.swing.JButton RegistarFunc;
     private javax.swing.JPanel RegistarFunc1;
     private javax.swing.JFrame RegistarFuncFrame;
@@ -4274,6 +4471,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JTextField email1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton25;
@@ -4289,7 +4488,14 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -4372,6 +4578,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
