@@ -65,14 +65,15 @@ public class Database{
         cmd = cmd + "'" + p.getPassword()+ "') ";
         stm.executeUpdate(cmd);
     }
-    public void insertAcidente(Acidente a, String carrinha) throws SQLException{
+    public void insertAcidente(Acidente a, String carrinha, String culpado) throws SQLException{
         String cmd;
-        cmd = "insert into acidentes(data, descricao, valorPagar, dataLimitePagamento, carrinha)values(";
+        cmd = "insert into acidentes(data, descricao, valorPagar, dataLimitePagamento, carrinha, cartaConducaoCulpado)values(";
         cmd = cmd + "'" + a.getData() + "', ";
         cmd = cmd + "'" + a.getDescricao() + "', ";
         cmd = cmd + "'" + a.getValorPagar() + "', ";
         cmd = cmd + "'" + a.getDataLimitePagamento() + "', ";
-        cmd = cmd + "'" + carrinha + "') ";
+        cmd = cmd + "'" + carrinha + "', ";
+        cmd = cmd + "'" + culpado + "') ";
         stm.executeUpdate(cmd);
     }
     public void insertFuncionario(Funcionario f) throws SQLException{
