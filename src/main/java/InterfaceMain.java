@@ -149,19 +149,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
-        PedidoAluguer = new javax.swing.JFrame();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel56 = new javax.swing.JLabel();
-        jButton28 = new javax.swing.JButton();
-        jLabel53 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField19 = new javax.swing.JTextField();
-        jLabel54 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jButton27 = new javax.swing.JButton();
-        jLabel55 = new javax.swing.JLabel();
         RegistarFuncFrame = new javax.swing.JFrame();
         RegistarFunc1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -334,7 +321,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         RegistarClienteBtn = new javax.swing.JButton();
 
-        ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ReportarProblemas.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ReportarProblemas.setResizable(false);
         ReportarProblemas.setSize(new java.awt.Dimension(635, 600));
 
@@ -381,11 +368,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtnResetAcidente(evt);
-            }
-        });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
             }
         });
 
@@ -508,7 +490,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         .addComponent(jLabel108)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCCa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(aaaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel34))
@@ -550,7 +532,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        AlugarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AlugarVeiculo.setBackground(new java.awt.Color(239, 177, 74));
         AlugarVeiculo.setMinimumSize(new java.awt.Dimension(885, 645));
         AlugarVeiculo.setResizable(false);
@@ -606,11 +588,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel58.setText("Marca:");
 
         cmbMarca.setBackground(new java.awt.Color(169, 202, 221));
-        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarModelos(evt);
-            }
-        });
 
         jLabel61.setForeground(new java.awt.Color(217, 86, 74));
         jLabel61.setText("Modelo:");
@@ -772,7 +749,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        RegistarVeiculo.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         RegistarVeiculo.setMinimumSize(new java.awt.Dimension(380, 500));
         RegistarVeiculo.setResizable(false);
         RegistarVeiculo.setSize(new java.awt.Dimension(380, 500));
@@ -1002,6 +979,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
+        Perfil_Utilizador.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         Perfil_Utilizador.setResizable(false);
         Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
 
@@ -1150,114 +1128,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
         );
 
-        PedidoAluguer.setResizable(false);
-
-        jPanel7.setBackground(new java.awt.Color(239, 177, 74));
-
-        jLabel56.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel56.setText("Categoria");
-
-        jButton28.setBackground(new java.awt.Color(217, 86, 74));
-        jButton28.setForeground(new java.awt.Color(235, 244, 249));
-        jButton28.setText("Limpar");
-
-        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(60, 94, 115));
-        jLabel53.setText("Aluguer de veículo");
-
-        jTextField17.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField17.setText("hh:mm");
-
-        jTextField18.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField18.setText("   --/--/--");
-
-        jComboBox1.setBackground(new java.awt.Color(169, 202, 221));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria" }));
-
-        jTextField19.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField19.setText("   --/--/--");
-
-        jLabel54.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel54.setText("Data e hora de ínicio de aluguer");
-
-        jTextField20.setBackground(new java.awt.Color(169, 202, 221));
-        jTextField20.setText("hh:mm");
-
-        jButton27.setBackground(new java.awt.Color(60, 94, 115));
-        jButton27.setForeground(new java.awt.Color(235, 244, 249));
-        jButton27.setText("Pesquisar");
-
-        jLabel55.setForeground(new java.awt.Color(217, 86, 74));
-        jLabel55.setText("Data e hora de fim de aluguer");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButton27)
-                .addGap(18, 18, 18)
-                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel53)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel56)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel54)
-                    .addComponent(jLabel55)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel53)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel56)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton27)
-                    .addComponent(jButton28))
-                .addGap(0, 17, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout PedidoAluguerLayout = new javax.swing.GroupLayout(PedidoAluguer.getContentPane());
-        PedidoAluguer.getContentPane().setLayout(PedidoAluguerLayout);
-        PedidoAluguerLayout.setHorizontalGroup(
-            PedidoAluguerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        PedidoAluguerLayout.setVerticalGroup(
-            PedidoAluguerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
+        RegistarFuncFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         RegistarFuncFrame.setResizable(false);
         RegistarFuncFrame.setSize(new java.awt.Dimension(680, 610));
 
@@ -1483,6 +1354,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        GerirFuncionario.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         GerirFuncionario.setResizable(false);
         GerirFuncionario.setSize(new java.awt.Dimension(885, 630));
 
@@ -1601,6 +1473,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        PerfilFunc.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         PerfilFunc.setResizable(false);
         PerfilFunc.setSize(new java.awt.Dimension(462, 500));
 
@@ -1838,6 +1711,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ReceberVeiculoFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ReceberVeiculoFrame.setMinimumSize(new java.awt.Dimension(350, 235));
         ReceberVeiculoFrame.setResizable(false);
         ReceberVeiculoFrame.setSize(new java.awt.Dimension(350, 270));
@@ -1969,6 +1843,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        RegistarClienteFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         RegistarClienteFrame.setResizable(false);
         RegistarClienteFrame.setSize(new java.awt.Dimension(732, 664));
 
@@ -2211,6 +2086,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        RegistarFornecedorFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         RegistarFornecedorFrame.setMaximumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setMinimumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setSize(new java.awt.Dimension(732, 538));
@@ -2391,6 +2267,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         RegistarFornecedorFrame.getContentPane().add(RegistarFronecedor);
         RegistarFronecedor.setBounds(0, 0, 732, 538);
 
+        ConsultarVeiculoFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ConsultarVeiculoFrame.setMinimumSize(new java.awt.Dimension(885, 650));
         ConsultarVeiculoFrame.setResizable(false);
         ConsultarVeiculoFrame.setSize(new java.awt.Dimension(885, 650));
@@ -2535,6 +2412,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        ConsultarAcidenteFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ConsultarAcidenteFrame.setMinimumSize(new java.awt.Dimension(885, 650));
         ConsultarAcidenteFrame.setResizable(false);
 
@@ -2998,6 +2876,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AlugarVeiculoMainMenuBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculoMainMenuBtn
+        txtDataFim.setText("");
+        txtDataInicio.setText("");
         AlugarVeiculo.setLocationRelativeTo(null);
         AlugarVeiculo.setVisible(true);
         cmbMarca.removeAllItems();
@@ -3029,13 +2909,13 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
         //abrir thread
+        MatriculaTxt.setText("");
+        DescricaoAcidente1.setText("");
+        DataAcidente.setText("");
+        LocalTxt.setText("");
         ReportarProblemas.setLocationRelativeTo(null);
         ReportarProblemas.setVisible(true);
     }//GEN-LAST:event_BtnMainAcidenteActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void BtnResetAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnResetAcidente
         MatriculaTxt.setText("");
@@ -3180,6 +3060,16 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Registar_MainMenu_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registar_MainMenu_Btn
+        TxtMatricula.setText("");
+        ComboMarca.setSelectedIndex(0);
+        ComboCombustivel.setSelectedIndex(0);
+        ComboPotencia.setSelectedIndex(0);
+        TxtCilindrada.setText("");
+        TextValSeguro.setText("");
+        TextApolice.setText("");
+        TextDataInicio.setText("");
+        TextDataFim.setText("");
+        TxtKilomet.setText("");
         String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão do cliente:");
         try{
             ResultSet rs = null;
@@ -3498,6 +3388,9 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmarReceberVeiculoBtn
 
     private void ReceberVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceberVeiculoBtnActionPerformed
+        txtkm.setText("");
+        txtMatricula.setText("");
+        txtNota.setText("");
         ReceberVeiculoFrame.setVisible(true);
         ReceberVeiculoFrame.setLocationRelativeTo(null);
     }//GEN-LAST:event_ReceberVeiculoBtnActionPerformed
@@ -3802,7 +3695,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmarRegistoClienteBtn
 
     private void AlugarVeiculo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculo
-        // TODO add your handling code here:
         if(tblCarrinhas.getSelectedRowCount() != 1){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
         }else{
@@ -3848,21 +3740,6 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_AlugarVeiculo
-
-    private void atualizarModelos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarModelos
-        cmbModelo.removeAllItems();
-        cmbModelo.addItem("Todos");
-        if(selecionarModelo){
-            try {
-                ResultSet rs1 = db.select("select distinct modelo from carrinhas where marca = '" + cmbMarca.getSelectedItem().toString() + "'");
-                while(rs1.next()){
-                    cmbModelo.addItem(rs1.getString("modelo"));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_atualizarModelos
 
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
         if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){
@@ -4188,7 +4065,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }
     private void ConsultarVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVeiculoBtnActionPerformed
-        // TODO add your handling code here:
+        txtMatriculaV.setText("");
         ConsultarVeiculoFrame.setVisible(true);
         ConsultarVeiculoFrame.setLocationRelativeTo(null);
         populateTblCarrinhas("a");
@@ -4252,7 +4129,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         
     }
     private void ConsultarAcidenteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarAcidenteBtnActionPerformed
-        // TODO add your handling code here:
+        txtMatriculaV1.setText("");
         ConsultarAcidenteFrame.setVisible(true);
         ConsultarAcidenteFrame.setLocationRelativeTo(null);
         try {
@@ -4441,7 +4318,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JTextField NomeRegistoFornecedor;
     private javax.swing.JTextField NomeRegistoFunc;
     private javax.swing.JPasswordField PasswordRegistoFunc1;
-    private javax.swing.JFrame PedidoAluguer;
     private javax.swing.JFrame PerfilFunc;
     private javax.swing.JFrame Perfil_Utilizador;
     private javax.swing.JPanel ReceberVeiculo;
@@ -4493,14 +4369,11 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -4559,10 +4432,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
@@ -4619,7 +4488,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -4631,10 +4499,6 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextArea morada;
     private javax.swing.JTextArea morada1;
     private javax.swing.JTextField nomeUtilizador;
