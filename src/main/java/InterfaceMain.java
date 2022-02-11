@@ -26,7 +26,6 @@ import javax.swing.table.DefaultTableModel;
 /*ToDo:
     -Threads
     -Testes
-    -pesquisar cliente se for fornecedor mostrar dados sem carta
 */
 
 /**
@@ -980,8 +979,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         Perfil_Utilizador.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        Perfil_Utilizador.setMaximumSize(new java.awt.Dimension(444, 350));
+        Perfil_Utilizador.setMinimumSize(new java.awt.Dimension(444, 350));
+        Perfil_Utilizador.setPreferredSize(new java.awt.Dimension(444, 350));
         Perfil_Utilizador.setResizable(false);
-        Perfil_Utilizador.setSize(new java.awt.Dimension(444, 332));
+        Perfil_Utilizador.setSize(new java.awt.Dimension(444, 350));
 
         jPanel6.setBackground(new java.awt.Color(239, 177, 74));
         jPanel6.setMaximumSize(new java.awt.Dimension(444, 350));
@@ -2090,7 +2092,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         RegistarFornecedorFrame.setMaximumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setMinimumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setSize(new java.awt.Dimension(732, 538));
-        RegistarFornecedorFrame.getContentPane().setLayout(null);
 
         RegistarFronecedor.setBackground(new java.awt.Color(239, 177, 74));
         RegistarFronecedor.setToolTipText("Sign Up");
@@ -2264,8 +2265,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 .addContainerGap(67, Short.MAX_VALUE))
         );
 
-        RegistarFornecedorFrame.getContentPane().add(RegistarFronecedor);
-        RegistarFronecedor.setBounds(0, 0, 732, 538);
+        RegistarFornecedorFrame.getContentPane().add(RegistarFronecedor, java.awt.BorderLayout.CENTER);
 
         ConsultarVeiculoFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ConsultarVeiculoFrame.setMinimumSize(new java.awt.Dimension(885, 650));
@@ -3083,6 +3083,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             if(rowcount == 0){
                 rowcount++;
                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado, por favor registe o cliente primeiro.");
+                EmailRegistoFornecedor.setText("");
+                CCRegistoFornecedor.setText("");
+                ContactoRegistoFornecedor.setText("");
+                MoradaRegistoFornecedor.setText("");
+                DataNascimentoRegistoFornecedor.setText("");
+                NomeRegistoFornecedor.setText("");
                 RegistarFornecedorFrame.setVisible(true);
                 RegistarFornecedorFrame.setLocationRelativeTo(null);
                 
@@ -3397,17 +3403,17 @@ public class InterfaceMain extends javax.swing.JFrame {
 
     private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
         String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+        if(pesquisa != null || pesquisa.equals("")){
+            try{
+                ResultSet rs = null;
+                rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas "
+                    + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '"
+                    + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
 
-        try{
-            ResultSet rs = null;
-            rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas "
-                + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '"
-                + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
-
-            int rowcount = 0;
-            while (rs.next()){
-                rowcount ++;
-                Perfil_Utilizador.setVisible(true);
+                int rowcount = 0;
+                while (rs.next()){
+                    rowcount ++;
+                    Perfil_Utilizador.setVisible(true);
                     Perfil_Utilizador.setLocationRelativeTo(null);
                     nomeUtilizador.setText(rs.getString("nome"));
                     docID.setText(rs.getString("numeroCC"));
@@ -3415,13 +3421,14 @@ public class InterfaceMain extends javax.swing.JFrame {
                     telemovel.setText(rs.getString("numTelefone"));
                     email.setText(rs.getString("email"));
                     morada.setText(rs.getString("morada"));
-            }
-            if(rowcount == 0){
+                }
+                if(rowcount == 0){
                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
                 }
 
-        } catch (SQLException ex) {
-            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_Consultar_Perfil_Btn
 
@@ -3944,75 +3951,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
-    private void ResetRegistoFornecedorResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistoFornecedorResetRegistarClienteBtn
-        EmailRegistoFornecedor.setText("");
-        CCRegistoFornecedor.setText("");
-        ContactoRegistoFornecedor.setText("");
-        MoradaRegistoFornecedor.setText("");
-        DataNascimentoRegistoFornecedor.setText("");
-        NomeRegistoFornecedor.setText("");
-    }//GEN-LAST:event_ResetRegistoFornecedorResetRegistarClienteBtn
-
-    private void ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
-        boolean erro = false;
-        String mensagem = "\nForam detectados os seguintes erros.\n";
-        ResultSet rs = null;
-        LocalDate nascimento = null;
-        
-        if(!Pattern.matches(formatoEmail, EmailRegistoFornecedor.getText())){
-            erro = true;
-            mensagem += "\nEmail inválido.";
-       }
-        if(!Pattern.matches(formatoTelefone, ContactoRegistoFornecedor.getText())){
-            erro = true;
-            mensagem += "\nNumero Contacto inválido.";
-            }
-       try{
-            nascimento = StringtoDate(DataNascimentoRegistoFornecedor.getText());
-        }catch(Exception e){
-            erro = true;
-            mensagem +="\nData Nascimento inválida.";
-        }
-        try {
-            rs = db.select("select email from pessoas");
-            while(rs.next()){
-                if(rs.getString("email").equals(EmailRegistoFornecedor.getText())){
-                    erro = true;
-                    mensagem += "\nEste email já está associado a outro utilizador.";
-                }
-            }
-            rs = db.select("select numeroCC from pessoas");
-            while(rs.next()){
-                if(rs.getString("numeroCC").equals(CCRegistoFornecedor.getText())){
-                    erro = true;
-                    mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
-                }
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if(erro){
-            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
-        }else{
-            Pessoa p = new Pessoa(NomeRegistoFornecedor.getText(), 0, CCRegistoFornecedor.getText(), MoradaRegistoFornecedor.getText(),
-                    LocalDate.now(), nascimento, Integer.parseInt(ContactoRegistoFornecedor.getText()), EmailRegistoFornecedor.getText() , "", "");
-            
-            try {
-                db.insertPessoa(p);
-                RegistarFornecedorFrame.dispose();
-                RegistarVeiculo.setLocationRelativeTo(null);
-                RegistarVeiculo.setVisible(true);
-                
-                rs = db.select("select * from marcas");
-                while(rs.next()){
-                    ComboMarca.addItem(rs.getString("marca"));
-                }
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(new JOptionPane(), "Ocorreu um erro. Tente novamente", "Erro", JOptionPane.ERROR_MESSAGE);
-                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
     private void btnFiltrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrar1ActionPerformed
         // TODO add your handling code here:
         populateTblCarrinhas(txtMatriculaV.getText());
@@ -4153,6 +4091,76 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnConcluirActionPerformed
+
+    private void ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
+        boolean erro = false;
+        String mensagem = "\nForam detectados os seguintes erros.\n";
+        ResultSet rs = null;
+        LocalDate nascimento = null;
+
+        if(!Pattern.matches(formatoEmail, EmailRegistoFornecedor.getText())){
+            erro = true;
+            mensagem += "\nEmail inválido.";
+        }
+        if(!Pattern.matches(formatoTelefone, ContactoRegistoFornecedor.getText())){
+            erro = true;
+            mensagem += "\nNumero Contacto inválido.";
+        }
+        try{
+            nascimento = StringtoDate(DataNascimentoRegistoFornecedor.getText());
+        }catch(Exception e){
+            erro = true;
+            mensagem +="\nData Nascimento inválida.";
+        }
+        try {
+            rs = db.select("select email from pessoas");
+            while(rs.next()){
+                if(rs.getString("email").equals(EmailRegistoFornecedor.getText())){
+                    erro = true;
+                    mensagem += "\nEste email já está associado a outro utilizador.";
+                }
+            }
+            rs = db.select("select numeroCC from pessoas");
+            while(rs.next()){
+                if(rs.getString("numeroCC").equals(CCRegistoFornecedor.getText())){
+                    erro = true;
+                    mensagem +="\nJá existe um utilizador associada a este numero de cidadão.";
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(erro){
+            JOptionPane.showMessageDialog(new JOptionPane(), mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Pessoa p = new Pessoa(NomeRegistoFornecedor.getText(), 0, CCRegistoFornecedor.getText(), MoradaRegistoFornecedor.getText(),
+                LocalDate.now(), nascimento, Integer.parseInt(ContactoRegistoFornecedor.getText()), EmailRegistoFornecedor.getText() , "", "");
+
+            try {
+                db.insertPessoa(p);
+                RegistarFornecedorFrame.dispose();
+                RegistarVeiculo.setLocationRelativeTo(null);
+                RegistarVeiculo.setVisible(true);
+
+                rs = db.select("select * from marcas");
+                while(rs.next()){
+                    ComboMarca.addItem(rs.getString("marca"));
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(new JOptionPane(), "Ocorreu um erro. Tente novamente", "Erro", JOptionPane.ERROR_MESSAGE);
+                Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
+
+    private void ResetRegistoFornecedorResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistoFornecedorResetRegistarClienteBtn
+        EmailRegistoFornecedor.setText("");
+        CCRegistoFornecedor.setText("");
+        ContactoRegistoFornecedor.setText("");
+        MoradaRegistoFornecedor.setText("");
+        DataNascimentoRegistoFornecedor.setText("");
+        NomeRegistoFornecedor.setText("");
+    }//GEN-LAST:event_ResetRegistoFornecedorResetRegistarClienteBtn
 
     /**
      * @param args the command line arguments
