@@ -972,9 +972,7 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         Perfil_Utilizador.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        Perfil_Utilizador.setMaximumSize(new java.awt.Dimension(444, 350));
         Perfil_Utilizador.setMinimumSize(new java.awt.Dimension(444, 350));
-        Perfil_Utilizador.setPreferredSize(new java.awt.Dimension(444, 350));
         Perfil_Utilizador.setResizable(false);
         Perfil_Utilizador.setSize(new java.awt.Dimension(444, 350));
 
@@ -2082,7 +2080,6 @@ public class InterfaceMain extends javax.swing.JFrame {
         );
 
         RegistarFornecedorFrame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        RegistarFornecedorFrame.setMaximumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setMinimumSize(new java.awt.Dimension(732, 538));
         RegistarFornecedorFrame.setSize(new java.awt.Dimension(732, 538));
 
@@ -3434,13 +3431,12 @@ public class InterfaceMain extends javax.swing.JFrame {
      * @param evt 
      */
     private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
-        String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+        String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão:");
         if(pesquisa != null || pesquisa.equals("")){
             try{
                 ResultSet rs = null;
-                rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.condutores as condutores left outer join pessoas "
-                    + "as pessoas on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '"
-                    + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores "
+                        + "as condutores on pessoas.id = condutores.idPessoa where pessoas.numeroCC = '" + pesquisa + "'");
 
                 int rowcount = 0;
                 while (rs.next()){
