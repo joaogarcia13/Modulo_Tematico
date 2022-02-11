@@ -11,6 +11,14 @@ public class Acidente {
     private float valorPagar;
     private LocalDate dataLimitePagamento;
 
+    /**
+     * construtor da classe acidente
+     * @param id
+     * @param data
+     * @param descricao
+     * @param valorPagar
+     * @param dataLimitePagamento 
+     */
     public Acidente(int id, LocalDate data, String descricao, float valorPagar,
                     LocalDate dataLimitePagamento){
         this.id=id;
@@ -19,46 +27,43 @@ public class Acidente {
         this.valorPagar=valorPagar;
         this.dataLimitePagamento=dataLimitePagamento;
     }
-
+    /**
+     * método que retorna o id
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * método que retorna a descriçao
+     * @return 
+     */
     public String getDescricao() {
         return descricao;
     }
 
+    /**
+     * método que retorna o valor a pagar
+     * @return 
+     */
     public float getValorPagar() {
         return valorPagar;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public void setValorPagar(float valorPagar) {
-        this.valorPagar = valorPagar;
-    }
-
+    /**
+     * método que retorna a data
+     * @return 
+     */
     public LocalDate getData() {
         return data;
     }
 
+    /**
+     * método que retorna a data limite de pagamento
+     * @return 
+     */
     public LocalDate getDataLimitePagamento() {
         return dataLimitePagamento;
     }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public void setDataLimitePagamento(LocalDate dataLimitePagamento) {
-        this.dataLimitePagamento = dataLimitePagamento;
-    }
-    
-
 }

@@ -8,6 +8,13 @@ public class CartaDeConducao{
     private LocalDate dataDeValidade;
     private String categoria;
 
+    /**
+     * construtor da classe cartaDeConducao
+     * @param numero
+     * @param DataDeEmissao
+     * @param DataDeValidade
+     * @param Categoria 
+     */
     public CartaDeConducao(String numero, LocalDate DataDeEmissao, LocalDate DataDeValidade, String Categoria){
         this.numero = numero;
         this.dataDeEmissao = DataDeEmissao;
@@ -15,35 +22,35 @@ public class CartaDeConducao{
         this.categoria = Categoria;
     }
 
+    /**
+     * método que retorna o numero da carta de conduçao
+     * @return 
+     */
     public String getNumero() {
         return numero;
     }
 
+    /**
+     * método que retorna a data de emissao da carta de conduçao 
+     * @return 
+     */
     public LocalDate getDataDeEmissao() {
         return dataDeEmissao;
     }
 
+    /**
+     * método que retorna a data de validade da carta de condução
+     * @return 
+     */
     public LocalDate getDataDeValidade() {
         return dataDeValidade;
     }
-
+    
+    /**
+     * método que retorna a categoria da carta de conduçao
+     * @return 
+     */
     public String getCategoria() {
         return categoria;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public void setDataDeEmissao(LocalDate dataDeEmissao) {
-        this.dataDeEmissao = dataDeEmissao;
-    }
-
-    public void setDataDeValidade(LocalDate dataDeValidade) {
-        this.dataDeValidade = dataDeValidade;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 }

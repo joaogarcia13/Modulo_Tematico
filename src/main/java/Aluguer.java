@@ -6,7 +6,15 @@ public class Aluguer {
     private float preco;
     private String estado;
     private int classificacao;
-
+    
+    /**
+     * Construtor da classe Aluguer 
+     * @param horario
+     * @param regularidade
+     * @param preco
+     * @param estado
+     * @param classificacao 
+     */
     public Aluguer(String horario, String regularidade, float preco, String estado, int classificacao) {
         this.horario = horario;
         this.regularidade = regularidade;
@@ -15,43 +23,43 @@ public class Aluguer {
         this.classificacao = classificacao;
     }
 
+    /**
+     * metodo que retorna o horario do aluguer
+     * @return 
+     */
     public String getHorario() {
         return horario;
     }
 
+    /**
+     * método que retorna a regularidade do aluguer
+     * @return 
+     */
     public String getRegularidade() {
         return regularidade;
     }
-
+    
+    /**
+     * método que retorna o preço do aluguer 
+     * @return 
+     */
     public float getPreco() {
         return preco;
     }
 
+    /**
+     * método que retorna o estado do aluguer
+     * @return 
+     */
     public String getEstado() {
         return estado;
     }
 
+    /**
+     * método que retorna a classificação
+     * @return 
+     */
     public int getClassificacao() {
         return classificacao;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-
-    public void setRegularidade(String regularidade) {
-        this.regularidade = regularidade;
-    }
-
-    public void setPreco(float preco) {
-        this.preco = preco;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public void setClassificacao(int classificacao) {
-        this.classificacao = classificacao;
     }
 }
