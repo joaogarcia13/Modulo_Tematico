@@ -7,7 +7,21 @@ public class Funcionario extends Pessoa {
     protected String cargo;
 
     public Funcionario(){};
-
+    
+    /**
+     * Construtor da classe funcionario
+     * @param nome
+     * @param id
+     * @param numeroCidadao
+     * @param morada
+     * @param dataRegistoSistema
+     * @param dataNascimento
+     * @param numTelefone
+     * @param email
+     * @param username
+     * @param password
+     * @param cargo 
+     */
     public Funcionario(String nome, int id, String numeroCidadao, String morada, LocalDate dataRegistoSistema,
                        LocalDate dataNascimento, int numTelefone, String email, String username, String password,
                        String cargo) {
@@ -25,92 +39,91 @@ public class Funcionario extends Pessoa {
         this.cargo=cargo;
     }
 
+    /**
+     * Metodo que retorna o cargo do funcionario
+     * @return 
+     */
     public String getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
+    /**
+     * Metodo que retorna o nome do funcionario
+     * @return 
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * Metodo que retorna o id do funcionario
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Metodo que retorna o numero de cidadao do funcionario
+     * @return 
+     */
     public String getNumeroCidadao() {
         return numeroCidadao;
     }
-
+    
+    /**
+     * Metodo que retorna a morada do funcionario
+     * @return 
+     */
     public String getMorada() {
         return morada;
     }
 
+    /**
+     * Metodo que retorna a data de registo no sistema do funcionario
+     * @return 
+     */
     public LocalDate getDataRegistoSistema() {
         return dataRegistoSistema;
     }
-
+    
+    /**
+     * Metodo que retorna a data de nascimento do funcionario
+     * @return 
+     */
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
+    /**
+     * Metodo que retorna o numero de telefone do funcionario
+     * @return 
+     */
     public int getNumTelefone() {
         return numTelefone;
     }
-
+    
+    /**
+     * Metodo que retorna o email do funcionario
+     * @return 
+     */
     public String getEmail() {
         return email;
     }
-
+    /**
+     * Metodo que retorna o username do funcionario
+     * @return 
+     */
     public String getUsername() {
         return username;
     }
-
+    
+    /**
+     * Metodo que retorna a password do funcionario
+     * @return 
+     */
     public String getPassword() {
         return password;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNumeroCidadao(String numeroCidadao) {
-        this.numeroCidadao = numeroCidadao;
-    }
-
-    public void setMorada(String morada) {
-        this.morada = morada;
-    }
-
-    public void setDataRegistoSistema(LocalDate dataRegistoSistema) {
-        this.dataRegistoSistema = dataRegistoSistema;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public void setNumTelefone(int numTelefone) {
-        this.numTelefone = numTelefone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 }

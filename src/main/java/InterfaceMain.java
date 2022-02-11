@@ -23,14 +23,12 @@ import javax.swing.table.DefaultTableModel;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/*ToDo:
-    -Threads
-    -Testes
-*/
-
 /**
  *
- * @author joaogarcia
+ * @author João Garcia
+ * @author Diogo Figueiredo
+ * @author Eliana Oliveira
+ * @author Gonçalo Gonçalves
  */
 public class InterfaceMain extends javax.swing.JFrame {
     private static Database db = new Database();
@@ -329,11 +327,6 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         DataPagamentoAc.setBackground(new java.awt.Color(169, 202, 221));
         DataPagamentoAc.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(60, 94, 115)));
-        DataPagamentoAc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DataPagamentoAcActionPerformed(evt);
-            }
-        });
 
         jLabel34.setFont(new java.awt.Font("Fira Sans", 0, 16)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(217, 86, 74));
@@ -2875,6 +2868,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo da frame MainMenu que mostra a frame AlugarVeiculo 
+     * @param evt 
+     */
     private void AlugarVeiculoMainMenuBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculoMainMenuBtn
         txtDataFim.setText("");
         txtDataInicio.setText("");
@@ -2907,6 +2904,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         
     }//GEN-LAST:event_AlugarVeiculoMainMenuBtn
 
+    /**
+     * Metodo do botao Registar Acidente do MainMenu que mostra a frame ReportarProblemas
+     * @param evt 
+     */
     private void BtnMainAcidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMainAcidenteActionPerformed
         //abrir thread
         MatriculaTxt.setText("");
@@ -2917,13 +2918,21 @@ public class InterfaceMain extends javax.swing.JFrame {
         ReportarProblemas.setVisible(true);
     }//GEN-LAST:event_BtnMainAcidenteActionPerformed
 
+    /**
+     * Metodo do botao Reset do frame ReportarProblemas que limpa o texto das caixas de texto
+     * @param evt 
+     */
     private void BtnResetAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnResetAcidente
         MatriculaTxt.setText("");
         DescricaoAcidente1.setText("");
         DataAcidente.setText("");
         LocalTxt.setText("");
     }//GEN-LAST:event_BtnResetAcidente
-
+    
+    /**
+     * Metodo do botao de confirmar do frame RegistarAcidente que valida os campos introduzidos e insere na base de dados o acidente
+     * @param evt 
+     */
     private void BtnRegistarAcidente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistarAcidente
         
         LocalDate DataAc = null;
@@ -3016,6 +3025,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_BtnRegistarAcidente
+
+    /**
+     * Metodo do botão login que verifica se as crendetias de login 
+     * @param evt 
+     */
     private void LoginConfirmarBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginConfirmarBtn
         // TODO add your handling code here:
         ResultSet rs;
@@ -3053,12 +3067,17 @@ public class InterfaceMain extends javax.swing.JFrame {
         String userInput = JOptionPane.showInputDialog(null, "Numero Carta Condução.");
         //pedir á base de dados pela carta
     }//GEN-LAST:event_Consultar_Perfil
-
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
             Login.setVisible(false);
             MainMenu.setVisible(true);       
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    /**
+     * Metodo do botao Registar Veiculo do frame MainMenu que reencaminha para o registo de fornecedor se nao existir nenhum fornecedor com o numero de cidadao introduzido
+     * e para a frame de registo de carrinhas. Valida os dados introduzidos e adiciona á base de dados as carrinhas e o fornecedor (no caso de ter sido feito um registo do mesmo)
+     * @param evt 
+     */
     private void Registar_MainMenu_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registar_MainMenu_Btn
         TxtMatricula.setText("");
         ComboMarca.setSelectedIndex(0);
@@ -3107,6 +3126,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Registar_MainMenu_Btn
 
+    /**
+     * Metodo do botao Gerir Funcionario do MainMenu que rencaminha para a frame GerirFuncionario e popula a tabela com os funcionarios
+     * @param evt 
+     */
     private void RegistarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncActionPerformed
         GerirFuncionario.setVisible(true);
         GerirFuncionario.setLocationRelativeTo(null);
@@ -3142,7 +3165,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         
     }//GEN-LAST:event_RegistarFuncActionPerformed
-
+    
+    /**
+     * Metodo que remove o funcionario selecionado da base de dados. elimina da tabela funcioarios e apaga as credenciais de login mas mantem a infromacao na tabela pessoas
+     * @param evt 
+     */
     private void Remover_FuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remover_FuncActionPerformed
         if(tblFunc.getSelectedRowCount() != 1){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma linha da tabela.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -3187,6 +3214,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_Remover_FuncActionPerformed
 
+    /**
+     * Metodo do botao Editar Funcionario da frame GerirFuncionario que mostra o frame PerfilFunc com os dados do funcionario selecionado
+     * @param evt 
+     */
     private void Editar_funcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Editar_funcActionPerformed
         if(tblFunc.getSelectedRowCount() != 1){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma linha da tabela.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -3214,6 +3245,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Editar_funcActionPerformed
 
+    /**
+     * Metodo do botao editar da frame EditarFuncionario que desbloqueia os campos da informaçao relativa ao funcionario para poderem ser alterados
+     * @param evt 
+     */
     private void EditarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarFuncBtn
         ConfirmarPerfilCLienteBtn.setEnabled(true);
         nomeUtilizador1.setEditable(true);
@@ -3228,6 +3263,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         ComboCargo.setEditable(true);
     }//GEN-LAST:event_EditarFuncBtn
 
+    /**
+     * Metodo do botao confirmar do frame ConsultarFunc que valida os dados inseridos e atualiza os dados do funcionario na base de dados
+     * @param evt 
+     */
     private void ConfirmarEditarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarEditarFuncBtn
         String id = IDFunc.getText();
         boolean erro = false;
@@ -3319,6 +3358,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         ReceberVeiculoFrame.setVisible(true);
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    /**
+     * Metodo do botao confirmar da frame ReceberVeiculoFrame que valida os campos inseridos e faz os calculos do preco a pagar
+     * @param evt 
+     */
     private void ConfirmarReceberVeiculoBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarReceberVeiculoBtn
         //verificar se os km inseridos sao maiores que os que a carrinha tinha quando saiu
         if(txtkm.getText().equals("") || txtNota.getText().equals("") || txtMatricula.getText().equals("")){
@@ -3393,6 +3436,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarReceberVeiculoBtn
 
+    /**
+     * Metodo do botao ReceberVeiculo da Frame MainMenu que reecaminha para a frame ReceberVeiculoFrame
+     * @param evt 
+     */
     private void ReceberVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceberVeiculoBtnActionPerformed
         txtkm.setText("");
         txtMatricula.setText("");
@@ -3401,6 +3448,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         ReceberVeiculoFrame.setLocationRelativeTo(null);
     }//GEN-LAST:event_ReceberVeiculoBtnActionPerformed
 
+    /**
+     * Metodo que pesquisa por um numero de cidadão ou carta de condução e mostra as informações associadas a esse utilizador na Frame Perfil_Utilizador
+     * @param evt 
+     */
     private void Consultar_Perfil_Btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_Perfil_Btn
         String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
         if(pesquisa != null || pesquisa.equals("")){
@@ -3432,11 +3483,19 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Consultar_Perfil_Btn
 
+    /**
+     * Metodo do botao Registar Funcionario da Frame GerirFuncionario que reencaminha para o formulario de registo de um novo funcionario da frame RegistarFuncFrame
+     * @param evt 
+     */
     private void RegistarFuncBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarFuncBtn
         RegistarFuncFrame.setVisible(true);
         RegistarFuncFrame.setLocationRelativeTo(null);
     }//GEN-LAST:event_RegistarFuncBtn
 
+    /**
+     * metodo do botão reset de Frame RegistarFunc que limpa as caixas de texto
+     * @param evt 
+     */
     private void ResetRegistoFunc(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistoFunc
         UsernameFuncRegisto1.setText("");
         EmailRegistoFunc.setText("");
@@ -3449,6 +3508,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         CargoRegistoFunc.setSelectedIndex(0);
     }//GEN-LAST:event_ResetRegistoFunc
 
+    /**
+     * Metodo do botao confirmar da frame RegistarFunc que valida os campos inseridos e adiciona o funcionario à base de dados
+     * @param evt 
+     */
     private void ConfirmarRegistoFunc(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoFunc
         boolean erro = false;
         String mensagem = "Os seguintes erros foram encontrados:\n";
@@ -3510,7 +3573,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ConfirmarRegistoFunc
-
+    
+    /**
+     * Metodo do botao Registar Cliente da frame MainMenu que reencaminha para a frame de RegistoCliente ou RegistoFornecedor dependendo se já existe uma conta de fornecedor
+     * na base de dados associada ao numero de cidadao introduzido
+     * @param evt 
+     */
     private void RegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarClienteBtn
         Object [] ob = {"Não", "Sim"};
         int i = JOptionPane.showOptionDialog(null, "O Cliente que quer registar já tem conta de fornecedor ?", "Registo", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, ob, null);
@@ -3547,6 +3615,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_RegistarClienteBtn
 
+    /**
+     * metodo do botao reset da frame RegistarCliente que limpa as caixas de texto
+     * @param evt 
+     */
     private void ResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistarClienteBtn
         EmailRegistoCliente1.setText("");
         NomeRegistoCliente1.setText("");
@@ -3560,6 +3632,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         CategoriaRegistoCliente.setSelectedIndex(0);
     }//GEN-LAST:event_ResetRegistarClienteBtn
 
+    /**
+     * Metodo do botao confirmar na frame RegistarCliente que valida os dados inseridos e insero o cliente na base de dados
+     * @param evt 
+     */
     private void ConfirmarRegistoClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoClienteBtn
         boolean erro = false;
         String mensagem = "Os seguintes erros foram encontrados:\n";
@@ -3701,6 +3777,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarRegistoClienteBtn
 
+    /**
+     * Metodo do botao alugar da frame AlugarVeiculo que regista o aluguer na base de dados
+     * @param evt 
+     */
     private void AlugarVeiculo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculo
         if(tblCarrinhas.getSelectedRowCount() != 1){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
@@ -3748,6 +3828,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AlugarVeiculo
 
+    /**
+     * Metodo do botao filtrar da frame AlugarVeiculo que valida as datas e vai buscar todas as carrinhas disponiveis nessas datas à base de dados
+     * @param evt 
+     */
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
         if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){
             String filtro = "";
@@ -3821,10 +3905,10 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
-    private void DataPagamentoAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPagamentoAcActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DataPagamentoAcActionPerformed
-
+    /**
+     * Metodo do botao reset da frame RegistarVeiculo que limpa as caixas de texto
+     * @param evt 
+     */
     private void LimparBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimparBtn_RegistarVeiculo
         TxtMatricula.setText("");
         ComboMarca.setSelectedIndex(0);
@@ -3838,6 +3922,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         TxtKilomet.setText("");
     }//GEN-LAST:event_LimparBtn_RegistarVeiculo
 
+    /**
+     * Metodo do botao confirmar da frame RegistarVeiculo que faz a validação dos campos inseridos e adiciona a carrinha á base de dados
+     * @param evt 
+     */
     private void ConfirmarBtn_RegistarVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarBtn_RegistarVeiculo
         LocalDate DataIni = null;
         LocalDate DataFim = null;
@@ -3951,11 +4039,20 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConfirmarBtn_RegistarVeiculo
 
+    /**
+     * Metodo do botã filtrar da frame ConsultarVeiculos que pesquisa por uma carrinha com à matricula inserida
+     * @param evt 
+     */
     private void btnFiltrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrar1ActionPerformed
         // TODO add your handling code here:
         populateTblCarrinhas(txtMatriculaV.getText());
 
     }//GEN-LAST:event_btnFiltrar1ActionPerformed
+    
+    /**
+     * Metodo que vai buscar as carrinhas à base de dados e popula a tabela do frame ConsultarVeiculoFrame
+     * @param matricula 
+     */
     private void populateTblCarrinhas(String matricula){
         ResultSet rs = null;
         try {
@@ -4002,6 +4099,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    /**
+     * Metodo do botao consultar carrinhas da frame MainMenu que abre a frame ConsultarVeiculoFrame
+     * @param evt 
+     */
     private void ConsultarVeiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVeiculoBtnActionPerformed
         txtMatriculaV.setText("");
         ConsultarVeiculoFrame.setVisible(true);
@@ -4009,7 +4111,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         populateTblCarrinhas("a");
         
     }//GEN-LAST:event_ConsultarVeiculoBtnActionPerformed
-
+    
+    /**
+     * Metodo do botã filtrar da frame ConsultarAcidentes que pesquisa por um processo de acidente por resolver correspondente à matricula inserida
+     * @param evt 
+     */
     private void btnFiltrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrar2ActionPerformed
         try {
             // TODO add your handling code here:
@@ -4018,6 +4124,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnFiltrar2ActionPerformed
+    
+    /**
+     * Metodo que vai buscar os acidentes com processos pendentes a base de dados e popula a tabela da frame ConsultarAcidentes
+     * @param matricula
+     * @throws SQLException 
+     */
     private void populateAcidentes(String matricula) throws SQLException{
         ResultSet rs = null;
         String cmd = "";
@@ -4066,6 +4178,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
         
     }
+    
+    /**
+     * Metodo do botão consultar acidente do Main Menu que mostra a frame ConsultarAcidentes
+     * @param evt 
+     */
     private void ConsultarAcidenteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarAcidenteBtnActionPerformed
         txtMatriculaV1.setText("");
         ConsultarAcidenteFrame.setVisible(true);
@@ -4077,6 +4194,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConsultarAcidenteBtnActionPerformed
 
+    /**
+     * Metodo do botao concluir da frame consultar acidentes que marca o processo de acidente pendente como concluido
+     * @param evt 
+     */
     private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
         // TODO add your handling code here:
         if(tblAcidentes.getSelectedRowCount() != 1){
@@ -4091,7 +4212,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnConcluirActionPerformed
-
+    
+    /**
+     * Metodo do botao confirmar da frame registo de fornecedor, valida os campos introduzidos e insere na base de dados
+     * @param evt 
+     */
     private void ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
         boolean erro = false;
         String mensagem = "\nForam detectados os seguintes erros.\n";
@@ -4152,7 +4277,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ConfirmarRegistoFornecedorConfirmarRegistoClienteBtn
-
+    
+    /**
+     * Metodo para o botao reset da frame de registo do fornecedor, faz reset as caixas de texto
+     * @param evt 
+     */
     private void ResetRegistoFornecedorResetRegistarClienteBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetRegistoFornecedorResetRegistarClienteBtn
         EmailRegistoFornecedor.setText("");
         CCRegistoFornecedor.setText("");
@@ -4205,7 +4334,12 @@ public class InterfaceMain extends javax.swing.JFrame {
             }
         });
     }
-    
+    /**
+     * Método que transforma uma string numa hash
+     * @param s
+     * @return hash do String s
+     * @throws NoSuchAlgorithmException 
+     */
     private String encriptar(String s) throws NoSuchAlgorithmException{
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] b = md.digest(s.getBytes(StandardCharsets.UTF_8));
@@ -4223,7 +4357,11 @@ public class InterfaceMain extends javax.swing.JFrame {
   
         return hexString.toString();
     }
-
+    /**
+     * Toma como parametro uma String e retorna true se a string for uma data com formato d-M-uuuu ou false se não for
+     * @param date
+     * @return boolean
+     */
     public static boolean isValid(final String date) {
 
         boolean valid = false;
@@ -4244,7 +4382,11 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         return valid;
     }
-    
+    /**
+     * Toma como parametro uma string e converte para LocalDate com formato d-M-uuuu
+     * @param date
+     * @return data
+     */
     public static LocalDate StringtoDate(String date){
         LocalDate d = LocalDate.parse(date,
                     DateTimeFormatter.ofPattern("d-M-uuuu")
@@ -4252,7 +4394,11 @@ public class InterfaceMain extends javax.swing.JFrame {
             );
         return d;
     }
-    
+    /**
+     * Toma como parametro uma string e converte para LocalDate com formato uuuu-M-d
+     * @param date
+     * @return data
+     */
     public static LocalDate StringtoDate2(String date){
         LocalDate d = LocalDate.parse(date,
                     DateTimeFormatter.ofPattern("uuuu-M-d")
@@ -4260,11 +4406,19 @@ public class InterfaceMain extends javax.swing.JFrame {
             );
         return d;
     }
-    
+    /**
+     * Toma como parametro uma LocalDate e retorna uma string no formato "dd-MM-uuuu"
+     * @param date
+     * @return String
+     */
     public static String DatetoString(LocalDate date){
         return date.format(DateTimeFormatter.ofPattern("dd-MM-uuuu"));
     }
-    
+    /**
+     * Toma como parametro uma LocalDate e retorna uma string no formato "uuuu-MM-dd"
+     * @param date
+     * @return String
+     */
     public static String DatetoString2(LocalDate date){
         return date.format(DateTimeFormatter.ofPattern("uuuu-MM-dd"));
     }

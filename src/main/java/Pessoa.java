@@ -16,6 +16,19 @@ public class Pessoa {
 
     public Pessoa(){};
 
+    /**
+     * Construtor da classe Pessoa
+     * @param nome
+     * @param id
+     * @param numeroCidadao
+     * @param morada
+     * @param dataRegistoSistema
+     * @param dataNascimento
+     * @param numTelefone
+     * @param email
+     * @param username
+     * @param password 
+     */
     public Pessoa(String nome, int id, String numeroCidadao, String morada, LocalDate dataRegistoSistema,
     LocalDate dataNascimento, int numTelefone, String email, String username, String password){
 
@@ -32,84 +45,84 @@ public class Pessoa {
 
     }
 
+    /**
+     * Metodo que retorna o nome do objecto pessoa
+     * @return 
+     */
     public String getNome() {
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
+    
+    /**
+     * Metodo que retorna o id do Objecto pessoa
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    /**
+     * Metodo que retorna o numero de cidadao do objecto pessoa
+     * @return 
+     */
     public String getNumeroCidadao() {
         return numeroCidadao;
     }
-
-    public void setNumeroCidadao(String numeroCidadao) {
-        this.numeroCidadao = numeroCidadao;
-    }
-
+    
+    /**
+     * Metodo que retorna a morada do objecto pessoa
+     * @return 
+     */
     public String getMorada() {
         return morada;
     }
-
-    public void setMorada(String morada) {
-        this.morada = morada;
-    }
-
+    
+    /**
+     * Metodo que retorna a data de Registo do objecto pessoa no sistema
+     * @return 
+     */
     public LocalDate getDataRegistoSistema() {
         return dataRegistoSistema;
     }
 
-    public void setDataRegistoSistema(LocalDate dataRegistoSistema) {
-        this.dataRegistoSistema = dataRegistoSistema;
-    }
-
+    /**
+     * Metodo que retorna a data de nascimento do objecto pessoa
+     * @return 
+     */
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
+    /**
+     * Metodo que retorna o numero de telefone do objecto pessoa
+     * @return 
+     */
     public int getNumTelefone() {
         return numTelefone;
     }
 
-    public void setNumTelefone(int numTelefone) {
-        this.numTelefone = numTelefone;
-    }
-
+    /**
+     * Metodo que retorna o email do objecto pessoa
+     * @return 
+     */
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    /**
+     * Metodo que retorna o username do objecto pessoa
+     * @return 
+     */
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
+    /**
+     * Metodo que retorna a password do objecto pessoa
+     * @return 
+     */
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
     
 }
