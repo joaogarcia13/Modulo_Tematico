@@ -5,7 +5,11 @@ import java.awt.*;
 public class Cor {
 
     private Color cor;
-
+    
+    /**
+     * Construtor da classe cor 
+     * @param cor 
+     */
     public Cor (String cor){
         switch(cor){
             case "azul_escuro":
