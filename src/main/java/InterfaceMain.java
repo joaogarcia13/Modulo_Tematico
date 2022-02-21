@@ -2856,6 +2856,8 @@ public class InterfaceMain extends javax.swing.JFrame {
      * @param evt 
      */
     private void AlugarVeiculoMainMenuBtn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlugarVeiculoMainMenuBtn
+        DefaultTableModel model = new DefaultTableModel();
+        tblCarrinhas.setModel(model);
         txtDataFim.setText("");
         txtDataInicio.setText("");
         AlugarVeiculo.setLocationRelativeTo(null);
@@ -3026,6 +3028,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             if(rowCount == 1){
                 rs = db.select("select * from pessoas where username = '" + txtUsername.getText() + "'");
                 rs.next();
+                System.out.println(encriptar(txtPassword.getText()));
                 if(encriptar(txtPassword.getText()).equals(rs.getString("password"))){
                     idUtilizador = rs.getString("id");
                     rs = db.select("select cargo from funcionarios where idPessoa = '" + idUtilizador + "'" );
@@ -3036,8 +3039,10 @@ public class InterfaceMain extends javax.swing.JFrame {
                     Login.setVisible(false);
                     MainMenu.setVisible(true);
                 }else{
-                     JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(new JOptionPane(), "Password Errada!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
+            }else{
+                 JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não existe", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
@@ -3112,10 +3117,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         GerirFuncionario.setVisible(true);
         GerirFuncionario.setLocationRelativeTo(null);
         DefaultTableModel model = new DefaultTableModel(){
-                @Override
-                 public boolean isCellEditable(int row, int column) {
-                    return false;
-            }}; 
+            @Override
+            public boolean isCellEditable(int row, int column) {
+            return false;
+        }}; 
             model.addColumn("id");
             model.addColumn("Nome");
             model.addColumn("Numero CC");
@@ -3133,11 +3138,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                         DatetoString(StringtoDate2(rs.getString("dataNascimento"))), rs.getString("numTelefone"), rs.getString("email"), rs.getString("cargo")});
                 }
                 tblFunc.setModel(model);
-                for(int i = 0; i < tblFunc.getColumnCount(); i++){
-                    for (int j = 0; j < tblFunc.getRowCount(); j++) {
-                        tblFunc.isCellEditable(i, j);
-                    }
-                }
+                
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3327,8 +3328,8 @@ public class InterfaceMain extends javax.swing.JFrame {
                 Logger.getLogger(InterfaceMain.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(new JOptionPane(), "Registo efetuado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            PerfilFunc.dispose();
         }
+        PerfilFunc.dispose();
     }//GEN-LAST:event_ConfirmarEditarFuncBtn
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -3765,7 +3766,7 @@ public class InterfaceMain extends javax.swing.JFrame {
             String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
             try{
                 ResultSet rs = null;
-                rs = db.select("SELECT pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                rs = db.select("SELECT condutores.*, pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
                 int rowCount = 0;
                 String id = "";
                 String carta = "";

@@ -52,7 +52,7 @@ conecao.commit()
 #array pessoas: nome - numeroCC - morada - dataregisto - data nascimento - telefone - email - user - pass
 pessoas = [ "","","","","","","","","",
     "Fernanda Gomes", random_com_N_digitos(7), "Rua do Vieira, 3750-463 Fermentelos", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "fernando.gomes@gmail.com", "admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", #admin
-    "Jerônimo Gonsalves", random_com_N_digitos(7), "Lomba, 3750-017 Agadão", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "jeronimo@gmail.pt", "jeronimo", "00040f820205a3fb5c1905ec2ec67b231280fb95da86680659443d4e57a603c6", #jerom123
+    "Jerônimo Gonsalves", random_com_N_digitos(7), "Lomba, 3750-017 Agadão", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "jeronimo@gmail.pt", "jeronimo", "40f820205a3fb5c1905ec2ec67b231280fb95da86680659443d4e57a603c6", #jerom123
     "Calisto Almeida", random_com_N_digitos(7), "Barrosinhas, 3750-000 Águeda", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "calisto.a@gmail.pt", "calisto", "4873bfd3efc25341257ad2c71217e4df3c89540111828a46c2f80a8dceb0755a", #caucau
     "Zeferino Dias", random_com_N_digitos(7), "Barro, 3750-351 Barrô Agd", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "zeferino.what@gmail.pt", "zeferino", "6e43246ea6ff80e02c724c92a2188d29b8f679287f46f63196ac0464939014c0", #nomeMaisEstranho
     "Isac Barboza", random_com_N_digitos(7), "Barrosinhas, 3750-000 Águeda", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "isac@gmail.pt", "", "",
@@ -75,7 +75,7 @@ pessoas = [ "","","","","","","","","",
     "Egídio Correia",  random_com_N_digitos(7), "Rua do Afurado, 3750-303 Águeda", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "E.Correia@gmail.pt", "edigio", "388471a048a1b8cf23536ea4a632a556e9a1b4bd2395e113894fea561d313896", #egipto
     "Vasco Carriço",  random_com_N_digitos(7), "Rua da Azenha, 3750-303 Águeda", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "Vasquito@gmail.pt", "", "",
     "Xandinho Cabral",random_com_N_digitos(7), "Rua da Azenha, 3750-303 Águeda", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "Cabral_X@gmail.pt", "", "",
-    "Gaspar Monteiro", random_com_N_digitos(7), "Rua Doutor Teixeira Guedes, 2000-000 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "Gaspacho_Monteiro@gmail.pt", "gaspar", "026f4258e758497562a6200aed442afa67809c7061b95ab9dbc14b7251c8ea23", #gaspacho26
+    "Gaspar Monteiro", random_com_N_digitos(7), "Rua Doutor Teixeira Guedes, 2000-000 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "Gaspacho_Monteiro@gmail.pt", "gaspar", "26f4258e758497562a6200aed442afa67809c7061b95ab9dbc14b7251c8ea23", #gaspacho26
     "Edgar Mata", random_com_N_digitos(7), "Rua Doutor Teixeira Guedes, 2000-000 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "Mata_Edgar@gmail.pt", "edgar", "2c5bf27b377eef1c2005625e70d9c49a59412e6a3ce0aeb3e60fc8e6e660fa78", #matador32
     "Celia Batista", random_com_N_digitos(7), "Rua Doutor Teixeira Guedes, 2000-000 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "celia@gmail.pt", "", "",
     "Natalia Dantas",  random_com_N_digitos(7), "Rua Doutor Teixeira Guedes, 2000-000 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "natalia_lia@gmail.pt", "", "",
@@ -89,7 +89,7 @@ pessoas = [ "","","","","","","","","",
     "Diogo Antunes", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "digo.f@gmail.pt", "", "",
     "Aleixo Gusmão", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "aleixo@gmail.pt", "", "",
     "Ian Rocha", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "rocha_ian@gmail.pt", "ian", "d8afa0305bc090e028a252089ee2f124bec6368f3afa30dace6cf05369212a07", #indoFora
-    "Mariana Rego", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "rego_m@gmail.pt", "rego", "0e94e408f393d7eddefebfc2d900714643ebea78a6ebf4ef503c490df6cecc81", #olhodoc
+    "Mariana Rego", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "rego_m@gmail.pt", "rego", "e94e408f393d7eddefebfc2d900714643ebea78a6ebf4ef503c490df6cecc81", #olhodoc
     "Fábia Tavares", random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "f.tavares@gmail.pt", "", "",
     "Carlitos Rego",random_com_N_digitos(7), "Avenida do Brasil, 2005-136 Santarém", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "rego.c@gmail.pt", "", "",
     "Rafaela Abril", random_com_N_digitos(7), "Rua dos Combatentes da Grande Guerra, 3810-000 Aveiro", random_data(datetime(2005,1,1), datetime(2022,2,19)), random_data(datetime(1960,1,1), datetime(2003,3,1)), random_com_N_digitos(9), "rafaela@gmail.pt", "rafaela", "54b79489428d3ae5d18bff5939990e8dc0b27011d52f88b90e7ebc1ab2bafad2", #rafastrapas
@@ -137,7 +137,7 @@ sql = "INSERT INTO `PTDA_BD_1`.`cartasconducao` (`idPessoa`,`numeroCartaConducao
 for i in range(0,35):
     numeroCarta = Loc[random.randint(0,4)] + "-" + random_com_N_digitos(7)
     dataEmissao = random_data(datetime(1993,1,1), datetime(2004,1,1))
-    dataVal = addYears(datetime.fromisoformat(dataEmissao),11).strftime('%Y-%m-%d')
+    dataVal = addYears(datetime.fromisoformat(dataEmissao),30).strftime('%Y-%m-%d')
     
     cursor.execute(sql,(cartasIDPessoa[i], numeroCarta, dataEmissao, dataVal, categoria[random.randint(0,13)]))
 
@@ -193,4 +193,3 @@ for i in range (0,100):
     cursor.execute(sql,(matricula,registo,estado[random.randint(0,1)],seguro,valSeguro,proprietario,marca[random.randint(0,41)],modelo, cilindrada, potencia[random.randint(0,27)], combustivel[random.randint(0,2)], dataInicio, dataFim, Km, preco, precoExtra, ano))
 
 conecao.commit()
-
