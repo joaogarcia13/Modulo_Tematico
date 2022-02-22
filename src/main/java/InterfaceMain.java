@@ -129,6 +129,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         TxtKilomet = new javax.swing.JTextField();
         TxtCilindrada = new javax.swing.JTextField();
+        km = new javax.swing.JLabel();
+        txtkmextra = new javax.swing.JTextField();
+        km1 = new javax.swing.JLabel();
+        txtprecodia = new javax.swing.JTextField();
         Perfil_Utilizador = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         cartaConducao = new javax.swing.JTextField();
@@ -786,6 +790,11 @@ public class InterfaceMain extends javax.swing.JFrame {
                 ConfirmarBtn_RegistarVeiculo(evt);
             }
         });
+        BtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnConfirmarActionPerformed(evt);
+            }
+        });
 
         jLabel29.setForeground(new java.awt.Color(217, 86, 74));
         jLabel29.setText("Modelo");
@@ -795,6 +804,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         BtnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LimparBtn_RegistarVeiculo(evt);
+            }
+        });
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
             }
         });
 
@@ -833,6 +847,16 @@ public class InterfaceMain extends javax.swing.JFrame {
         TxtKilomet.setBackground(new java.awt.Color(169, 202, 221));
 
         TxtCilindrada.setBackground(new java.awt.Color(169, 202, 221));
+
+        km.setForeground(new java.awt.Color(217, 86, 74));
+        km.setText("Preco por dia:");
+
+        txtkmextra.setBackground(new java.awt.Color(169, 202, 221));
+
+        km1.setForeground(new java.awt.Color(217, 86, 74));
+        km1.setText("Preco km extra:");
+
+        txtprecodia.setBackground(new java.awt.Color(169, 202, 221));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -873,13 +897,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                                     .addComponent(jLabel26)))
                             .addGap(57, 57, 57))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel23)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(152, 152, 152))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TxtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -888,9 +905,26 @@ public class InterfaceMain extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel27)
                                     .addComponent(ComboMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel42)
-                                .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(km)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                            .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel23))
+                                        .addComponent(txtprecodia, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(km1)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(TextDataFim, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(43, 43, 43)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel42)
+                                            .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtkmextra, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(13, 13, 13))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(ComboCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -953,7 +987,15 @@ public class InterfaceMain extends javax.swing.JFrame {
                     .addComponent(jLabel23)
                     .addComponent(TextDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtKilomet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(km)
+                    .addComponent(km1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtkmextra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtprecodia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3841,7 +3883,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     rs = db.select(queryCarrinhas + filtro);
                     while(rs.next()){
                         contadorCarrinhas++;
-                        Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro);
+                        Carrinha tmp = new Carrinha(filtro, todayDate, filtro, filtro, filtro, filtro, filtro, filtro, filtro, filtro, todayDate, todayDate, todayDate, filtro,filtro,filtro);
                         tmp.setMatricula(rs.getString("matricula"));
                         tmp.setMarca(rs.getString("marca"));
                         tmp.setModelo(rs.getString("modelo"));
@@ -3959,6 +4001,14 @@ public class InterfaceMain extends javax.swing.JFrame {
             erro = true;
             mensagem += "\nValidade do Seguro não é uma data válida ou nao tem o formato dd-mm-aaaa.";
         }
+        if(Float.parseFloat(txtprecodia.getText()) < 0){
+            erro = true;
+            mensagem += "\nPreco por dia não pode ser menor que 0.";
+        }
+        if(Float.parseFloat(txtkmextra.getText()) < 0){
+            erro = true;
+            mensagem += "\nPreco por Km extra não pode ser menor que 0.";
+        }
 
         if(isValid(TextDataInicio.getText())){
             DataIni = StringtoDate(TextDataInicio.getText());
@@ -4003,7 +4053,7 @@ public class InterfaceMain extends javax.swing.JFrame {
 
             Carrinha carrinha = new Carrinha(TxtMatricula.getText(), now, "Disponivél", ComboMarca.getItemAt(ComboMarca.getSelectedIndex()), TxtModelo.getText(),
                 TxtCilindrada.getText(), ComboPotencia.getItemAt(ComboPotencia.getSelectedIndex()), ComboCombustivel.getItemAt(ComboCombustivel.getSelectedIndex()),
-                TxtAno.getText(), TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText());
+                TxtAno.getText(), TextApolice.getText(), ValApol, DataIni, DataFim, TxtKilomet.getText(),txtprecodia.getText(), txtkmextra.getText());
 
             try {
                 db.insertCarrinha(carrinha, id);
@@ -4267,7 +4317,17 @@ public class InterfaceMain extends javax.swing.JFrame {
         MoradaRegistoFornecedor.setText("");
         DataNascimentoRegistoFornecedor.setText("");
         NomeRegistoFornecedor.setText("");
+        txtprecodia.setText("");
+        txtkmextra.setText("");
     }//GEN-LAST:event_ResetRegistoFornecedorResetRegistarClienteBtn
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4638,6 +4698,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField15;
+    private javax.swing.JLabel km;
+    private javax.swing.JLabel km1;
     private javax.swing.JTextArea morada;
     private javax.swing.JTextArea morada1;
     private javax.swing.JTextField nomeUtilizador;
@@ -4662,6 +4724,8 @@ public class InterfaceMain extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtkm;
+    private javax.swing.JTextField txtkmextra;
+    private javax.swing.JTextField txtprecodia;
     private javax.swing.JTextField username1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,6 +19,8 @@ public class Carrinha {
     private LocalDate InicioDisponibilidade;
     private LocalDate fimDisponibilidade;
     private String kilm;
+    private String preco;
+    private String kmExtra;
 
     /**
      * Construtor da classe Carrinha
@@ -38,7 +40,7 @@ public class Carrinha {
      * @param km 
      */
     public Carrinha(String matricula, LocalDate dataRegistoSistema, String estado, String marca, String modelo, String cilindrada,
-            String Potencia, String combustivel, String ano, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim, String km){
+            String Potencia, String combustivel, String ano, String numeroSeguro, LocalDate dataValidadeSeguro, LocalDate Inicio, LocalDate Fim, String km, String preco, String kmextra){
         
         this.matricula=matricula;
         this.ano=ano;
@@ -54,6 +56,8 @@ public class Carrinha {
         this.combustivel = combustivel;
         this.DataRegistoSistema = dataRegistoSistema;
         this.kilm = km;
+        this.preco = preco;
+        this.kmExtra = kmextra;
     }
     
     /**
@@ -274,4 +278,25 @@ public class Carrinha {
     public void setKilm(String kilm) {
         this.kilm = kilm;
     }
+
+    public LocalDate getDataRegistoSistema() {
+        return DataRegistoSistema;
+    }
+
+    public LocalDate getDataValidadeSeguro() {
+        return dataValidadeSeguro;
+    }
+
+    public LocalDate getFimDisponibilidade() {
+        return fimDisponibilidade;
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public String getKmExtra() {
+        return kmExtra;
+    }
+    
 }

@@ -80,8 +80,8 @@ public class Database{
         cmd = cmd + "'" + c.getInicioDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getfimDisponibilidade() + "', ";
         cmd = cmd + "'" + c.getKilm() + "', ";
-        cmd = cmd + "'" + 30.0 + "', "; //a mudar o preco
-        cmd = cmd + "'" + 0.20 + "', "; //mudar o preço
+        cmd = cmd + "'" + c.getPreco() + "', "; 
+        cmd = cmd + "'" + c.getKmExtra() + "', ";
         cmd = cmd + "'" + c.getAno() + "')";
         System.out.println(cmd);
         stm.executeUpdate(cmd);
