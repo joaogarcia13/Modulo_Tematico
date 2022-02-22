@@ -3390,7 +3390,15 @@ public class InterfaceMain extends javax.swing.JFrame {
         }else{
             try {
                 ResultSet rs = null;
-                
+                rs = db.select("select condutor from aluguer where  carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'");
+                int count = 0;
+                while(rs.next()){
+                    count++;
+                }
+                if(count == 0){
+                    JOptionPane.showMessageDialog(new JOptionPane(), "O Aluguer deste veículo não termina hoje.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
                 rs = db.select("select condutor from aluguer where  carrinha = '" + txtMatricula.getText() + "' and dataFim = '" + todayDate.now() + "'");
                 rs.next();
                 String condutor = rs.getString("condutor");
@@ -3805,10 +3813,10 @@ public class InterfaceMain extends javax.swing.JFrame {
         if(tblCarrinhas.getSelectedRowCount() != 1){
             JOptionPane.showMessageDialog(new JOptionPane(), "Tem de selecionar uma e apenas uma carrinha");
         }else{
-            String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero do cartão de cidadão ou da carta de condução:");
+            String pesquisa = JOptionPane.showInputDialog(null, "Introduza o numero da carta de condução:");
             try{
                 ResultSet rs = null;
-                rs = db.select("SELECT condutores.*, pessoas.* FROM PTDA_BD_1.pessoas as pessoas left outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
+                rs = db.select("SELECT pessoas.*, condutores.* FROM PTDA_BD_1.pessoas as pessoas right outer join condutores as condutores on condutores.idPessoa = pessoas.id where condutores.numeroCartaConducao = '" + pesquisa + "' or pessoas.numeroCC ='" + pesquisa + "'");
                 int rowCount = 0;
                 String id = "";
                 String carta = "";
@@ -3818,7 +3826,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                     carta = rs.getString("numeroCartaConducao");
                 }
                 if(rowCount == 0){
-                    JOptionPane.showMessageDialog(new JOptionPane(), "Utilizador não encontrado");
+                    JOptionPane.showMessageDialog(new JOptionPane(), "Condutor não encontrado");
                 }else{
                     rs = db.select("select * from cartasconducao where numeroCartaConducao = '" + carta + "'");
                     rs.next();
@@ -3839,7 +3847,6 @@ public class InterfaceMain extends javax.swing.JFrame {
                         AlugarVeiculo.dispose();
                         JOptionPane.showMessageDialog(new JOptionPane(), "Aluguer Registado.");
                         }
-                    
                 }
 
             } catch (SQLException ex) {
@@ -3853,7 +3860,7 @@ public class InterfaceMain extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-        if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText()))){
+        if(isValid(txtDataInicio.getText()) && isValid(txtDataFim.getText()) && StringtoDate(txtDataInicio.getText()).isBefore(StringtoDate(txtDataFim.getText())) && StringtoDate(txtDataInicio.getText()).isAfter(LocalDate.now())){
             String filtro = "";
             String queryCarrinhas = "select * from carrinhas where matricula <> ''";
             if(cmbMarca.getSelectedItem().toString() != "Todos"){
@@ -3921,7 +3928,7 @@ public class InterfaceMain extends javax.swing.JFrame {
                 }
 
             }else{
-                JOptionPane.showMessageDialog(new JOptionPane(), "Não foram selecionadas duas datas, ou a data de inicio é depois da data fim.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JOptionPane(), "Não foram selecionadas duas datas, ou a data de inicio é depois da data fim ou no passado.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
